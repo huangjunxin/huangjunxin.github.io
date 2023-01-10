@@ -1,0 +1,893 @@
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sat Apr 04 2020');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="huangjunxin">
+  <meta name="keywords" content="">
+  <title>我的记事本</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>我的记事本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/03/13/8KlqAK.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/jyutping_tutorial_for_vietnamese/" target="_self">
+          <img src="https://z3.ax1x.com/2021/06/22/ReIhyF.png" srcset="/img/loading.gif" alt="Giáo trình Việt bính (粤拼教程)">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/posts/jyutping_tutorial_for_vietnamese/">Giáo trình Việt bính (粤拼教程)</a>
+
+      <a href="/posts/jyutping_tutorial_for_vietnamese/" class="index-excerpt">
+        
+        
+          
+        
+        <div>Tiếng Quảng Đông thường được viết bằng chữ Hán. Bạn cần khoảng 3000 chữ Hán để sử dụng thành thạo tiếng Quảng Đông. Nghe có vẻ nhiều? Đúng là rất nhiều. Đó là tại sao chúng ta cần một hệ thống phiên â</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2021-04-28
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/Tieng-Viet/">Tiếng Việt</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+            
+              <a href="/tags/%E7%B2%A4%E6%8B%BC/">粤拼</a>
+            
+              <a href="/tags/%E5%B9%BF%E5%B7%9E%E8%AF%9D/">广州话</a>
+            
+              <a href="/tags/%E6%8B%BC%E9%9F%B3%E6%96%B9%E6%A1%88/">拼音方案</a>
+            
+              <a href="/tags/%E5%BA%94%E7%94%A8%E8%AF%AD%E8%A8%80%E5%AD%A6/">应用语言学</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/phonological_system_of_dabu_baihou_hakka_dialect_2021/" target="_self">
+          <img src="https://z3.ax1x.com/2021/06/22/RehbJf.jpg" srcset="/img/loading.gif" alt="2021大埔百侯客家方言音系">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/posts/phonological_system_of_dabu_baihou_hakka_dialect_2021/">2021大埔百侯客家方言音系</a>
+
+      <a href="/posts/phonological_system_of_dabu_baihou_hakka_dialect_2021/" class="index-excerpt">
+        
+        
+          
+        
+        <div>本文主要研究梅州市大埔縣百侯鎮的客家語音系。2021.2.9 重釐定版本。</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2021-02-11
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/">语言学</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%AE%A2%E5%AE%B6%E6%96%B9%E8%A8%80/">客家方言</a>
+            
+              <a href="/tags/%E7%99%BE%E4%BE%AF/">百侯</a>
+            
+              <a href="/tags/%E9%9F%B3%E4%BD%8D%E5%AD%A6/">音位学</a>
+            
+              <a href="/tags/%E5%AE%9E%E9%AA%8C%E8%AF%AD%E9%9F%B3%E5%AD%A6/">实验语音学</a>
+            
+              <a href="/tags/%E7%94%B0%E9%87%8E%E8%AF%AD%E8%A8%80%E5%AD%A6/">田野语言学</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/from_the_word_what_in_topolects_to_the_etymology_of_je5_in_yue_chinese/" target="_self">
+          <img src="https://z3.ax1x.com/2021/06/22/RehtiV.png" srcset="/img/loading.gif" alt="试论各方言中的「什么」一词兼谈粤方言「嘢」的语源">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/posts/from_the_word_what_in_topolects_to_the_etymology_of_je5_in_yue_chinese/">试论各方言中的「什么」一词兼谈粤方言「嘢」的语源</a>
+
+      <a href="/posts/from_the_word_what_in_topolects_to_the_etymology_of_je5_in_yue_chinese/" class="index-excerpt">
+        
+        
+          
+        
+        <div>摘　要：在指代词方面，上个世纪就已经有许多前辈进行过各种探讨，同时也获得了许多丰硕的成果。关于“嘢”的语源，前人也有提到如“也”、“个”的观点。本文从现代汉语的“什么”一词谈起，追溯了国内部分方言的“什么”一词的构成形式，提出了粤方言的“乜嘢”一词可能也符合“疑问词+对象的指示”的组成形式的猜想，并就前人考“嘢”的语源为“也”和“个”给出了笔者的观点和看法。最后还谈到了调查“嘢”时的一个意外发现，</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-12-17
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/">语言学</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%B2%A4%E6%96%B9%E8%A8%80/">粤方言</a>
+            
+              <a href="/tags/%E8%AF%AD%E6%BA%90/">语源</a>
+            
+              <a href="/tags/%E8%AF%8D%E6%BA%90%E5%AD%A6/">词源学</a>
+            
+              <a href="/tags/%E6%96%B9%E8%A8%80%E5%AD%A6/">方言学</a>
+            
+              <a href="/tags/%E5%85%B1%E6%97%B6%E8%AF%AD%E8%A8%80%E5%AD%A6/">共时语言学</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/install_manjaro_xfce_in_raspberry_pi_4B/" target="_self">
+          <img src="https://s1.ax1x.com/2020/08/17/dVjFED.png" srcset="/img/loading.gif" alt="树莓派4B 安装 Manjaro Xfce 上手体验">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/posts/install_manjaro_xfce_in_raspberry_pi_4B/">树莓派4B 安装 Manjaro Xfce 上手体验</a>
+
+      <a href="/posts/install_manjaro_xfce_in_raspberry_pi_4B/" class="index-excerpt">
+        
+        
+          
+        
+        <div>今年，在618时趁着低价（然而并没有低多少）购入了树莓派4B——一直以来想要尝试的机器。想当年，自从2代就开始关注树莓派了，但一直怕买了不用放着吸尘，便拖了许久。这次618咬了咬牙，想了想也不是很贵，就直接买了。版本是树莓派4B的2G版，还附送了一个500W像素的摄像头。</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-08-06
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">Linux</a>
+            
+              <a href="/tags/Manjaro/">Manjaro</a>
+            
+              <a href="/tags/Raspberry-Pi/">Raspberry Pi</a>
+            
+              <a href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/play_manjaro_xfce_20_0_in_virtualbox/" target="_self">
+          <img src="https://s1.ax1x.com/2020/05/10/Y8AYB6.md.png" srcset="/img/loading.gif" alt="在 VirtualBox 中玩 Manjaro Xfce 20.0">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/posts/play_manjaro_xfce_20_0_in_virtualbox/">在 VirtualBox 中玩 Manjaro Xfce 20.0</a>
+
+      <a href="/posts/play_manjaro_xfce_20_0_in_virtualbox/" class="index-excerpt">
+        
+        
+          
+        
+        <div>疫情期间，在家闲得想找点事情玩玩，而之前在学校日常折腾的 Manjaro 的系统硬盘又落在了宿舍……打算在家重新用虚拟机装一个。由于家里电脑配置比较低，开起虚拟机来还是比较勉强的，所以选择了 xfce 的 Manjaro，因为它更加轻量化。</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-05-09
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/Linux/">Linux</a>
+            
+              <a href="/tags/Manjaro/">Manjaro</a>
+            
+              <a href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+            
+              <a href="/tags/VirtualBox/">VirtualBox</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/excerpt_from_the_book_of_survival/" target="_self">
+          <img src="https://s1.ax1x.com/2020/05/10/Y8kO1A.png" srcset="/img/loading.gif" alt="《自救书》书摘">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/posts/excerpt_from_the_book_of_survival/">《自救书》书摘</a>
+
+      <a href="/posts/excerpt_from_the_book_of_survival/" class="index-excerpt">
+        
+        
+          
+        
+        <div>
+臣聞求木之長者，必固其根本；欲流之遠者，必浚其泉源；思國之安者，必積其德義。源不深而豈望流之遠，根不固而何求木之長？德不厚而思國之治，雖在下愚，知其不可，而況於明哲乎！人君當神器之重，居域中之大，將崇極天之峻，永保無疆之休。不念於居安思危，戒貪以儉；德不處其厚，情不勝其欲，斯亦伐根以求木茂，塞源而欲流長者也。
+
+——《舊唐書 · 卷七十一 列傳第二十一 魏徵》</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-04-17
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E4%B9%A6%E6%91%98/">书摘</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E7%94%9F%E5%AD%98%E6%8A%80%E5%B7%A7/">生存技巧</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/poem_jig_laih/" target="_self">
+          <img src="https://s1.ax1x.com/2020/04/10/GIYxds.png" srcset="/img/loading.gif" alt="疫癘">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/posts/poem_jig_laih/">疫癘</a>
+
+      <a href="/posts/poem_jig_laih/" class="index-excerpt">
+        
+        
+          
+        
+        <div>新冠肺炎疫情嚴重，感發而記。</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-02-16
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%A9%A9%E8%A9%9E%E9%9B%86/">詩詞集</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E8%A9%A9/">詩</a>
+            
+              <a href="/tags/%E4%BA%94%E8%A8%80%E7%B5%95%E5%8F%A5/">五言絕句</a>
+            
+              <a href="/tags/%E5%B9%B3%E6%B0%B4%E9%9F%BB/">平水韻</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/poem_coengv_soeng_si/" target="_self">
+          <img src="https://s1.ax1x.com/2020/04/10/GIt6Ts.png" srcset="/img/loading.gif" alt="長相思">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/posts/poem_coengv_soeng_si/">長相思</a>
+
+      <a href="/posts/poem_coengv_soeng_si/" class="index-excerpt">
+        
+        
+          
+        
+        <div>擱筆太久，半夜難眠，感發而作。</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-02-14
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%A9%A9%E8%A9%9E%E9%9B%86/">詩詞集</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E8%A9%9E/">詞</a>
+            
+              <a href="/tags/%E9%95%B7%E7%9B%B8%E6%80%9D/">長相思</a>
+            
+              <a href="/tags/%E8%A9%9E%E6%9E%97%E6%AD%A3%E9%9F%BB/">詞林正韻</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/basic_principle_of_marxism_review_summary/" target="_self">
+          <img src="https://s1.ax1x.com/2020/04/07/G6ce7n.jpg" srcset="/img/loading.gif" alt="马原考试复习总结">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/posts/basic_principle_of_marxism_review_summary/">马原考试复习总结</a>
+
+      <a href="/posts/basic_principle_of_marxism_review_summary/" class="index-excerpt">
+        
+        
+          
+        
+        <div>大二上学期学习了课程“马克思主义基本原理”，本文是期末时对本课程的总结与归纳，同时便于以后复查。</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-01-08
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%94%BF%E6%B2%BB/">政治</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a>
+            
+              <a href="/tags/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/">马克思主义</a>
+            
+              <a href="/tags/%E5%93%B2%E5%AD%A6/">哲学</a>
+            
+              <a href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/">经济学</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/computer_network_review_summary/" target="_self">
+          <img src="https://s1.ax1x.com/2020/03/18/80D7eP.png" srcset="/img/loading.gif" alt="计算机网络考试复习总结">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 mx-auto index-info">
+      <a class="index-header" href="/posts/computer_network_review_summary/">计算机网络考试复习总结</a>
+
+      <a href="/posts/computer_network_review_summary/" class="index-excerpt">
+        
+        
+          
+        
+        <div>大二上学期学习了课程“计算机网络”，本文是期末时对本课程的总结与归纳，同时便于以后复查。</div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>&nbsp;2020-01-03
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a>
+            
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+            
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+  
+  <script>
+    for (ele of document.getElementById("pagination").getElementsByTagName("a")) {
+      ele.href += '#board';
+    }
+  </script>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      ©2015-2020 Transion Creative Centre
+      <br>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "以成，却非已成。&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?deb343538ea97eeebc6eea038e232994";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

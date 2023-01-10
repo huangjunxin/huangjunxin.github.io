@@ -1,0 +1,940 @@
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sat Apr 04 2020');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="huangjunxin">
+  <meta name="keywords" content="">
+  <title>2021大埔百侯客家方言音系 - 我的记事本</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>我的记事本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/03/13/8KDuAe.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2021-02-11 12:56">
+      2021年2月11日 下午
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      30
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>本文主要研究梅州市大埔縣百侯鎮的客家語音系。2021.2.9 重釐定版本。</p>
+<a id="more"></a>
+<p class="note note-info">本文首发于知乎专栏<a href="https://www.zhihu.com/column/c_1322820762479210496" target="_blank" rel="noopener">《大埔百侯话》</a>，可<a href="https://zhuanlan.zhihu.com/p/349914674" target="_blank" rel="noopener">点击此处查看原文</a></p>
+
+<p class="note note-info">本文因特殊需要，主要语言（文字）使用：中文（繁体）</p>
+
+<p>作者：以成</p>
+<p>調查者：以成</p>
+<p>2018.7.30 初稿（未公開）</p>
+<p>2018.8.20 第十次修改稿（未公開）</p>
+<p>2021.2.9 重釐定</p>
+<h2 id="1-研究對象"><a href="#1-研究對象" class="headerlink" title="1. 研究對象"></a>1. 研究對象</h2><p>本文主要研究梅州市大埔縣百侯鎮的客家語音系。</p>
+<h2 id="2-前人研究成果"><a href="#2-前人研究成果" class="headerlink" title="2. 前人研究成果"></a>2. 前人研究成果</h2><p>從筆者目前 (2018 年) 收集到的資料來看，尚未有學者研究百侯鎮的方言音系，而只有一份大埔縣城（即湖寮鎮）的方言音系<a href="https://zhuanlan.zhihu.com/p/349914674#ref_1" target="_blank" rel="noopener">[1]</a>、幾筆大埔話的語音描述<a href="https://zhuanlan.zhihu.com/p/349914674#ref_2" target="_blank" rel="noopener">[2]</a>。而本文在今天 (2021 年) 又根據後來獲得的一本大埔客家話詞典<a href="https://zhuanlan.zhihu.com/p/349914674#ref_3" target="_blank" rel="noopener">[3]</a>對之前記錄的音系進行了更正與微調。</p>
+<p>對於客家人而言，其遷移歷史及社會背景更受學者關注。而今有關百侯的文章或論文的研究方向也一樣如此，如李思睿的<strong>跨國網絡與粵東僑鄉社會變遷：以梅州市大埔縣百侯鎮爲例</strong>；蕭文評的<strong>粵東北客家“僑鄉”的形成與建構——以大埔縣百侯村爲例</strong>；蕭文評的<strong>祖先開基的傳說與解讀——以大埔縣百侯楊氏爲中心</strong>。雖然並未直接以漢語言學的描述形式來記錄百侯話的音系，但前人對百侯的遷徙歷史、社會背景的研究，對反應當地的語言特徵也有一定的幫助。</p>
+<h2 id="3-研究的背景與意義"><a href="#3-研究的背景與意義" class="headerlink" title="3. 研究的背景與意義"></a>3. 研究的背景與意義</h2><p>地大物博的中國蘊含着多種多樣的民族文化，而語言又是一種特殊的、綜合性的文化凝聚體。研究語言，有利於發現與保留語言中文化的點滴。在今日普通話推廣的大浪潮下，弱勢方言日益被普通話或強勢方言同化，許多有當地特色的語音、詞彙、語法正在慢慢地成爲歷史。這時，曾經經過研究，以文字、語音形式記錄下來的方言材料便顯得尤爲珍貴。</p>
+<p>通過挖掘與記錄方言中的語音現象，相信不僅能保留當地語言中的文化特色，還能給歷時語音學、共時語音學等研究帶來許多幫助。本文通過對大埔百侯客家方言音系的記錄與研究，期望能給漢語言學相關學科提供有益的材料。</p>
+<h2 id="4-研究方法"><a href="#4-研究方法" class="headerlink" title="4. 研究方法"></a>4. 研究方法</h2><p>本文主要採用調查法、描述性研究法。</p>
+<h2 id="5-大埔縣百侯鎮概況"><a href="#5-大埔縣百侯鎮概況" class="headerlink" title="5. 大埔縣百侯鎮概況"></a>5. 大埔縣百侯鎮概況</h2><h3 id="5-1-地理概況"><a href="#5-1-地理概況" class="headerlink" title="5.1 地理概況"></a>5.1 地理概況</h3><p>百侯鎮隸屬於廣東省梅州市大埔縣，位於廣東省梅州市大埔縣南部，是距離縣城（即湖寮鎮）最近的一個鎮，直線距離僅約 10 公里。百侯鎮北接西河鎮，東連大東鎮，南毗楓朗鎮、高陂鎮，西臨湖寮鎮。全鎮總面積 94.2 平方公里，有山地 7038 公頃，耕地面積 785 公頃。</p>
+<h3 id="5-2-歷史文化"><a href="#5-2-歷史文化" class="headerlink" title="5.2 歷史文化"></a>5.2 歷史文化</h3><p>百侯鎮歷史悠久，早在 4000 多年前就已有人羣聚居<a href="https://zhuanlan.zhihu.com/p/349914674#ref_4" target="_blank" rel="noopener">[4]</a>。在<strong>秦漢</strong>時期，今百侯鎮全境屬於南海郡揭陽縣。<strong>東晉</strong>義熙九年 (413 年) 立義招縣，今百侯鎮（下略）全境屬於義安郡義招縣。<strong>隋</strong>大業三年 (607 年) 改義招縣爲萬川縣，全境屬於潮州萬川縣。<strong>唐</strong>武德四年 (621 年) ，廢萬川縣，縣境併入潮州海陽縣（今潮安）。此後，歷<strong>宋元</strong>及<strong>明</strong>前期，均屬潮州海陽縣光德鄉。<strong>明</strong>成化十四年 (1478 年) 立饒平縣，今百侯鎮爲潮州府饒平縣地。<strong>明</strong>嘉靖五年 (1526 年) ，全境屬潮州府大埔縣。<strong>民國</strong> 3 年 (1914 年) 屬於潮循道，<strong>民國</strong> 25 年 (1936 年) 屬廣東第六行政督察專員公署。新中國成立後，百侯鎮的轄區範圍不斷變化。截止至 2020 年 6 月，百侯鎮下轄 14 個行政村（曹鮎村、軟橋村、舊寨里村、帽山村、曲灘村、橫乾村、東山村、南山村、新樂村、蘇姑坪村、武塘村、白羅村、侯南村、侯北村）和 1 個社區（百侯社區），轄區範圍延續至今。</p>
+<p>百侯鎮素有「文化之鄉、華僑之鄉、幹部之鄉」等美譽。 2010 年，獲住房和城鄉建設部、國家文物局授予第五批「中國歷史文化名鎮」榮譽稱號<a href="https://zhuanlan.zhihu.com/p/349914674#ref_5" target="_blank" rel="noopener">[5]</a>。2019 年 12 月 30 日，百侯鎮入選首批「廣東省旅遊風情小鎮」<a href="https://zhuanlan.zhihu.com/p/349914674#ref_6" target="_blank" rel="noopener">[6]</a>。</p>
+<h3 id="5-3-鎮名來源"><a href="#5-3-鎮名來源" class="headerlink" title="5.3 鎮名來源"></a>5.3 鎮名來源</h3><p><img src="https://z3.ax1x.com/2021/06/22/Re4MY6.jpg" srcset="/img/loading.gif" alt="img"></p>
+<p>上图：「蔡仙圳」石刻，以成攝於2018年8月4日</p>
+<p>百侯古稱「白侯」，其名最早見於蔡仙人古圳之摩崖石刻：「余甲申年四十有二，因開此圳，謬言四句：白侯洞裏號神仙，一帶江山幾百年。余今開墾乾坤地，永與鬼爲祭祀田。開禧元年 (1205 年) 己丑仲春，開山錢公超記。」<strong>明</strong>永樂元年 (1403 年)，皇帝朱棣令解主持編纂<strong>永樂大典</strong>。其<strong>湖·潮州府總圖</strong>載「白侯」爲潮州府所轄。2007 年 3 月，有人在百侯鎮軟橋村張田坑中發現一<strong>明</strong>萬曆丁亥年 (1587 年) 的古墓。該墓用糯米灰搗製而成，總佔地面積約爲 80 平方米，碑上方刻「白侯」二字。據考，「白侯」爲姓氏，出自白姓，最初出自羋姓。由上可知，「白侯」應是因姓氏而命名的地名。</p>
+<p>於<strong>明</strong>嘉靖至康乾年間 (約 1522-1722 年) 的<strong>大埔縣誌</strong>（攝製本），「侯」字被改作「堠」字。堠，乃古代瞭望敵情的土堡。<strong>清</strong>康熙二十五年 (1686 年) ，縣令宋嗣京編<strong>埔陽志</strong>刻本（攝製本）也記錄了「白堠社」一名。<strong>民國</strong>初期，部分鄉民取「白侯轄地，出百位封侯」之意，將「白堠」改稱爲「百侯」。該稱呼便沿用至今。</p>
+<h3 id="5-4-語言概況"><a href="#5-4-語言概況" class="headerlink" title="5.4 語言概況"></a>5.4 語言概況</h3><p>百侯鎮全鎮居民主要爲漢族的客家人，全鎮使用客家語粵台片梅惠小片大埔百侯話。近年來受普通話推廣影響，青少年的客家語運用能力有所下降。</p>
+<p>百侯話一般以侯南話爲最正，大概是因爲侯南村一直是百侯的政治、文化中心。本文將主要以侯南話的調查結果爲基礎，並由此整理出百侯客家方言音系。</p>
+<h2 id="6-發音人情況"><a href="#6-發音人情況" class="headerlink" title="6. 發音人情況"></a>6. 發音人情況</h2><p>本文的主要發音合作人爲楊永泉，男，1955 年生，在大埔縣百侯鎮侯南村出生、居住，文化程度爲高中，職業爲個體戶，未長時間離開過百侯鎮。其母語爲百侯話，還能夠講普通話。本次調查由筆者於 2018 年 8 月 4 日至 8 日進行，本文未經許可，禁止轉載。</p>
+<h2 id="7-百侯話聲韻調"><a href="#7-百侯話聲韻調" class="headerlink" title="7. 百侯話聲韻調"></a>7. 百侯話聲韻調</h2><h3 id="7-1-聲母"><a href="#7-1-聲母" class="headerlink" title="7.1 聲母"></a>7.1 聲母</h3><p>聲母總數為 22 個，含零聲母。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>p 幫八百寶</th>
+<th>pʰ 滂鋪飯肥</th>
+<th>m 明微摸問</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>f 非副福虎</td>
+<td>v 娃溫胃危</td>
+<td></td>
+</tr>
+<tr>
+<td>t 端多東肚</td>
+<td>tʰ 透甜天毒</td>
+<td>n 泥年腦南</td>
+</tr>
+<tr>
+<td>l 來老藍路</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ts 精早爭租</td>
+<td>tsʰ 清拆祠字</td>
+<td>s 心三謝酸</td>
+</tr>
+<tr>
+<td>tʃ 照張主粥</td>
+<td>tʃʰ 穿臭車柱</td>
+<td>ʃ 審船書手</td>
+</tr>
+<tr>
+<td>ʒ 以雲影藥</td>
+<td>ɕ 喜許係靴</td>
+<td></td>
+</tr>
+<tr>
+<td>k 見九甲價</td>
+<td>kʰ 溪共氣權</td>
+<td>ŋ 疑日軟月</td>
+</tr>
+<tr>
+<td>h 孝匣海河</td>
+<td>Ø 愛矮壓鴉</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>註：</p>
+<ol>
+<li>聲母 ŋ 與 -i 相拼時，實際音質仍爲 ŋ。</li>
+<li>聲母 v 實際音質多爲 ʋ ，兩音互爲自由變體，此處只記 v。</li>
+<li>聲母 ʒ 有時也讀作 ʐ，兩音互爲自由變體，此處只記 ʒ。</li>
+<li>聲母 ɕ 主要爲部分中古曉匣母三、四等字的聲母，是 h 與 -i 相拼時顎化而來。</li>
+</ol>
+<h3 id="7-2-韻母"><a href="#7-2-韻母" class="headerlink" title="7.2 韻母"></a>7.2 韻母</h3><p>韻母總數為 73 個，含獨立成音節的鼻韻母 3 個：v̩、m̩、ŋ̍。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>a</th>
+<th>a 阿爺</th>
+<th>ai 大戒</th>
+<th>au 靠包</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ia</td>
+<td>ia 謝姐</td>
+<td></td>
+<td>iau 貓票</td>
+</tr>
+<tr>
+<td>ua</td>
+<td>ua 瓜掛</td>
+<td>uai 怪快</td>
+<td></td>
+</tr>
+<tr>
+<td>æ</td>
+<td></td>
+<td></td>
+<td>æu 釣鳥</td>
+</tr>
+<tr>
+<td>ɛ</td>
+<td>ɛ 個*</td>
+<td>ɛi 個蟻</td>
+<td>ɛu 鬥瘦</td>
+</tr>
+<tr>
+<td>iɛ</td>
+<td>iɛ 矣*</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ə</td>
+<td>ə 的*</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ɔ</td>
+<td>ɔ 哦</td>
+<td>ɔi 來開</td>
+<td>ou 寶座</td>
+</tr>
+<tr>
+<td>i</td>
+<td>i 義女</td>
+<td></td>
+<td>iu 九流</td>
+</tr>
+<tr>
+<td>u</td>
+<td>u 囑咐</td>
+<td>ui 尾隨</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>ɿ 紫字</td>
+<td>ʅ 時意</td>
+<td>v̩ 武烏</td>
+</tr>
+<tr>
+<td>a</td>
+<td>an 半山</td>
+<td>am 鹽犯</td>
+<td>aŋ 橫聲</td>
+</tr>
+<tr>
+<td>ia</td>
+<td></td>
+<td>iam 尖鉗</td>
+<td>iaŋ 迎青</td>
+</tr>
+<tr>
+<td>ua</td>
+<td>uan 慣款</td>
+<td></td>
+<td>uaŋ 莖*</td>
+</tr>
+<tr>
+<td>æ</td>
+<td>æn 年典</td>
+<td>æm 甜念</td>
+<td></td>
+</tr>
+<tr>
+<td>ɛ</td>
+<td>ɛn 省廳</td>
+<td>ɛm 黏鹹</td>
+<td></td>
+</tr>
+<tr>
+<td>iɛ</td>
+<td>iɛn 綿麪</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>uɛ</td>
+<td>uɛn 肱</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ɔ</td>
+<td>ɔn 看飯</td>
+<td></td>
+<td>ɔŋ 上當</td>
+</tr>
+<tr>
+<td>iɔ</td>
+<td>iɔn 全軟</td>
+<td></td>
+<td>iɔŋ 放*箱</td>
+</tr>
+<tr>
+<td>uɔ</td>
+<td></td>
+<td></td>
+<td>uɔŋ 廣光</td>
+</tr>
+<tr>
+<td>i</td>
+<td>in 人品</td>
+<td>im 尋針</td>
+<td></td>
+</tr>
+<tr>
+<td>u</td>
+<td>un 隱存</td>
+<td></td>
+<td>oŋ 中用</td>
+</tr>
+<tr>
+<td>iu</td>
+<td>iun 銀巾</td>
+<td></td>
+<td>ioŋ 龍胸</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>m̩ 唔</td>
+<td>ŋ̍ 五魚</td>
+</tr>
+<tr>
+<td>a</td>
+<td>at 發襪</td>
+<td>ap 法葉</td>
+<td>ak 百客</td>
+</tr>
+<tr>
+<td>ia</td>
+<td></td>
+<td>iap 接插</td>
+<td>iak 額劇</td>
+</tr>
+<tr>
+<td>ua</td>
+<td>uat 刮闊</td>
+<td></td>
+<td>uak 摑*</td>
+</tr>
+<tr>
+<td>æ</td>
+<td>æt 八鐵</td>
+<td>æp 貼碟</td>
+<td></td>
+</tr>
+<tr>
+<td>ɛ</td>
+<td>ɛt 墨黑</td>
+<td>ɛp 扱澀</td>
+<td></td>
+</tr>
+<tr>
+<td>iɛ</td>
+<td>iɛt 別節</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>uɛ</td>
+<td>uɛt 國</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ɔ</td>
+<td>ɔt 渴脫</td>
+<td></td>
+<td>ɔk 薄勺</td>
+</tr>
+<tr>
+<td>iɔ</td>
+<td>iɔt 劣</td>
+<td></td>
+<td>iɔk 雀腳</td>
+</tr>
+<tr>
+<td>uɔ</td>
+<td></td>
+<td></td>
+<td>uɔk 郭廓</td>
+</tr>
+<tr>
+<td>i</td>
+<td>it 一筆</td>
+<td>ip 入汁</td>
+<td></td>
+</tr>
+<tr>
+<td>u</td>
+<td>ut 出骨</td>
+<td></td>
+<td>ok 木竹</td>
+</tr>
+<tr>
+<td>iu</td>
+<td>iut 律</td>
+<td></td>
+<td>iok 六足</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>註：</p>
+<ol>
+<li>韻母 oŋ 是 uŋ 的變化形式，故此處歸入 u 行，ok、ioŋ、iok 也同理。</li>
+<li>韻母 ou 是 ɔu 的變化形式，故此處歸入 ɔ 行。</li>
+<li>韻母 ə 中只有一個漢字「的 tə」，這是百侯話的小稱後綴；韻母 ɛ 中只有一個漢字「個 kɛ51」，是「個 kɛi51」的口語讀法；韻母 iɛ 中只有一個漢字「矣 liɛ51」，這是百侯話的句末語氣詞之一。</li>
+<li>韻母 ɿ、ʅ 即指舌尖元音，韻母 ɿ 與聲母 ts、tsʰ、s 搭配，韻母 ʅ 與聲母 tʃ、tʃʰ、ʃ、ʒ 搭配。</li>
+<li>韻母 uaŋ 中的漢字「莖」的讀音「kuaŋ31」是該字的白讀音；韻母 uak 中的漢字「摑」的讀音「kuak5」是該字的白讀音；韻母 iɔŋ 中的漢字「放」的讀音「piɔŋ51」是該字的白讀音。</li>
+</ol>
+<h3 id="7-3-聲調"><a href="#7-3-聲調" class="headerlink" title="7.3 聲調"></a>7.3 聲調</h3><p>聲調總數爲 6 個，各聲調、例字及調值如下：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>陰平</th>
+<th>陽平</th>
+<th>上聲</th>
+<th>去聲</th>
+<th>陰入</th>
+<th>陽入</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>詩衣</td>
+<td>時移</td>
+<td>使雨</td>
+<td>市意</td>
+<td>濕一</td>
+<td>食逸</td>
+</tr>
+<tr>
+<td>45</td>
+<td>335</td>
+<td>31</td>
+<td>51</td>
+<td>32</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>註：</p>
+<ol>
+<li>百侯話不存在系統的連讀變調現象。</li>
+<li>除以上六種聲調外，百侯話還有一個輕聲。百侯話的小稱後綴「的 tə」是唯一的輕聲字，其實際調值隨前字聲調的不同而不同。前字聲調若爲陰平、去聲或陽入，則實際調值爲 32；前字聲調若爲陽平、上聲或陰入，則實際調值爲 5。</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/349914674#ref_1_0" target="_blank" rel="noopener">^</a>李菲, 甘于恩. 大埔客家方言音系[J]. 嘉應學院學報（哲學社會科學）, 2014, 32(3): 18-21.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/349914674#ref_2_0" target="_blank" rel="noopener">^</a>李新魁. 廣東的方言[M]. 广州: 广东人民出版社, 1994.10.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/349914674#ref_3_0" target="_blank" rel="noopener">^</a>何耿鏞. 客家方言詞典[M]. 新加坡文藝協會, 2012.10.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/349914674#ref_4_0" target="_blank" rel="noopener">^</a>來源暫缺(?)</li>
+<li><a href="https://zhuanlan.zhihu.com/p/349914674#ref_5_0" target="_blank" rel="noopener">^</a>中華人民共和國住房和城鄉建設部. 關於公佈第五批中國歷史文化名鎮（村）的通知[EB/OL]. (2010-07-22)[2021-02-09]. <a href="http://www.mohurd.gov.cn/lswj/tz/t20110225_202666.htm" target="_blank" rel="noopener">http://www.mohurd.gov.cn/lswj/tz/t20110225_202666.htm</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/349914674#ref_6_0" target="_blank" rel="noopener">^</a>廣東省文化和旅遊廳. 廣東省文化和旅遊廳關於公佈首批廣東省旅遊風情小鎮名單的通知[EB/OL]. (2019-12-30)[2021-02-09]. <a href="http://whly.gd.gov.cn/open_newggl/content/post_2857544.html" target="_blank" rel="noopener">http://whly.gd.gov.cn/open_newggl/content/post_2857544.html</a></li>
+</ol>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/">语言学</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AE%A2%E5%AE%B6%E6%96%B9%E8%A8%80/">客家方言</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%99%BE%E4%BE%AF/">百侯</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%9F%B3%E4%BD%8D%E5%AD%A6/">音位学</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AE%9E%E9%AA%8C%E8%AF%AD%E9%9F%B3%E5%AD%A6/">实验语音学</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%94%B0%E9%87%8E%E8%AF%AD%E8%A8%80%E5%AD%A6/">田野语言学</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本文作者：以成<br>本文链接：<a href=""><script>document.write(window.location.href.replace(window.location.hash, ``))</script></a><br>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noopener">CC BY-NC-SA 4.0 协议</a> 。转载请注明本文作者与链接！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/jyutping_tutorial_for_vietnamese/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Giáo trình Việt bính (粤拼教程)</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/posts/from_the_word_what_in_topolects_to_the_etymology_of_je5_in_yue_chinese/">
+                        <span class="hidden-mobile">试论各方言中的「什么」一词兼谈粤方言「嘢」的语源</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "jfqqrz6l9VmBjlVdmCKusyUX-gzGzoHsz",
+          app_key: "KMLndPzsjoL98YgC9e85v4WK",
+          placeholder: "欢迎给我留言，谈谈你的想法哦。\n（支持Markdown语法）",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      ©2015-2020 Transion Creative Centre
+      <br>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "2021大埔百侯客家方言音系&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?deb343538ea97eeebc6eea038e232994";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

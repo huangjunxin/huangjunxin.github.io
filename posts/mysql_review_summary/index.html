@@ -1,0 +1,759 @@
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sat Apr 04 2020');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="huangjunxin">
+  <meta name="keywords" content="">
+  <title>MySQL考试复习总结 - 我的记事本</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>我的记事本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/03/13/8KDuAe.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2019-06-27 23:35">
+      2019年6月27日 晚上
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      25
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>大一下学期学习了课程“数据库应用技术”，本文是期末时对本课程的总结与归纳，同时便于以后复查。</p>
+<a id="more"></a>
+<h2 id="一、表"><a href="#一、表" class="headerlink" title="一、表"></a>一、表</h2><h3 id="1-删除表记录-drop-table-……"><a href="#1-删除表记录-drop-table-……" class="headerlink" title="1. 删除表记录 drop table ……"></a>1. 删除表记录 drop table ……</h3><pre><code class="hljs sql"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span> abc;
+<span class="hljs-keyword">show</span> <span class="hljs-keyword">tables</span>;</code></pre>
+<h3 id="2-创建表-create-table-……"><a href="#2-创建表-create-table-……" class="headerlink" title="2. 创建表 create table ( …… )"></a>2. 创建表 create table ( …… )</h3><h4 id="2-1-新建表"><a href="#2-1-新建表" class="headerlink" title="2.1 新建表"></a>2.1 新建表</h4><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">database</span> xscj;
+<span class="hljs-keyword">use</span> xscj;
+<span class="hljs-comment">-- default（默认值）例：</span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> Course
+(
+    课程号 <span class="hljs-built_in">char</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> primary <span class="hljs-keyword">key</span>,
+    课程名 <span class="hljs-built_in">char</span>(<span class="hljs-number">16</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    开课学期 <span class="hljs-built_in">tinyint</span>(<span class="hljs-number">1</span>)  <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> <span class="hljs-keyword">default</span> <span class="hljs-number">1</span>,
+    学分 <span class="hljs-built_in">tinyint</span>(<span class="hljs-number">1</span>) <span class="hljs-literal">null</span>
+) <span class="hljs-keyword">engine</span> = <span class="hljs-keyword">innodb</span>;
+<span class="hljs-comment">-- 外键例：</span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> Teacher
+(
+    教工号 <span class="hljs-built_in">char</span>(<span class="hljs-number">2</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> primary <span class="hljs-keyword">key</span>,
+    姓名 <span class="hljs-built_in">char</span>(<span class="hljs-number">5</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    性别 <span class="hljs-built_in">char</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    课程号 <span class="hljs-built_in">char</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    <span class="hljs-keyword">foreign</span> <span class="hljs-keyword">key</span>(课程号) <span class="hljs-keyword">references</span> Course(课程号)
+) <span class="hljs-keyword">engine</span> = <span class="hljs-keyword">innodb</span>;
+<span class="hljs-comment">-- 复合主键例：</span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> Score
+(
+    学号 <span class="hljs-built_in">char</span>(<span class="hljs-number">7</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    课程号 <span class="hljs-built_in">char</span>(<span class="hljs-number">3</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    成绩 <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    primary <span class="hljs-keyword">key</span>(学号, 课程号)
+) <span class="hljs-keyword">engine</span> = <span class="hljs-keyword">innodb</span>;</code></pre>
+<h4 id="2-2-复制现存表"><a href="#2-2-复制现存表" class="headerlink" title="2.2 复制现存表"></a>2.2 复制现存表</h4><h5 id="2-2-1-只复制结构-create-table-……-like-……"><a href="#2-2-1-只复制结构-create-table-……-like-……" class="headerlink" title="2.2.1 只复制结构 create table …… like ……"></a>2.2.1 只复制结构 create table …… like ……</h5><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> Student2 <span class="hljs-keyword">like</span> Student;</code></pre>
+<h5 id="2-2-2-既复制结构也复制数据-create-table-……-as-select-……-from-……"><a href="#2-2-2-既复制结构也复制数据-create-table-……-as-select-……-from-……" class="headerlink" title="2.2.2 既复制结构也复制数据 create table …… as (select …… from ……)"></a>2.2.2 既复制结构也复制数据 create table …… as (select …… from ……)</h5><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> Student2 <span class="hljs-keyword">as</span> (
+    <span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> Student
+);</code></pre>
+<h3 id="3-插入记录-insert-into-……-values-……"><a href="#3-插入记录-insert-into-……-values-……" class="headerlink" title="3. 插入记录 insert into …… values ……"></a>3. 插入记录 insert into …… values ……</h3><pre><code class="hljs sql"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> Score
+<span class="hljs-keyword">values</span>
+    (<span class="hljs-string">'2018001'</span>, <span class="hljs-string">'001'</span>, <span class="hljs-string">'68'</span>),
+    (<span class="hljs-string">'2018003'</span>, <span class="hljs-string">'001'</span>, <span class="hljs-string">'80'</span>);</code></pre>
+<pre><code class="hljs sql"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> Score (学号, 课程号, 成绩)
+<span class="hljs-keyword">values</span>(<span class="hljs-string">'2018004'</span>, <span class="hljs-string">'001'</span>, <span class="hljs-string">'95'</span>);</code></pre>
+<h3 id="4-更改表字段名（列名）alter-table-……-change-rename-column-modify"><a href="#4-更改表字段名（列名）alter-table-……-change-rename-column-modify" class="headerlink" title="4. 更改表字段名（列名）alter table …… [change / rename column / modify]"></a>4. 更改表字段名（列名）alter table …… [change / rename column / modify]</h3><p>更改 Student 表的“学号”字段名为“号学”。</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> Student
+    <span class="hljs-keyword">change</span> 学号 号学 <span class="hljs-built_in">char</span>(<span class="hljs-number">7</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>;</code></pre>
+<pre><code class="hljs sql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> Student
+    <span class="hljs-keyword">rename</span> <span class="hljs-keyword">column</span> 号学 <span class="hljs-keyword">to</span> 学号;</code></pre>
+<p>更改 Student 表的“学号”列的<strong>数据类型</strong>为“integer”。（若表中该列原有的数据类型与将要修改的列类型冲突，则无法修改）</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> Student
+    <span class="hljs-keyword">modify</span> 学号 <span class="hljs-built_in">integer</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>;</code></pre>
+<h3 id="5-增减列数-alter-table-……-add-drop-column"><a href="#5-增减列数-alter-table-……-add-drop-column" class="headerlink" title="5. 增减列数 alter table …… [add  / drop column]"></a>5. 增减列数 alter table …… [add  / drop column]</h3><p>P26-E.g. 3.5：在 xscj 数据库的 xs 表中，增加“奖学金等级”一列，并将表中的“姓名”列删除。</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> xs
+    <span class="hljs-keyword">add</span> 奖学金等级 <span class="hljs-built_in">tinyint</span> <span class="hljs-literal">null</span>,
+    <span class="hljs-keyword">drop</span> <span class="hljs-keyword">column</span> 姓名;</code></pre>
+<h3 id="6-更新数据-update-……-set-……-where-……"><a href="#6-更新数据-update-……-set-……-where-……" class="headerlink" title="6. 更新数据 update …… set …… (where ……)"></a>6. 更新数据 update …… set …… (where ……)</h3><p>Exp 21-3：将学生表中李丽的出生日期修改为2002-6-5。</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">update</span> Student
+<span class="hljs-keyword">set</span> 出生日期 = <span class="hljs-string">'2002-6-5'</span>
+<span class="hljs-keyword">where</span> 姓名=<span class="hljs-string">'李丽'</span>;</code></pre>
+<p>Exp 21-10：将软件工程专业的学生的程序设计基础这门课成绩加上5分。</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">update</span> score
+<span class="hljs-keyword">set</span> 成绩=成绩+<span class="hljs-number">5</span>
+<span class="hljs-keyword">where</span> 学号 <span class="hljs-keyword">in</span> (<span class="hljs-keyword">select</span> 学号 <span class="hljs-keyword">from</span> student <span class="hljs-keyword">where</span> 专业=<span class="hljs-string">'软件工程'</span>) <span class="hljs-keyword">and</span> 课程号=(<span class="hljs-keyword">select</span> 课程号 <span class="hljs-keyword">from</span> course <span class="hljs-keyword">where</span> 课程名=<span class="hljs-string">'程序设计基础'</span>);</code></pre>
+<h2 id="二、查询"><a href="#二、查询" class="headerlink" title="二、查询"></a>二、查询</h2><h3 id="1-Select"><a href="#1-Select" class="headerlink" title="1. Select"></a>1. Select</h3><h4 id="1-1-连表查询"><a href="#1-1-连表查询" class="headerlink" title="1.1 连表查询"></a>1.1 连表查询</h4><p>Exp 21-4：查询高等数学成绩大于90分的所有学生的信息。</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">select</span> *
+<span class="hljs-keyword">from</span> Student, Score, Course
+<span class="hljs-keyword">where</span>
+    Course.课程号=Score.课程号 <span class="hljs-keyword">and</span>
+    Student.学号=Score.学号 <span class="hljs-keyword">and</span>
+    课程名=<span class="hljs-string">'高等数学'</span> <span class="hljs-keyword">and</span>
+    成绩&gt;<span class="hljs-number">90</span>;</code></pre>
+<p>Exp 21-6：求数据库应用技术中分数最高的学生姓名。</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">select</span> 姓名, <span class="hljs-keyword">Max</span>(成绩)
+<span class="hljs-keyword">from</span> Student, Score, Course
+<span class="hljs-keyword">where</span>
+    Student.学号=Score.学号 <span class="hljs-keyword">and</span>
+    Course.课程号=Score.课程号 <span class="hljs-keyword">and</span>
+    课程名=<span class="hljs-string">'数据库应用技术'</span>;</code></pre>
+<h4 id="1-2-别名-……-as-……"><a href="#1-2-别名-……-as-……" class="headerlink" title="1.2 别名 …… as ……"></a>1.2 别名 …… as ……</h4><p>Exp 21-7：查询高等数学成绩比程序设计基础成绩高的所有学生的学号。</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">select</span> s1.学号
+<span class="hljs-keyword">from</span> score <span class="hljs-keyword">as</span> s1, score <span class="hljs-keyword">as</span> s2, course <span class="hljs-keyword">as</span> c1, course <span class="hljs-keyword">as</span> c2
+<span class="hljs-keyword">where</span>
+    s1.<span class="hljs-string">`课程号`</span>=c1.<span class="hljs-string">`课程号`</span> <span class="hljs-keyword">and</span>
+    c1.<span class="hljs-string">`课程名`</span>=<span class="hljs-string">'高等数学'</span> <span class="hljs-keyword">and</span>
+    s2.<span class="hljs-string">`课程号`</span>=c2.<span class="hljs-string">`课程号`</span> <span class="hljs-keyword">and</span>
+    c2.<span class="hljs-string">`课程名`</span>=<span class="hljs-string">'程序设计基础'</span> <span class="hljs-keyword">and</span>
+    s1.<span class="hljs-string">`学号`</span>=s2.<span class="hljs-string">`学号`</span> <span class="hljs-keyword">and</span>
+    s1.<span class="hljs-string">`成绩`</span>&gt;s2.<span class="hljs-string">`成绩`</span>;</code></pre>
+<h3 id="2-Like-与"><a href="#2-Like-与" class="headerlink" title="2. Like (% 与 _)"></a>2. Like (% 与 _)</h3><p>Exp 21-8：查询姓林的老师的人数。</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(*)
+<span class="hljs-keyword">from</span> Teacher
+<span class="hljs-keyword">where</span> 姓名 <span class="hljs-keyword">like</span> <span class="hljs-string">'林%'</span>;</code></pre>
+<h3 id="3-Order-by"><a href="#3-Order-by" class="headerlink" title="3. Order by"></a>3. Order by</h3><h4 id="3-1-普通排序"><a href="#3-1-普通排序" class="headerlink" title="3.1 普通排序"></a>3.1 普通排序</h4><p>Exp 21-16：将学生的情况按平均分排序。</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">select</span> *, <span class="hljs-keyword">avg</span>(成绩)
+<span class="hljs-keyword">from</span> Student, Score
+<span class="hljs-keyword">where</span> Student.学号=Score.学号
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> Student.学号
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> <span class="hljs-keyword">avg</span>(成绩) <span class="hljs-keyword">desc</span>;</code></pre>
+<h4 id="3-2-Limit"><a href="#3-2-Limit" class="headerlink" title="3.2 Limit"></a>3.2 Limit</h4><pre><code class="hljs sql">limit 5 <span class="hljs-comment">-- 前5行</span>
+limit 3,5 <span class="hljs-comment">-- 从第4行开始的后5行</span></code></pre>
+<h3 id="4-Group-by-amp-having"><a href="#4-Group-by-amp-having" class="headerlink" title="4. Group by &amp; having"></a>4. Group by &amp; having</h3><p>当一个查询语句同时出现 where, group by, having, order by 时，执行顺序是：</p>
+<ol>
+<li>对 from 选中的表执行 where 对数据做筛选，返回第1个结果集。</li>
+<li>针对第1个结果集使用 group by 分组，返回第2个结果集。</li>
+<li>针对第2个结果集中的<strong>每一组数据</strong>执行 select，<strong>有几组就执行几次</strong>，返回第3个结果集。</li>
+<li>针对第3个结果集执行 having 进行筛选，返回第4个结果集。</li>
+<li>针对第4个结果集进行 order by 排序，最后输出结果。</li>
+</ol>
+<p>Exp 21-5：查询平均成绩大于85分的同学的学号、姓名和平均成绩。</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">select</span> Student.学号, Student.姓名, <span class="hljs-keyword">avg</span>(成绩) <span class="hljs-keyword">as</span> 平均成绩
+<span class="hljs-keyword">from</span> Student, Score, Course
+<span class="hljs-keyword">where</span> Course.课程号=Score.课程号 <span class="hljs-keyword">and</span> Student.学号=Score.学号
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> Student.学号
+<span class="hljs-keyword">having</span> 平均成绩&gt;<span class="hljs-number">85</span>;</code></pre>
+<p>Exp 21-9：查询学生人数超过4人的老师姓名和课程名。</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">select</span> Teacher.姓名, Teacher.课程号
+<span class="hljs-keyword">from</span> Student, Teacher, Course, Score
+<span class="hljs-keyword">where</span>
+    Student.学号=Score.学号 <span class="hljs-keyword">and</span>
+    Score.课程号=Course.课程号 <span class="hljs-keyword">and</span>
+    Teacher.课程号=Course.课程号
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> Teacher.姓名
+<span class="hljs-keyword">having</span> <span class="hljs-keyword">count</span>(Teacher.姓名)&gt;<span class="hljs-number">4</span>;</code></pre>
+<h3 id="5-多表查询"><a href="#5-多表查询" class="headerlink" title="5. 多表查询"></a>5. 多表查询</h3><h4 id="5-1-见-Select"><a href="#5-1-见-Select" class="headerlink" title="5.1 见 Select"></a>5.1 见 Select</h4><h4 id="5-2-in"><a href="#5-2-in" class="headerlink" title="5.2 in"></a>5.2 in</h4><p>Exp 21-15：查询没有选修林丽老师课程的学生学号和姓名。</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">select</span> 学号, 姓名
+<span class="hljs-keyword">from</span> Student
+<span class="hljs-keyword">where</span> 学号 <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> (
+    <span class="hljs-keyword">select</span> 学号
+    <span class="hljs-keyword">from</span> Score
+    <span class="hljs-keyword">where</span> 课程号 <span class="hljs-keyword">in</span> (
+        <span class="hljs-keyword">select</span> 课程号
+        <span class="hljs-keyword">from</span> Teacher
+        <span class="hljs-keyword">where</span> 姓名=<span class="hljs-string">'林丽'</span>
+    )
+);</code></pre>
+<h3 id="6-多表-子查询-分组"><a href="#6-多表-子查询-分组" class="headerlink" title="6. 多表+子查询+分组"></a>6. 多表+子查询+分组</h3><p>Exp 21-18：查询学生的平均成绩，按所在专业的人数降序排列。</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">select</span> *, <span class="hljs-keyword">avg</span>(成绩) <span class="hljs-keyword">as</span> 平均成绩
+<span class="hljs-keyword">from</span> Student, Score, (
+    <span class="hljs-keyword">select</span> 专业, <span class="hljs-keyword">count</span>(专业) <span class="hljs-keyword">as</span> 人数
+    <span class="hljs-keyword">from</span> Student
+    <span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> 专业
+) <span class="hljs-keyword">as</span> 专业人数
+<span class="hljs-keyword">where</span> Student.专业=专业人数.专业 <span class="hljs-keyword">and</span> Student.学号=Score.学号
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> Student.专业
+<span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span> 专业人数.人数 <span class="hljs-keyword">desc</span>;</code></pre>
+<h3 id="7-视图"><a href="#7-视图" class="headerlink" title="7. 视图"></a>7. 视图</h3><h4 id="7-1-创建视图-create-view-……-as-……"><a href="#7-1-创建视图-create-view-……-as-……" class="headerlink" title="7.1 创建视图 create view …… as ……"></a>7.1 创建视图 create view …… as ……</h4><p>P68-E.g. 4.69：创建 xscj 数据库上的 xs_kc 视图，包括计算机专业各学生的学号、选修的课程号及成绩。要<strong>保证对该视图的修改都符合(with check option)</strong>专业名为计算机这个条件。</p>
+<pre><code class="hljs sql"><span class="hljs-comment">-- or replace 为替换已有同名视图。</span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">replace</span> <span class="hljs-keyword">view</span> xscj.cj_kc
+    <span class="hljs-keyword">as</span>
+    <span class="hljs-keyword">select</span> xs.学号, 课程号, 成绩
+    <span class="hljs-keyword">from</span> xscj.xs, xscj.xs_kc
+    <span class="hljs-keyword">where</span> xs.学号=xs_kc.学号 <span class="hljs-keyword">and</span>
+        xs.专业名=<span class="hljs-string">'计算机'</span>
+    <span class="hljs-keyword">with</span> <span class="hljs-keyword">check</span> <span class="hljs-keyword">option</span>;</code></pre>
+<h4 id="7-2-插入数据、修改数据"><a href="#7-2-插入数据、修改数据" class="headerlink" title="7.2 插入数据、修改数据"></a>7.2 插入数据、修改数据</h4><p>见表插入与删除。</p>
+<h4 id="7-3-修改视图"><a href="#7-3-修改视图" class="headerlink" title="7.3 修改视图"></a>7.3 修改视图</h4><p>与 create view 类似。</p>
+<h2 id="三、其它"><a href="#三、其它" class="headerlink" title="三、其它"></a>三、其它</h2><h3 id="1-索引"><a href="#1-索引" class="headerlink" title="1. 索引"></a>1. 索引</h3><h4 id="1-1-在原有表格增加索引-create-index-……-on-……"><a href="#1-1-在原有表格增加索引-create-index-……-on-……" class="headerlink" title="1.1 在原有表格增加索引 create index …… on ……"></a>1.1 在原有表格增加索引 create index …… on ……</h4><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">index</span> Student_index
+<span class="hljs-keyword">on</span> Student(学号(<span class="hljs-number">5</span>) <span class="hljs-keyword">asc</span>, 课程号 <span class="hljs-keyword">desc</span>)
+<span class="hljs-keyword">using</span> btree;
+<span class="hljs-comment">-- 以上创建复合索引，外括号中为索引列，(5)为限制长度，asc升序为默认，desc为降序，btree为默认索引类型</span></code></pre>
+<h4 id="1-2-？修改表并添加索引-alter-table-……-add-index-……"><a href="#1-2-？修改表并添加索引-alter-table-……-add-index-……" class="headerlink" title="1.2 ？修改表并添加索引 alter table …… add index ……"></a>1.2 ？修改表并添加索引 alter table …… add index ……</h4><pre><code class="hljs sql"><span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> Student
+    <span class="hljs-keyword">add</span> <span class="hljs-keyword">index</span> Student_index <span class="hljs-keyword">using</span> btree (姓名);
+<span class="hljs-comment">-- 括号中为索引列</span>
+<span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> Student
+    <span class="hljs-keyword">add</span> primary <span class="hljs-keyword">key</span>;</code></pre>
+<h4 id="1-3-新建表时创建索引"><a href="#1-3-新建表时创建索引" class="headerlink" title="1.3 新建表时创建索引"></a>1.3 新建表时创建索引</h4><pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> Student
+(
+    学号 <span class="hljs-built_in">char</span>(<span class="hljs-number">7</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    姓名 <span class="hljs-built_in">char</span>(<span class="hljs-number">5</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    性别 <span class="hljs-built_in">char</span>(<span class="hljs-number">1</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    专业 <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>) <span class="hljs-literal">null</span>,
+    出生日期 <span class="hljs-built_in">date</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    <span class="hljs-comment">-- 下方创建两个索引</span>
+    primary <span class="hljs-keyword">key</span>(学号),
+    <span class="hljs-keyword">index</span> rq(出生日期)
+) <span class="hljs-keyword">engine</span> = <span class="hljs-keyword">innodb</span>;</code></pre>
+<h4 id="1-4-查看与删除索引"><a href="#1-4-查看与删除索引" class="headerlink" title="1.4 查看与删除索引"></a>1.4 查看与删除索引</h4><pre><code class="hljs sql"><span class="hljs-keyword">show</span> <span class="hljs-keyword">index</span> <span class="hljs-keyword">from</span> Student;
+<span class="hljs-comment">-- 上查看，下删除</span>
+<span class="hljs-keyword">drop</span> <span class="hljs-keyword">index</span> Student_index <span class="hljs-keyword">on</span> Student;
+<span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> Student
+    <span class="hljs-keyword">drop</span> <span class="hljs-keyword">index</span> Student_index;
+<span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> Student
+    <span class="hljs-keyword">drop</span> primary <span class="hljs-keyword">key</span>;</code></pre>
+<h3 id="2-空值问题"><a href="#2-空值问题" class="headerlink" title="2. 空值问题"></a>2. 空值问题</h3><h4 id="2-1-null-not-null-表定义默认值为（可）空值"><a href="#2-1-null-not-null-表定义默认值为（可）空值" class="headerlink" title="2.1 null, not null, 表定义默认值为（可）空值"></a>2.1 null, not null, 表定义默认值为（可）空值</h4><h4 id="2-2-空值的比较-lt-gt"><a href="#2-2-空值的比较-lt-gt" class="headerlink" title="2.2 空值的比较 &lt;=&gt;"></a>2.2 空值的比较 &lt;=&gt;</h4><p>都为空值或相同，返回真值；否则返回假值。</p>
+<h3 id="3-触发器-create-trigger-……-after-delete-on-……-for-each-row-……"><a href="#3-触发器-create-trigger-……-after-delete-on-……-for-each-row-……" class="headerlink" title="3. 触发器 create trigger …… after delete on …… for each row ……"></a>3. 触发器 create trigger …… after delete on …… for each row ……</h3><p>Exp 21-20：创建触发器，当删除学生表中的学生时，将成绩表中对应的学生成绩删除。</p>
+<pre><code class="hljs sql">delimiter $$
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">trigger</span> Student_delete <span class="hljs-keyword">after</span> <span class="hljs-keyword">delete</span>
+    <span class="hljs-keyword">on</span> Student <span class="hljs-keyword">for</span> <span class="hljs-keyword">each</span> <span class="hljs-keyword">row</span>
+<span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">delete</span> <span class="hljs-keyword">from</span> Score <span class="hljs-keyword">where</span> 学号=old.学号;
+<span class="hljs-keyword">end</span>$$
+delimiter ;</code></pre>
+<h3 id="4-参照完整性-foreign-key-列名-references"><a href="#4-参照完整性-foreign-key-列名-references" class="headerlink" title="4. 参照完整性 foreign key(列名) references"></a>4. 参照完整性 foreign key(列名) references</h3><p>Exp 21-7：创建带有参照动作CASCADE的表book3，所有book3表中的书号都必须出现在book表中。</p>
+<pre><code class="hljs sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> book
+(
+    书号  <span class="hljs-built_in">char</span>(<span class="hljs-number">20</span>) primary <span class="hljs-keyword">key</span>,
+    书名  <span class="hljs-built_in">char</span>(<span class="hljs-number">20</span>),
+    购买时间 <span class="hljs-built_in">date</span>,
+    借出时间 <span class="hljs-built_in">date</span>,
+    <span class="hljs-keyword">foreign</span> <span class="hljs-keyword">key</span>(书号)
+        <span class="hljs-keyword">references</span> book_2(书号)
+            <span class="hljs-keyword">on</span> <span class="hljs-keyword">update</span> <span class="hljs-keyword">cascade</span>
+);</code></pre>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a>
+                    
+                      <a class="hover-with-bg" href="/tags/MySQL/">MySQL</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本文作者：以成<br>本文链接：<a href=""><script>document.write(window.location.href.replace(window.location.hash, ``))</script></a><br>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noopener">CC BY-NC-SA 4.0 协议</a> 。转载请注明本文作者与链接！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/advanced_maths_vol_II_review_summary/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">高数（下）考试复习总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/posts/member_function_&amp;_this_pointer_of_cpp_class/">
+                        <span class="hidden-mobile">C++类的成员函数与this指针</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "jfqqrz6l9VmBjlVdmCKusyUX-gzGzoHsz",
+          app_key: "KMLndPzsjoL98YgC9e85v4WK",
+          placeholder: "欢迎给我留言，谈谈你的想法哦。\n（支持Markdown语法）",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      ©2015-2020 Transion Creative Centre
+      <br>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "MySQL考试复习总结&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?deb343538ea97eeebc6eea038e232994";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

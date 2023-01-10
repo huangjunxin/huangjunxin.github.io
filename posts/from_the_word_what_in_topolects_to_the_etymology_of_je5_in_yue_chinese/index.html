@@ -1,0 +1,850 @@
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sat Apr 04 2020');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="huangjunxin">
+  <meta name="keywords" content="">
+  <title>试论各方言中的「什么」一词兼谈粤方言「嘢」的语源 - 我的记事本</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>我的记事本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/03/13/8KDuAe.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-12-17 18:56">
+      2020年12月17日 晚上
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      8.6k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      91
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p><strong>摘　要</strong>：在指代词方面，上个世纪就已经有许多前辈进行过各种探讨，同时也获得了许多丰硕的成果。关于“嘢”的语源，前人也有提到如“也”、“个”的观点。本文从现代汉语的“什么”一词谈起，追溯了国内部分方言的“什么”一词的构成形式，提出了粤方言的“乜嘢”一词可能也符合“疑问词+对象的指示”的组成形式的猜想，并就前人考“嘢”的语源为“也”和“个”给出了笔者的观点和看法。最后还谈到了调查“嘢”时的一个意外发现，并结合调查结果给出了笔者对粤方言中“閒嘢”一词的语源的思考。</p>
+<p><strong>关键词</strong>：疑问代词，什么，粤语，嘢，语源</p>
+<a id="more"></a>
+<p class="note note-info">本文首发于知乎专栏<a href="https://www.zhihu.com/column/c_1326867300361420800" target="_blank" rel="noopener">《粤语词源探》</a>，可<a href="https://zhuanlan.zhihu.com/p/335507013" target="_blank" rel="noopener">点击此处查看原文</a></p>
+
+<p>作者：以成</p>
+<p>2020.12.17 初稿</p>
+<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>笔者从两年以前 (2018) 一直觉得比较有趣的就是各方言中的“什么”一词，奈何一直没有将这些想法落笔成文。或许各地方言中关于“什么”的说法也有共通之处。在笔者探索“什么”的语源时，出于本能地开始对自己比较熟悉的方言对比，从而联想到了粤语的“乜嘢”及“嘢”。另外，需要注意的是，笔者不是以汉语言文字学为专业的官科学者，只是凭对母语的热爱而学习相关知识，换言之，<strong>笔者是如假包换的民科</strong>。本文权当抛砖引玉，笔者才疏学浅，不当之处还请多加指正。</p>
+<h2 id="2-试论各方言中的“什么”"><a href="#2-试论各方言中的“什么”" class="headerlink" title="2. 试论各方言中的“什么”"></a>2. 试论各方言中的“什么”</h2><p>本文第二部分拟对部分方言的“什么”的相应形式进行来源的论证，以探求“什么”一词在各方言中的构成形式与特点，并为本文第三部分对“嘢”的语源的探讨打下基础。</p>
+<h3 id="2-1-什么、甚么"><a href="#2-1-什么、甚么" class="headerlink" title="2.1 什么、甚么"></a>2.1 什么、甚么</h3><p>翻看唐宋早期白话文文献，这个疑问词就有各种形式，“什么”、“甚么”、“是物”、“阿没”等。其中，“什么”与“甚么”最为普遍。</p>
+<p>而当代主要使用“什么”较多，“甚么”较少但也会见于港台文章。</p>
+<p>虽然用粤语广州话读“什么”一词只能读成 ʃɐm22 mɔ55（音同“甚么”），但也并不代表“什么”比“甚么”更晚出现<a href="https://zhuanlan.zhihu.com/p/335507013#ref_1" target="_blank" rel="noopener">[1]</a>，按文献来看，“什么”和“甚么”出现的时间相仿，或许“什么”这一形式还要出现得更早<a href="https://zhuanlan.zhihu.com/p/335507013#ref_2" target="_blank" rel="noopener">[2]</a>。广州话的读音大概只是恰好选中了后者。</p>
+<p>对于“什么”的语源形式，吕叔湘 (1985) 曾作出如下探讨：“是物”或许是“什么”与“甚么”的来源。</p>
+<p>魏晋以来询问词通用“何物”一词，“何物”已融为一体，也就是说，整个词基本是只有“何”字在起作用。而“物”应该解作“色样、等类”，即“何物”应解作“何种”、“何等”。“是物”中的“物”就是“何物”的“物”<a href="https://zhuanlan.zhihu.com/p/335507013#ref_3" target="_blank" rel="noopener">[3]</a>。</p>
+<p>吕先生认为，“是物”的“是”就是“是与不是”的意思。也就是说，“是物”是“是何物” 的省略。而且，近代汉语中有一种倾向，就是避免使用疑问词做主语，而常常会在其前面加一个“是”字。例如“是谁”就非常常见<a href="https://zhuanlan.zhihu.com/p/335507013#ref_3" target="_blank" rel="noopener">[3]</a>。</p>
+<p>至今吕先生的这个推论仍能得到学界的大体认同<a href="https://zhuanlan.zhihu.com/p/335507013#ref_4" target="_blank" rel="noopener">[4]</a>，至少“是物”&gt;“什么”、“甚么”的路线可以基本明确。甚至在某些江淮官话<a href="https://zhuanlan.zhihu.com/p/335507013#ref_5" target="_blank" rel="noopener">[5]</a>、某些粤语勾漏片<a href="https://zhuanlan.zhihu.com/p/335507013#ref_6" target="_blank" rel="noopener">[6]</a><a href="https://zhuanlan.zhihu.com/p/335507013#ref_7" target="_blank" rel="noopener">[7]</a>的方言点中保留了“是物”这一原始形式。</p>
+<p>不过对于“是物”的“是”，在后来其他学者也有不同的意见。</p>
+<p>太田辰夫 (1991) 认为<a href="https://zhuanlan.zhihu.com/p/335507013#ref_8" target="_blank" rel="noopener">[8]</a>，在说“是物”时，“是”应是表示疑问，“物”则是“东西”意的名词。“是”本身是指示词，又有用作“所有”之意，即是任指。在汉语中，疑问词一般也转用于任指（如“什么”&gt;“任什么”），或许由此又反过来使“是”产生了疑问的意义。</p>
+<p>江蓝生 (1995) 认为<a href="https://zhuanlan.zhihu.com/p/335507013#ref_9" target="_blank" rel="noopener">[9]</a>，“是物”也有可能就是“是”跟“物”的结合，由于疑问代词“何物”的长期使用，使“物”沾染了疑问词义，开始它不太能单独使用表示疑问，而要跟“是”结合使用，后来才逐渐获得独立性，但在句首的时候仍然不能单独使用，要用“是物”的形式。这样看来，“是物”的“是”最初是带有系词性的。</p>
+<p>吴福祥 (1996) 认为<a href="https://zhuanlan.zhihu.com/p/335507013#ref_10" target="_blank" rel="noopener">[10]</a>，“是物”来源于疑问代词“物”，它是由“物”前面加上前缀“是”构成的。唐五代时，常常在一些代词前加“是”使其双音节化，最初可能是为了加强这些代词的指称性或者疑问性。后来由于“是”后加代词的惯用，久而久之，“是”字逐渐变成了一个单纯的前缀。</p>
+<p>综上各家的论述，笔者认为，不论“是何物”是不是“是物”的完整形式，“物”可以用作疑问词应是可以通过当今各南方方言带有“物”开头的疑问词进行补证的（见后文），因此“物”若在早前吸收了“何”的疑问意义而单独使用代表疑问也是可以理解的。对于组成“是物”一词的“是”，最初可能是需要对疑问对象的主体进行指示及明确，而后来便丢失了它指代的意义，在这点上，笔者可能更倾向于吴福祥的观点。</p>
+<h3 id="2-2-嘛"><a href="#2-2-嘛" class="headerlink" title="2.2 嘛"></a>2.2 嘛</h3><p>北京官话、冀鲁官话等方言中的“什么”可以使用“嘛”单字来表示，事实上应就是由“什么”省略为“么”<a href="https://zhuanlan.zhihu.com/p/335507013#ref_11" target="_blank" rel="noopener">[11]</a>。</p>
+<h3 id="2-3-啥"><a href="#2-3-啥" class="headerlink" title="2.3 啥"></a>2.3 啥</h3><p>官话区的大多数方言及吴语的大部分方言里，一般都使用“啥”单字来表示。应是“什么”的合音<a href="https://zhuanlan.zhihu.com/p/335507013#ref_11" target="_blank" rel="noopener">[11]</a>。</p>
+<h3 id="2-4-乜嘢、咩、咩嘢、乜"><a href="#2-4-乜嘢、咩、咩嘢、乜" class="headerlink" title="2.4 乜嘢、咩、咩嘢、乜"></a>2.4 乜嘢、咩、咩嘢、乜</h3><p>粤语广州话中的“什么”大概就是“乜嘢”、“咩”、“咩嘢”这几种形式。其中比较清晰的是，“咩”其实就是“乜嘢”的合音，而“咩”吸收了“乜嘢”的意义后，又组成了“咩嘢”一词<a href="https://zhuanlan.zhihu.com/p/335507013#ref_12" target="_blank" rel="noopener">[12]</a>。</p>
+<p>所以问题最终落到了“乜嘢”身上。经过上面对“什么”等词的讨论，要找出“乜”的来源并不困难。“乜”在当代广州话读作 mɐt5，与“物 mɐt2”只有声调的差异，此处应是将“物”字变调而成为疑问词。而广州话通过变调区分意义也不无先例，如“咁 kɐm 33”变调为“噉 kɐm 35”来大致对应“这”、“那”<a href="https://zhuanlan.zhihu.com/p/335507013#ref_13" target="_blank" rel="noopener">[13]</a>，“係 hɐi22”变调为“喺 hɐi35”来表示处所<a href="https://zhuanlan.zhihu.com/p/335507013#ref_14" target="_blank" rel="noopener">[14]</a>。另外还有两个词“乜乜物物 mɐt5 mɐt5 mɐt2 mɐt2”（这个那个）、“又乜又物 jɐu22 mɐt5 jɐu22 mɐt2”（又这又那）作为佐证，可以基本推知“乜”来源于“物”。</p>
+<p>在广州话中，单用“乜”通常用来表示“怎么”、“为什么”，如“乜你唔食呢？”<a href="https://zhuanlan.zhihu.com/p/335507013#ref_15" target="_blank" rel="noopener">[15]</a>（怎么你不吃呢？），而用来表示“什么”的情况较少。多数情况在“乜”后都会加上需要进行提问的内容，如“乜事”（什么事情）、“乜書”<a href="https://zhuanlan.zhihu.com/p/335507013#ref_16" target="_blank" rel="noopener">[16]</a>（什么书本），可以理解为“乜嘢”中的“乜”在广州话中不太具有单独使用的能力。</p>
+<p>对于“乜”一字，笔者还想提到的一点是，“乜”在《广韵》中的注音是“彌也切”，在《字汇》中是“彌耶切”，也就是说，根据同音假借的借字规律，“乜”字按理来说对应的应该是广州话今音 mɛ。由此可以猜测，“乜”最初应该是“乜嘢”的合音 mɛ 的同音假借字，后来“乜”可能是因为笔画较少，或是与“物”字声调不一致而被借用作表示 mɐt5。而后人便又借了一个“咩”字来表示 mɛ。由此看来，广州话的“乜嘢”合音为“咩”的年代可能是比较早的。</p>
+<p>对于“嘢”，若按一般词典释义来说，“嘢”大致就是“东西”的意思。但对于“乜嘢”整词，按语境不同解释为“什么”、“什么东西”或“什么事”均可。对于“嘢”的语源的相关探讨，请见本文的第三部分。</p>
+<h3 id="2-5-麼个"><a href="#2-5-麼个" class="headerlink" title="2.5 麼个"></a>2.5 麼个</h3><p>客家话大致都使用“麼个”<a href="https://zhuanlan.zhihu.com/p/335507013#ref_17" target="_blank" rel="noopener">[17]</a>作为疑问词。在当代梅县话读作 mak1 ke52<a href="https://zhuanlan.zhihu.com/p/335507013#ref_18" target="_blank" rel="noopener">[18]</a>，考虑前字受后字的逆同化作用，可知前字韵尾发生过从 -t 到 -k 的变化<a href="https://zhuanlan.zhihu.com/p/335507013#ref_19" target="_blank" rel="noopener">[19]</a>。同时也不难推知“麼”同样来源于“物”。</p>
+<p>对于“麼个”的“个”，则需要进行进一步的讨论。</p>
+<p>汉语方言的结构助词，可以依照“量词-&gt;指示词-&gt;结构助词”这一路线演变<a href="https://zhuanlan.zhihu.com/p/335507013#ref_20" target="_blank" rel="noopener">[20]</a>。尤其是在南方方言中的“个”字，常常都发展出了量词、指示词与结构助词这三种用法，包括但不限于粤语、客家话以及部分闽语。从此处看来，“麼个”的“个”很可能是这三类用法中的其中一类，并由语素词汇化成整词“麼个”。</p>
+<p>赖文英 (2012) 认为“麼个”的“个”是由指示词发展而来的<a href="https://zhuanlan.zhihu.com/p/335507013#ref_21" target="_blank" rel="noopener">[21]</a>，并列举了以下几个论据对此进行说明：一是“个”字总是与人数量或指代人有密切关联，如疑问短语的“哪个”、“幾个”；二是客语、冀鲁官话、中原官话、湘语中都具有类似的“麼”开头的疑问代词用法，湘语、赣语、粤语的“麼”也可接与人有关的词素，如粤语的“乜誰”；三是吴语也有“誰”接“个”等与人有关的疑问用法；四是客语的“麼”无独用阶段，且“麼儕”<a href="https://zhuanlan.zhihu.com/p/335507013#ref_22" target="_blank" rel="noopener">[22]</a>带有其它汉语方言没有的底层词现象；五是指代词具有指代明确人或事物的功能，“麼个”也具有代词的功能，但指代的对象不明确。</p>
+<p>赖教授所指出的“麼个”词汇化与语法化的演变过程如下所示：</p>
+<blockquote>
+<p>麼+个人→麼个（重新分析，词汇化+语法化）+人→麼个+X（X：具体→抽象，语法化）</p>
+</blockquote>
+<p>也可能是：</p>
+<blockquote>
+<p>麼+个人→麼+个X（X：具体→抽象，语法化）→麼个（重新分析，词汇化+语法化）+X</p>
+</blockquote>
+<p>也就是说，“麼”可能是和指人方面的指代或特定短语“个人”相结合而发展得来。</p>
+<p>回顾前文2.1节对“什么”的论述，“是物”中的“是”或许最开始是起到“对疑问对象的主体进行指示及明确”的作用。对照本节客家话“麼个”的“个”可能最开始与指代人方面有关系，笔者猜测，这种“疑问词+对象的指示”的模式或许并不是单纯的巧合。就像现代汉语中的“哪个”、“哪些”、“哪位”、“啥事”，粤语中的“乜誰”，提问者会依照上下文或事实情景的不同，对提问的内容进行进一步指代的明确，以便听话者更清晰明确。对于比较具有泛指性的指示词进行结合的情况，久而久之，人们难免会忘记原先将两个语素进行组合的目的。最终这种组合经过词汇化，就留下现在我们能看到的形式。对于这个猜测，本文将应用在第三部分对“嘢”的探讨中。</p>
+<h3 id="2-6-嘛个、乜个"><a href="#2-6-嘛个、乜个" class="headerlink" title="2.6 嘛个、乜个"></a>2.6 嘛个、乜个</h3><p>赣语中会使用“嘛个”来表示“什么”，如湖南耒阳话的 ma21 kɤ<a href="https://zhuanlan.zhihu.com/p/335507013#ref_23" target="_blank" rel="noopener">[23]</a>，道理应同上文客家话所述的一样。一些广东省内的闽方言也会使用“乜个”，如潮州的 miʔ2 kai55，揭阳的 mɛʔ2 kai55<a href="https://zhuanlan.zhihu.com/p/335507013#ref_24" target="_blank" rel="noopener">[24]</a>。“乜个”在形式上也与客家话的基本相同，或许是受周边客方言的影响而来。</p>
+<h2 id="3-试探“嘢”的语源"><a href="#3-试探“嘢”的语源" class="headerlink" title="3. 试探“嘢”的语源"></a>3. 试探“嘢”的语源</h2><p>通过前文对普通话“什么”、粤语“乜嘢”、客家话“麼个”等词的语源的论证，笔者猜测，构成“什么”一词的“疑问词+对象的指示”的模式或许并不是单纯的巧合。也就是说，对于粤语的“乜嘢”一词，或许也符合“疑问词+对象的指示”的模式。本文2.4节中，笔者论述了“乜”应是由“物”变来，但尚未论述“嘢”的来源，文章本部分即会对此进行探讨。</p>
+<h3 id="3-1-对考“嘢”语源为“也”的讨论"><a href="#3-1-对考“嘢”语源为“也”的讨论" class="headerlink" title="3.1 对考“嘢”语源为“也”的讨论"></a>3.1 对考“嘢”语源为“也”的讨论</h3><p>笔者最初在寻找前人对“嘢”的相关讨论中找到一种观点，即“嘢”来源于“也”。黄氏 (2012) 认为<a href="https://zhuanlan.zhihu.com/p/335507013#ref_25" target="_blank" rel="noopener">[25]</a>，“也”与“野”、“冶”在中古为同音字，且古人可能将“此何物也”省略成“此物也”，而其中的“也”就是语气词，于是“物也 mɐt5 jε23”就有了“何物也”的意思 。</p>
+<p>笔者认为，首先不论“也”的含义是否贴切，对于 j 声母字而言，若单从当代广州话语音直接对应到中古音来探求对应关系来得出结论，这样的考虑似乎有所欠缺。因为只要对广州话音系有一定的了解就可以知道，当代广州话的 j 声母字并不单纯对应中古的以母字，而还有影母、日母、疑母细音等其他声母来源。</p>
+<p>借助泛粤大典<a href="https://zhuanlan.zhihu.com/p/335507013#ref_26" target="_blank" rel="noopener">[26]</a>对各粤语方言字音的记音成果，关于“嘢”字的读音如下<a href="https://zhuanlan.zhihu.com/p/335507013#ref_27" target="_blank" rel="noopener">[27]</a><a href="https://zhuanlan.zhihu.com/p/335507013#ref_28" target="_blank" rel="noopener">[28]</a><a href="https://zhuanlan.zhihu.com/p/335507013#ref_29" target="_blank" rel="noopener">[29]</a><a href="https://zhuanlan.zhihu.com/p/335507013#ref_30" target="_blank" rel="noopener">[30]</a>：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>台山 jie5/jia5</th>
+<th>江门北街 je4</th>
+<th>江门白沙 je4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>东莞塘角 je3</td>
+<td>广州 je5</td>
+<td>顺德 je5</td>
+</tr>
+<tr>
+<td>中山小榄 je5</td>
+<td>端州 je5</td>
+<td>罗定 nje5</td>
+</tr>
+<tr>
+<td>梧州 nje5</td>
+<td>平南 nje5</td>
+<td>桂平 nje5</td>
+</tr>
+<tr>
+<td>茂名 nje5</td>
+<td>阳春 nje5</td>
+<td>北海 nje2</td>
+</tr>
+<tr>
+<td>钦州 nje2</td>
+<td>贵港 nje5</td>
+<td>玉林 nje5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>由上可见，除四邑方言点外，其它仍然保留 ȵ 声母（上方记作 nj）的方言点“嘢”字仍然读作“ȵɛ 上声”的形式，由此推断，广州话中“嘢”的早期形式应该也是“*ȵɛ 阳上”。但由于“嘢”字的创造时期，广州的 ȵ 声母已经丢失<a href="https://zhuanlan.zhihu.com/p/335507013#ref_31" target="_blank" rel="noopener">[31]</a>，于是只借用了以母的“野”而后再加上口字旁造出。</p>
+<p>其次，“也”字的含义也并不符合本文第二部分论证得到的猜想，即“也”字与指代没有关系。综合上述两点，笔者认为，将“嘢”字考证为“也”字显然是缺乏依据的。</p>
+<h3 id="3-2-对考“嘢”语源为“个”的讨论"><a href="#3-2-对考“嘢”语源为“个”的讨论" class="headerlink" title="3.2 对考“嘢”语源为“个”的讨论"></a>3.2 对考“嘢”语源为“个”的讨论</h3><p>对于“嘢”字的来源可能也是指示词的猜想，笔者最先想到的是，是否与客家话的“麼个”的“个”、潮州话“乜个”的“个”有关联。也就是说，“嘢”字可能来源于“个”的变读。张惠英 (1990) 也认为“嘢”来源于“个”<a href="https://zhuanlan.zhihu.com/p/335507013#ref_32" target="_blank" rel="noopener">[32]</a>。</p>
+<p>张惠英首先列举了珠江三角洲的一些方言关于“什么”一词的说法<a href="https://zhuanlan.zhihu.com/p/335507013#ref_33" target="_blank" rel="noopener">[33]</a>：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>粤语</th>
+<th>客家话</th>
+<th>闽南语</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>广州 mɐt55 (j)iε13</td>
+<td>东莞清溪 mak55 kai33</td>
+<td>中山隆都 man31 niε24</td>
+</tr>
+<tr>
+<td>恩平牛江 ᵐbat55 zia33</td>
+<td>深圳沙头角 mak55 kai33</td>
+<td></td>
+</tr>
+<tr>
+<td>东莞莞城 mεk44 zø13</td>
+<td>从化吕田 mak22 kai35</td>
+<td></td>
+</tr>
+<tr>
+<td>珠海前山 mɐt55 ia13</td>
+<td>中山南朗合水 mεt33 ia52</td>
+<td></td>
+</tr>
+<tr>
+<td>开平赤坎 ᵐbᵘɔt55 a33</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>张惠英结合上表作出了如下的解释<a href="https://zhuanlan.zhihu.com/p/335507013#ref_32" target="_blank" rel="noopener">[32]</a>：恩平牛江、东莞莞城中，“嘢”读作 z 声母，显然是受到前字“乜”的韵尾 -t 所致。东莞莞城中“乜”虽然今读 -k 尾，但“乜”由“物”演变而来，本来就是属于 -t 尾。东莞清溪、深圳沙头角的读音为 mak55 kai33，其语源就是“物介”或“物个”。从中山南朗合水“乜嘢”读 mεt33 ia52 看，“乜”读 -t 尾，“嘢”倾向于读舌尖前音或 i 元音起头的零声母字。</p>
+<p>随后，张惠英又援引客家话、闽南语中“个”字的 k 声母失落的情况<a href="https://zhuanlan.zhihu.com/p/335507013#ref_32" target="_blank" rel="noopener">[32]</a>，给粤语“嘢”可能来源于“个”而失落 k 声母而变为 z、j 等声母提供了论据支撑。如在梅县、四县等客家话中，”个“用作指示词，处于首字音节，就读 kε55，可以认为是“个”的本音、单字音；而在非首字音节时，除了 kε55 以外，还有 nε55、jε55、ε、ai55 等读法（海陆的 kai55 是 kε55 的方言变体）。nε55 是受前字的鼻音尾影响而致，jε55 是受前字元音尾 -i 影响而致。对于闽南语，张惠英主要讨论的都是闽南语“兮 e24”的意义覆盖情况，并将其与客家话的“个”的意义覆盖情况进行比较，以用于论证闽南语的“兮 e24”也应该来源于“个”，只是失落了原来的声母而已。</p>
+<p>笔者认为，张惠英的观点符合常理，援引旁证比较充分，得到的结论基本可信，但仍有一些不足。首先，恩平牛江、东莞莞城中的“嘢”记作 z 声母可能不是实际读音如此，而只是记音人在音系上倾向于将比一般的穗港 j 摩擦程度更大的 j 记为 z 以示区别<a href="https://zhuanlan.zhihu.com/p/335507013#ref_34" target="_blank" rel="noopener">[34]</a>，应不能成为受到前字韵尾的影响的根本原因。其次，上文的解释也未能解释清楚粤语中“嘢”的声母由“个”字的 k 变为 j 的根本原因，即使客家话、闽南语有类似的例子，但在粤语中没有先例。即便是客家话，使“个”读为 jε55 的原因也是受前字元音韵尾 -i 的影响导致，在粤语的“乜嘢”中的“乜”也并不是以元音韵尾 -i 结尾的，以客家话的这一变读情况来佐证当代粤语中“嘢”变读为 j 声母，说服力似乎有所欠缺。笔者认为，这可能是由于当年引用的方言点数据不够充分而导致的。从本文3.1节中，笔者借助了泛粤大典中各地粤语“嘢”的读音可以得到，广州至于珠三角一带粤语在丢失 ȵ 声母前，“嘢”的早期形式应该也是“*ȵɛ 阳上”，也就是说，“嘢”的声母由“个”字的 k 变为 j 中间应该还有一段 ȵ 的过程，只是当今珠三角一带的粤语普遍失落了 ȵ 声母，在上表的方言点中没有体现而已。</p>
+<p>若补上 ȵ-&gt;j 这一过程，粤语的“嘢”在语音上的变化就不难明白了，即是受到前字“乜”的入声韵尾 -t 影响而使后字“个”的 k 声母脱落，并使后字产生了与 t 的舌位相近的 n 或 ȵ 声母<a href="https://zhuanlan.zhihu.com/p/335507013#ref_35" target="_blank" rel="noopener">[35]</a>，由于“nε 阴去”不是广州话的常见音节，所以或许当时就选择了 ȵ 声母与韵母 ε 结合成音。又由于声母 ȵ 为浊音声母，不适合与阴声调搭配，由此可能就导致了声调由阴去到阳上的改变。当然，也有可能是因为变调分义。</p>
+<p>前文笔者论述了“嘢”来源于“个”在语音上发展的合理性，但还剩下一个问题，如果“个”本身是指代义，是如何发展出“东西”的意思的呢？</p>
+<p>笔者认为有一种假设是，“物”、“个”二字一起使用的时间长了，或许原先表示物体使用的“物”就沾染到“个”字上了，而同时“物”字就只保留下变调形式以表示疑问。这或许可以类比之前2.1节讨论的“何物”二字用久了“何”的疑问意义就转移到了“物”上那样。在这个过程中，“物个”的语音也变成了“乜嘢”，“嘢”在语音变化完成后，脱离了整词“乜嘢”，再经过词义扩大，便成了今天用于指代物品、东西、事情等等。另外，今天粤语勾漏片的阳山话仍把“什么”说成“乜个 mɐt5 kɔ34”或“麼哦 mɔ51 ɔ34”<a href="https://zhuanlan.zhihu.com/p/335507013#ref_36" target="_blank" rel="noopener">[36]</a>（类比广州话的“乜嘢 mɐt5 jε23”和“咩嘢 mε53 jε23”），这或许可以看作“乜嘢”的早期形式被粤语子方言保留至今的现象。</p>
+<p>至此，笔者认为对于本文“嘢”的来源为“个”的讨论，应该可以暂告一段落了。</p>
+<h3 id="3-3-谈调查“嘢”过程中的更多发现"><a href="#3-3-谈调查“嘢”过程中的更多发现" class="headerlink" title="3.3 谈调查“嘢”过程中的更多发现"></a>3.3 谈调查“嘢”过程中的更多发现</h3><p>实际上，笔者在探求“嘢”的语源的过程中，还对一些广东省的方言进行了线上“田调”。笔者发现，粤语区并不是所有地方都单纯以“嘢”字来指代“物品”、“东西”的意思，而还有另一个读音类似“閒嘢”、“哈嘢”或“核嘢”的词（以下统称“閒嘢”）。令人惊讶的是，该词在当代的分布范围并不小。该词各地的读音如下：</p>
+<blockquote>
+<p>方言名　方言点　国际音标<br>客家语粤台片河源话 河源市源城区<a href="https://zhuanlan.zhihu.com/p/335507013#ref_37" target="_blank" rel="noopener">[37]</a> ha33 ɲa21<br>惠州蛇佬话 惠州市惠城区塘背村<a href="https://zhuanlan.zhihu.com/p/335507013#ref_38" target="_blank" rel="noopener">[38]</a> han11 ɲa13<br>粤语四邑片新会话 江门市新会区会城街道<a href="https://zhuanlan.zhihu.com/p/335507013#ref_39" target="_blank" rel="noopener">[39]</a> hɑn22 (n)iɜ21<br>粤语四邑片台山话 台山市台城街道<a href="https://zhuanlan.zhihu.com/p/335507013#ref_39" target="_blank" rel="noopener">[39]</a> han22 (n)ia11<br>粤语四邑片开平沙塘话 开平市沙塘镇<a href="https://zhuanlan.zhihu.com/p/335507013#ref_40" target="_blank" rel="noopener">[40]</a> han22 nə21-214<br>粤语勾漏片阳山话 清远市阳山县阳城镇<a href="https://zhuanlan.zhihu.com/p/335507013#ref_36" target="_blank" rel="noopener">[36]</a> heŋ21 je224<br>粤语勾漏片四会话 四会市城中街道<a href="https://zhuanlan.zhihu.com/p/335507013#ref_41" target="_blank" rel="noopener">[41]</a> hɛn24 jɛ33<br>粤语勾漏片广宁话 肇庆市广宁县南街镇<a href="https://zhuanlan.zhihu.com/p/335507013#ref_42" target="_blank" rel="noopener">[42]</a> hen323 jə33<br>粤语粤海片肇庆端州话 肇庆市端州区<a href="https://zhuanlan.zhihu.com/p/335507013#ref_43" target="_blank" rel="noopener">[43]</a> han21 jɛ13<br>标话 肇庆市怀集县诗洞镇<a href="https://zhuanlan.zhihu.com/p/335507013#ref_44" target="_blank" rel="noopener">[44]</a> hɐŋ21 ȵiɐ214<br>粤语粤海片罗定白话 罗定市区<a href="https://zhuanlan.zhihu.com/p/335507013#ref_45" target="_blank" rel="noopener">[45]</a> hɐt2 ȵɛ23<br>粤语勾漏片罗平㑷古话 罗定市罗平镇<a href="https://zhuanlan.zhihu.com/p/335507013#ref_45" target="_blank" rel="noopener">[45]</a> hɐt2 ȵɛ13<br>粤语勾漏片围底㑷古话 罗定市围底镇<a href="https://zhuanlan.zhihu.com/p/335507013#ref_46" target="_blank" rel="noopener">[46]</a> hɐã21 ȵɛ13<br>平话铺门话 贺州市八步区铺门镇<a href="https://zhuanlan.zhihu.com/p/335507013#ref_47" target="_blank" rel="noopener">[47]</a> ɛŋ22 ja231<br>粤语勾漏片容县话 玉林市容县容州镇<a href="https://zhuanlan.zhihu.com/p/335507013#ref_48" target="_blank" rel="noopener">[48]</a> ha31 ȵɛ24</p>
+</blockquote>
+<p>除了上述能找到具体发音人的方言点，参考汉语方言地图集 (2008)<a href="https://zhuanlan.zhihu.com/p/335507013#ref_49" target="_blank" rel="noopener">[49]</a>，笔者发现，梧州岑溪、佛山南海、惠州惠东、河源龙川都记录了“閒嘢”一词。老派广州话也有“閒嘢 han21 jɛ23”一词，白宛如 (1993) 将其解释为<a href="https://zhuanlan.zhihu.com/p/335507013#ref_50" target="_blank" rel="noopener">[50]</a>“小物件，不足道的东西”，并给出例句“我去買啲閒嘢啫”（我去买一些小东西而已）；Eitel (1877) 将其解释为<a href="https://zhuanlan.zhihu.com/p/335507013#ref_51" target="_blank" rel="noopener">[51]</a>“寻常之物”。</p>
+<p>笔者认为，“閒嘢”一词成词应晚于“嘢”独立使用，可以参考下面的调查结果：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>方言点</th>
+<th>①</th>
+<th>②</th>
+<th>③</th>
+<th>④</th>
+<th>⑤</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>河源源城</td>
+<td>是</td>
+<td>否</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>惠州塘背</td>
+<td>是</td>
+<td>否</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>新会会城</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>台山台城</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>开平沙塘</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>罗定市区</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>罗定罗平</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+<tr>
+<td>罗定围底</td>
+<td>否</td>
+<td>-</td>
+<td>是</td>
+<td>是</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<p>注：上表中的“-”表示不存在。<br>①“什么”的形式是“乜嘢”<br>② 可以讲“乜閒嘢”，若否，则表示只能讲“乜嘢閒嘢”<br>③“閒嘢”特指物体而不能指事情，若否，则表示既能指物体也能指事情<br>④“嘢”能单独使用<br>⑤“嘢”既可以指物体也能指事情</p>
+</blockquote>
+<p>从上表可知，所有方言点均可以单独使用“嘢”，“嘢”可以用于指物品和事情，而且所有点的“閒嘢”都是特指物体而不能指事情的。这和老派广州话的记录基本一致。对于河源源城和惠州塘背两个方言点而言，“乜閒嘢”都是无法让人理解的表达，而只能使用“乜嘢閒嘢”<a href="https://zhuanlan.zhihu.com/p/335507013#ref_52" target="_blank" rel="noopener">[52]</a>。这或许反过来体现了“乜嘢”的整体性，为“嘢”从“乜嘢”中独立开来之后再有“閒嘢”一词的论点提供了一定的参考。对于罗定围底、怀集标话、贺州铺门的情况，或许可以看出“閒嘢”可能在历史上的某段时间在周边方言中非常常用，以至于被不使用“乜嘢”的方言点借入<a href="https://zhuanlan.zhihu.com/p/335507013#ref_53" target="_blank" rel="noopener">[53]</a>，甚至被作为侗台语的标话、作为平话的铺门话借入并作为常用词。</p>
+<p>而对于“閒嘢”的语源，在笔者看来，应就是“閒嘢”二字。从老派广州话的记录看来，“閒嘢”曾经是“小物品”或“不足称道的寻常东西”的意思，或许是后来经过周边方言的相互借用，并扩大词义，最后便变成了“物品”与“东西”的意思。</p>
+<h2 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h2><p>本文从现代汉语的“什么”一词谈起，追溯了国内部分方言的“什么”一词的构成形式，提出了粤方言的“乜嘢”一词可能也符合“疑问词+对象的指示”的组成形式的猜想，并就前人考“嘢”的语源为“也”和“个”给出了笔者的观点和看法。最后还谈到了调查“嘢”时的一个意外发现，并结合调查结果给出了笔者对粤方言中“閒嘢”一词的语源的思考。</p>
+<p>纵观全文，笔者可大致整理出关于粤方言“嘢”字的发展路线猜想（ȵ 声母的“嘢”用“惹”代替）：</p>
+<p><img src="https://z3.ax1x.com/2021/06/22/Re4poq.png" srcset="/img/loading.gif" alt="img"></p>
+<p>上图：粤方言“嘢”字的发展路线猜想</p>
+<p>要注意的是，其中“閒嘢”一词的具体形成时间笔者不敢确定。但可以根据广州话的相关口语文献推测<a href="https://zhuanlan.zhihu.com/p/335507013#ref_54" target="_blank" rel="noopener">[54]</a>，其成词时间大概不早于1800年，也就是大约在珠三角一带正在脱落 ȵ 声母的那个时间段。不过归根结底，图中的顺序也只是笔者的一种猜测而已，不能当做结论使用。</p>
+<p>本文提出的主要观点或猜想有如下几点：一是对于组成“是物”一词的“是”，最初可能是需要对疑问对象的主体进行指示及明确；二是粤方言的“乜嘢”一词甚至其他汉语方言中的“什么”一词可能都符合“疑问词+对象的指示”的组成形式；三是“嘢”的语源不应该为“也”；四是“嘢”的语源有可能为“个”，且“物”、“个”二字在早期常常是一起使用的，只是后来经历了一系列音变和引申后，“嘢”字被赋予“物品”、“东西”的意义后脱落“乜嘢”一词并独立成词；五是粤方言中“閒嘢”表示“物品”的语源应该就是“閒”+“嘢”二字的组词。</p>
+<p>笔者看来，本文的不足之处大约有以下几点：一是笔者的一些猜想与推论偏向理想化情况，以至于仔细推敲起来还有许多可以讨论的空间，这大概是受限于笔者的知识水平；二是笔者的精力与时间有限，文中论述时引用的方言点或已有文献仍不够多，论证的主要过程仍然有许多不足。笔者希望各方有识之士能对本文进行批评指正，并再做更深入的探讨。</p>
+<h2 id="5-后记"><a href="#5-后记" class="headerlink" title="5. 后记"></a>5. 后记</h2><p>本文最初是受<a href="https://www.zhihu.com/question/308967987" target="_blank" rel="noopener">一个知乎提问</a>的启发而开始落笔，其中的论据与论证参考了不少前人的辛勤耕耘得来的成果，没有了前人的这些成果，笔者或许根本没有再做进一步讨论的机会。本文在公开前还听取了几位好友（ <a href="https://www.zhihu.com/people/4bc864df7b4f0bff9938fcbacff689e7" target="_blank" rel="noopener">@暾明</a> 、 <a href="https://www.zhihu.com/people/0d1615f7325ad62a18e2232f8dd54fde" target="_blank" rel="noopener">@Ecr-弋汐</a> ）的建议，并根据这些宝贵意见作了若干修改。在本文的线上及线下方言点的调查过程中，得到了几位同学（朱同学、邓同学等）和几位网友（阿斯巴甜、xing等）的积极配合。笔者在此对以上各位表示由衷的感谢。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_1_0" target="_blank" rel="noopener">^</a>考虑到方言用词的存古度相对较高，有些粤语母语者或研究者可能会有类似的想法。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_2_0" target="_blank" rel="noopener">^</a>张双庆. 什么=甚么 什≠甚[J]. 中国语文通讯, 1989.3(1).</li>
+<li>^<a href="https://zhuanlan.zhihu.com/p/335507013#ref_3_0" target="_blank" rel="noopener">a</a><a href="https://zhuanlan.zhihu.com/p/335507013#ref_3_1" target="_blank" rel="noopener">b</a>吕叔湘. 近代汉语指示词[M]. 上海: 学林出版社, 1985: 128-130.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_4_0" target="_blank" rel="noopener">^</a>袁宾, 徐时仪等. 二十世纪的近代汉语研究[M]. 山西: 书海出版社, 2001: 320.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_5_0" target="_blank" rel="noopener">^</a>方环海. “什么”语源的方言补证[J]. 中国语文, 1998(4).</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_6_0" target="_blank" rel="noopener">^</a>岑溪白话作“是乜 ʃi11 mɐt5”来源：中国语言资源保护工程采录展示平台-广西省梧州市岑溪市-岑城镇-老年男性。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_7_0" target="_blank" rel="noopener">^</a>连山白话作“是乜 ʃi33 mɔt5”来源：中国语言资源保护工程采录展示平台-广东省清远市连山壮族瑶族自治县-吉田镇-老年男性。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_8_0" target="_blank" rel="noopener">^</a>太田辰夫. 汉语史通考[M]. 江蓝生, 白维国译. 重庆: 重庆出版社, 1991.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_9_0" target="_blank" rel="noopener">^</a>江蓝生. 说“麽”与“们”同源[J]. 中国语文, 1995(3).</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_10_0" target="_blank" rel="noopener">^</a>吴福祥. 敦煌变文语法研究[M]. 湖南: 岳麓书社, 1996.</li>
+<li>^<a href="https://zhuanlan.zhihu.com/p/335507013#ref_11_0" target="_blank" rel="noopener">a</a><a href="https://zhuanlan.zhihu.com/p/335507013#ref_11_1" target="_blank" rel="noopener">b</a>吕叔湘. 近代汉语指示词[M]. 上海: 学林出版社, 1985: 127.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_12_0" target="_blank" rel="noopener">^</a>麦耘, 谭步云. 实用广州话分类词典[M]. 世界图书出版公司, 2016.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_13_0" target="_blank" rel="noopener">^</a>以成. “粤语‘咁’和‘噉’的本字是什么”的回答[OL]. 知乎, 2018.2. <a href="https://www.zhihu.com/question/266747223/answer/314986385" target="_blank" rel="noopener">https://www.zhihu.com/question/266747223/answer/314986385</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_14_0" target="_blank" rel="noopener">^</a>以成. “请问你的方言怎么说‘在’”的回答[OL]. 知乎, 2020.4. <a href="https://www.zhihu.com/question/384710047/answer/1130564122" target="_blank" rel="noopener">https://www.zhihu.com/question/384710047/answer/1130564122</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_15_0" target="_blank" rel="noopener">^</a>白宛如. 广州方言词典[M]. 江苏教育出版社, 1993: 422.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_16_0" target="_blank" rel="noopener">^</a>粤语、客家话等书写系统常使用繁体字，此处引用时遵循对应语言的书写习惯，下同。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_17_0" target="_blank" rel="noopener">^</a>台湾教育部. 台湾客家语书写推荐用字（第1批）[OL]. 台湾教育部, 2009. <a href="https://language.moe.gov.tw/001/Upload/6/RelFile/6507/7824/hakka-words.pdf" target="_blank" rel="noopener">https://language.moe.gov.tw/001/Upload/6/RelFile/6507/7824/hakka-words.pdf</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_18_0" target="_blank" rel="noopener">^</a>罗美珍, 林立芳, 饶长溶. 客家话通用词典[M]. 广州: 中山大学出版社, 2004. 原文写作“脉个”。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_19_0" target="_blank" rel="noopener">^</a>一说是单音节化为/ma/后再与后字声母进行连音同化，但此处表述并无大碍。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_20_0" target="_blank" rel="noopener">^</a>石毓智. 量词、指示代词和结构助词的关系[J]. 方言, 2002(2).</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_21_0" target="_blank" rel="noopener">^</a>赖文英. 客语疑问代词“麼”的来源与演变[J]. 语言暨语言学, 2012.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_22_0" target="_blank" rel="noopener">^</a>同“麼人”，意思是“谁”。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_23_0" target="_blank" rel="noopener">^</a>许宝华, 宫田一郎等. 汉语方言大词典[M]. 中华书局, 1999: 6819.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_24_0" target="_blank" rel="noopener">^</a>佚名. “乜个”用潮州话怎么说[OL]. 潮语在线词典, 2020-12-10. <a href="https://www.mogher.com/baike-item/乜个" target="_blank" rel="noopener">https://www.mogher.com/baike-item/%E4%B9%9C%E4%B8%AA</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_25_0" target="_blank" rel="noopener">^</a>黄氏. 粤语古趣谈三编[M]. 金石图书贸易有限公司, 2012: 50.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_26_0" target="_blank" rel="noopener">^</a>泛粤大典编委会. 泛粤大典[OL]. 泛粤大典, 2020-12-13. <a href="http://www.jyutdict.org/" target="_blank" rel="noopener">http://www.jyutdict.org/</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_27_0" target="_blank" rel="noopener">^</a>此处只选取了具有代表性的方言点的读音。此处音标系统使用泛粤大典定义的扩展粤拼方案，理论上该套方案可表示所有粤方言的音系。概要而言，j 对应国际音标 j，nj 对应国际音标 ȵ，e 对应 ɛ 的音位，声调 5 为阳上、2 为阴上，详情请移步泛粤大典官网查看。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_28_0" target="_blank" rel="noopener">^</a>贵港、玉林两地实际上很少使用“乜嘢”一词，这大概是以前向广州话的借词。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_29_0" target="_blank" rel="noopener">^</a>滕波. 三里白话代词初探[D]. 2018. 贵港三里的“什么”作“乜唎 mɐt5-3 lei55”。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_30_0" target="_blank" rel="noopener">^</a>发音人：@暾明，玉林人。玉林的“什么”一般用“ɕi21 lɐt2”。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_31_0" target="_blank" rel="noopener">^</a>在现存最早的粤语口语文献之一《Chinese Chrestomathy in the Canton Dialect (1841)》中，进行同音假借的 j 声母粤语字除了“嘢”字还有如“依郁”一词。而在《泛粤大典》记音成果的视角下，它们都被视为曾经应是 ȵ 声母的字。</li>
+<li>^<a href="https://zhuanlan.zhihu.com/p/335507013#ref_32_0" target="_blank" rel="noopener">a</a><a href="https://zhuanlan.zhihu.com/p/335507013#ref_32_1" target="_blank" rel="noopener">b</a><a href="https://zhuanlan.zhihu.com/p/335507013#ref_32_2" target="_blank" rel="noopener">c</a>张惠英. 广州方言词考释（二）[J]. 方言, 1990(4).</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_33_0" target="_blank" rel="noopener">^</a>詹伯慧, 张日昇. 珠江三角洲方言词汇对照[M]. 1988: 429.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_34_0" target="_blank" rel="noopener">^</a>来源：中国语言资源保护工程采录展示平台-广东省东莞市-莞城街道-老年男性。其中“野”的声母记为 j。此处笔者想表达的意思是，记录 j/z 的差异应与记音者本人的习惯有关。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_35_0" target="_blank" rel="noopener">^</a>笔者也曾经怀疑过为何不是产生 t 声母，也因为“嘢”的 ȵ 声母而将粤语中的“乜嘢”拟作“物兒个”、“物你个”、“物呢”等形式，但遗憾的是，笔者始终找不到这些猜测的突破点，便只能顺着当前这个可能性较大的“物个”的思路继续走下去。</li>
+<li>^<a href="https://zhuanlan.zhihu.com/p/335507013#ref_36_0" target="_blank" rel="noopener">a</a><a href="https://zhuanlan.zhihu.com/p/335507013#ref_36_1" target="_blank" rel="noopener">b</a>来源：中国语言资源保护工程采录展示平台-广东省清远市阳山县-阳城镇-老年男性。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_37_0" target="_blank" rel="noopener">^</a>发音人：朱同学，河源源城区人，能流利地讲河源话。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_38_0" target="_blank" rel="noopener">^</a>发音人：邓同学，惠州市惠城区塘背村人，能讲惠州蛇佬话、惠州客家话。据发音人所述，附近的廖岗村、何岗村、东楼村、水围村、罗庚盆村、梧村、青春村、东阁村都可互通惠州“蛇佬话”（自称，此处为同音字）。发音人认为，蛇佬话与惠州本地话的声调有明显不同但仍能进行沟通。笔者认为其应该属于东江话一支。</li>
+<li>^<a href="https://zhuanlan.zhihu.com/p/335507013#ref_39_0" target="_blank" rel="noopener">a</a><a href="https://zhuanlan.zhihu.com/p/335507013#ref_39_1" target="_blank" rel="noopener">b</a>提供者：@Kwingiem Chan，江门人。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_40_0" target="_blank" rel="noopener">^</a>发音人：@xing，开平沙塘人。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_41_0" target="_blank" rel="noopener">^</a>来源：中国语言资源保护工程采录展示平台-广东省肇庆市四会市-城中街道-老年男性。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_42_0" target="_blank" rel="noopener">^</a>来源：中国语言资源保护工程采录展示平台-广东省肇庆市广宁县-南街镇-老年男性。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_43_0" target="_blank" rel="noopener">^</a>来源：中国语言资源保护工程采录展示平台-广东省肇庆市端州区-城东街道、城西街道-老年男性。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_44_0" target="_blank" rel="noopener">^</a>来源：中国语言资源保护工程采录展示平台-侗台语族-广东省肇庆市怀集县-诗洞镇-老年男性。</li>
+<li>^<a href="https://zhuanlan.zhihu.com/p/335507013#ref_45_0" target="_blank" rel="noopener">a</a><a href="https://zhuanlan.zhihu.com/p/335507013#ref_45_1" target="_blank" rel="noopener">b</a>发音人：阿斯巴甜，罗定人，能讲流利的罗定市区白话、罗定罗平能古话。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_46_0" target="_blank" rel="noopener">^</a>发音人：Y千里马，罗定围底人。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_47_0" target="_blank" rel="noopener">^</a>来源：中国语言资源保护工程采录展示平台-广西壮族自治区贺州市八步区-铺门镇-老年男性。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_48_0" target="_blank" rel="noopener">^</a>来源：中国语言资源保护工程采录展示平台-广西壮族自治区玉林市容县-容州镇-老年男性。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_49_0" target="_blank" rel="noopener">^</a>曹志耘等. 汉语方言地图集（词汇卷）[M]. 商务印书馆, 2008: 119.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_50_0" target="_blank" rel="noopener">^</a>白宛如. 广州方言词典[M]. 江苏教育出版社, 1993: 318.</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_51_0" target="_blank" rel="noopener">^</a>Ernest John Eitel. A Chinese Dictionary in the Cantonese Dialect[M]. Trübner &amp; Co., 1877: 984. 原文作“an ordinary thing”。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_52_0" target="_blank" rel="noopener">^</a>河源源城：it5 ɲa21-23 ha33 ɲa21（什么东西）；惠州塘背：mit5 ɲa13 han11 ɲa13（什么东西）。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_53_0" target="_blank" rel="noopener">^</a>罗定围底：mɐt5 ɗi55（什么）。</li>
+<li><a href="https://zhuanlan.zhihu.com/p/335507013#ref_54_0" target="_blank" rel="noopener">^</a>笔者能找到的对“閒嘢”一词的最早记录就是Eitel (1877)，见注51。</li>
+</ol>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AF%AD%E8%A8%80%E5%AD%A6/">语言学</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%B2%A4%E6%96%B9%E8%A8%80/">粤方言</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AF%AD%E6%BA%90/">语源</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AF%8D%E6%BA%90%E5%AD%A6/">词源学</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%96%B9%E8%A8%80%E5%AD%A6/">方言学</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%85%B1%E6%97%B6%E8%AF%AD%E8%A8%80%E5%AD%A6/">共时语言学</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本文作者：以成<br>本文链接：<a href=""><script>document.write(window.location.href.replace(window.location.hash, ``))</script></a><br>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noopener">CC BY-NC-SA 4.0 协议</a> 。转载请注明本文作者与链接！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/phonological_system_of_dabu_baihou_hakka_dialect_2021/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2021大埔百侯客家方言音系</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/posts/install_manjaro_xfce_in_raspberry_pi_4B/">
+                        <span class="hidden-mobile">树莓派4B 安装 Manjaro Xfce 上手体验</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "jfqqrz6l9VmBjlVdmCKusyUX-gzGzoHsz",
+          app_key: "KMLndPzsjoL98YgC9e85v4WK",
+          placeholder: "欢迎给我留言，谈谈你的想法哦。\n（支持Markdown语法）",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      ©2015-2020 Transion Creative Centre
+      <br>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "试论各方言中的「什么」一词兼谈粤方言「嘢」的语源&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?deb343538ea97eeebc6eea038e232994";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1219 @@
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sat Apr 04 2020');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="huangjunxin">
+  <meta name="keywords" content="">
+  <title>Giáo trình Việt bính (粤拼教程) - 我的记事本</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>我的记事本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/03/13/8KDuAe.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2021-04-28 20:56">
+      2021年4月28日 晚上
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      75
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>Tiếng Quảng Đông thường được viết bằng chữ Hán. Bạn cần khoảng 3000 chữ Hán để sử dụng thành thạo tiếng Quảng Đông. Nghe có vẻ nhiều? Đúng là rất nhiều. Đó là tại sao chúng ta cần một hệ thống phiên âm trong khi đang học các chữ Hán.</p>
+<a id="more"></a>
+<p class="note note-info">本文首发于知乎专栏，可<a href="https://zhuanlan.zhihu.com/p/367560498" target="_blank" rel="noopener">点击此处查看原文</a></p>
+
+<p class="note note-info">本文因特殊需要，主要语言（文字）使用：越南语</p>
+
+<p><strong>Giáo trình Việt bính cho người Việt</strong></p>
+<p><strong>给越南人的粤拼教程</strong></p>
+<p>Tác giả 作者: 以成 (Dĩ Thành)</p>
+<p>Hiệu đính 校对: Nhiệt Thuỷ~</p>
+<p>2021.4.25 Bản thảo đầu tiên 初稿</p>
+<p>Vui lòng xem văn bản gốc để nghe phát âm: <a href="hhttps://jyutping.org/vi/docs/vietnamese/">https://jyutping.org/vi/docs/vietnamese/</a></p>
+<p>Tiếng Quảng Đông thường được viết bằng chữ Hán. Bạn cần khoảng 3000 chữ Hán để sử dụng thành thạo tiếng Quảng Đông. Nghe có vẻ nhiều? Đúng là rất nhiều. Đó là tại sao chúng ta cần một hệ thống phiên âm trong khi đang học các chữ Hán.</p>
+<h2 id="1-Gioi-thieu"><a href="#1-Gioi-thieu" class="headerlink" title="1. Giới thiệu"></a>1. Giới thiệu</h2><p>Việt bính là một phương pháp sử dụng chữ Latinh để phiên âm tiếng Quảng Đông, mà cũng là một từ viết tắt của “Phương pháp phiên âm tiếng Quảng Đông của Hội học thuật ngôn ngữ học Hồng Kông”. Đây là một phương pháp được lập bởi <a href="https://www.lshk.org/" target="_blank" rel="noopener">Hội học thuật ngôn ngữ học Hồng Kông (LSHK)</a>.</p>
+<p>Không giống với tiếng Việt cần sử dụng các kí hiệu dấu và những kí hiệu khác để đánh vần, Việt bính chỉ cần sử dụng 26 chữ Latinh và 6 chữ số.</p>
+<p>Người Việt Nam học tiếng Quảng Đông thường cũng có kiến thức căn bản về tiếng Anh và tiếng Phổ Thông, vì vậy ở những phần sau, khi giải thích về Việt bính, chúng ta sẽ đưa ra những phát âm tương tự trong tiếng Anh hoặc tiếng Phổ Thông (Hanyu Pinyin) làm ví dụ để tiện học tập hơn.</p>
+<p>Ngoài ra còn một điều cần lưu ý nữa là cách viết và cách phát âm của Việt bính gần như có thể tương ứng với nhau, thường không có ngoại lệ.</p>
+<p>Dưới đây là 4 khái niệm: đồng âm cùng cách viết, đồng âm khác cách viết, âm dễ nhầm lẫn, âm mới cần luyện tập</p>
+<ol>
+<li><strong>Đồng âm cùng cách viết</strong>: là Việt bính có những âm với cách viết và cách phát âm hoàn toàn giống với tiếng Việt.</li>
+<li><strong>Đồng âm khác cách viết</strong>: là những âm mà có cách viết giống với chữ Quốc ngữ nhưng cách phát âm khác nhau.</li>
+<li><strong>Âm dễ nhầm lẫn</strong>: là những âm có cách viết giống với tiếng Việt nhưng cách đọc có sự khác biệt nhỏ, cần chú ý phân biệt.</li>
+<li><strong>Âm mới cần luyện tập</strong>: là những âm không có trong tiếng Việt, mà chỉ có trong tiếng Quảng Đông, cần luyện tập nhiều hơn.</li>
+</ol>
+<p>Bài viết này sẽ giải thích về Việt bính và cách phát âm của nó theo thứ tự trên, hy vọng sẽ hữu ích cho việc học tiếng Quảng Đông của bạn.</p>
+<blockquote>
+<p>Bảng mẫu tự ngữ âm quốc tế (IPA) sẽ được sử dụng để giải thích cách phát âm, nếu bạn không quen với IPA thì có thể bỏ qua. Bạn có thể nhấp vào nút nghe trong ví dụ để nghe cách phát âm tương ứng. Trong phần ví dụ có bạn có thể nghe cách phát âm tương ứng bằng cách nhấp vào nút .<br>Tất cả các Việt bính trong bài viết này đều sẽ được <strong>in đậm</strong>, các số 1-6 trong Việt bính là số của thanh điệu, người mới bắt đầu chưa quen với thanh điệu cũng có thể tạm thời bỏ qua.</p>
+</blockquote>
+<h2 id="2-Dong-am-cung-cach-viet"><a href="#2-Dong-am-cung-cach-viet" class="headerlink" title="2. Đồng âm cùng cách viết"></a>2. Đồng âm cùng cách viết</h2><p>Tình huống phát âm và cách viết hoàn toàn giống nhau chỉ xuất hiện ở một vài thanh mẫu và vận mẫu bắt đầu bằng <strong>i</strong> hoặc <strong>u</strong>, còn những phần khác thì sẽ hơi khác một chút. Đó có thể là sự khác biệt về cách viết (xem phần 3), hoặc là một sự khác biệt nhỏ trong cách phát âm (xem phần 4).</p>
+<h3 id="2-1-Thanh-mau-hoan-toan-dong-nhat"><a href="#2-1-Thanh-mau-hoan-toan-dong-nhat" class="headerlink" title="2.1 Thanh mẫu hoàn toàn đồng nhất"></a>2.1 Thanh mẫu hoàn toàn đồng nhất</h3><p>Trong cách viết của chữ Quốc ngữ và Việt bính, các thanh mẫu hoàn toàn đồng nhất như sau: <strong>m</strong>, <strong>n</strong>, <strong>l</strong>, <strong>h</strong>, <strong>ng</strong>. Những âm này tương đối đơn giản, vì vậy không lấy ví dụ.</p>
+<h3 id="2-2-Van-mau-hoan-toan-dong-nhat"><a href="#2-2-Van-mau-hoan-toan-dong-nhat" class="headerlink" title="2.2 Vận mẫu hoàn toàn đồng nhất"></a>2.2 Vận mẫu hoàn toàn đồng nhất</h3><p>Trong cách viết chữ Quốc ngữ và Việt bính, các vận mẫu hoàn toàn đồng nhất chủ yếu là một số vận mẫu bắt đầu bằng <strong>i</strong> hoặc <strong>u</strong>.</p>
+<h3 id="2-2-1-Mot-so-van-mau-bat-dau-bang-“i”"><a href="#2-2-1-Mot-so-van-mau-bat-dau-bang-“i”" class="headerlink" title="2.2.1 Một số vận mẫu bắt đầu bằng “i”"></a>2.2.1 Một số vận mẫu bắt đầu bằng “i”</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Vận mẫu</th>
+<th>Ví dụ</th>
+<th>Việt bính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>知</td>
+<td>zi1</td>
+</tr>
+<tr>
+<td>iu</td>
+<td>少</td>
+<td>siu2</td>
+</tr>
+<tr>
+<td>im</td>
+<td>點</td>
+<td>dim2</td>
+</tr>
+<tr>
+<td>in (giọng Bắc)</td>
+<td>面</td>
+<td>min6</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>碟</td>
+<td>dip6</td>
+</tr>
+<tr>
+<td>it (giọng Bắc)</td>
+<td>熱</td>
+<td>jit6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="2-2-2-Mot-so-van-mau-bat-dau-bang-“u”"><a href="#2-2-2-Mot-so-van-mau-bat-dau-bang-“u”" class="headerlink" title="2.2.2 Một số vận mẫu bắt đầu bằng “u”"></a>2.2.2 Một số vận mẫu bắt đầu bằng “u”</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Vận mẫu</th>
+<th>Ví dụ</th>
+<th>Việt bính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>u</td>
+<td>苦</td>
+<td>fu2</td>
+</tr>
+<tr>
+<td>ui</td>
+<td>杯</td>
+<td>bui1</td>
+</tr>
+<tr>
+<td>un (giọng Bắc)</td>
+<td>門</td>
+<td>mun4</td>
+</tr>
+<tr>
+<td>ut (giọng Bắc)</td>
+<td>活</td>
+<td>wut6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="3-Dong-am-khac-cach-viet"><a href="#3-Dong-am-khac-cach-viet" class="headerlink" title="3. Đồng âm khác cách viết"></a>3. Đồng âm khác cách viết</h2><p>Có những Việt bính có cách viết khác với chữ Quốc ngữ nhưng cách đọc lại gần giống nhau. Trường hợp này gồm 10 thanh mẫu và một số vận mẫu bắt đầu bằng <strong>a</strong>, <strong>aa</strong> và <strong>o</strong>.</p>
+<h3 id="3-1-Thanh-mau-dong-am-khac-cach-viet"><a href="#3-1-Thanh-mau-dong-am-khac-cach-viet" class="headerlink" title="3.1 Thanh mẫu đồng âm khác cách viết"></a>3.1 Thanh mẫu đồng âm khác cách viết</h3><p>Mặc dù những thanh mẫu dưới đây có cách viết khác nhau, nhưng phát âm của chúng về cơ bản là đồng nhất, có thể coi là một.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Thanh mẫu</th>
+<th>Chữ Quốc ngữ</th>
+<th>Ví dụ</th>
+<th>Việt bính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>b</td>
+<td>p</td>
+<td>爸</td>
+<td>baa1</td>
+</tr>
+<tr>
+<td>f</td>
+<td>ph</td>
+<td>飯</td>
+<td>faan6</td>
+</tr>
+<tr>
+<td>d</td>
+<td>t</td>
+<td>打</td>
+<td>daa2</td>
+</tr>
+<tr>
+<td>t</td>
+<td>th</td>
+<td>睇</td>
+<td>tai2</td>
+</tr>
+<tr>
+<td>g</td>
+<td>c</td>
+<td>九</td>
+<td>gau2</td>
+</tr>
+<tr>
+<td>k</td>
+<td>kh (giọng Nam)</td>
+<td>佢</td>
+<td>keoi5</td>
+</tr>
+<tr>
+<td>s</td>
+<td>x</td>
+<td>三</td>
+<td>saam1</td>
+</tr>
+<tr>
+<td>gw</td>
+<td>qu (giọng Bắc)</td>
+<td>瓜</td>
+<td>gwaa1</td>
+</tr>
+<tr>
+<td>j</td>
+<td>d (giọng Nam)</td>
+<td>有</td>
+<td>jau5</td>
+</tr>
+<tr>
+<td>w</td>
+<td>qu (giọng Nam)</td>
+<td>話</td>
+<td>waa6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3-2-Van-mau-dong-am-khac-cach-viet"><a href="#3-2-Van-mau-dong-am-khac-cach-viet" class="headerlink" title="3.2 Vận mẫu đồng âm khác cách viết"></a>3.2 Vận mẫu đồng âm khác cách viết</h3><p>Những vận mẫu dưới đây tuy có cách viết khác nhau nhưng sự khác biệt trong cách đọc của chúng là có thể bỏ qua. Ví dụ như các vận mẫu bắt đầu bằng <strong>a</strong> và <strong>aa</strong>.</p>
+<h3 id="3-2-1-Van-mau-bat-dau-bang-“a”"><a href="#3-2-1-Van-mau-bat-dau-bang-“a”" class="headerlink" title="3.2.1 Vận mẫu bắt đầu bằng “a”"></a>3.2.1 Vận mẫu bắt đầu bằng “a”</h3><p>Trong chữ Quốc ngữ, vần “ay” là dạng viết tắt của “ăi”, còn vần “au” là dạng viết tắt của “ău”. Chúng được thiết kế để phân biệt “ai” với “ay”, “au” với “ao” trên cơ sở hạn chế sử dụng ký hiệu “ă”. Do đó, cách phát âm của nguyên âm “a” trong “ay” và “au” hoàn toàn giống với nguyên âm “ă” trong “ăm”. Trong Việt bính, nguyên âm này được viết thống nhất là <strong>a</strong>.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Vận mẫu</th>
+<th>Chữ Quốc ngữ</th>
+<th>Ví dụ</th>
+<th>Việt bính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ai</td>
+<td>ay</td>
+<td>睇</td>
+<td>tai2</td>
+</tr>
+<tr>
+<td>au</td>
+<td>au</td>
+<td>口</td>
+<td>hau2</td>
+</tr>
+<tr>
+<td>am</td>
+<td>ăm</td>
+<td>心</td>
+<td>sam1</td>
+</tr>
+<tr>
+<td>an</td>
+<td>ăn</td>
+<td>新</td>
+<td>san1</td>
+</tr>
+<tr>
+<td>ang</td>
+<td>ăng</td>
+<td>等</td>
+<td>dang2</td>
+</tr>
+<tr>
+<td>ap</td>
+<td>ăp</td>
+<td>十</td>
+<td>sap6</td>
+</tr>
+<tr>
+<td>at</td>
+<td>ăt</td>
+<td>一</td>
+<td>jat1</td>
+</tr>
+<tr>
+<td>ak</td>
+<td>ăc</td>
+<td>北</td>
+<td>bak1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3-2-2-Van-mau-bat-dau-bang-“aa”"><a href="#3-2-2-Van-mau-bat-dau-bang-“aa”" class="headerlink" title="3.2.2 Vận mẫu bắt đầu bằng “aa”"></a>3.2.2 Vận mẫu bắt đầu bằng “aa”</h3><p>Trong tiếng Việt, để hạn chế sử dụng ký hiệu “ă”, người ta sử dụng “ai” để phân biệt với vần “ay”, sử dụng “au” để phân biệt với vần “ao”. Vì vậy, nguyên âm “a” trong vần “ai” và “ao” có cách đọc giống với “a” trong vần “am”. Trong Việt bính, nguyên âm này được viết thống nhất là <strong>aa</strong>.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Vận mẫu</th>
+<th>Chữ Quốc ngữ</th>
+<th>Ví dụ</th>
+<th>Việt bính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aa</td>
+<td>a</td>
+<td>爸</td>
+<td>baa1</td>
+</tr>
+<tr>
+<td>aai</td>
+<td>ai</td>
+<td>大</td>
+<td>daai6</td>
+</tr>
+<tr>
+<td>aau</td>
+<td>ao</td>
+<td>跑</td>
+<td>paau2</td>
+</tr>
+<tr>
+<td>aam</td>
+<td>am</td>
+<td>男</td>
+<td>naam4</td>
+</tr>
+<tr>
+<td>aan</td>
+<td>an (giọng Bắc)</td>
+<td>眼</td>
+<td>ngaan5</td>
+</tr>
+<tr>
+<td>aag</td>
+<td>ang</td>
+<td>硬</td>
+<td>ngaang6</td>
+</tr>
+<tr>
+<td>aap</td>
+<td>ap</td>
+<td>集</td>
+<td>zaap6</td>
+</tr>
+<tr>
+<td>aat</td>
+<td>at</td>
+<td>辣</td>
+<td>laat6</td>
+</tr>
+<tr>
+<td>aak</td>
+<td>ac</td>
+<td>白</td>
+<td>baak6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="3-2-3-Mot-so-van-mau-bat-dau-bang-“o”"><a href="#3-2-3-Mot-so-van-mau-bat-dau-bang-“o”" class="headerlink" title="3.2.3 Một số vận mẫu bắt đầu bằng “o”"></a>3.2.3 Một số vận mẫu bắt đầu bằng “o”</h3><p>Trong chữ Quốc ngữ, sự khác biệt chính giữa “ong” và “oong” là ở phần sau của cách phát âm, phát âm xong có đóng miệng hay không. Đối với vận mẫu <strong>ong</strong> trong Việt bính, khẩu hình cuối là miệng không đóng, nên tương ứng với âm “oong” trong chữ Quốc ngữ. Tương tự với vận mẫu <strong>ok</strong>.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Vận mẫu</th>
+<th>Chữ Quốc ngữ</th>
+<th>Ví dụ</th>
+<th>Việt bính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ong</td>
+<td>oong</td>
+<td>江</td>
+<td>gong1</td>
+</tr>
+<tr>
+<td>ok</td>
+<td>ooc</td>
+<td>角</td>
+<td>gok3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="4-Am-de-nham-lan"><a href="#4-Am-de-nham-lan" class="headerlink" title="4. Âm dễ nhầm lẫn"></a>4. Âm dễ nhầm lẫn</h2><p>Có những âm trong Việt Bính và tiếng Việt tưởng chừng như giống nhau nhưng trên thực tế giữa chúng vẫn có khác biệt nhỏ. Ví dụ như một số vận mẫu bắt đầu bằng <strong>e</strong> và <strong>o</strong>.</p>
+<h3 id="4-1-Mot-so-van-mau-bat-dau-bang-“e”"><a href="#4-1-Mot-so-van-mau-bat-dau-bang-“e”" class="headerlink" title="4.1 Một số vận mẫu bắt đầu bằng “e”"></a>4.1 Một số vận mẫu bắt đầu bằng “e”</h3><p>Trong giọng Quảng Châu, vận mẫu bắt đầu bằng <strong>e</strong> giống cách phát âm giữa “ê” và “e” trong tiếng Việt. Nhưng giọng Hồng Kông thì sẽ mở miệng lớn hơn, vậy nên những âm có vận mẫu bắt đầu bằng <strong>e</strong> sẽ giống “e” trong tiếng Việt hơn.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Vận mẫu</th>
+<th>Chữ Quốc ngữ</th>
+<th>Ví dụ</th>
+<th>Việt bính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>e</td>
+<td>e</td>
+<td>車</td>
+<td>ce1</td>
+</tr>
+<tr>
+<td>eu</td>
+<td>eo</td>
+<td>掉</td>
+<td>deu6</td>
+</tr>
+<tr>
+<td>em</td>
+<td>em</td>
+<td>舐</td>
+<td>lem2</td>
+</tr>
+<tr>
+<td>eng</td>
+<td>eng</td>
+<td>餅</td>
+<td>beng2</td>
+</tr>
+<tr>
+<td>ep</td>
+<td>ep</td>
+<td>夾</td>
+<td>gep6</td>
+</tr>
+<tr>
+<td>ek</td>
+<td>ec</td>
+<td>石</td>
+<td>sek6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="4-2-Mot-so-van-mau-bat-dau-bang-“o”"><a href="#4-2-Mot-so-van-mau-bat-dau-bang-“o”" class="headerlink" title="4.2 Một số vận mẫu bắt đầu bằng “o”"></a>4.2 Một số vận mẫu bắt đầu bằng “o”</h3><p>Trong giọng Quảng Châu, vận mẫu bắt đầu bằng <strong>o</strong> có cách phát âm như âm giữa “ô” và “o” trong tiếng Việt. Nhưng giọng Hồng Kông sẽ mở miệng lớn hơn, vận mẫu bắt đầu bằng <strong>o</strong> sẽ gần giống “o” trong tiếng Việt hơn.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Vận mẫu</th>
+<th>Chữ Quốc ngữ</th>
+<th>Ví dụ</th>
+<th>Việt bính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>o</td>
+<td>o</td>
+<td>坐</td>
+<td>co5</td>
+</tr>
+<tr>
+<td>oi</td>
+<td>oi</td>
+<td>開</td>
+<td>hoi1</td>
+</tr>
+<tr>
+<td>on</td>
+<td>on (giọng Bắc)</td>
+<td>汗</td>
+<td>hon6</td>
+</tr>
+<tr>
+<td>ot</td>
+<td>ot (giọng Bắc)</td>
+<td>割</td>
+<td>got3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="5-Am-moi-can-luyen-tap"><a href="#5-Am-moi-can-luyen-tap" class="headerlink" title="5. Âm mới cần luyện tập"></a>5. Âm mới cần luyện tập</h2><p>Những cách phát âm còn lại chưa nhắc đến là những âm không tồn tại trong tiếng Việt mà chỉ có trong tiếng Quảng Đông. Vì vậy chúng ta cần phải luyện tập nhiều hơn. Phần sau cũng sẽ sử dụng phiên âm tiếng Anh và Pinyin để làm ví dụ, vậy nên các bạn học có kiến thức căn bản sẽ dễ hiểu hơn.</p>
+<h3 id="5-1-Nhung-thanh-mau-can-luyen-nhieu-hon"><a href="#5-1-Nhung-thanh-mau-can-luyen-nhieu-hon" class="headerlink" title="5.1 Những thanh mẫu cần luyện nhiều hơn"></a>5.1 Những thanh mẫu cần luyện nhiều hơn</h3><p>4 thanh mẫu còn lại cần chú ý luyện tập nhiều hơn.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Thanh mẫu</th>
+<th>Giải thích</th>
+<th>Ví dụ</th>
+<th>Việt bính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p</td>
+<td>“p” trong tiếng Anh / Pinyin, bật hơi</td>
+<td>爬</td>
+<td>paa4</td>
+</tr>
+<tr>
+<td>z</td>
+<td>“z” trong Pinyin, không bật hơi</td>
+<td>遮</td>
+<td>ze1</td>
+</tr>
+<tr>
+<td>c</td>
+<td>“c” trong Pinyin, bật hơi</td>
+<td>車</td>
+<td>ce1</td>
+</tr>
+<tr>
+<td>kw</td>
+<td>“qu” trong chữ “queen” tiếng Anh, bật hơi</td>
+<td>夸</td>
+<td>kwaa1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="5-2-Nhung-van-mau-can-luyen-nhieu-hon"><a href="#5-2-Nhung-van-mau-can-luyen-nhieu-hon" class="headerlink" title="5.2 Những vận mẫu cần luyện nhiều hơn"></a>5.2 Những vận mẫu cần luyện nhiều hơn</h3><h3 id="5-2-1-Van-mau-“ei”-va-“ou”"><a href="#5-2-1-Van-mau-“ei”-va-“ou”" class="headerlink" title="5.2.1 Vận mẫu “ei” và “ou”"></a>5.2.1 Vận mẫu “ei” và “ou”</h3><p>Hai vận mẫu này chưa xuất hiện ở 4.1 và 4.2, do “e” và “o” trong tiếng Việt không ghép thành vần “ei” và “ou”. Chúng ta cần sử dụng Pinyin hoặc tiếng Anh để giải thích cho âm này.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Vận mẫu</th>
+<th>Giải thích</th>
+<th>Ví dụ</th>
+<th>Việt bính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ei</td>
+<td>“ay” trong chữ “say” tiếng Anh, “ei” trong Pinyin</td>
+<td>四</td>
+<td>sei3</td>
+</tr>
+<tr>
+<td>ou</td>
+<td>“o” trong chữ “go” tiếng Anh, “ou” trong Pinyin</td>
+<td>高</td>
+<td>gou1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="5-2-2-Van-mau-bat-dau-bang-“eo”"><a href="#5-2-2-Van-mau-bat-dau-bang-“eo”" class="headerlink" title="5.2.2 Vận mẫu bắt đầu bằng “eo”"></a>5.2.2 Vận mẫu bắt đầu bằng “eo”</h3><p>Tiếng Việt, tiếng Anh hay tiếng Phổ Thông đều không có cách phát âm chính xác của âm <strong>eo</strong> trong tiếng Quảng Đông, vì vậy bạn cần tách riêng những âm này để luyện tập. Trong đó, <strong>eoi</strong> có thể được phát âm như “ây” khi tròn môi, <strong>eon</strong> có thể được phát âm như “ân” khi tròn môi, <strong>eot</strong> có thể được phát âm như “ât” khi tròn môi.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Vận mẫu</th>
+<th>Ví dụ</th>
+<th>Việt bính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eoi</td>
+<td>去</td>
+<td>heoi3</td>
+</tr>
+<tr>
+<td>eon</td>
+<td>信</td>
+<td>seon3</td>
+</tr>
+<tr>
+<td>eot</td>
+<td>出</td>
+<td>ceot1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="5-2-3-Van-mau-bat-dau-bang-“oe”"><a href="#5-2-3-Van-mau-bat-dau-bang-“oe”" class="headerlink" title="5.2.3 Vận mẫu bắt đầu bằng “oe”"></a>5.2.3 Vận mẫu bắt đầu bằng “oe”</h3><p>Cũng giống như <strong>eo</strong>, âm <strong>oe</strong> trong tiếng Quảng Đông cũng không có cách phát âm tương ứng trong tiếng Việt, tiếng Anh hay tiếng Phổ Thông. Vì vậy bạn cần chú ý luyện tập nhiều hơn. Bạn có thể luyện tập nguyên âm đơn <strong>oe</strong> trước, âm này có thể phát âm như “e” khi tròn môi. Khi phát âm tự nhiên hơn, hãy kết nối với <strong>-ng</strong> và <strong>-k</strong> để luyện tập.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Vận mẫu</th>
+<th>Ví dụ</th>
+<th>Việt bính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>oe</td>
+<td>靴</td>
+<td>hoe1</td>
+</tr>
+<tr>
+<td>oeng</td>
+<td>向</td>
+<td>hoeng3</td>
+</tr>
+<tr>
+<td>oek</td>
+<td>腳</td>
+<td>goek3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="5-2-4-Van-mau-bat-dau-bang-“yu”"><a href="#5-2-4-Van-mau-bat-dau-bang-“yu”" class="headerlink" title="5.2.4 Vận mẫu bắt đầu bằng “yu”"></a>5.2.4 Vận mẫu bắt đầu bằng “yu”</h3><p><strong>yu</strong> trong tiếng Quảng Đông giống với âm “ü” trong tiếng Phổ Thông, nhưng có sự khác biệt đáng kể so với “uy” trong tiếng Việt. Nếu bạn chưa thành thạo “ü” trong tiếng Phổ Thông, bạn nên luyện tập thêm. Bạn cũng nên luyện tập nguyên âm đơn <strong>yu</strong> trước, cho đến khi phát âm tự nhiên hơn thì hãy luyện tập nối âm <strong>yu</strong> với <strong>-n</strong> và <strong>-t</strong>.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Vận mẫu</th>
+<th>Ví dụ</th>
+<th>Việt bính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>yu</td>
+<td>于</td>
+<td>jyu1</td>
+</tr>
+<tr>
+<td>yun</td>
+<td>短</td>
+<td>dyun2</td>
+</tr>
+<tr>
+<td>yut</td>
+<td>越</td>
+<td>jyut6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="5-2-5-Am-tiet-mui-“m”-va-“ng”"><a href="#5-2-5-Am-tiet-mui-“m”-va-“ng”" class="headerlink" title="5.2.5 Âm tiết mũi “m” và “ng”"></a>5.2.5 Âm tiết mũi “m” và “ng”</h3><p>Âm tiết mũi <strong>m</strong> và <strong>ng</strong> là vận mẫu đặc biệt trong tiếng Quảng Đông, chúng tạo thành các âm tiết độc lập. Nếu chú ý nghe cách phát âm của những âm này, bạn sẽ thấy chúng không khó.</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Vận mẫu</th>
+<th>Ví dụ</th>
+<th>Việt bính</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>m</td>
+<td>唔</td>
+<td>m4</td>
+</tr>
+<tr>
+<td>ng</td>
+<td>五</td>
+<td>ng5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="6-Thanh-dieu"><a href="#6-Thanh-dieu" class="headerlink" title="6. Thanh điệu"></a>6. Thanh điệu</h2><p>Tiếng Quảng Đông cũng có 6 thanh điệu như tiếng Việt, nhưng không hoàn toàn giống tiếng Việt. 6 thanh điệu trong tiếng Quảng Đông cụ thể như sau:</p>
+<ul>
+<li>Thanh thứ 1 (âm bình/thượng âm nhập): giống như thanh thứ 1 trong tiếng Phổ Thông, nó cao và ngang, cao hơn thanh ngang trong tiếng Việt. Nếu là vận mẫu kết thúc bằng <strong>-p</strong>, <strong>-t</strong> và <strong>-k</strong> thì sẽ thanh này nghe giống như thanh sắc trong các âm kết thúc bằng “-p”, “-t”, “-c” và “-ch” trong tiếng Việt.</li>
+<li>Thanh thứ 2 (âm thượng): giống như thanh thứ 2 trong tiếng Phổ Thông, từ giữa lên cao.</li>
+<li>Thanh thứ 3 (âm khứ/hạ âm nhập): giống như thanh ngang trong tiếng Việt, ở giữa và ngang, nhưng thấp hơn thanh thứ 1. Nếu vận mẫu kết thúc bằng <strong>-p</strong>, <strong>-t</strong> và <strong>-k</strong> thì sẽ nghe ngắn như thanh sắc kết thúc bằng “-p”, “-t”, “-c” và “-ch” trong tiếng Việt, nhưng thấp hơn thanh thứ 1.</li>
+<li>Thanh thứ 4 (dương bình): giống như nửa đầu của thanh thứ 3 trong tiếng Phổ Thông, hạ từ thấp vừa đến thấp nhất.</li>
+<li>Thanh thứ 5 (dương thượng): giống như thanh sắc trong các âm với âm cuối khác “-p”, “-t”, “-c” và “-ch” trong tiếng Việt, và như thanh điệu trong của “nếu”. Thanh này từ dưới lên giữa.</li>
+<li>Thanh thứ 6 (dương khứ/dương nhập): giống như cao độ của thanh nặng trong tiếng Việt, nhưng cần chú ý rằng nếu vận mẫu kết thúc bằng <strong>-p</strong>, <strong>-t</strong> và <strong>-k</strong> thì thanh này mới ngắn, còn nếu không thì sẽ phẳng và dài.</li>
+</ul>
+<p>Nếu 6 thanh điệu của tiếng Quảng Đông được thể hiện như cao độ trên khuông nhạc, chúng sẽ giống như hình dưới đây:</p>
+<p><img src="https://z3.ax1x.com/2021/06/22/ReI92T.jpg" srcset="/img/loading.gif" alt="img"></p>
+<p>Hãy nghe các thanh điệu qua những ví dụ sau:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Thanh thứ 1 (55)</th>
+<th>Thanh thứ 2 (35)</th>
+<th>Thanh thứ 3 (33)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>詩 si1</td>
+<td>史 si2</td>
+<td>試 si3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Thanh thứ 4 (21)</th>
+<th>Thanh thứ 5 (13)</th>
+<th>Thanh thứ 6 (22)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>時 si4</td>
+<td>市 si5</td>
+<td>事 si6</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ngoài ra còn có một phương pháp luyện thanh đơn giản và thú vị khác, đó là <a href="https:///jyutping.org/vi/blog/song" target="_blank" rel="noopener">luyện thanh điệu với các bài hát tiếng Quảng Đông</a>.</p>
+<h2 id="7-Ket-thuc"><a href="#7-Ket-thuc" class="headerlink" title="7. Kết thúc"></a>7. Kết thúc</h2><p>Để biết thêm tài liệu học tiếng Quảng Đông, vui lòng xem <a href="https://jyutping.org/vi/blog/resource" target="_blank" rel="noopener">Tài liệu học tiếng Quảng Đông</a>.</p>
+<p>Một phương pháp tốt để luyện Việt bính hoặc tiếng Quảng Đông là gõ tiếng Quảng Đông bằng Việt bính. Vì Việt bính là phiên âm của tiếng Quảng Đông, mỗi khi bạn gõ Việt bính, thì cũng giống như bạn đang luyện nói tiếng Quảng Đông vậy. Hãy xem trang <a href="https://jyutping.org/vi/keyboard" target="_blank" rel="noopener">Bàn phím tiếng Quảng Đông</a> của chúng tôi để tải xuống các bộ gõ.</p>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Tieng-Viet/">Tiếng Việt</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%B2%A4%E6%8B%BC/">粤拼</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%B9%BF%E5%B7%9E%E8%AF%9D/">广州话</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%8B%BC%E9%9F%B3%E6%96%B9%E6%A1%88/">拼音方案</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%BA%94%E7%94%A8%E8%AF%AD%E8%A8%80%E5%AD%A6/">应用语言学</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本文作者：以成<br>本文链接：<a href=""><script>document.write(window.location.href.replace(window.location.hash, ``))</script></a><br>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noopener">CC BY-NC-SA 4.0 协议</a> 。转载请注明本文作者与链接！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/posts/phonological_system_of_dabu_baihou_hakka_dialect_2021/">
+                        <span class="hidden-mobile">2021大埔百侯客家方言音系</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "jfqqrz6l9VmBjlVdmCKusyUX-gzGzoHsz",
+          app_key: "KMLndPzsjoL98YgC9e85v4WK",
+          placeholder: "欢迎给我留言，谈谈你的想法哦。\n（支持Markdown语法）",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      ©2015-2020 Transion Creative Centre
+      <br>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "Giáo trình Việt bính (粤拼教程)&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?deb343538ea97eeebc6eea038e232994";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

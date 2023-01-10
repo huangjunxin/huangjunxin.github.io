@@ -1,0 +1,1203 @@
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sat Apr 04 2020');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="huangjunxin">
+  <meta name="keywords" content="">
+  <title>计算机网络考试复习总结 - 我的记事本</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>我的记事本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/03/13/8KDuAe.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-01-03 22:12">
+      2020年1月3日 晚上
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      76
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>大二上学期学习了课程“计算机网络”，本文是期末时对本课程的总结与归纳，同时便于以后复查。</p>
+<a id="more"></a>
+<h2 id="0-考试说明"><a href="#0-考试说明" class="headerlink" title="0. 考试说明"></a>0. 考试说明</h2><h3 id="0-1-考试题型与分值"><a href="#0-1-考试题型与分值" class="headerlink" title="0.1 考试题型与分值"></a>0.1 考试题型与分值</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>题型</th>
+<th>题量</th>
+<th>分值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>选择</td>
+<td>10</td>
+<td>2</td>
+</tr>
+<tr>
+<td>填空</td>
+<td>20</td>
+<td>1</td>
+</tr>
+<tr>
+<td>简答</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>计算</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>应用</td>
+<td>1</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="0-2-考试章节与分值"><a href="#0-2-考试章节与分值" class="headerlink" title="0.2 考试章节与分值"></a>0.2 考试章节与分值</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>章节</th>
+<th>分值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一章 概述</td>
+<td>13</td>
+</tr>
+<tr>
+<td>第二层 物理层</td>
+<td>10</td>
+</tr>
+<tr>
+<td>第三章 数据链路层</td>
+<td>17</td>
+</tr>
+<tr>
+<td>第四章 网络层</td>
+<td>30</td>
+</tr>
+<tr>
+<td>第五章 运输层</td>
+<td>20</td>
+</tr>
+<tr>
+<td>第六章 应用层</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><h3 id="1-1-计算机网络在信息时代的作用"><a href="#1-1-计算机网络在信息时代的作用" class="headerlink" title="1.1 计算机网络在信息时代的作用"></a>1.1 计算机网络在信息时代的作用</h3><h4 id="P1-三网融合（填空题）"><a href="#P1-三网融合（填空题）" class="headerlink" title="P1 三网融合（填空题）"></a>P1 三网融合（填空题）</h4><ul>
+<li>==电信网络、有线电视网络、计算机网络==</li>
+</ul>
+<h4 id="P2-互联网的两个重要基本特点"><a href="#P2-互联网的两个重要基本特点" class="headerlink" title="P2 互联网的两个重要基本特点"></a>P2 互联网的两个重要基本特点</h4><ul>
+<li>连通性、共享</li>
+</ul>
+<h3 id="1-2-互联网概述"><a href="#1-2-互联网概述" class="headerlink" title="1.2 互联网概述"></a>1.2 互联网概述</h3><h4 id="P4-互连网（非重点）"><a href="#P4-互连网（非重点）" class="headerlink" title="P4 互连网（非重点）"></a>P4 互连网（非重点）</h4><ul>
+<li>网络的网络</li>
+</ul>
+<h4 id="P5-大小写-i-nternet（非重点）"><a href="#P5-大小写-i-nternet（非重点）" class="headerlink" title="P5 大小写 (i)nternet（非重点）"></a>P5 大小写 (i)nternet（非重点）</h4><ul>
+<li>internet（互连网）是一个通用名词，它<strong>泛指由多个计算机网络互连而成的计算机网络</strong>。</li>
+<li>Internet（互联网，或因特网）则是一个<strong>专用名词</strong>，它指当前全球最大的、开放的、由众多网络相互连接而成的特定的互连网，它采用TCP/IP协议簇作为通信的规则，且其前身是美国的 ARPANET</li>
+</ul>
+<h4 id="P5-互联网发展的三个阶段（非重点）"><a href="#P5-互联网发展的三个阶段（非重点）" class="headerlink" title="P5 互联网发展的三个阶段（非重点）"></a>P5 互联网发展的三个阶段（非重点）</h4><ul>
+<li>第一阶段：从单个网络 ARPANET 向互联网发展的过程</li>
+<li>第二阶段：建成了<strong>三级结构的互联网</strong></li>
+<li>第三阶段：逐渐形成了<strong>多层次 ISP 结构的互联网</strong><ul>
+<li>ISP：互联网服务提供商</li>
+</ul>
+</li>
+</ul>
+<h4 id="P9-互联网协会-ISOC-，机构部署"><a href="#P9-互联网协会-ISOC-，机构部署" class="headerlink" title="P9 互联网协会 (ISOC)，机构部署"></a>P9 互联网协会 (ISOC)，机构部署</h4><p>ISOC 下面有一个技术组织叫 <strong>互联网体系结构委员会 IAB</strong>，旗下还有：</p>
+<ul>
+<li>互联网工程部 IETF：针对短、中期的工程问题（如协议的开发和标准化）</li>
+<li>互联网研究部 IRTF：研究长期考虑的问题（如协议、应用、体系结构）</li>
+</ul>
+<h4 id="P9-制定互联网标准三个阶段，了解"><a href="#P9-制定互联网标准三个阶段，了解" class="headerlink" title="P9 制定互联网标准三个阶段，了解"></a>P9 制定互联网标准三个阶段，了解</h4><ul>
+<li><strong>互联网草案：有效期只有六个月</strong>，尚非 RFC 文档</li>
+<li><strong>建议标准</strong>：成为 RFC 文档</li>
+<li><strong>互联网标准</strong>：分配编号 STD XX</li>
+</ul>
+<h3 id="1-3-互联网的组成"><a href="#1-3-互联网的组成" class="headerlink" title="1.3 互联网的组成"></a>1.3 互联网的组成</h3><h4 id="P10-从工作方式上划分互联网：边缘部分、核心部分（重点）"><a href="#P10-从工作方式上划分互联网：边缘部分、核心部分（重点）" class="headerlink" title="P10 从工作方式上划分互联网：边缘部分、核心部分（重点）"></a>P10 从工作方式上划分互联网：边缘部分、核心部分（重点）</h4><ul>
+<li>边缘部分：由所有连接在互联网上的主机组成。这部分是<strong>用户直接使用的</strong>，用来进行通信（传送数据、音频或视频）和资源共享。<ul>
+<li>端系统：在互联网末端的网络设备（主机）</li>
+</ul>
+</li>
+<li>核心部分：由<strong>大量网络</strong>和连接这些网络的<strong>路由器</strong>组成。这部分是为<strong>边缘部分提供服务的</strong>（提供连通性和交换）。<ul>
+<li>核心部分采用了<strong>分组交换技术</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="P11-12-在网络边缘的端系统之间的两大类通信方式（应用层上体现更多）"><a href="#P11-12-在网络边缘的端系统之间的两大类通信方式（应用层上体现更多）" class="headerlink" title="P11-12 在网络边缘的端系统之间的两大类通信方式（应用层上体现更多）"></a>P11-12 在网络边缘的端系统之间的<strong>两大类通信方式</strong>（应用层上体现更多）</h4><ul>
+<li>客户-服务器方式：客户是服务请求方，服务器是服务提供方</li>
+<li>对等连接方式 P2P：见6.9</li>
+</ul>
+<h4 id="P13-17-路由器的三种交换技术（电路、报文、分组）的主要特点-（重点）"><a href="#P13-17-路由器的三种交换技术（电路、报文、分组）的主要特点-（重点）" class="headerlink" title="P13-17 路由器的三种交换技术（电路、报文、分组）的主要特点 （重点）"></a>P13-17 路由器的<strong>三种交换技术</strong>（电路、报文、分组）的主要特点 <strong>（重点）</strong></h4><ul>
+<li>电路交换：整个报文的比特流持续地从源点直达终点，好像在一个管道传送</li>
+<li>报文交换：整个报文先传到相邻结点，全部存储下来后查找转发表，转发到下一个结点</li>
+<li>分组交换：单个分组（整个报文的一部分）传送到相邻结点，存储下来后查找转发表，转发到下一个结点</li>
+</ul>
+<h4 id="三种交换技术（电路、报文、分组）比较的优缺点-（重点，简答题？）"><a href="#三种交换技术（电路、报文、分组）比较的优缺点-（重点，简答题？）" class="headerlink" title="三种交换技术（电路、报文、分组）比较的优缺点 （重点，简答题？）"></a><strong>三种交换技术</strong>（电路、报文、分组）比较的优缺点 <strong>（重点，简答题？）</strong></h4><p><img src="https://s2.ax1x.com/2019/12/23/lpPhXd.png" srcset="/img/loading.gif" alt="lpPhXd.png"></p>
+<ul>
+<li>若要<strong>传送大量的数据</strong>，且传送时间远大于连接时间，则<strong>电路交换的传输效率较快</strong></li>
+<li><strong>报文交换、分组交换</strong>不需要预先分配传输带宽，在<strong>传送突发数据</strong>时可<strong>提高整个网络的信道利用率</strong></li>
+<li>由于一个分组的长度往往小于整个报文的长度，因此<strong>分组交换比报文交换的时延小</strong>，同时也具有更好的灵活性</li>
+</ul>
+<h3 id="1-5-计算机网络的类别"><a href="#1-5-计算机网络的类别" class="headerlink" title="1.5 计算机网络的类别"></a>1.5 计算机网络的类别</h3><h4 id="P19-计算机网络的基本定义（填空题？）"><a href="#P19-计算机网络的基本定义（填空题？）" class="headerlink" title="P19 计算机网络的基本定义（填空题？）"></a>P19 计算机网络的基本定义（填空题？）</h4><ul>
+<li>精确定义并未统一</li>
+<li>较好的定义：计算机网络主要是<strong>由一些通用的、可编程的硬件互连而成的</strong>，而这些硬件并非专门用来实现某一特定目的。这些可编程的硬件能够用来传送多种不同类型的数据，并能支持广泛的和日益增长的应用。</li>
+</ul>
+<h4 id="P20-按网络作用范围分类"><a href="#P20-按网络作用范围分类" class="headerlink" title="P20 按网络作用范围分类"></a>P20 按网络作用范围分类</h4><ul>
+<li>广域网 WAN</li>
+<li>城域网 MAN</li>
+<li>局域网 LAN</li>
+<li>个人局域网 PAN</li>
+</ul>
+<h4 id="P20-按网络的使用者进行分类"><a href="#P20-按网络的使用者进行分类" class="headerlink" title="P20 按网络的使用者进行分类"></a>P20 按网络的使用者进行分类</h4><ul>
+<li>共用网 public network</li>
+<li>专用网 private network</li>
+</ul>
+<h3 id="1-7-计算机网络体系结构"><a href="#1-7-计算机网络体系结构" class="headerlink" title="1.7 计算机网络体系结构"></a>1.7 计算机网络体系结构</h3><p><img src="https://s2.ax1x.com/2019/12/23/lpNNlD.png" srcset="/img/loading.gif" alt="lpNNlD.png"></p>
+<h4 id="P27-OSI、TCP-IP的理论比较，为何OSI没有成为最终标准"><a href="#P27-OSI、TCP-IP的理论比较，为何OSI没有成为最终标准" class="headerlink" title="P27 OSI、TCP/IP的理论比较，为何OSI没有成为最终标准"></a>P27 OSI、TCP/IP的理论比较，为何OSI没有成为最终标准</h4><ul>
+<li>OSI 的专家们在完成 OSI 标准时没有商业驱动力</li>
+<li>OSI 的协议实现起来过分复杂，且运行效率很低</li>
+<li>OSI 标准的制定周期太长，因而使得按 OSI 标准生产的设备无法及时进入市场</li>
+<li>OSI 的层次划分也不太合理，有些功能在多个层次中重复出现<ul>
+<li><strong>OSI/RM 开放系统互连基本参考模型</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="P29-什么是网络协议，协议的三要素是什么，为什么要分层，分层有什么好处"><a href="#P29-什么是网络协议，协议的三要素是什么，为什么要分层，分层有什么好处" class="headerlink" title="P29 什么是网络协议，协议的三要素是什么，为什么要分层，分层有什么好处"></a>P29 什么是网络协议，协议的三要素是什么，为什么要分层，分层有什么好处</h4><ul>
+<li>网络协议（协议）：为进行网络中的数据交换而建立的==规则、标准或约定==</li>
+<li>协议的三要素：==语法，语义，同步==</li>
+<li>分层的好处：<ul>
+<li>各层之间是独立的</li>
+<li>灵活性好</li>
+<li>结构上可分割开</li>
+<li>易于实现和维护</li>
+<li>能促进标准化工作</li>
+</ul>
+</li>
+</ul>
+<h4 id="P31-五层协议的体系结构，每一层从上到下的名称、作用、数据单元名称、封装与拆分过程"><a href="#P31-五层协议的体系结构，每一层从上到下的名称、作用、数据单元名称、封装与拆分过程" class="headerlink" title="P31 五层协议的体系结构，每一层从上到下的名称、作用、数据单元名称、封装与拆分过程"></a>P31 五层协议的体系结构，每一层从上到下的名称、作用、数据单元名称、<strong>封装与拆分过程</strong></h4><p><img src="https://s2.ax1x.com/2019/12/23/lpUwgU.png" srcset="/img/loading.gif" alt="lpUwgU.png"></p>
+<h4 id="PDU-协议数据单元"><a href="#PDU-协议数据单元" class="headerlink" title="PDU 协议数据单元"></a>PDU 协议数据单元</h4><ul>
+<li>应用层 (application layer)<ul>
+<li>任务：通过应用进程间的交互来完成特定网络应用</li>
+<li>数据单元：报文</li>
+<li>封装与拆分：应用层首部 的加入与剥去</li>
+</ul>
+</li>
+<li><strong>运输层</strong> (transport layer)<ul>
+<li>任务：负责向两台主机中进程之间的通信提供通用的数据传输服务</li>
+<li>数据单元： TCP 为报文段，UDP 用户数据报</li>
+<li>封装与拆分：运输层首部 的加入与剥去</li>
+<li>网络设备：<strong>网关（网络层以上）</strong></li>
+</ul>
+</li>
+<li><strong>网络层</strong> (network layer)<ul>
+<li>任务：负责为分组交换网上不同主机提供通信服务</li>
+<li>数据单元：分组（或称 IP 数据报）</li>
+<li>封装与拆分：网络层首部 的加入与剥去</li>
+<li>网络设备：<strong>路由器</strong></li>
+</ul>
+</li>
+<li>数据链路层 (data link layer)<ul>
+<li>任务：控制数据在链路上的传输</li>
+<li>数据单元：帧</li>
+<li>封装与拆分：链路层<strong>首部和尾部</strong> 的加入与剥去</li>
+<li>网络设备：交换机、<strong>网桥（桥接器）</strong></li>
+</ul>
+</li>
+<li>物理层 (physical layer)<ul>
+<li>任务：考虑物理层面的传输问题</li>
+<li>数据单元：比特</li>
+<li>网络设备：集线器、<strong>转发器</strong></li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>数据单元</th>
+<th>设备</th>
+<th>协议</th>
+<th>地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>应用层</td>
+<td>报文</td>
+<td>应用程序</td>
+<td>==DNS(53) FTP(21) TFTP(69) HTTP(80)== HTTPS(443) ==SMTP(25) POP3(110) TELNET(23)== SNMP</td>
+<td>域名</td>
+</tr>
+<tr>
+<td>运输层</td>
+<td>TCP 报文段、UDP 用户数据报</td>
+<td>进程、端口</td>
+<td>TCP UDP</td>
+<td>进程的端口号</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>分组 (IP 数据报)</td>
+<td>路由器、防火墙</td>
+<td>IP ARP ICMP IGMP RIP OSPF</td>
+<td>IP 地址</td>
+</tr>
+<tr>
+<td>数据链路层</td>
+<td>帧</td>
+<td>网卡、网桥（桥接器）、交换机</td>
+<td>802.3 802.11 HDLC PPP</td>
+<td>MAC 地址</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td>比特</td>
+<td>集线器、转发器、中继器</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="P34-实体、协议"><a href="#P34-实体、协议" class="headerlink" title="P34 实体、协议"></a>P34 实体、协议</h4><ul>
+<li>==实体==：表示任何可发送或接收信息的硬件或软件进程</li>
+<li>==协议==：是控制两个对等实体（或多个实体）进行通信的规则的集合</li>
+<li>服务：服务是由下层向上层通过层间接口提供的。只有那些能被高一层实体“看得见”的功能才能称之为“服务”。</li>
+<li>两个对等实体间的通信使得本层能够向上一层提供服务</li>
+<li>15-16 真题：在互连网分层的体系结构中，下层通过服务访问点向上层提供（==服务==），对等层次之间的通信规则称为（==协议==）</li>
+</ul>
+<h2 id="2-物理层"><a href="#2-物理层" class="headerlink" title="2. 物理层"></a>2. 物理层</h2><h3 id="2-1-物理层的基本概念"><a href="#2-1-物理层的基本概念" class="headerlink" title="2.1 物理层的基本概念"></a>2.1 物理层的基本概念</h3><h4 id="P41-四个特性，分别在什么时候用到"><a href="#P41-四个特性，分别在什么时候用到" class="headerlink" title="P41 四个特性，分别在什么时候用到"></a>P41 四个特性，分别在什么时候用到</h4><ul>
+<li><strong>机械特性</strong>：指明接口所用接线器的形状和尺寸</li>
+<li><strong>电器特性</strong>：指明在接口线缆的各条线上出现的电压范围</li>
+<li><strong>功能特性</strong>：指明某条线上出现某一电平的电压的意义</li>
+<li><strong>过程特性</strong>：指明对于不同功能的各种可能事件的出现顺序</li>
+</ul>
+<h3 id="2-2-数据通信的基础知识"><a href="#2-2-数据通信的基础知识" class="headerlink" title="2.2 数据通信的基础知识"></a>2.2 数据通信的基础知识</h3><h4 id="P43-信号分类：模拟、离散"><a href="#P43-信号分类：模拟、离散" class="headerlink" title="P43 信号分类：模拟、离散"></a>P43 信号分类：模拟、离散</h4><h4 id="P43-信息交互的三种基本方式：单工通信、半双工通信、全双工通信"><a href="#P43-信息交互的三种基本方式：单工通信、半双工通信、全双工通信" class="headerlink" title="P43 信息交互的三种基本方式：单工通信、半双工通信、全双工通信"></a>P43 信息交互的三种基本方式：单工通信、半双工通信、全双工通信</h4><ul>
+<li>单工通信（单向通信）：只能有一个方向的通信而没有反方向的交互</li>
+<li>半双工通信（双向交替通信）：通信的双方都可以发送信息，但不能双方同时发送（或接收）</li>
+<li>全双工通信（双向同时通信）：通信的双方可以==同时发送和接收信息==<ul>
+<li>16-17 真题：（==全双工通信==）是指在一条通信线路中可以同时双向传输数据的方法。</li>
+</ul>
+</li>
+</ul>
+<h4 id="P44-编码方式"><a href="#P44-编码方式" class="headerlink" title="P44 编码方式"></a>P44 编码方式</h4><p>看波形要知道是哪个。</p>
+<ul>
+<li>曼彻斯特编码：自行设定1/0的波形。</li>
+<li>差分曼彻斯特编码：看开始部分边界是否跳变，若跳变，则为0，若无跳变则为1（区别一下，不用画）</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/01/02/ltWExs.png" srcset="/img/loading.gif" alt="ltWExs.png"></p>
+<h4 id="P44-三种调制方法"><a href="#P44-三种调制方法" class="headerlink" title="P44 三种调制方法"></a>P44 三种调制方法</h4><p>调幅 (AM)、调频 (FM)、调相 (PM)（区别一下就可以，不用画）</p>
+<ul>
+<li>16-17 真题：调制是将数字信号转换为模拟倍号，常用的调制方法有（==调幅==）、（==调频==）和（==调相==）</li>
+</ul>
+<h4 id="P45-46-概念，了解一下"><a href="#P45-46-概念，了解一下" class="headerlink" title="P45-46 概念，了解一下"></a>P45-46 概念，了解一下</h4><h3 id="2-3-物理层下面的传输媒体"><a href="#2-3-物理层下面的传输媒体" class="headerlink" title="2.3 物理层下面的传输媒体"></a>2.3 物理层下面的传输媒体</h3><h4 id="P46-传输媒体：导引型（光纤等）、非导引型（短波等）（对比）"><a href="#P46-传输媒体：导引型（光纤等）、非导引型（短波等）（对比）" class="headerlink" title="P46 传输媒体：导引型（光纤等）、非导引型（短波等）（对比）"></a>P46 传输媒体：导引型（光纤等）、非导引型（短波等）（对比）</h4><ul>
+<li>导引型传输媒体<ul>
+<li>电磁波被导引沿着固体媒体（铜线或光纤）传播</li>
+</ul>
+</li>
+<li>非导引型传输媒体<ul>
+<li>指无线传输</li>
+</ul>
+</li>
+</ul>
+<h4 id="实验：双绞线的制作：剥线、分线、对应顺序、压线、测试"><a href="#实验：双绞线的制作：剥线、分线、对应顺序、压线、测试" class="headerlink" title="实验：双绞线的制作：剥线、分线、对应顺序、压线、测试"></a>实验：双绞线的制作：剥线、分线、对应顺序、压线、测试</h4><ul>
+<li>15-16 真题：日常用的双绞线有 4 对线，100M 以下的网络主要使用到其中 2 对，其颜色是 ==（白橙、橙、白绿、绿）==</li>
+</ul>
+<h3 id="2-4-信道复用技术"><a href="#2-4-信道复用技术" class="headerlink" title="2.4 信道复用技术"></a>2.4 信道复用技术</h3><h4 id="P53-信道复用技术：什么是复用，三大类（要记英文缩写）：频分、时分、统计时分、波分、码分"><a href="#P53-信道复用技术：什么是复用，三大类（要记英文缩写）：频分、时分、统计时分、波分、码分" class="headerlink" title="P53 信道复用技术：什么是复用，三大类（要记英文缩写）：频分、时分、统计时分、波分、码分"></a>P53 信道复用技术：什么是复用，三大类（要记英文缩写）：频分、时分、统计时分、波分、码分</h4><ul>
+<li>频分复用 ==FDM (Frequency== Division Multiplexing)</li>
+<li>时分复用 ==TDM (Time)==</li>
+<li>统计时分复用 ==STDM (Statistic Time)==</li>
+<li>波分复用 ==WDM (Wavelength)==</li>
+<li><p>码分复用 ==CDM (Code)==</p>
+</li>
+<li><p>16-17 真题：在光纤中采用的多路复用技术是：A.时分复用 ==B.波分复用== C.频分复用 D.码分复用 (B)</p>
+</li>
+</ul>
+<h4 id="P58-码分复用：正交分析（重要！第一题计算题）"><a href="#P58-码分复用：正交分析（重要！第一题计算题）" class="headerlink" title="P58 码分复用：正交分析（重要！第一题计算题）"></a>P58 码分复用：正交分析（重要！第一题计算题）</h4><h2 id="3-数据链路层"><a href="#3-数据链路层" class="headerlink" title="3. 数据链路层"></a>3. 数据链路层</h2><p>两种信道：点对点、广播</p>
+<h3 id="3-1-使用点对点信道的数据链路层"><a href="#3-1-使用点对点信道的数据链路层" class="headerlink" title="3.1 使用点对点信道的数据链路层"></a>3.1 使用点对点信道的数据链路层</h3><h4 id="P71-数据链路层要解决的三个基本问题（重点）"><a href="#P71-数据链路层要解决的三个基本问题（重点）" class="headerlink" title="P71 数据链路层要解决的三个基本问题（重点）"></a>P71 数据链路层要解决的<strong>三个基本问题</strong>（重点）</h4><ul>
+<li>==封装成帧==（最大传输单元MTU）</li>
+<li>==透明传输==（字符填充、字节填充）</li>
+<li>CRC ==差错检测==（必考计算题）<ul>
+<li>15-16 真题：数据链路层主要的功能是 ==（封装成帧）==、透明传输和 ==（差错检测）==。</li>
+</ul>
+</li>
+</ul>
+<h4 id="差错检测例题"><a href="#差错检测例题" class="headerlink" title="差错检测例题"></a>差错检测例题</h4><ul>
+<li>要发送的数据为 10110，采用 CRC 的生成多项式是 G(x) = X^4 + X + 1，试求应添加在数据后面的模 2 运算的余数。</li>
+</ul>
+<h3 id="3-2-点对点协议PPP"><a href="#3-2-点对点协议PPP" class="headerlink" title="3.2 点对点协议PPP"></a>3.2 点对点协议PPP</h3><h4 id="P78-PPP-点对点协议的帧格式（简单看看）（非重点）"><a href="#P78-PPP-点对点协议的帧格式（简单看看）（非重点）" class="headerlink" title="P78 PPP 点对点协议的帧格式（简单看看）（非重点）"></a>P78 PPP 点对点协议的帧格式（简单看看）（非重点）</h4><ul>
+<li>标志字段 F (Flag)：十六进制的 7E，标志着一个帧的开始或结束，如果连续出现两个标志字段，则这是一个空帧，应该丢弃</li>
+<li>转义字符 0x7D</li>
+<li>若出现转义字符一样的比特组合，则将 0x7D 转变成 2 字节序列 0x7D 0x5D</li>
+</ul>
+<h3 id="3-3-使用广播信道的数据链路层"><a href="#3-3-使用广播信道的数据链路层" class="headerlink" title="3.3 使用广播信道的数据链路层"></a>3.3 使用广播信道的数据链路层</h3><h4 id="P83-两个以太网标准，适配器的作用是什么"><a href="#P83-两个以太网标准，适配器的作用是什么" class="headerlink" title="P83 两个以太网标准，适配器的作用是什么"></a>P83 两个以太网标准，适配器的作用是什么</h4><p>两个以太网标准：</p>
+<ul>
+<li>DIX Ethernet V2</li>
+<li>IEEE 802.3</li>
+</ul>
+<p>适配器的作用：</p>
+<ul>
+<li>计算机与外界局域网的连接是通过通信==适配器==进行的</li>
+<li>相当于我们现在所说的网卡</li>
+</ul>
+<h4 id="P85-CSMA-CD（先发先收……）"><a href="#P85-CSMA-CD（先发先收……）" class="headerlink" title="P85 CSMA/CD（先发先收……）"></a>P85 CSMA/CD（先发先收……）</h4><ul>
+<li>多点接入：总线型网络，许多计算机连在总线上</li>
+<li>协议的实质：<ul>
+<li>载波监听：检测信道，不管在发送前还是发送中，每个站都不停地检测信道</li>
+<li>碰撞检测：边发送边监听，监听总线上的信号变化是否稳定</li>
+</ul>
+</li>
+</ul>
+<h4 id="P93-MAC层：硬件地址（-48位-）"><a href="#P93-MAC层：硬件地址（-48位-）" class="headerlink" title="P93 MAC层：硬件地址（==48位==）"></a>P93 MAC层：硬件地址（==48位==）</h4><ul>
+<li>硬件地址指：局域网上每一台计算机中==固化在适配器的 ROM 中的地址==</li>
+</ul>
+<h4 id="P94-MAC-地址的组成：前三个字节……后三个……"><a href="#P94-MAC-地址的组成：前三个字节……后三个……" class="headerlink" title="P94 MAC 地址的组成：前三个字节……后三个……"></a>P94 MAC 地址的组成：前三个字节……后三个……</h4><ul>
+<li>IEEE 的注册管理机构 RA 是局域网全球地址的法定管理机构，它负责分配地址字段的 6 个字节中的==前三个字节==，正式名称为==组织唯一标识符 OUI（公司标识符）==</li>
+<li>地址字段的==后三个字节==则由厂家自行指派 ==（扩展标识符）==</li>
+</ul>
+<h4 id="MAC桢格式（简单了解）（非重点）"><a href="#MAC桢格式（简单了解）（非重点）" class="headerlink" title="MAC桢格式（简单了解）（非重点）"></a>MAC桢格式（简单了解）（非重点）</h4><h3 id="3-4-扩展的以太网"><a href="#3-4-扩展的以太网" class="headerlink" title="3.4 扩展的以太网"></a>3.4 扩展的以太网</h3><h4 id="P100-交换机的-自学习方法-，自学习是怎么学习的"><a href="#P100-交换机的-自学习方法-，自学习是怎么学习的" class="headerlink" title="P100 交换机的==自学习方法==，自学习是怎么学习的"></a>P100 交换机的==自学习方法==，自学习是怎么学习的</h4><p>15-16 真题：生成树协议（STP）的作用是(A) ==A.防止“兜圈子”== B.防止广播风暴 C.生成转发表 D.多播</p>
+<p>15-16 真题：关于星型以太网的拓扑结构，从本质上来说，它是(B) A.星型 ==B.总线型== C.环型 D.树型</p>
+<p>16-17 真题：STP 生成树协议主要解决 ==（环路）== 问题</p>
+<p><img src="https://s2.ax1x.com/2020/01/02/lNZRBQ.png" srcset="/img/loading.gif" alt="lNZRBQ.png"></p>
+<h4 id="P101-102-虚拟局域网：为什么要划分，划分的时候有什么规则、规律。实验2、3：VLAN都两个实验，命令要解读好"><a href="#P101-102-虚拟局域网：为什么要划分，划分的时候有什么规则、规律。实验2、3：VLAN都两个实验，命令要解读好" class="headerlink" title="P101-102 虚拟局域网：为什么要划分，划分的时候有什么规则、规律。实验2、3：VLAN都两个实验，命令要解读好"></a>P101-102 虚拟局域网：为什么要划分，划分的时候有什么规则、规律。实验2、3：VLAN都两个实验，命令要解读好</h4><ul>
+<li>虚拟局域网其实只是局域网给用户提供的一种服务，而并不是一种新型局域网。</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2020/01/02/lNnRBD.png" srcset="/img/loading.gif" alt="lNnRBD.png"></p>
+<h4 id="CRC-校验"><a href="#CRC-校验" class="headerlink" title="CRC 校验"></a>CRC 校验</h4><h4 id="PPP-字节填充"><a href="#PPP-字节填充" class="headerlink" title="PPP 字节填充"></a>PPP 字节填充</h4><h4 id="零比特填充"><a href="#零比特填充" class="headerlink" title="零比特填充"></a>零比特填充</h4><h2 id="4-网络层"><a href="#4-网络层" class="headerlink" title="4. 网络层"></a>4. 网络层</h2><p>IPV4 协议内容</p>
+<h3 id="4-2-网际协议IP"><a href="#4-2-网际协议IP" class="headerlink" title="4.2 网际协议IP"></a>4.2 网际协议IP</h3><h4 id="与-IP-协议配套使用的协议"><a href="#与-IP-协议配套使用的协议" class="headerlink" title="与 IP 协议配套使用的协议"></a>与 IP 协议配套使用的协议</h4><ul>
+<li>==地址解析协议 ARP==（用于已知 IP 地址找 MAC 地址，偏基础和底层）</li>
+<li>==网际控制报文协议 ICMP==（与 ==ping== 命令有关）</li>
+<li>网际组管理协议 IGMP</li>
+</ul>
+<h4 id="P115-虚电路、数据报服务的对比"><a href="#P115-虚电路、数据报服务的对比" class="headerlink" title="P115 虚电路、数据报服务的对比"></a>P115 虚电路、数据报服务的对比</h4><ul>
+<li>（重点：<strong>面向连接</strong>的虚电路服务，<strong>面向无连接</strong>的数据报服务）<br><img src="https://s2.ax1x.com/2019/12/28/lmR93j.png" srcset="/img/loading.gif" alt="lmR93j.png"></li>
+</ul>
+<h4 id="P118-IP-三类编址方法"><a href="#P118-IP-三类编址方法" class="headerlink" title="P118 IP 三类编址方法"></a>P118 IP 三类编址方法</h4><ol>
+<li><p><strong>分类的 IP 地址</strong>：</p>
+<ul>
+<li>A 类地址：网络号开头为 0 的，<strong>且占 8 位</strong>（网络号开头为 0，前 8 位必为 0 ~ 127，但 <strong>127 为本地环回地址</strong>，不计入 A 类地址）</li>
+<li>B 类地址：网络号开头为 10 的，<strong>且占 16 位</strong>（网络号开头为 10，前 8 位必为 128 ~ 191）</li>
+<li>C 类地址：网络号开头为 110 的，<strong>且占 24 位</strong>（网络号开头为 110，前 8 位必为 192 ~ 224）</li>
+<li>D 类地址：网络号开头为 1110 的，用于 ==IP 多播==</li>
+<li>E 类地址：网络号开头为 1111 的，保留后用</li>
+</ul>
+</li>
+<li><p><strong>子网的划分</strong>，子网划分基本思路：</p>
+<ul>
+<li>将所属的物理网络划分为若干个子网，本单位外看不见这个网络是由多少个子网组成，因为<strong>对外仍表现为一个网络</strong></li>
+<li>从网络的主机号借用若干位作为子网号，于是两级 IP 地址<strong>在本单位内部变为三级 IP 地址</strong>：网络号 + 子网号 + 主机号</li>
+<li>其它网络发送给本单位某台主机的 <strong>IP 数据报</strong> -&gt; 本单位网络上的路由器 -&gt; 按目的网络号和子网号找到目的子网 -&gt; 交付给相应目的主机</li>
+</ul>
+</li>
+<li><p><strong>构成超网（无分类编址 CIDR）</strong>，<strong>斜线记法（CIDR 记法）</strong>：</p>
+<ul>
+<li>在 IP 地址后面加上斜线“/”，然后写上<strong>网络前缀</strong>所占的位数</li>
+</ul>
+</li>
+</ol>
+<h4 id="常用的三种类别的-IP-地址（特殊的-IP-地址）"><a href="#常用的三种类别的-IP-地址（特殊的-IP-地址）" class="headerlink" title="常用的三种类别的 IP 地址（特殊的 IP 地址）"></a>常用的三种类别的 IP 地址（特殊的 IP 地址）</h4><ul>
+<li>127.0.0.1 本地环回地址</li>
+<li>全 0 的主机号地址：单个网络地址</li>
+<li>全 1 的主机号地址：所有主机 ==（广播地址）==</li>
+<li>169.254.0.0 Windoows 自动分配的 IP 地址</li>
+</ul>
+<p>保留的私网地址：</p>
+<ul>
+<li>10.0.0.0 (10.0.0.0/8)</li>
+<li>172.16.0.0 ~ 172.31.255.255 (172.16.0.0/12) 保留的 B 类地址</li>
+<li>192.168.0.0 ~ 192.168.255.255 (192.168.0.0/16) 保留的 C 类地址</li>
+</ul>
+<h4 id="点分十进制方式（IPv4-为-32-位）"><a href="#点分十进制方式（IPv4-为-32-位）" class="headerlink" title="点分十进制方式（IPv4 为 32 位）"></a>点分十进制方式（IPv4 为 32 位）</h4><h4 id="P132-IP地址和硬件地址的区别"><a href="#P132-IP地址和硬件地址的区别" class="headerlink" title="P132 IP地址和硬件地址的区别"></a>P132 IP地址和硬件地址的区别</h4><ul>
+<li>硬件地址（或物理地址）是<strong>数据链路层和物理层使用的地址</strong>。</li>
+<li>IP 地址是网络层和以上各层使用的地址，是一种<strong>逻辑地址</strong>（称 IP 地址是逻辑地址是因为 IP 地址是用软件实现的）。</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/12/29/lnKKfA.png" srcset="/img/loading.gif" alt="lnKKfA.png"></p>
+<h4 id="IP地址和分组转发的过程"><a href="#IP地址和分组转发的过程" class="headerlink" title="IP地址和分组转发的过程"></a>IP地址和分组转发的过程</h4><h4 id="IP数据报格式（计算题，P196-13（10进制转2进制）-14（16进制转换，每个16进制表示4位二进制））"><a href="#IP数据报格式（计算题，P196-13（10进制转2进制）-14（16进制转换，每个16进制表示4位二进制））" class="headerlink" title="IP数据报格式（计算题，P196 13（10进制转2进制）,14（16进制转换，每个16进制表示4位二进制））"></a>IP数据报格式（计算题，P196 13（10进制转2进制）,14（16进制转换，每个16进制表示4位二进制））</h4><h4 id="P129-片偏移（计算题）"><a href="#P129-片偏移（计算题）" class="headerlink" title="P129 片偏移（计算题）"></a>P129 片偏移（计算题）</h4><ul>
+<li>最大传输单元 MTU (Maximum Transfer Unit)，最常用的==以太网规定为 1500 字节==，若长度超过此值，则需要分片</li>
+<li>标志(flag)，占 3 位，但目前只有两位有意义：<ul>
+<li>MF (More Fragment)：若后面还有更多分片，则为1；最后一片分片则为0</li>
+<li>DF (Don’t Fragment)：意为“不能分片”，只有 DF = 0 时才允许分片</li>
+</ul>
+</li>
+<li>片偏移，占 13 位，每个分片一定是 8 字节的整数倍，片偏移计算方法：<ul>
+<li>片偏移 = 当前分片数据部分的首部在原来数据部分的位置（第几字节）/ 8</li>
+</ul>
+</li>
+</ul>
+<h4 id="P131-首部检验和（只了解概念，不用计算）"><a href="#P131-首部检验和（只了解概念，不用计算）" class="headerlink" title="P131 首部检验和（只了解概念，不用计算）"></a>P131 首部检验和（只了解概念，不用计算）</h4><h4 id="P132-IP层分组转发的流程（了解）"><a href="#P132-IP层分组转发的流程（了解）" class="headerlink" title="P132 IP层分组转发的流程（了解）"></a>P132 IP层分组转发的流程（了解）</h4><h3 id="4-3-划分子网和构造超网"><a href="#4-3-划分子网和构造超网" class="headerlink" title="4.3 划分子网和构造超网"></a>4.3 划分子网和构造超网</h3><h4 id="P136-划分子网和构造超网（非常好的图解）"><a href="#P136-划分子网和构造超网（非常好的图解）" class="headerlink" title="P136 划分子网和构造超网（非常好的图解）"></a>P136 划分子网和构造超网（非常好的图解）</h4><p>重要：子网掩码，注意：我们得出的子网数，往往要减去全零全一（课后题P199 37题：这道题对于此概念有点冲突，因为没有减去全零全一；结论：对于考试如果是选择填空，就要考虑减去全零全一；计算题就不减去全零全一；要用括号表明实际可用主机数；最大地址（1110）和最小地址（0001））。课后题：29,30（通过主机数多的开始往小的划分）</p>
+<p><img src="https://s2.ax1x.com/2019/12/28/lnCvZt.png" srcset="/img/loading.gif" alt="lnCvZt.png"></p>
+<h4 id="P139-网络地址的求解（与运算）"><a href="#P139-网络地址的求解（与运算）" class="headerlink" title="P139 网络地址的求解（与运算）"></a>P139 网络地址的求解（与运算）</h4><p><img src="https://s2.ax1x.com/2019/12/29/lnmJw4.png" srcset="/img/loading.gif" alt="lnmJw4.png"></p>
+<h4 id="P140-划分子网的分组转发（P197-20题）"><a href="#P140-划分子网的分组转发（P197-20题）" class="headerlink" title="P140 划分子网的分组转发（P197 20题）"></a>P140 划分子网的分组转发（P197 20题）</h4><p><img src="https://s2.ax1x.com/2019/12/29/lnmNk9.png" srcset="/img/loading.gif" alt="lnmNk9.png"></p>
+<h4 id="P145-最长前缀匹配：前缀越长主机划分越详细，前缀越短，主机越多"><a href="#P145-最长前缀匹配：前缀越长主机划分越详细，前缀越短，主机越多" class="headerlink" title="P145 最长前缀匹配：前缀越长主机划分越详细，前缀越短，主机越多"></a>P145 最长前缀匹配：前缀越长主机划分越详细，前缀越短，主机越多</h4><p>在查找路由表时可能会得到不止一个匹配结果，这时应该选择最长匹配的下一跳</p>
+<h3 id="4-4-网际控制报文协议ICMP"><a href="#4-4-网际控制报文协议ICMP" class="headerlink" title="4.4 网际控制报文协议ICMP"></a>4.4 网际控制报文协议ICMP</h3><h4 id="P148-几种常用的-ICMP-报文类型"><a href="#P148-几种常用的-ICMP-报文类型" class="headerlink" title="P148 几种常用的 ICMP 报文类型"></a>P148 几种常用的 ICMP 报文类型</h4><ul>
+<li>差错报告报文<ul>
+<li>终点不可达</li>
+<li>时间超过</li>
+<li>参数问题</li>
+<li>改变路由</li>
+</ul>
+</li>
+<li>询问报文<ul>
+<li>回送请求和回答</li>
+<li>时间戳请求和回答</li>
+</ul>
+</li>
+</ul>
+<h4 id="P149-Ping命令"><a href="#P149-Ping命令" class="headerlink" title="P149 Ping命令"></a>P149 Ping命令</h4><ul>
+<li>ICMP 的应用</li>
+<li>PING 使用了 <strong>ICMP 回送请求和回答报文</strong></li>
+</ul>
+<h3 id="4-5-互联网的路由选择协议"><a href="#4-5-互联网的路由选择协议" class="headerlink" title="4.5 互联网的路由选择协议"></a>4.5 互联网的路由选择协议</h3><h4 id="路由选择协议：内部网关、外部网关，这两者的区别，实验里的命令"><a href="#路由选择协议：内部网关、外部网关，这两者的区别，实验里的命令" class="headerlink" title="路由选择协议：内部网关、外部网关，这两者的区别，实验里的命令"></a>路由选择协议：内部网关、外部网关，这两者的区别，实验里的命令</h4><h4 id="P158-路由表更新后的状态（简答题）"><a href="#P158-路由表更新后的状态（简答题）" class="headerlink" title="P158 路由表更新后的状态（简答题）"></a>P158 路由表更新后的状态（简答题）</h4><h4 id="P185-虚拟专用网-VPN-的原理：隧道技术"><a href="#P185-虚拟专用网-VPN-的原理：隧道技术" class="headerlink" title="P185 虚拟专用网 VPN 的原理：隧道技术"></a>P185 虚拟专用网 VPN 的原理：隧道技术</h4><h4 id="P187-网络地址转换-NAT-作用：-内部地址和外部地址的转换"><a href="#P187-网络地址转换-NAT-作用：-内部地址和外部地址的转换" class="headerlink" title="P187 网络地址转换 NAT 作用：==内部地址和外部地址的转换=="></a>P187 网络地址转换 NAT 作用：==内部地址和外部地址的转换==</h4><h3 id="4-6-IPV6"><a href="#4-6-IPV6" class="headerlink" title="4.6 IPV6"></a>4.6 IPV6</h3><h4 id="P171-IPv6-地址表示方法，首部长度40字节，用16进制书写"><a href="#P171-IPv6-地址表示方法，首部长度40字节，用16进制书写" class="headerlink" title="P171 IPv6 地址表示方法，首部长度40字节，用16进制书写"></a>P171 IPv6 地址表示方法，<strong>首部长度40字节</strong>，用16进制书写</h4><h4 id="P196-9-5-习题：关于子网掩码，注意下面这题，是否有效？（是，但使用不方便。）"><a href="#P196-9-5-习题：关于子网掩码，注意下面这题，是否有效？（是，但使用不方便。）" class="headerlink" title="P196 9(5) 习题：关于子网掩码，注意下面这题，是否有效？（是，但使用不方便。）"></a>P196 9(5) 习题：关于子网掩码，注意下面这题，是否有效？（是，但使用不方便。）</h4><ul>
+<li>一个 A 类网络地址的子网掩码为 255.255.0.255 它是否为有效的子网掩码？</li>
+</ul>
+<h2 id="5-运输层"><a href="#5-运输层" class="headerlink" title="5. 运输层"></a>5. 运输层</h2><h3 id="5-1-运输层协议概述"><a href="#5-1-运输层协议概述" class="headerlink" title="5.1 运输层协议概述"></a>5.1 运输层协议概述</h3><h4 id="TCP-Transmission-Control-Protocol-、UDP-User-Datagram-Protocol-之间的比较"><a href="#TCP-Transmission-Control-Protocol-、UDP-User-Datagram-Protocol-之间的比较" class="headerlink" title="TCP (Transmission Control Protocol)、UDP (User Datagram Protocol) 之间的比较"></a>TCP (Transmission Control Protocol)、UDP (User Datagram Protocol) 之间的比较</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>用户数据报协议 UDP</th>
+<th>传输控制协议 TCP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无连接</td>
+<td>面向连接</td>
+</tr>
+<tr>
+<td>尽最大努力交付</td>
+<td>可靠交付</td>
+</tr>
+<tr>
+<td>面向报文的</td>
+<td>面向字节流</td>
+</tr>
+<tr>
+<td>没有拥塞控制</td>
+<td>有拥塞控制</td>
+</tr>
+<tr>
+<td>支持一对一、一对多、多对一、多对多通信</td>
+<td>只能是一对一通信</td>
+</tr>
+<tr>
+<td>首部开销小(8 Byte)</td>
+<td>首部开销大(20 Byte)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="5-5-TCP报文段的首部格式"><a href="#5-5-TCP报文段的首部格式" class="headerlink" title="5.5 TCP报文段的首部格式"></a>5.5 TCP报文段的首部格式</h3><h4 id="TCP-首部格式（20个字节，重要：六个特殊字段，首部格式的分析，检验和；检验首部和数据部分（与IP不一样））"><a href="#TCP-首部格式（20个字节，重要：六个特殊字段，首部格式的分析，检验和；检验首部和数据部分（与IP不一样））" class="headerlink" title="TCP 首部格式（20个字节，重要：六个特殊字段，首部格式的分析，检验和；检验首部和数据部分（与IP不一样））"></a>TCP 首部格式（20个字节，重要：六个特殊字段，首部格式的分析，检验和；检验首部和数据部分（与IP不一样））</h4><h4 id="TCP-首部格式的六个特殊字段"><a href="#TCP-首部格式的六个特殊字段" class="headerlink" title="TCP 首部格式的六个特殊字段"></a>TCP 首部格式的六个特殊字段</h4><ol>
+<li><strong>紧急 URG</strong> (Urgent)：当 URG = 1 时，表明紧急指针字段有效。它告诉系统此报文段中有紧急数据，应尽快传送(相当于高优先级的数据)。</li>
+<li><strong>确认 ACK</strong> (Acknowledgment)：只有当 ACK = 1 时确认号字段才有效。当 ACK =0 时，确认号无效。</li>
+<li><strong>推送 PSH (Push)</strong>：接收 TCP 收到 PSH = 1 的报文段，就尽快地交付接收应用进程，而不再等到整个缓存都填满了后再向上交付。</li>
+<li><strong>复位 RST (Reset)</strong>：当 RST=1 时，表明 TCP 连接中出现严重差错（如由于主机崩溃或其他原因），必须释放连接，然后再重新建立运输连接。</li>
+<li><strong>同步 SYN (Synchronization)</strong>：同步 SYN = 1 表示这是一个连接请求或连接接受报文。</li>
+<li><strong>终止 FIN (Finish)</strong>：用来释放一个连接。FIN=1 表明此报文段的发送端的数据已发送完毕，并要求释放运输连接。</li>
+</ol>
+<h4 id="TCP-首部检验和"><a href="#TCP-首部检验和" class="headerlink" title="TCP 首部检验和"></a>TCP 首部检验和</h4><ul>
+<li>占 <strong>2 字节</strong>。检验和字段检验的范围包括<strong>首部和数据这两部分</strong>。在计算检验和时，要在 TCP 报文段的前面<strong>加上 12 字节的伪首部</strong>。<br><img src="https://s2.ax1x.com/2019/12/28/lesj6f.png" srcset="/img/loading.gif" alt="lesj6f.png"></li>
+</ul>
+<h3 id="5-8-TCP的拥塞控制"><a href="#5-8-TCP的拥塞控制" class="headerlink" title="5.8 TCP的拥塞控制"></a>5.8 TCP的拥塞控制</h3><h4 id="拥塞控制（简答重点）（图解表格都要重点掌握，课后38、39题）"><a href="#拥塞控制（简答重点）（图解表格都要重点掌握，课后38、39题）" class="headerlink" title="拥塞控制（简答重点）（图解表格都要重点掌握，课后38、39题）"></a>拥塞控制（简答重点）（图解表格都要重点掌握，课后38、39题）</h4><ul>
+<li>基本方法<ul>
+<li>TCP 采用基于窗口的方法进行拥塞控制。该方法属于闭环控制方法</li>
+<li><strong>真正的发送窗口</strong>值 = Min (接收方窗口值，拥塞窗口值)</li>
+</ul>
+</li>
+<li>慢开始<ul>
+<li><strong>拥塞窗口 cwnd  控制方法</strong>：在每收到一个对新的报文段的确认后，可以把拥塞窗口增加最多一个 SMSS 的数值</li>
+<li>拥塞窗口 cwnd 每次的增加量 = min (N, SMSS)</li>
+<li><strong>简化为：每收到一个确认的新报文段，就将 cwnd = cwnd + 1</strong></li>
+<li><strong>换言之，如果一整个轮次都能成功确认，则 cwnd 将会加倍</strong></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/12/28/lmFq1g.png" srcset="/img/loading.gif" alt="lmFq1g.png"></p>
+<p><img src="https://s2.ax1x.com/2019/12/28/lmk9hT.png" srcset="/img/loading.gif" alt="lmk9hT.png"></p>
+<ul>
+<li><p>慢开始门限 ssthresh 的用法如下：</p>
+<ul>
+<li>当 cwnd &lt; ssthresh 时，使用慢开始算法。</li>
+<li>当 cwnd &gt; ssthresh 时，停止使用慢开始算法而改用拥塞避免算法。</li>
+<li>当 cwnd = ssthresh 时，<strong>既可使用慢开始算法，也可使用拥塞避免算法</strong>。</li>
+</ul>
+</li>
+<li><p>拥塞避免<br><img src="https://s2.ax1x.com/2019/12/28/lmV8u4.png" srcset="/img/loading.gif" alt="lmV8u4.png"></p>
+</li>
+<li><p>快重传</p>
+<ul>
+<li>发送方只要<strong>一连收到三个重复确认</strong>，就知道接收方确实没有收到报文段，因而应当<strong>立即进行重传（即“快重传”）</strong>，这样就不会出现超时，发送方也不就会误认为出现了网络拥塞。</li>
+<li>使用快重传可以使整个网络的吞吐量提高约20%。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/12/28/lmVdC6.png" srcset="/img/loading.gif" alt="lmVdC6.png"></p>
+<ul>
+<li>快恢复<ul>
+<li>当发送端收到连续三个重复的确认时，由于发送方现在认为网络很可能没有发生拥塞，因此现在不执行慢开始算法，而是执行快恢复算法 FR (Fast Recovery) 算法：</li>
+<li>慢开始门限 ssthresh = 当前拥塞窗口 cwnd / 2 ；</li>
+<li>新拥塞窗口 cwnd = 慢开始门限 ssthresh ；</li>
+<li>开始执行拥塞避免算法，使拥塞窗口缓慢地线性增大。</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/12/28/lmu10g.png" srcset="/img/loading.gif" alt="lmu10g.png"></p>
+<p>5-38（计算题）<br><img src="https://s2.ax1x.com/2019/12/28/lmrLnO.png" srcset="/img/loading.gif" alt="lmrLnO.png"></p>
+<p>5-39（计算题）<br><img src="https://s2.ax1x.com/2019/12/28/lmsp9I.png" srcset="/img/loading.gif" alt="lmsp9I.png"><br><img src="https://s2.ax1x.com/2019/12/28/lmsU81.png" srcset="/img/loading.gif" alt="lmsU81.png"><br><img src="https://s2.ax1x.com/2019/12/28/lms0KK.png" srcset="/img/loading.gif" alt="lms0KK.png"></p>
+<p>5-40（简答题）<br><img src="https://s2.ax1x.com/2019/12/28/lmWWFO.png" srcset="/img/loading.gif" alt="lmWWFO.png"></p>
+<h4 id="流量控制、拥塞控制之间的区别（透彻）"><a href="#流量控制、拥塞控制之间的区别（透彻）" class="headerlink" title="流量控制、拥塞控制之间的区别（透彻）"></a>流量控制、拥塞控制之间的区别（透彻）</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>流量控制</th>
+<th>拥塞控制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>防止过多的数据注入到网络中，使网络中的路由器或链路<strong>不致过载</strong></td>
+<td>抑制发送端发送数据的速率，以使接收端<strong>来得及接收</strong></td>
+</tr>
+<tr>
+<td>是一个<strong>全局性</strong>的过程，涉及到与降低网络传输性能有关的所有因素</td>
+<td>是<strong>点对点</strong>通信量的控制，是<strong>端到端</strong>的问题</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="5-9-TCP的运输连接管理"><a href="#5-9-TCP的运输连接管理" class="headerlink" title="5.9 TCP的运输连接管理"></a>5.9 TCP的运输连接管理</h3><h4 id="管理链接：三次握手，四报文握手，如果是单向（？）就是两次"><a href="#管理链接：三次握手，四报文握手，如果是单向（？）就是两次" class="headerlink" title="管理链接：三次握手，四报文握手，如果是单向（？）就是两次"></a>管理链接：三次握手，四报文握手，如果是单向（？）就是两次</h4><h2 id="6-应用层"><a href="#6-应用层" class="headerlink" title="6. 应用层"></a>6. 应用层</h2><h3 id="6-1-域名系统DNS"><a href="#6-1-域名系统DNS" class="headerlink" title="6.1 域名系统DNS"></a>6.1 域名系统DNS</h3><h4 id="域名系统-53-，域名解析过程"><a href="#域名系统-53-，域名解析过程" class="headerlink" title="域名系统(53)，域名解析过程"></a>域名系统(53)，域名解析过程</h4><ol>
+<li>主机 m.xyz.com 先向其本地域名服务器 dns.xyz.com 进行<strong>递归查询</strong></li>
+<li>本地域名服务器采用<strong>迭代查询</strong>，先向根域名服务器查询</li>
+<li>根域名服务器返回下一次应查询的顶级域名服务器 dns.com 的 IP</li>
+<li>本地域名服务器向顶级域名服务器 dns.com 查询</li>
+<li>顶级域名服务器 dns.com 返回下一次应查询的权限域名服务器 dns.abc.com 的 IP</li>
+<li>本地域名服务器向权限域名服务器 dns.abc.com 查询</li>
+<li>权限域名服务器 dns.abc.com 返回所查询主机的 IP</li>
+<li>本地域名服务器最后将查得的结果告诉查询主机 m.xyz.com</li>
+</ol>
+<h3 id="6-2-文件传送协议"><a href="#6-2-文件传送协议" class="headerlink" title="6.2 文件传送协议"></a>6.2 文件传送协议</h3><h4 id="什么是FTP-21"><a href="#什么是FTP-21" class="headerlink" title="什么是FTP(21)"></a>什么是FTP(21)</h4><ul>
+<li>文件传送协议 FTP 使用客户-服务器方式，由两大部分组成：</li>
+<li>一个<strong>主进程</strong>，负责接受新的请求；</li>
+<li>另外有<strong>若干个从属进程</strong>，负责处理单个请求</li>
+</ul>
+<h4 id="FTP-工作原理"><a href="#FTP-工作原理" class="headerlink" title="FTP 工作原理"></a>FTP 工作原理</h4><ol>
+<li>打开熟知窗口(21)，使客户进程能连接上</li>
+<li>等待客户进程发出连接请求</li>
+<li>启动从属进程处理用户进程发来的请求</li>
+<li>回到等待状态，继续接受其它用户进程发来的请求</li>
+</ol>
+<h3 id="6-4-万维网"><a href="#6-4-万维网" class="headerlink" title="6.4 万维网"></a>6.4 万维网</h3><h4 id="WWW重要协议：HTTP协议-80"><a href="#WWW重要协议：HTTP协议-80" class="headerlink" title="WWW重要协议：HTTP协议(80)"></a>WWW重要协议：HTTP协议(80)</h4><p><img src="https://s2.ax1x.com/2019/12/28/leGoPe.png" srcset="/img/loading.gif" alt="leGoPe.png"></p>
+<h3 id="6-5-电子邮件"><a href="#6-5-电子邮件" class="headerlink" title="6.5 电子邮件"></a>6.5 电子邮件</h3><h4 id="什么是电子邮件-25-，书写格式，（重要协议：SMTP）"><a href="#什么是电子邮件-25-，书写格式，（重要协议：SMTP）" class="headerlink" title="什么是电子邮件(25)，书写格式，（重要协议：SMTP）"></a>什么是电子邮件(25)，书写格式，（重要协议：SMTP）</h4><ul>
+<li>电子邮件由<strong>信封</strong>和<strong>内容</strong>两部分组成</li>
+<li>电子邮件地址的格式为 用户名 @ 邮件服务器的域名</li>
+<li>To: 是一个或多个收件人的电子邮件地址</li>
+<li>Subject: 是邮件的主题</li>
+<li>Cc: 是抄送，发送邮件副本</li>
+<li>From 和 Date 表示发件人的邮件地址和发信日期</li>
+</ul>
+<h4 id="电子邮件发送过程"><a href="#电子邮件发送过程" class="headerlink" title="电子邮件发送过程"></a>电子邮件发送过程</h4><ul>
+<li>发件人调用 PC 中的用户代理编辑要发送的邮件</li>
+<li>发件人的用户代理把邮件用 SMTP 协议发给<strong>发送方邮件服务器</strong></li>
+<li>SMTP 服务器将邮件临时存在邮件缓存队列中</li>
+<li><strong>发送方服务器的 SMTP 客户</strong>与<strong>接收方邮件服务器的 SMTP 服务器</strong>建立 TCP 连接，依次发送邮件缓存队列中的邮件</li>
+<li>运行在接收方邮件服务器中的<strong>SMTP服务器</strong>进程收到邮件后，把邮件放入收件人的邮箱中，等待收件人进行读取</li>
+<li>收件人收信时，运行PC机中的用户代理，用POP3（或 IMAP）协议读取发来的邮件</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/12/28/le062T.png" srcset="/img/loading.gif" alt="le062T.png"></p>
+<h4 id="简单邮件传送协议-SMTP"><a href="#简单邮件传送协议-SMTP" class="headerlink" title="简单邮件传送协议 (SMTP)"></a>简单邮件传送协议 (SMTP)</h4><ol>
+<li>连接建立：用户代理发送到<strong>发送方邮件服务器 (SMTP服务器)</strong>后，SMTP 客户就 每隔一定时间 对邮件缓存扫描一次，如果发现有邮件，就用 25 端口与接收方邮件服务器的 SMTP 服务器建立 TCP 连接</li>
+<li>邮件传送：从 MAIL 命令（发件人的地址）开始，接下来是 RCPT 命令（用于发送给几个收件人，弄清接收方服务器是否做好了准备），接下来是 DATA 命令（传送邮件的内容）</li>
+<li>连接释放：SMTP 客户发送 QUIT 命令，经同意后释放 TCP 连接</li>
+</ol>
+<h3 id="P207-一些必记的端口号"><a href="#P207-一些必记的端口号" class="headerlink" title="P207 一些必记的端口号"></a>P207 一些必记的端口号</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>应用程序</th>
+<th>熟知端口号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>域名系统 DNS</td>
+<td>53</td>
+</tr>
+<tr>
+<td>==文件传送协议 FTP==</td>
+<td>21</td>
+</tr>
+<tr>
+<td>==远程终端协议 TELNET==</td>
+<td>23</td>
+</tr>
+<tr>
+<td>==简单邮件传送协议 SMTP==</td>
+<td>25</td>
+</tr>
+<tr>
+<td>==邮局协议 POP3==</td>
+<td>110</td>
+</tr>
+<tr>
+<td>==简单文件传输协议 TFTP==</td>
+<td>69</td>
+</tr>
+<tr>
+<td>==万维网 HTTP==</td>
+<td>80</td>
+</tr>
+<tr>
+<td>HTTPS</td>
+<td>443</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="7-参考资料"><a href="#7-参考资料" class="headerlink" title="7. 参考资料"></a>7. 参考资料</h2><p>[1] 谢希仁. 计算机网络[M]. 7版. 北京: 电子工业出版社, 2017.</p>
+<p>[2] 谢希仁. 计算机网络释疑与习题解答[M]. 7版. 北京: 电子工业出版社, 2017.</p>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本文作者：以成<br>本文链接：<a href=""><script>document.write(window.location.href.replace(window.location.hash, ``))</script></a><br>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noopener">CC BY-NC-SA 4.0 协议</a> 。转载请注明本文作者与链接！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/basic_principle_of_marxism_review_summary/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">马原考试复习总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/posts/jlpt_n1_word_list_verb/">
+                        <span class="hidden-mobile">日本語能力試験N1単語表：動詞・複合動詞</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "jfqqrz6l9VmBjlVdmCKusyUX-gzGzoHsz",
+          app_key: "KMLndPzsjoL98YgC9e85v4WK",
+          placeholder: "欢迎给我留言，谈谈你的想法哦。\n（支持Markdown语法）",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      ©2015-2020 Transion Creative Centre
+      <br>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "计算机网络考试复习总结&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?deb343538ea97eeebc6eea038e232994";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

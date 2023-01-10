@@ -1,0 +1,635 @@
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sat Apr 04 2020');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="huangjunxin">
+  <meta name="keywords" content="">
+  <title>树莓派4B 安装 Manjaro Xfce 上手体验 - 我的记事本</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>我的记事本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/03/13/8KDuAe.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-08-06 15:23">
+      2020年8月6日 下午
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.6k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      17
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>今年，在618时趁着低价（然而并没有低多少）购入了树莓派4B——一直以来想要尝试的机器。想当年，自从2代就开始关注树莓派了，但一直怕买了不用放着吸尘，便拖了许久。这次618咬了咬牙，想了想也不是很贵，就直接买了。版本是树莓派4B的2G版，还附送了一个500W像素的摄像头。</p>
+<a id="more"></a>
+<p>奈何当时还在外地公司实习，身边没有显示屏不方便折腾，写文章也便拖到了现在。</p>
+<p>用九层亚克力外壳装好后是这样的，直接上图了：</p>
+<p><img src="https://s1.ax1x.com/2020/08/06/agTQzj.jpg" srcset="/img/loading.gif" alt="agTQzj.jpg"></p>
+<p>后来辞了实习之后就回家了，现在趁着有空，打算重新装一个 Manjaro Xfce 在树莓派上，毕竟我还算是 Manjaro 的忠实粉丝吧，哈哈（</p>
+<h2 id="1-预备与镜像写入"><a href="#1-预备与镜像写入" class="headerlink" title="1. 预备与镜像写入"></a>1. 预备与镜像写入</h2><p>显然，要先准备好一些安装的工具和镜像：</p>
+<ul>
+<li><p>Manjaro 镜像可以在 <a href="https://manjaro.org/download/" target="_blank" rel="noopener">Manjaro 官网</a>上下载，这里我装的是 Raspberry Pi 4 XFCE 20.06 的版本</p>
+</li>
+<li><p>然后利用树莓派官方的安装工具 Raspberry Pi Imager 进行安装，也可以在<a href="https://www.raspberrypi.org/downloads/" target="_blank" rel="noopener">树莓派官网</a>找到</p>
+</li>
+</ul>
+<p>下载完以上两个之后，安装好 Raspberry Pi Imager，找一张8G以上的 Micro SD 卡，接上读卡器就可以进行镜像的写入，显然，写入的时候是要格式化的，所以需要确保卡里没有重要的东西。打开安装工具，选好 Operating System（也就是镜像，这里我们选择 Use custom）：</p>
+<p><img src="https://s1.ax1x.com/2020/08/06/a2JYDK.png" srcset="/img/loading.gif" alt="a2JYDK.png"></p>
+<p>还有 SD Card 盘符后，点 Write 开始写入：</p>
+<p><img src="https://s1.ax1x.com/2020/08/06/a2FrXq.png" srcset="/img/loading.gif" alt="a2FrXq.png"></p>
+<p>这里我用的是 32G 的朗科的京东联名款 Micro SD 卡，当时是 ¥22.9 买的，还附送读卡器，读写速度实测还是非常可以的。树莓派4B 也能兼容这张 Micro SD 卡，所以也就可以不用买比较贵的闪迪了。</p>
+<p>如下图所示，就完成写入了：</p>
+<p><img src="https://s1.ax1x.com/2020/08/06/a2QRUA.png" srcset="/img/loading.gif" alt="a2QRUA.png"></p>
+<p>然后可以直接将 Micro SD 卡插入树莓派，直接启动。</p>
+<h2 id="2-安装及设置-Manjaro-ARM"><a href="#2-安装及设置-Manjaro-ARM" class="headerlink" title="2. 安装及设置 Manjaro ARM"></a>2. 安装及设置 Manjaro ARM</h2><p>开机启动后会自动进行安装，随后会显示安装设置的界面，如下图是设置键盘布局：</p>
+<p><img src="https://s1.ax1x.com/2020/08/16/dVbKzV.png" srcset="/img/loading.gif" alt="dVbKzV.png"></p>
+<p>我们选择 us 即可。</p>
+<p>接下来就是输入自己的用户名 (Enter username)，注意用户名只能为小写字母。</p>
+<p>随后设置用户组 (Enter additional groups) ，这里留空即可。</p>
+<p>设置用户密码和 Root 密码，自己设置即可。</p>
+<p>设置时区 (timezone)，这里可以选择 Asia/Hong_Kong 或者 Asia/Shanghai。</p>
+<p>最后进行语言设置 (locale)，这里建议选择英文即可 en_US.UTF-8，如果选择中文的话开机后会因为字体缺失而都是乱码：</p>
+<p><img src="https://s1.ax1x.com/2020/08/16/dVqfhR.png" srcset="/img/loading.gif" alt="dVqfhR.png"></p>
+<p>最后确认设置，等待一会就会自动重启，然后就可以成功启动了：</p>
+<p><img src="https://s1.ax1x.com/2020/08/17/dVqX4A.png" srcset="/img/loading.gif" alt="dVqX4A.png"></p>
+<p>注意，这整个安装过程中有可能会卡住之类的，那么有可能是在镜像写入的时候有出错，如果卡住太久，可以尝试重新查看前文 <1. 预备与镜像写入> 并重新进行镜像写入。</p>
+<h2 id="3-环境配置"><a href="#3-环境配置" class="headerlink" title="3. 环境配置"></a>3. 环境配置</h2><p>其实到这里基本上和我之前写过的 Manjaro 教程类似了，不过还是有些需要额外设置的地方，一些相同的步骤也直接复制过来了：</p>
+<h3 id="3-1-换源"><a href="#3-1-换源" class="headerlink" title="3.1 换源"></a>3.1 换源</h3><p>装完肯定要换源，不然更新系统或程序的时候会很慢：</p>
+<pre><code class="hljs shell">sudo pacman-mirrors -i -c China -m rank</code></pre>
+<p>然后就可以更新一下整个系统：</p>
+<pre><code class="hljs shell">sudo pacman -Syu #更新整个系统</code></pre>
+<p>再更新一下 Archlinux 的签名：</p>
+<pre><code class="hljs shell">sudo pacman -S archlinux-keyring</code></pre>
+<h3 id="3-2-包管理器"><a href="#3-2-包管理器" class="headerlink" title="3.2 包管理器"></a>3.2 包管理器</h3><p>那么在这顺道列一下 Pacman （Arch Linux 自带包管理器）的一些常用用法吧：</p>
+<pre><code class="hljs shell">sudo pacman -Ss keyword #在仓库中搜索含关键字的包
+sudo pacman -Qs keyword #搜索已安装的包
+sudo pacman -S package_name #安装指定包，可以是多个
+sudo pacman -Rs package_name #在删除包的同时，删除其所有没有被其他已安装软件包使用的依赖关系
+sudo pacman -Sc	#清理未安装的包文件 包文件位于 /var/cache/pacman/pkg/ 目录
+sudo pacman -Scc #清理所有的缓存文件</code></pre>
+<p>另外，推荐再安装一个 yay 包管理器，以备以后安装更多软件：</p>
+<pre><code class="hljs shell">sudo pacman -S yay</code></pre>
+<p>同样，换源：</p>
+<pre><code class="hljs shell">yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save</code></pre>
+<p>另外，多说一句，尽量不要用 yaourt 这个包管理器了，因为它已经停止维护了。</p>
+<h3 id="3-3-安装中文字体"><a href="#3-3-安装中文字体" class="headerlink" title="3.3 安装中文字体"></a>3.3 安装中文字体</h3><p>由于 Manjaro ARM 貌似没有自带中文字体，因此是无法显示中文的，显示的时候会变成一些框框，我们就要手动安装中文字体。</p>
+<p>这里推荐安装 wqy-zhenhei，直接运行下面的命令即可：</p>
+<pre><code class="hljs shell">sudo pacman -S wqy-zenhei</code></pre>
+<p>然后需要重启或注销再登入才能生效，随后中文就能正常显示了。</p>
+<h3 id="3-4-安装-Vim"><a href="#3-4-安装-Vim" class="headerlink" title="3.4 安装 Vim"></a>3.4 安装 Vim</h3><p>Vim 是 Linux 下的经典编辑器，正常我们都需要学习使用，也是直接运行命令安装即可：</p>
+<pre><code class="hljs shell">sudo pacman -S vim</code></pre>
+<h3 id="3-5-zsh-及-oh-my-zsh"><a href="#3-5-zsh-及-oh-my-zsh" class="headerlink" title="3.5 zsh 及 oh-my-zsh"></a>3.5 zsh 及 oh-my-zsh</h3><p>zsh 是一个很受欢迎的 Shell，而 Manjaro ARM 没有自带 zsh，因此我们需要先安装，然后再把默认 Shell 切换过去：</p>
+<pre><code class="hljs shell">sudo pacman -S zsh
+chsh -s /bin/zsh</code></pre>
+<p>然后，我们需要安装 oh-my-zsh，oh-my-zsh 是一个美化 zsh 的工具包，安装后就能拥有好看的 Shell 啦：</p>
+<pre><code class="hljs shell">sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"</code></pre>
+<p>这时，有可能会因为 DNS 污染（是的我遇到了），导致 raw.githubusercontent.com 无法连接，这时需要设置一下 hosts 文件，将 raw.githubusercontent.com 指向正确的 IP。在终端输入：</p>
+<pre><code class="hljs shell">sudo vim /etc/hosts</code></pre>
+<p>并添加以下内容：</p>
+<pre><code class="hljs markdown">199.232.4.133 raw.githubusercontent.com</code></pre>
+<p>安装成功后，关掉当前终端窗口再开即可。</p>
+<p>随后，可以根据自己需要，更改<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes" target="_blank" rel="noopener">主题</a>，推荐清晰明了的 ys，输入编辑配置文件：</p>
+<pre><code class="hljs shell">sudo vim ~/.zshrc</code></pre>
+<p>然后将 ZSH_THEME 一栏换成 ys，保存，再运行：</p>
+<pre><code class="hljs shell">source ~/.zshrc</code></pre>
+<p>即可。如图是主题更改前后的对比：</p>
+<p><img src="https://s1.ax1x.com/2020/05/10/Y3SdmQ.png" srcset="/img/loading.gif" alt="Y3SdmQ.png"></p>
+<h2 id="4-后记"><a href="#4-后记" class="headerlink" title="4. 后记"></a>4. 后记</h2><p>购买树莓派的初衷也是自己想多接触嵌入式这方面的知识，后面希望自己有新的折腾，就另写文章啦，根据上面的安装步骤即可完成 Manjaro ARM Xfce 大致的配置，便就此搁笔了。</p>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Linux/">Linux</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Manjaro/">Manjaro</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Raspberry-Pi/">Raspberry Pi</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本文作者：以成<br>本文链接：<a href=""><script>document.write(window.location.href.replace(window.location.hash, ``))</script></a><br>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noopener">CC BY-NC-SA 4.0 协议</a> 。转载请注明本文作者与链接！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/from_the_word_what_in_topolects_to_the_etymology_of_je5_in_yue_chinese/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">试论各方言中的「什么」一词兼谈粤方言「嘢」的语源</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/posts/play_manjaro_xfce_20_0_in_virtualbox/">
+                        <span class="hidden-mobile">在 VirtualBox 中玩 Manjaro Xfce 20.0</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "jfqqrz6l9VmBjlVdmCKusyUX-gzGzoHsz",
+          app_key: "KMLndPzsjoL98YgC9e85v4WK",
+          placeholder: "欢迎给我留言，谈谈你的想法哦。\n（支持Markdown语法）",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      ©2015-2020 Transion Creative Centre
+      <br>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "树莓派4B 安装 Manjaro Xfce 上手体验&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?deb343538ea97eeebc6eea038e232994";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

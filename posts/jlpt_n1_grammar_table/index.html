@@ -1,0 +1,765 @@
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sat Apr 04 2020');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="huangjunxin">
+  <meta name="keywords" content="">
+  <title>日本語能力試験N1文法表 - 我的记事本</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>我的记事本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/03/13/8KDuAe.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2019-10-17 11:00">
+      2019年10月17日 上午
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      25
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>これは2019年12月の日本語能力試験N1を準備するときに整理した文法表。この表は「日本語の森」のネットの授業順序に基づいてまとめています。</p>
+<a id="more"></a>
+<p class="note note-info">本文因特殊需要，主要语言（文字）使用：日语</p>
+
+<h2 id="1-第一課"><a href="#1-第一課" class="headerlink" title="1. 第一課"></a>1. 第一課</h2><h3 id="1-1-同然だ"><a href="#1-1-同然だ" class="headerlink" title="1.1 同然だ"></a>1.1 同然だ</h3><p>彼女と三年間一緒に住んでたから、これは結婚生活<strong>も同然だ</strong>。</p>
+<p>テニスはちょっと<strong>かじった</strong>だけなので初心者<strong>同然だ</strong>。</p>
+<p>N1試験に落ちたら、死んだ<strong>も同然だ</strong>と思っています。</p>
+<h3 id="1-2-とは"><a href="#1-2-とは" class="headerlink" title="1.2 とは"></a>1.2 とは</h3><p>日本語の先生がN5の漢字が書けない<strong>とは</strong>、どういうことですか。</p>
+<p>あいつがゆか先生とデートする<strong>とは</strong>！</p>
+<p>彼氏が浮気をしている<strong>とは</strong>！</p>
+<h3 id="1-3-に越したことはない"><a href="#1-3-に越したことはない" class="headerlink" title="1.3 に越したことはない"></a>1.3 に越したことはない</h3><p>彼氏は金持ちである<strong>に越したことはない</strong>。</p>
+<p>パソコンは Core i7 <strong>に越したことはない</strong>。</p>
+<p>ラーメンは日本で食べる<strong>に越したことはない</strong>。</p>
+<p>初デートの終わりはキス<strong>に越したことはない</strong>。</p>
+<p>N1勉強するからには合格する<strong>に越したことはない</strong>。</p>
+<h2 id="2-第二課"><a href="#2-第二課" class="headerlink" title="2. 第二課"></a>2. 第二課</h2><h3 id="2-1-いかん"><a href="#2-1-いかん" class="headerlink" title="2.1 いかん"></a>2.1 いかん</h3><p>N1合格は君のやる気<strong>いかんに</strong>すると思うよ。</p>
+<p>JLPT受験者数<strong>いかんでは</strong>、試験会場の変更があるかもしれない。</p>
+<p>出席状況<strong>いかんで</strong>、三月に卒業ができない可能性もある。</p>
+<h3 id="2-2-いかんによらず"><a href="#2-2-いかんによらず" class="headerlink" title="2.2 いかんによらず"></a>2.2 いかんによらず</h3><p>筋肉トレーニングの量<strong>のいかんによっては</strong>、代謝が異なってくる。</p>
+<p>お支払いになった会員料は理由<strong>のいかんによらず</strong>、お返しすることができません。</p>
+<p>弊社では、理由<strong>のいかんにかかわらず</strong>、お買い上げの商品の返品・交換を承りません。</p>
+<p>語学の勉強は、知能<strong>のいかんを問わず</strong>、話せば話すほど誰でも上達できる。</p>
+<h2 id="3-第三課"><a href="#3-第三課" class="headerlink" title="3. 第三課"></a>3. 第三課</h2><h3 id="3-1-ないではおかない"><a href="#3-1-ないではおかない" class="headerlink" title="3.1 ないではおかない"></a>3.1 ないではおかない</h3><p>部長の怒り方は、彼女を泣か<strong>せずにはおかなかった</strong>。</p>
+<p>このイタリアンのパスタには、口に一口入れた瞬間、感動し<strong>ないではおかない</strong>特別な味がある。</p>
+<p>アップルのアイフォンは携帯電話製造業界の反響を呼び起こさ<strong>ずにはおかない</strong>だろう。</p>
+<p>父が入院したから、お見舞いに行か<strong>ずにはすまない</strong>。</p>
+<p>癌が見つかった以上は、手術をし<strong>ないではすまない</strong>。</p>
+<h3 id="3-2-を禁じ得ない"><a href="#3-2-を禁じ得ない" class="headerlink" title="3.2 を禁じ得ない"></a>3.2 を禁じ得ない</h3><p>日本の料理文化に対する海外での人気の高さに驚き<strong>を禁じ得ない</strong>よ。</p>
+<p>彼女の悲しい人生に涙<strong>を禁じ得ない</strong>わ。</p>
+<p>この映画の主人公の演技力に涙<strong>を禁じ得ない</strong>。</p>
+<p><strong>圧勝</strong>に喜び<strong>を禁じ得ない</strong>。</p>
+<h3 id="3-3-てやまない"><a href="#3-3-てやまない" class="headerlink" title="3.3 てやまない"></a>3.3 てやまない</h3><p>N2合格後、日本語の勉強をやめたことに後悔し<strong>て已まない</strong>です。</p>
+<p>娘の伸びる英会話を見て、将来を期待し<strong>てやまない</strong>。</p>
+<p>皆さんがN1合格するのを願っ<strong>てやみません</strong>。</p>
+<h2 id="4-第四課"><a href="#4-第四課" class="headerlink" title="4. 第四課"></a>4. 第四課</h2><h3 id="4-1-といったらない、といったらありはしない、ったらない（会話）、といったらありゃしない（会話）"><a href="#4-1-といったらない、といったらありはしない、ったらない（会話）、といったらありゃしない（会話）" class="headerlink" title="4.1 といったらない、といったらありはしない、ったらない（会話）、といったらありゃしない（会話）"></a>4.1 といったらない、といったらありはしない、ったらない（会話）、といったらありゃしない（会話）</h3><p>＝とても～だ、すごい～だ</p>
+<p>い形容詞・名詞＋といったらない</p>
+<p>あのラーメン屋の汚さ<strong>といったらない</strong>。</p>
+<p>仕事帰りに焼き鳥屋さんによって、ビールを飲むときの幸せ<strong>といったらありはしない</strong>。</p>
+<p>着物を着てるゆか先生の美しさ<strong>といったらありゃしない</strong>。</p>
+<h3 id="4-2-極（きわ）まる、極まりない"><a href="#4-2-極（きわ）まる、極まりない" class="headerlink" title="4.2 極（きわ）まる、極まりない"></a>4.2 極（きわ）まる、極まりない</h3><p>＝とても～だ、極限に～だ</p>
+<p>い形容詞＋こと極まる・極まりない</p>
+<p>な形容詞＋（なこと）＋極まる・極まりない</p>
+<p>彼の迷惑<strong>極まりない</strong>行為に大学に退学処分を下した。</p>
+<p>いつも飲み会でセクハラに近い行為をする社長に不愉快<strong>極まる</strong>。</p>
+<h3 id="4-3-の極みだ"><a href="#4-3-の極みだ" class="headerlink" title="4.3 の極みだ"></a>4.3 の極みだ</h3><p>＝とても～だ、極限に～だ</p>
+<p>名詞＋の極みだ</p>
+<p>飛行機が墜落して、多くの方がなくなり、悲痛の<strong>極みだ</strong>。</p>
+<p>美味しさの<strong>極み</strong>を求めて、ラーメン屋さんで修行を始める。</p>
+<h3 id="4-4-の至（いた）りだ"><a href="#4-4-の至（いた）りだ" class="headerlink" title="4.4 の至（いた）りだ"></a>4.4 の至（いた）りだ</h3><p>＝とても～だ、極限に～だ（古い）</p>
+<p>名詞＋の至りだ</p>
+<p>ノーベル賞の授賞式に自分が出るなんて、光栄<strong>の至り</strong>でございます。</p>
+<p>とんだミスをしてしまい、誠に汗顔<strong>の至り</strong>でございます。</p>
+<p>両親に手塩にかけて育てられて感謝<strong>の至り</strong>です。</p>
+<h3 id="4-5-ことこの上ない"><a href="#4-5-ことこの上ない" class="headerlink" title="4.5 ことこの上ない"></a>4.5 ことこの上ない</h3><p>＝とても～だ</p>
+<p>い形容詞＋ことこの上ない</p>
+<p>な形容詞な＋ことこの上ない</p>
+<p>箱根の紅葉は、きれいなこと<strong>この上ない</strong>ものであった。</p>
+<p>留学して一人暮らしを始めると、寂しいこと<strong>この上ない</strong>ものだ。</p>
+<p>友達が宝くじ一億円に当たって、うらやましいこと<strong>この上なかった</strong>。しかし、その友達が俺に一億円をくれて、ありがたいこと<strong>この上ない</strong>ものだった。</p>
+<p>片思いだった彼女と付き合えて、うれしいこと<strong>この上ない</strong>。</p>
+<h3 id="4-6-限りだ"><a href="#4-6-限りだ" class="headerlink" title="4.6 限りだ"></a>4.6 限りだ</h3><p>＝とても～だ</p>
+<p>い形容詞＋限りだ</p>
+<p>な形容詞な＋限りだ</p>
+<p>ビジネスの本を一冊も読まずに事業を起こすなんて恐ろしい<strong>限りです</strong>。</p>
+<p>ただ人を助けてあげたのに、こんなに沢山のお褒めの言葉を頂くなんで、恥ずかしい<strong>限りでございます</strong>。</p>
+<h3 id="4-7-て敵わない"><a href="#4-7-て敵わない" class="headerlink" title="4.7 て敵わない"></a>4.7 て敵わない</h3><p>＝我慢できない</p>
+<p>V・い形容詞＋てかなわない</p>
+<p>な形容詞・名詞＋でかなわない</p>
+<p>注意：ちゃ＝ては、じゃ＝では</p>
+<p>毎日こんな寒く<strong>ちゃかなわない</strong>よ。</p>
+<p>前の新築のビルの工事がうるさく<strong>てかなわない</strong>。</p>
+<p>美鈴先生の顔を見ると、可愛すぎて授業に集中できなく<strong>て敵わない</strong>わ。</p>
+<p>N1の文法は難しく<strong>てかなわない</strong>よ。</p>
+<h2 id="5-第五課"><a href="#5-第五課" class="headerlink" title="5. 第五課"></a>5. 第五課</h2><h3 id="5-1-まい、まいと"><a href="#5-1-まい、まいと" class="headerlink" title="5.1 まい、まいと"></a>5.1 まい、まいと</h3><p>＝絶対～しない、～しないだろう</p>
+<p>绝不……；不会……吧</p>
+<p>Vる＋まい・まいと</p>
+<p>この難病は治る<strong>まい</strong>。</p>
+<p>昨日から二度と酒を飲む<strong>まいと</strong>決心した。</p>
+<p>怖い映画を見て、叫ぶ<strong>まいと</strong>我慢した。</p>
+<p>遅刻し<strong>まいと</strong>、スマホに目覚ましの設定を十個も入れてある。</p>
+<h3 id="5-2-べからず"><a href="#5-2-べからず" class="headerlink" title="5.2 べからず"></a>5.2 べからず</h3><p>＝するべきではない</p>
+<p>禁止……</p>
+<p>V る＋べからず</p>
+<p>するべからず・すべからず</p>
+<p>山にごみを捨てる<strong>べからず</strong>。</p>
+<p>奥多摩川で「釣りをする<strong>べからず</strong>」と書いてあるにも関わらず、友達は釣りをして魚を食べたことがある。</p>
+<p>初心忘る<strong>べからず</strong>。（諺）</p>
+<h3 id="5-3-べからざる"><a href="#5-3-べからざる" class="headerlink" title="5.3 べからざる"></a>5.3 べからざる</h3><p>＝べからず</p>
+<p>禁止……</p>
+<p>Vる＋べからざる</p>
+<p>するべからざる・すべからざる</p>
+<p>戦争は、どんな理由があっても許す<strong>べからざる</strong>国際的犯罪である。</p>
+<p>天空の城ラピュタは世界のアニメでは欠く<strong>べからざる</strong>名作である。</p>
+<p>大学生活にとってスマホは欠く<strong>べからざる</strong>必須アイテムである。</p>
+<p>妻に言うべからざる言葉は何かを覚えておかないと離婚されかねない。</p>
+<h3 id="5-4-ではあるまいし、じゃあるまいし"><a href="#5-4-ではあるまいし、じゃあるまいし" class="headerlink" title="5.4 ではあるまいし、じゃあるまいし"></a>5.4 ではあるまいし、じゃあるまいし</h3><p>＝ではないのだから</p>
+<p>又不是……了，……</p>
+<p>注意やアドバイスをするときよく使うので、目上の人には使えない。</p>
+<p>名詞＋ではあるまいし</p>
+<p>Vる＋わけ・の・ん＋ではあるまいし</p>
+<p>Vた＋わけ・の・ん＋ではあるまいし</p>
+<p>大学生では<strong>あるまいし</strong>、電話対応が下手過ぎるだわ。</p>
+<p>子供<strong>じゃあるまいし</strong>、社内で先輩を見たら挨拶するのは当たり前でしょう？</p>
+<p>ここは東京<strong>じゃあるまいし</strong>、二十四時間営業のレストランはないんだよ。</p>
+<h3 id="5-5-AべくしてBする"><a href="#5-5-AべくしてBする" class="headerlink" title="5.5 AべくしてBする"></a>5.5 AべくしてBする</h3><p>＝Aになるのは当然だからBする。AとBが同じ場合が多い。</p>
+<p>……的出现是必然的</p>
+<p>Vる＋べくして</p>
+<p>全然勉強してないからN1に落ちる<strong>べくして</strong>落ちた。</p>
+<p>あんな高いところから飛び降りたから死ぬ<strong>べくして</strong>死んだよ。</p>
+<h3 id="5-6-べくもない"><a href="#5-6-べくもない" class="headerlink" title="5.6 べくもない"></a>5.6 べくもない</h3><p>＝当然〜だから、〜しなくてもよい</p>
+<p>做不到……，不可能……</p>
+<p>Vる＋べくもいない</p>
+<p>するべくもない・すべくもない</p>
+<p>望む、比べる、疑うなどとよく使われる。</p>
+<p>アップルがうちより大きい会社ということは、比べる<strong>べくもありません</strong>。</p>
+<p>新宿はラーメン激戦区だから、今からラーメンで成功するのは極めて難しいことは疑う<strong>べくもない</strong>。</p>
+<p>こんな勉強不足でN1合格を望む<strong>べくもありません</strong>。</p>
+<h3 id="5-7-のではあるまいか"><a href="#5-7-のではあるまいか" class="headerlink" title="5.7 のではあるまいか"></a>5.7 のではあるまいか</h3><p>＝のではありませんか、なのでないだろうか</p>
+<p>会不会……，是不是……</p>
+<p>Vる・い形容詞＋のではあるまいか</p>
+<p>な形容詞・名詞＋（なの）＋ではあるまいか</p>
+<p>今時、着物を着て街にでる人は珍しい<strong>のではあるまいか</strong>。</p>
+<p>お葬儀でにニコニコしているのは、失礼な<strong>のではあるまいか</strong>。</p>
+<p>このラーメン屋さんはいつも行列ができてる。何か特別美味しいラーメンな<strong>のではあるまいか</strong>。</p>
+<h2 id="6-第六課"><a href="#6-第六課" class="headerlink" title="6. 第六課"></a>6. 第六課</h2><p><img src="https://s1.ax1x.com/2020/04/10/G7Ag3R.png" srcset="/img/loading.gif" alt="image"></p>
+<h3 id="6-1-AそばからB"><a href="#6-1-AそばからB" class="headerlink" title="6.1 AそばからB"></a>6.1 AそばからB</h3><p>＝Aしたら、またすぐBの状態になる</p>
+<p>Vる・Vた＋側から（Vたのほうが多い）</p>
+<p>注意：</p>
+<p>文句や不満を言う場合よく使う。</p>
+<p>いつも同じ結果になる。</p>
+<p>1回で終わることには使わない。</p>
+<p>あのラーメン屋さんは、外に暖簾をかけた<strong>そばから</strong>、長い行列ができしまう。</p>
+<p>英語は難しい。新しい単語を見た<strong>そばから</strong>、忘れてしまう。</p>
+<p>N1の漢字は難しすぎて、覚えた<strong>そばから</strong>忘れていく。</p>
+<h3 id="6-2-AなりB"><a href="#6-2-AなりB" class="headerlink" title="6.2 AなりB"></a>6.2 AなりB</h3><p>＝Aしたら、すぐBの状態になる</p>
+<p>Vる＋なり</p>
+<p>注意：</p>
+<p>1回に限る出来事。</p>
+<p>Bには意志や命令文は使えない。</p>
+<p>Bはネガティブな場合が多い。</p>
+<p>家を出る<strong>なり</strong>、空が暗くなってきた。</p>
+<p>女子高生が部屋に入り<strong>なり</strong>、A容疑者は卑猥な言葉を投げかけた。</p>
+<h3 id="6-3-Aが早いかB"><a href="#6-3-Aが早いかB" class="headerlink" title="6.3 Aが早いかB"></a>6.3 Aが早いかB</h3><p>＝Aしたら、すぐBの状態になる。Aが早いか、Bが早いかわからないぐらい同時に起こる。</p>
+<p>Vる・Vた＋が早いか</p>
+<p>チャイムが鳴る<strong>が早いか</strong>、生徒たちは弁当を取り出して食べ始めた。</p>
+<p>ラーメンがテーブルに置かれる<strong>が早いか</strong>、面をすすり始めた。</p>
+<p>息子は大学を卒業する<strong>が早いか</strong>、世界一周を始めた。</p>
+<h3 id="6-4-Aや否やB"><a href="#6-4-Aや否やB" class="headerlink" title="6.4 Aや否やB"></a>6.4 Aや否やB</h3><p>＝Aするかしないか、わからないぐらいの短い時間でBが起きる。</p>
+<p>Vる＋や否や</p>
+<p>赤ちゃんは目をつむる<strong>や否や</strong>、すやすや寝始めた。</p>
+<p>野良猫はひな鳥を捕まえる<strong>や否や</strong>、獲物を銜えたまま木の上に逃げた。</p>
+<p>部屋に帰る<strong>や否や</strong>ベッドで横になってスマホを見始める現代人。</p>
+<h2 id="7-第七課"><a href="#7-第七課" class="headerlink" title="7. 第七課"></a>7. 第七課</h2><h3 id="7-1-よくも～ものだ"><a href="#7-1-よくも～ものだ" class="headerlink" title="7.1 よくも～ものだ"></a>7.1 よくも～ものだ</h3><p>＝本当に～したんだ。</p>
+<p>竟然……</p>
+<p>驚きや怒り、意外な気持ち、憎しみ、あきれるなどの気持ちを強調した表現。</p>
+<p>よくも＋V普通・V可能・Vた＋ものだ</p>
+<p>彼は全然仕事をしてないのに、<strong>よくも</strong>部長になれた<strong>ものだ</strong>。</p>
+<p>こんな大きいラーメンを<strong>よくも</strong>一人で食べられた<strong>ものだ</strong>。</p>
+<p>明日試験なのに、<strong>よくも</strong>寝られる<strong>ものだ</strong>な。</p>
+<p>他に恋人がいるのに、<strong>よくも</strong>私の前で、私だけ愛してるとか言える<strong>もんだ</strong>な。</p>
+<h3 id="7-2-～ないものは～ない"><a href="#7-2-～ないものは～ない" class="headerlink" title="7.2 ～ないものは～ない"></a>7.2 ～ないものは～ない</h3><p>＝絶対しない、できない。</p>
+<p>V可能＋ないものは＋V可能＋ない</p>
+<p>食べれ<strong>ないものは</strong>食べ<strong>ない</strong>。</p>
+<p>秘密だから、話せ<strong>ないものは</strong>話せ<strong>ない</strong>。</p>
+<p>このパソコンはそんなに高性能ではないから、ビデオ編集なんてでき<strong>ないものは</strong>でき<strong>ない</strong>。</p>
+<p>あの有名な医者から治せ<strong>ないものは</strong>治せ<strong>ない</strong>って言われたら人生真っ暗だ。</p>
+<h3 id="7-3-以外の何物でもない"><a href="#7-3-以外の何物でもない" class="headerlink" title="7.3 以外の何物でもない"></a>7.3 以外の何物でもない</h3><p>＝それ一つしかない、絶対だ。</p>
+<p>名詞＋以外の何物でもない</p>
+<p>こんなに毎日カレーを食べるなんてインド人<strong>以外の何物でもない</strong>。</p>
+<p>あんなに何度もお辞儀をするなんて日本人<strong>以外の何物でもない</strong>。</p>
+<p>ヒョウ柄のシャツにとら柄のパンツを合わせるなんて大阪のおばちゃん<strong>以外の何物でない</strong>。</p>
+<h3 id="7-4-てからというもの"><a href="#7-4-てからというもの" class="headerlink" title="7.4 てからというもの"></a>7.4 てからというもの</h3><p>＝Aして以来今までBの状態が続く。</p>
+<p>Vて＋からというもの</p>
+<p>ダイエットを始め<strong>てからというもの</strong>、コメや甘いものを食べていない。</p>
+<p>大学を卒業し<strong>てからというもの</strong>、勉強という勉強をしていない。</p>
+<p>恋人と別れ<strong>てからというもの</strong>、女性と話すこともなくなった。</p>
+<p>深夜働くようになっ<strong>てからというもの</strong>、昼間でも急に眠くなって危ない体験をした。</p>
+<h3 id="7-5-ものなら"><a href="#7-5-ものなら" class="headerlink" title="7.5 ものなら"></a>7.5 ものなら</h3><p>＝もし～できるなら。話し手は～が絶対できないと思う。</p>
+<p>Vる（可能）＋ものなら</p>
+<p>遠くに住んでいる好きな人に会える<strong>ものなら</strong>会ってキスしたい。</p>
+<p>辛い物は苦手なんだけど、食べられる<strong>もんなら</strong>激辛キムチを食べてみたい。</p>
+<h3 id="7-6-ないものでもない"><a href="#7-6-ないものでもない" class="headerlink" title="7.6 ないものでもない"></a>7.6 ないものでもない</h3><p>＝まったくできないことはない、少し可能性がある。</p>
+<p>Vない＋ものでもない</p>
+<p>大盛ラーメン食べた後だから、餃子は食べられ<strong>ないものでもない</strong>けどきついな。</p>
+<p>チャンさんは日本語ができ<strong>ないものでもない</strong>けど、話していると、時々頭が混乱するよ。</p>
+<p>クラシック音楽は聴か<strong>ないものでもない</strong>けど、聞き始めて五分で寝てしまう。</p>
+<h3 id="7-7-ものを"><a href="#7-7-ものを" class="headerlink" title="7.7 ものを"></a>7.7 ものを</h3><p>＝AすればBになるのに。</p>
+<p>な形容詞＋ものを</p>
+<p>（過去の話に使うことが多いので、～たものを、で使うことが多い。）</p>
+<p>毎日勤勉に宿題すればよかった<strong>ものを</strong>。うちの子は夏休みの終わりになっていつも泣きながら宿題やってるよ。</p>
+<p>あと五分早く支度すればよかった<strong>ものを</strong>。電車がもう行っちゃったじゃない！</p>
+<p>先週の週末に彼女のフェイスブック聞けばよかった<strong>ものを</strong>、何で聞かなかったんだろう！</p>
+<h3 id="7-8-をものともせずに"><a href="#7-8-をものともせずに" class="headerlink" title="7.8 をものともせずに"></a>7.8 をものともせずに</h3><p>＝難しいことにも負けないで。</p>
+<p>名詞＋ものともせずに</p>
+<p>困難<strong>をものともせずに</strong>前進しろ！</p>
+<p>文化の違い<strong>をものともせず</strong>、彼らは見事に国際結婚した。</p>
+<p>年齢差<strong>をものともせず</strong>、二十歳も離れているのに両親を説得して結婚した。</p>
+<p>幾多の困難<strong>をものともせず</strong>、彼は一代にして莫大な財産を築き上げた。</p>
+<p>未経験<strong>をものともせず</strong>、恥を捨て、仕事に励めば、きっと一人前になる。</p>
+<h3 id="7-9-ないものだろうか"><a href="#7-9-ないものだろうか" class="headerlink" title="7.9 ないものだろうか"></a>7.9 ないものだろうか</h3><p>＝できそうなのに、できないのはなぜか。</p>
+<p>Vない＋ないものだろうか</p>
+<p>葬式の日に喧嘩している家族を見て、仲良くでき<strong>ないものだろうか</strong>、と感じた。</p>
+<p>どうにか女性からモテ<strong>ないものだろうか</strong>、と毎日SNSを使って写真をアップしたり、大量のメッセージを送っている。</p>
+<p>先生たちは日々、学生たちの日本語が上達し<strong>ないものだろうか</strong>、と悩んでいる。</p>
+<h3 id="7-10-せめてもの"><a href="#7-10-せめてもの" class="headerlink" title="7.10 せめてもの"></a>7.10 せめてもの</h3><p>＝悪い状況の中の一つだけの良いこと。</p>
+<p>せえてもの＋名詞</p>
+<p>火事で全焼になったが、<strong>せめてもの</strong>救いは家族全員が無事だったことだ。</p>
+<p>泥棒に入られて金品すべて奪われたが、<strong>せめてもの</strong>救いは下方の壺がとられてなかったことだ。</p>
+<p>被害者女性は<strong>せめてもの</strong>抵抗にと、近くにあったビール瓶で、加害者男性の頭を殴ったから、それが致命傷となり、彼は死んだ。</p>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%97%A5%E6%9C%AC%E8%AA%9E/">日本語</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%97%A5%E6%9C%AC%E8%AA%9E%E8%83%BD%E5%8A%9B%E8%A9%A6%E9%A8%93/">日本語能力試験</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%96%87%E6%B3%95%E8%A1%A8/">文法表</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本文作者：以成<br>本文链接：<a href=""><script>document.write(window.location.href.replace(window.location.hash, ``))</script></a><br>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noopener">CC BY-NC-SA 4.0 协议</a> 。转载请注明本文作者与链接！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/jlpt_n1_word_list_verb/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">日本語能力試験N1単語表：動詞・複合動詞</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/posts/jlpt_n1_word_list_noun/">
+                        <span class="hidden-mobile">日本語能力試験N1単語表：名詞</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "jfqqrz6l9VmBjlVdmCKusyUX-gzGzoHsz",
+          app_key: "KMLndPzsjoL98YgC9e85v4WK",
+          placeholder: "欢迎给我留言，谈谈你的想法哦。\n（支持Markdown语法）",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      ©2015-2020 Transion Creative Centre
+      <br>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "日本語能力試験N1文法表&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?deb343538ea97eeebc6eea038e232994";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

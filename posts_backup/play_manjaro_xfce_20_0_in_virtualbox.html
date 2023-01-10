@@ -1,0 +1,512 @@
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sat Apr 04 2020');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="huangjunxin">
+  <meta name="keywords" content="">
+  <title>在 VirtualBox 中玩 Manjaro Xfce 20.0 - 我的记事本</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 60vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>我的记事本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/03/13/8KDuAe.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-md">
+        <div class="py-5" id="board"
+          >
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+<div class="page-content">
+  <p>疫情期间，在家闲得想找点事情玩玩，而之前在学校日常折腾的 Manjaro 的系统硬盘又落在了宿舍……打算在家重新用虚拟机装一个。由于家里电脑配置比较低，开起虚拟机来还是比较勉强的，所以选择了 xfce 的 Manjaro，因为它更加轻量化。</p>
+<a id="more"></a>
+<p class="note note-info">本文持续更新中</p>
+
+<h2 id="1-安装预备"><a href="#1-安装预备" class="headerlink" title="1. 安装预备"></a>1. 安装预备</h2><p>先准备好一些环境：</p>
+<ul>
+<li>on Windows 10 LTSC</li>
+<li>on VirtualBox 6.1.6</li>
+<li>Manjaro Xfce 20.0 镜像文件</li>
+</ul>
+<p>Okay，废话不多说，直接开搞。</p>
+<p>打开 VirtualBox 后直接新建虚拟机，输入虚拟机的电脑名称和电脑类型，直接选择 Linux - Other Linux (64-bit) 即可。</p>
+<p>下一步，选择内存大小，需要 2G（含）以上。</p>
+<p>虚拟硬盘就按默认的设置，然后将硬盘大小改为上限 50GB 即可，因为后面还要折腾许多东西，默认的上限为 8GB，显然不够。</p>
+<p>新建虚拟机的向导过后，会返回到虚拟机列表，这时要重新设置一下虚拟机的设置，主要是要把“显示 - 屏幕”模块调整一下，将显存拉到最大 (128MB)，不然到时开机之后显存不够可能显示不了桌面；然后再将显卡控制器换成 VBoxSVGA，这是可能因为一些玄学原因吧，Manjaro 都需要调成这个显卡控制器，否则后续系统安装之后就调整不了屏幕分辨率了。</p>
+<p>另外，也可以调整一下“系统 - 处理器”模块，最好给虚拟机分配两个核心（含）以上。</p>
+<p>然后，就可以开机了。</p>
+<p>开机之后会叫你选加载光盘的，选上就行。</p>
+<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h2><p>开机之后，直接 Install，然后各种设置都可以以默认进行，既然都玩到 Linux 了，这里真的问题不大，就不赘述了。哦对了，系统语言建议先选 American English，后面要调中文再说吧。</p>
+<p>装完就可以重启了，记得将挂载的安装盘卸掉，不然又会回到安装界面了。</p>
+<h2 id="3-折腾"><a href="#3-折腾" class="headerlink" title="3. 折腾"></a>3. 折腾</h2><h3 id="3-1-换源"><a href="#3-1-换源" class="headerlink" title="3.1 换源"></a>3.1 换源</h3><p>装完肯定要换源，不然更新系统或程序的时候会很慢：</p>
+<pre><code class="hljs shell">sudo pacman-mirrors -i -c China -m rank</code></pre>
+<p>然后就可以更新一下整个系统：</p>
+<pre><code class="hljs shell">sudo pacman -Syu #更新整个系统</code></pre>
+<p>再更新一下 Archlinux 的签名：</p>
+<pre><code class="hljs shell">sudo pacman -S archlinux-keyring</code></pre>
+<h3 id="3-2-包管理器"><a href="#3-2-包管理器" class="headerlink" title="3.2 包管理器"></a>3.2 包管理器</h3><p>那么在这顺道列一下 Pacman （Arch Linux 自带包管理器）的一些常用用法吧：</p>
+<pre><code class="hljs shell">sudo pacman -Ss keyword #在仓库中搜索含关键字的包
+sudo pacman -Qs keyword #搜索已安装的包
+sudo pacman -S package_name #安装指定包，可以是多个
+sudo pacman -Rs package_name #在删除包的同时，删除其所有没有被其他已安装软件包使用的依赖关系
+sudo pacman -Sc	#清理未安装的包文件 包文件位于 /var/cache/pacman/pkg/ 目录
+sudo pacman -Scc #清理所有的缓存文件</code></pre>
+<p>另外，推荐再安装一个 yay 包管理器，以备以后安装更多软件：</p>
+<pre><code class="hljs shell">sudo pacman -S yay</code></pre>
+<p>同样，换源：</p>
+<pre><code class="hljs shell">yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save</code></pre>
+<p>另外，多说一句，尽量不要用 yaourt 这个包管理器了，因为它已经停止维护了。</p>
+<h3 id="3-3-中文输入法"><a href="#3-3-中文输入法" class="headerlink" title="3.3 中文输入法"></a>3.3 中文输入法</h3><p>在 Linux 下要输入中文，就必须装输入法了，之前尝试过一次搜狗输入法 Linux 版安装后无法使用，而且最近没有更新了，稳定度不够好，无奈只能改用 Sunpinyin 了：</p>
+<pre><code class="hljs shell">sudo pacman -S fcitx-im fcitx-configtool fcitx-cloudpinyin fcitx-sunpinyin</code></pre>
+<p>然后添加配置文件，用以下命令打开添加：</p>
+<pre><code class="hljs shell">sudo mousepad ~/.xprofile</code></pre>
+<p>内容如下：</p>
+<pre><code class="hljs shell">export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx</code></pre>
+<p>然后 log out 再 log in，在右下角就能看见输入法的图标了。</p>
+<p>接下来右击输入法图标来自己 configure 即可。</p>
+<p><img src="https://s1.ax1x.com/2020/05/10/Y3SGfP.png" srcset="/img/loading.gif" alt="Y3SGfP.png"></p>
+<h3 id="3-4-zsh-及-oh-my-zsh"><a href="#3-4-zsh-及-oh-my-zsh" class="headerlink" title="3.4 zsh 及 oh-my-zsh"></a>3.4 zsh 及 oh-my-zsh</h3><p>zsh 是一个很受欢迎的 Shell，而 Manjaro 也自带了 zsh，因此我们不用安装，只用切换过去即可：</p>
+<pre><code class="hljs shell">chsh -s /bin/zsh</code></pre>
+<p>然后，我们需要安装 oh-my-zsh，oh-my-zsh 是一个美化 zsh 的工具包，安装后就能拥有好看的 Shell 啦：</p>
+<pre><code class="hljs shell">sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"</code></pre>
+<p>这时，有可能会因为 DNS 污染（是的我遇到了），导致 raw.githubusercontent.com 无法连接，这时需要设置一下 hosts 文件，将 raw.githubusercontent.com 指向正确的 IP。在终端输入：</p>
+<pre><code class="hljs shell">sudo mousepad /etc/hosts</code></pre>
+<p>并添加以下内容：</p>
+<pre><code class="hljs markdown">199.232.4.133 raw.githubusercontent.com</code></pre>
+<p>安装成功后，关掉当前终端窗口再开即可。</p>
+<p>随后，可以根据自己需要，更改<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes" target="_blank" rel="noopener">主题</a>，推荐清晰明了的 ys，输入编辑配置文件：</p>
+<pre><code class="hljs shell">sudo mousepad ~/.zshrc</code></pre>
+<p>然后将 ZSH_THEME 一栏换成 ys，保存，再运行：</p>
+<pre><code class="hljs shell">source ~/.zshrc</code></pre>
+<p>即可。如图是主题更改前后的对比：</p>
+<p><img src="https://s1.ax1x.com/2020/05/10/Y3SdmQ.png" srcset="/img/loading.gif" alt="Y3SdmQ.png"></p>
+<h3 id="3-5-科学上网"><a href="#3-5-科学上网" class="headerlink" title="3.5 科学上网"></a>3.5 科学上网</h3><p>说到科学上网，这里要讲的方法是通过 SSR 实现的，可惜，之前非常好用的 electron-ssr 已经停止维护了，且目前的确有些问题，无法稳定使用，只能另辟蹊径，用另一个工具了：<a href="https://github.com/xzymoe/gfwlist2privoxy" target="_blank" rel="noopener">gfwlist2privoxy</a>。</p>
+<h4 id="3-5-1-gfwlist2privoxy"><a href="#3-5-1-gfwlist2privoxy" class="headerlink" title="3.5.1 gfwlist2privoxy"></a>3.5.1 gfwlist2privoxy</h4><p>由于 Git、python 在 Manjaro 是自带的，因此不用再手动安装了，可以直接到一个空目录里，把工具的源码 clone 下来，然后一顿操作猛如虎：</p>
+<pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">Git <span class="hljs-built_in">clone</span> 到本地</span>
+git clone https://github.com/xzymoe/gfwlist2privoxy.git
+<span class="hljs-meta">#</span><span class="bash">将ssr放到bin里，并给予x权限。</span>
+cd gfwlist2privoxy/
+mv ssr /usr/local/bin
+chmod +x /usr/local/bin/ssr
+<span class="hljs-meta">#</span><span class="bash">安装ssr</span>
+ssr install</code></pre>
+<p>然后就可以直接 config 了：</p>
+<pre><code class="hljs shell">ssr config</code></pre>
+<p>将 SSR 的一些配置信息（如服务器 IP、端口、密码、加密方式、协议等）填入后，保存，直接启动：</p>
+<pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">启动SSR</span>
+ssr start
+<span class="hljs-meta">#</span><span class="bash">停止SSR</span>
+ssr stop
+<span class="hljs-meta">#</span><span class="bash">要是想卸载的话是这样</span>
+ssr uninstall</code></pre>
+<p>默认情况下本地监听端口是 127.0.0.1:1080，正常来说，在浏览器中设置好代理（这里又是一个坑，Firefox 自带的 Proxy 貌似有点毛病，这里推荐通过 SwitchyOmega 插件进行 Proxy）就可以使用了。</p>
+<h4 id="3-5-2-SwitchyOmega-插件及配置"><a href="#3-5-2-SwitchyOmega-插件及配置" class="headerlink" title="3.5.2 SwitchyOmega 插件及配置"></a>3.5.2 SwitchyOmega 插件及配置</h4><p>呃，这真是提到一点，就又要展开讲了……</p>
+<p>好吧，这里直截了当，以 Firefox 浏览器为例，步骤如下：</p>
+<ol>
+<li>打开 Firefox 并自行到插件商店下载 SwitchyOmega</li>
+<li>安装完成后会自动弹出设置界面</li>
+<li><p>然后将 proxy 页面修改成这样：</p>
+<p> <img src="https://s1.ax1x.com/2020/05/10/Y3S0Ts.png" srcset="/img/loading.gif" alt="Y3S0Ts.png"></p>
+</li>
+<li><p>设置完后点保存 (Apply changes)，来到 auto switch 页面</p>
+</li>
+<li>删掉 auto switch 页面原来所有的默认配置</li>
+<li>点最下方的添加 Rule List Config</li>
+<li>将 Rule List Format 改成 AutoProxy</li>
+<li>将 Rule List URL 填写为 <a href="https://gitlab.com/gfwlist/gfwlist/raw/master/gfwlist.txt" target="_blank" rel="noopener">https://gitlab.com/gfwlist/gfwlist/raw/master/gfwlist.txt</a></li>
+<li>保存 (Apply changes)，然后点击 Download Profile Now</li>
+<li>修改上方 Rule list rules 的 Profile 为 proxy</li>
+<li><p>再保存 (Apply changes)，最后就是这样：</p>
+<p><img src="https://s1.ax1x.com/2020/05/10/Y3SDkn.png" srcset="/img/loading.gif" alt="Y3SDkn.png"></p>
+</li>
+</ol>
+<p>最后到另外一个任意的网站页面，换一下 Proxy 的模式为 auto switch，就一劳永逸了：</p>
+<p><img src="https://s1.ax1x.com/2020/05/10/Y3S6pV.png" srcset="/img/loading.gif" alt="Y3S6pV.png"></p>
+<p>解释一下，上面这些步骤都是为了实现一个事情：在规则表 (Rule List) 的帮助下，在平时可以正常访问的页面用平常的方式连接访问，在平时不能正常访问的页面自动调用 Proxy 来访问，这样一来，可以根据不同的情况自动切换，就不用整天浪费科学上网的流量了。</p>
+<h4 id="3-5-3-proxychains-ng"><a href="#3-5-3-proxychains-ng" class="headerlink" title="3.5.3 proxychains-ng"></a>3.5.3 proxychains-ng</h4><p>下面还有一个小拓展，如果想要在控制台通过命令的形式来对指定程序或命令来提供代理，可以用 <a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="noopener">proxychains-ng</a>。</p>
+<p>同样是通过 Git 来 clone 并安装，make 也是系统自带的，所以不用自己装：</p>
+<pre><code class="hljs shell">git clone https://github.com/rofl0r/proxychains-ng
+cd proxychains-ng
+./configure --prefix=/usr --sysconfdir=/etc
+sudo make
+sudo make install
+sudo make install-config</code></pre>
+<p>这样就装好了，随后可以通过编辑 config 文件来对它进行配置：</p>
+<pre><code class="hljs shell">sudo mousepad /etc/proxychains.conf</code></pre>
+<p>非常简单，只要在文件的最下方填入你 SSR 客户端的协议(socks5)、地址（默认是 127.0.0.1）和端口（默认是 1080），保存即可。对了，记得把原先的配置删掉，这些配置是按优先级从高到低排列的：</p>
+<pre><code class="hljs markdown">[ProxyList]
+socks5  127.0.0.1 1080</code></pre>
+<p>配置完成后，使用方法也很简单：</p>
+<pre><code class="hljs shell">proxychains4 程序 参数</code></pre>
+<p>可以这样测试一下是否配置成功：</p>
+<pre><code class="hljs shell">curl myip.ipip.net
+proxychains4 curl myip.ipip.net</code></pre>
+<p>如果像这样的两个位置不同，就说明成功了：</p>
+<p><img src="https://s1.ax1x.com/2020/05/10/Y3pSht.png" srcset="/img/loading.gif" alt="Y3pSht.png"></p>
+
+</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      ©2015-2020 Transion Creative Centre
+      <br>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "在 VirtualBox 中玩 Manjaro Xfce 20.0&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?deb343538ea97eeebc6eea038e232994";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

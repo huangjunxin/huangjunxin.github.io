@@ -1,0 +1,1027 @@
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sat Apr 04 2020');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="huangjunxin">
+  <meta name="keywords" content="">
+  <title>C++存储持续性、作用域与链接性 - 我的记事本</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>我的记事本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/03/13/8KDuAe.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2019-05-21 16:12">
+      2019年5月21日 下午
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      36
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>C++ 的存储方案决定了变量保留在内存中的时间，也决定了程序的哪一部分能够访问它。本文就来聊聊 C++ 变量存储方案的那些事。</p>
+<a id="more"></a>
+<h2 id="1-综述"><a href="#1-综述" class="headerlink" title="1. 综述"></a>1. 综述</h2><h3 id="1-1-存储持续性-Storage-Duration"><a href="#1-1-存储持续性-Storage-Duration" class="headerlink" title="1.1 存储持续性 (Storage Duration)"></a>1.1 存储持续性 (Storage Duration)</h3><ol>
+<li><p><strong>自动</strong>存储持续性 (Automatic)</p>
+<p><strong>在函数定义中</strong>声明的变量属于此类，如下变量 a, b：</p>
+<pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">int</span> a;
+    <span class="hljs-keyword">int</span> b = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+</li>
+<li><p><strong>静态</strong>存储持续性 (Static)</p>
+<p><strong>在函数定义外</strong>声明的变量属于此类，如下变量 a, b：</p>
+<pre><code class="hljs C++"><span class="hljs-keyword">int</span> a;
+<span class="hljs-keyword">int</span> b = <span class="hljs-number">1</span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p><strong>使用 static</strong> 声明的变量属于此类，如下变量 a, b：</p>
+<pre><code class="hljs C++"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> a;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> b;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+</li>
+<li><p><strong>动态</strong>存储持续性 (Dynamic)</p>
+<p><strong>使用 new</strong> 分配的内存属于此类，如下变量 a：</p>
+<pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">int</span> *p = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span> a;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+</li>
+</ol>
+<h3 id="1-2-作用域-Scope"><a href="#1-2-作用域-Scope" class="headerlink" title="1.2 作用域 (Scope)"></a>1.2 作用域 (Scope)</h3><ul>
+<li>作用域，顾名思义是一种<strong>作用范围</strong>。</li>
+<li>其代表了一个<strong>变量</strong>的可用区域。</li>
+</ul>
+<p>如下变量 a 的作用域为<strong>当前函数内</strong>（仅在函数 Now 内）：</p>
+<pre><code class="hljs C++"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Now</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a)</span> </span>&#123;
+
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>如下变量 a 的作用域为<strong>当前整个文件内</strong>：</p>
+<pre><code class="hljs C++"><span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> a;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>如下变量 a 的作用域为<strong>所有包含该定义的声明的文件内</strong>（稍后将详细说明）：</p>
+<pre><code class="hljs C++"><span class="hljs-keyword">int</span> a;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<h3 id="1-3-链接性-Linkage"><a href="#1-3-链接性-Linkage" class="headerlink" title="1.3 链接性 (Linkage)"></a>1.3 链接性 (Linkage)</h3><ul>
+<li>链接性指一个<strong>变量</strong>如何在不同区间相互共享。</li>
+<li>链接性包含<strong>外部链接性</strong>、<strong>内部连接性</strong>、<strong>无链接性</strong>。</li>
+</ul>
+<h2 id="2-自动存储"><a href="#2-自动存储" class="headerlink" title="2. 自动存储"></a>2. 自动存储</h2><h3 id="2-1-默认情况"><a href="#2-1-默认情况" class="headerlink" title="2.1 默认情况"></a>2.1 默认情况</h3><p>在默认情况下，在函数中声明的<strong>函数参数</strong>或<strong>变量</strong>的<strong>存储持续性</strong>为<strong>自动</strong>，作用域为<strong>局部</strong>，<strong>无链接性</strong>，如：</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">OutPut</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">int</span> a = <span class="hljs-number">2</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;
+    OutPut();
+    <span class="hljs-built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<pre><code class="hljs md">运行结果：
+1
+2</code></pre>
+<p>作用域为<strong>局部</strong>，体现在函数 OutPut 与 函数 main 中的变量 a 相互独立，互不干扰。</p>
+<p><strong>无连接性</strong>，体现在变量 a 只能在它的函数内部使用，而不能在其它函数中使用。</p>
+<p>另外，当程序开始执行变量所属的代码时，将为其分配内存，当函数结束时，这些变量都将消失。</p>
+<h3 id="2-2-代码块中的变量"><a href="#2-2-代码块中的变量" class="headerlink" title="2.2 代码块中的变量"></a>2.2 代码块中的变量</h3><p>若在代码块中定义了变量，则该变量的<strong>作用域</strong>就是<strong>其所在的代码块</strong>，如：</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;
+    &#123;
+        <span class="hljs-keyword">int</span> a = <span class="hljs-number">2</span>;
+        <span class="hljs-built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>;
+    &#125;
+    <span class="hljs-built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<pre><code class="hljs md">运行结果：
+2
+1</code></pre>
+<p>如上所示，在<strong>代码块外</strong>的变量 a 与<strong>在代码块内</strong>的变量 a 也是相互独立，互不干扰的。也可以这么说，<strong>代码块内</strong>的变量 a 在代码块中暂时覆盖了<strong>代码块外</strong>的变量 a 的定义。</p>
+<h3 id="2-3-自动变量与栈"><a href="#2-3-自动变量与栈" class="headerlink" title="2.3 自动变量与栈"></a>2.3 自动变量与栈</h3><p>事实上，<strong>自动存储持续</strong>的变量在C++编译器中是以<strong>栈</strong>的方式实现的。</p>
+<p><strong>栈</strong>是一种<strong>后进先出</strong>（最后进入的数据，最先被取出）的数据结构，它和<strong>筒装羽毛球</strong>的取放方式类似。</p>
+<p><img src="https://s1.ax1x.com/2020/03/13/8MPQgS.jpg" srcset="/img/loading.gif" alt="timg"></p>
+<p>请参考以下对<strong>栈</strong>的操作与具象的图表来理解它：</p>
+<ol>
+<li>创建空<strong>栈</strong></li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">栈顶</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">栈底</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>放入数据“100” (Push)</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">栈顶</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center">栈底</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>放入数据“50” (Push)</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">栈顶</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">50</td>
+</tr>
+<tr>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center">栈底</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>取出数据“50” (Pop)</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">栈顶</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">100</td>
+</tr>
+<tr>
+<td style="text-align:center">栈底</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ol>
+<li>取出数据“100” (Pop)</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">栈顶</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">栈底</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>不难理解，我们只能从<strong>栈顶</strong>往下放入一条数据，也只能从<strong>栈顶</strong>取出最顶端的一条数据。就像我们只能打开<strong>筒装羽毛球</strong>的盖子，从上面拿出（或倒出）一只球，或从上面放入一只球一样。</p>
+<p>回到正题，当文件编译时，编译器会对每一个<strong>代码块</strong>都取一段连续的内存，并视其为该<strong>代码块</strong>的变量<strong>栈</strong>，以管理<strong>自动变量</strong>。</p>
+<p>当程序尝试在一个代码块中创建一个新<strong>自动变量</strong>时，新的变量就会被放入这个变量<strong>栈</strong>中。就像刚刚演示的一样，申请一个，便会放一个。</p>
+<p>当程序<strong>不再使用</strong>该变量时（通常是程序执行到了该变量的作用域外），该变量就会被从<strong>栈</strong>中取出并删除（通常是将整个栈清空）。</p>
+<p>这样，我们便不难理解在<strong>自动存储</strong>中，<strong>代码块</strong>（或函数）之间的变量为什么能互不干扰了。</p>
+<h2 id="3-静态存储"><a href="#3-静态存储" class="headerlink" title="3. 静态存储"></a>3. 静态存储</h2><h3 id="3-1-链接性综述"><a href="#3-1-链接性综述" class="headerlink" title="3.1 链接性综述"></a>3.1 链接性综述</h3><p>在 1.3 ，我们曾提出过<strong>静态存储</strong>的三种链接性：</p>
+<ul>
+<li><strong>外部链接性</strong>：允许在当前文件访问该变量，可通过<strong>声明</strong>允许在其他文件（非当前文件）访问该变量</li>
+<li><strong>内部链接性</strong>：只允许在当前文件访问该变量</li>
+<li><strong>无连接性</strong>：只允许在当前代码块中访问该变量</li>
+</ul>
+<p>然而无论是以上的哪种<strong>链接性</strong>，只要是<strong>静态存储</strong>的变量，其寿命必定比<strong>自动存储</strong>的变量长。因为<strong>静态变量</strong>从程序的运行至结束都一直存在于内存中，而不会受到诸如<strong>栈</strong>之类的限制。</p>
+<p>另外，如果没有<strong>显式地初始化静态变量</strong>，编译器会默认将其设置为0。</p>
+<p>下面介绍如何创建这三种不同<strong>链接性</strong>的<strong>静态存储变量</strong>：</p>
+<ul>
+<li><strong>外部链接性</strong>：在代码块外声明变量，且<strong>不使用</strong> static。</li>
+<li><strong>内部链接性</strong>：在代码块外声明变量，且<strong>使用</strong> static。</li>
+<li><strong>无连接性</strong>：在代码块内声明变量，且<strong>使用</strong> static。</li>
+</ul>
+<p>如下所示。具有<strong>外部链接性</strong>的变量 a，具有<strong>内部链接性</strong>的变量 b，具有<strong>无链接性</strong>的变量 c：</p>
+<pre><code class="hljs C++"><span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> b = <span class="hljs-number">2</span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> c = <span class="hljs-number">3</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<h3 id="3-2-外部链接性"><a href="#3-2-外部链接性" class="headerlink" title="3.2 外部链接性"></a>3.2 外部链接性</h3><p>事实上，C++提供了两种变量声明方式：</p>
+<ul>
+<li>定义声明（简称<strong>定义</strong>）：<strong>不加任何关键字</strong>，<strong>可选择性地初始化</strong>变量，编译器<strong>给</strong>变量分配存储空间</li>
+<li>引用声明（简称<strong>声明</strong>）：<strong>添加关键字 extern</strong>，<strong>不可初始化</strong>变量，编译器不给<strong>变量</strong>分配存储空间</li>
+</ul>
+<p>在默认情况下，具有<strong>外部链接性</strong>的<strong>静态存储变量</strong>，作用域只限于当前文件。但也可以在其它文件通过<strong>声明</strong>以在其它文件使用该变量。如：</p>
+<pre><code class="hljs C++"><span class="hljs-comment">//file1.cpp</span>
+<span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>; <span class="hljs-comment">//注：此处是定义声明，可选择性地初始化该变量</span></code></pre>
+<pre><code class="hljs C++"><span class="hljs-comment">//file2.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">extern</span> <span class="hljs-keyword">int</span> a; <span class="hljs-comment">//注：此处是引用声明，不可初始化该变量</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>同时编译 file1.cpp 与 file2.cpp，并运行，得出：</p>
+<pre><code class="hljs md">运行结果：
+1</code></pre>
+<p>需要注意的是，C++有“<strong>单定义原则</strong>”，即每个变量只能定义一次。</p>
+<p>因此，在多个源文件的程序中，在除原始定义的变量 a 以外的<strong>其它文件</strong>中<strong>声明</strong>变量 a 时，不添加 extern 就会引起报错。因为其违反了“单定义原则”。</p>
+<h3 id="3-3-内部链接性"><a href="#3-3-内部链接性" class="headerlink" title="3.3 内部链接性"></a>3.3 内部链接性</h3><p>尝试阅读如下代码：</p>
+<pre><code class="hljs C++"><span class="hljs-comment">//file1.cpp</span>
+<span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>; <span class="hljs-comment">//定义声明</span></code></pre>
+<pre><code class="hljs C++"><span class="hljs-comment">//file2.cpp</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> a; <span class="hljs-comment">//未被显式赋初始值的具有内部链接性的静态变量</span>
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>思考一下，同时编译 file1.cpp 与 file2.cpp 时，会报错吗？</p>
+<p>显然，并不会。因为 file2.cpp 中的变量 a 是一个具有<strong>内部链接性</strong>的<strong>静态存储变量</strong>。它并不能在外部文件中被<strong>引用</strong>。</p>
+<p>我们也不难猜到：</p>
+<pre><code class="hljs md">运行结果：
+0</code></pre>
+<p>这是因为，file2.cpp 的变量 a 被<strong>静态定义</strong>了，其<strong>作用域</strong>仅限于 file2.cpp 这整个文件。同时，<strong>未被显式赋初始值</strong>时，变量 a 将被默认赋值为 0。因此，在输出时，变量 a 的值便是 0。</p>
+<h3 id="3-4-无链接性"><a href="#3-4-无链接性" class="headerlink" title="3.4 无链接性"></a>3.4 无链接性</h3><p>在 3.1 提到过，<strong>无链接性</strong>的<strong>静态变量</strong>只能在函数或代码块内使用。接下来，我们再更仔细地讨论一下<strong>静态变量</strong>的特点。</p>
+<p><strong>静态变量</strong>在程序运行时就已经被定义，直到程序允许结束。</p>
+<p>这也就说明，一个<strong>静态变量</strong>在其所处的代码块<strong>不处于活动状态</strong>时，它依旧是存在的。</p>
+<p>而且，一个<strong>静态变量</strong>只会在<strong>程序启动时</strong>被初始化。即使以后再次调用到<strong>变量所处的定义行</strong>，该变量也不会被重新初始化。如：</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Now</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; a &lt;&lt; <span class="hljs-built_in">endl</span>;
+    a++;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    Now();
+    Now();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<pre><code class="hljs md">运行结果：
+1
+2</code></pre>
+<p>如上，在第二次调用函数 Now 时，变量 a 不会被重新赋值为 1，因此其输出了变量 a 自增的结果—— 2。</p>
+<h2 id="4-动态存储"><a href="#4-动态存储" class="headerlink" title="4. 动态存储"></a>4. 动态存储</h2><h3 id="4-1-动态存储综述"><a href="#4-1-动态存储综述" class="headerlink" title="4.1 动态存储综述"></a>4.1 动态存储综述</h3><p>上文讨论了许多<strong>作用域</strong>与<strong>链接性</strong>的相关知识，而接下来将要讨论的<strong>动态存储</strong>与这些完全无关。因为<strong>动态存储</strong>完全由运算符 new 和 delete 控制。</p>
+<p>要注意的是，一旦使用运算符 new 从内存中分配了空间，它将会<strong>一直被保留</strong>在内存中，直到它被使用 delete 归还给系统内存。当然，倘若该空间一直到程序运行结束都还未被<strong>显式地归还</strong>给内存，则其将被<strong>自动归还</strong>。</p>
+<h3 id="4-2-动态存储与初始化-C-98"><a href="#4-2-动态存储与初始化-C-98" class="headerlink" title="4.2 动态存储与初始化 (C++98)"></a>4.2 动态存储与初始化 (C++98)</h3><p>对于<strong>标量类型数据</strong>（如 int, float），可以在类型名后加上初始值，并用<strong>圆括号</strong>括起。如：</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">int</span> *pa = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span> (<span class="hljs-number">20</span>); <span class="hljs-comment">//给动态变量 pa 初始化</span>
+    <span class="hljs-keyword">double</span> *pb = <span class="hljs-keyword">new</span> <span class="hljs-keyword">double</span> (<span class="hljs-number">22.5</span>); <span class="hljs-comment">//给动态变量 pb 初始化</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; *pa &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; *pb;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<pre><code class="hljs md">运行结果：
+20
+22.5</code></pre>
+<p>对于<strong>有构造函数的类</strong>，也是如此。如：</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> &#123;</span>
+    <span class="hljs-keyword">int</span> a_;
+    <span class="hljs-keyword">double</span> b_;
+<span class="hljs-keyword">public</span>:
+    MyClass(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">double</span> b) &#123;
+        a_ = a;
+        b_ = b;
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">OutPut</span><span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-built_in">cout</span> &lt;&lt; a_ &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; b_;
+    &#125;
+&#125;;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    MyClass *pA = <span class="hljs-keyword">new</span> MyClass (<span class="hljs-number">20</span>, <span class="hljs-number">22.5</span>); <span class="hljs-comment">//给动态变量 pA 初始化</span>
+    pA-&gt;OutPut();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<pre><code class="hljs md">运行结果：
+20
+22.5</code></pre>
+<h3 id="4-3-列表初始化-C-11"><a href="#4-3-列表初始化-C-11" class="headerlink" title="4.3 列表初始化 (C++11)"></a>4.3 列表初始化 (C++11)</h3><p>C++11 提供了新的做法：<strong>列表初始化</strong>。若编译器支持C++11，则可以通过<strong>列表初始化</strong>来给变量初始化，其做法是用<strong>花括号</strong>括起初始值，如：</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">int</span> *pa = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span> &#123;<span class="hljs-number">20</span>&#125;; <span class="hljs-comment">//用花括号给动态变量 pa 初始化</span>
+    <span class="hljs-keyword">double</span> *pb = <span class="hljs-keyword">new</span> <span class="hljs-keyword">double</span> &#123;<span class="hljs-number">22.5</span>&#125;; <span class="hljs-comment">//用花括号给动态变量 pb 初始化</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; *pa &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; *pb;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<pre><code class="hljs md">运行结果：
+20
+22.5</code></pre>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> &#123;</span>
+    <span class="hljs-keyword">int</span> a_;
+    <span class="hljs-keyword">double</span> b_;
+<span class="hljs-keyword">public</span>:
+    MyClass(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">double</span> b) &#123;
+        a_ = a;
+        b_ = b;
+    &#125;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">OutPut</span><span class="hljs-params">()</span> </span>&#123;
+        <span class="hljs-built_in">cout</span> &lt;&lt; a_ &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; b_;
+    &#125;
+&#125;;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    MyClass *pA = <span class="hljs-keyword">new</span> MyClass &#123;<span class="hljs-number">20</span>, <span class="hljs-number">22.5</span>&#125;; <span class="hljs-comment">//用花括号给动态变量 pA 初始化</span>
+    pA-&gt;OutPut();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<pre><code class="hljs md">运行结果：
+20
+22.5</code></pre>
+<p>同样，C++11 的<strong>列表初始化</strong>，还支持给具有<strong>自动存储持续性</strong>的<strong>变量</strong>赋初始值。如：</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">int</span> a &#123;<span class="hljs-number">5</span>&#125;; <span class="hljs-comment">//用花括号给自动变量 a 初始化</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; a;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<pre><code class="hljs md">运行结果：
+5</code></pre>
+<h2 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. 总结</h2><p>回顾全文，我们了解到：</p>
+<ol>
+<li><p>C++的存储方案决定了变量保留在内存中的时间（<strong>存储持续性</strong>）</p>
+<p>也决定了程序的哪一部分能够访问它（<strong>作用域</strong>与<strong>链接性</strong>）</p>
+</li>
+<li><p>单变量原则</p>
+</li>
+<li><p>栈的原理</p>
+</li>
+<li><p>C++11 列表初始化</p>
+</li>
+<li><p>五种变量存储方式，如下表：</p>
+</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>存储描述</th>
+<th>持续性</th>
+<th>作用域</th>
+<th>链接性</th>
+<th>声明方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>自动存储</td>
+<td>自动</td>
+<td>代码块</td>
+<td>无</td>
+<td>代码块中</td>
+</tr>
+<tr>
+<td>静态外部</td>
+<td>静态</td>
+<td>代码块</td>
+<td>外部</td>
+<td>代码块外 不用static</td>
+</tr>
+<tr>
+<td>静态内部</td>
+<td>静态</td>
+<td>当前文件</td>
+<td>内部</td>
+<td>代码块外 用static</td>
+</tr>
+<tr>
+<td>静态无链接</td>
+<td>静态</td>
+<td>当前文件</td>
+<td>无</td>
+<td>代码块中 用static</td>
+</tr>
+<tr>
+<td>动态存储</td>
+<td>动态</td>
+<td>动态</td>
+<td>动态</td>
+<td>用new, delete</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C++</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本文作者：以成<br>本文链接：<a href=""><script>document.write(window.location.href.replace(window.location.hash, ``))</script></a><br>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noopener">CC BY-NC-SA 4.0 协议</a> 。转载请注明本文作者与链接！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/deep_copy_&amp;_shallow_copy_of_cpp/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">C++深复制与浅复制</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/posts/is_the_legend_of_nian_beast_made_up_in_modern_times/">
+                        <span class="hidden-mobile">「年兽」的传说是不是近代编造的？</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "jfqqrz6l9VmBjlVdmCKusyUX-gzGzoHsz",
+          app_key: "KMLndPzsjoL98YgC9e85v4WK",
+          placeholder: "欢迎给我留言，谈谈你的想法哦。\n（支持Markdown语法）",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      ©2015-2020 Transion Creative Centre
+      <br>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "C++存储持续性、作用域与链接性&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?deb343538ea97eeebc6eea038e232994";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

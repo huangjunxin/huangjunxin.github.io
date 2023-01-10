@@ -1,0 +1,874 @@
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sat Apr 04 2020');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="huangjunxin">
+  <meta name="keywords" content="">
+  <title>《自救书》书摘 - 我的记事本</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>我的记事本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/03/13/8KDuAe.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-04-17 14:59">
+      2020年4月17日 下午
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      8.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      82
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <blockquote>
+<p>臣聞求木之長者，必固其根本；欲流之遠者，必浚其泉源；思國之安者，必積其德義。源不深而豈望流之遠，根不固而何求木之長？德不厚而思國之治，雖在下愚，知其不可，而況於明哲乎！人君當神器之重，居域中之大，將崇極天之峻，永保無疆之休。不念於居安思危，戒貪以儉；德不處其厚，情不勝其欲，斯亦伐根以求木茂，塞源而欲流長者也。</p>
+</blockquote>
+<p>——《舊唐書 · 卷七十一 列傳第二十一 魏徵》</p>
+<a id="more"></a>
+<p class="note note-info">本文持续更新中</p>
+
+<h2 id="自救书笔记"><a href="#自救书笔记" class="headerlink" title="自救书笔记"></a>自救书笔记</h2><h3 id="1-在孤寂中自救"><a href="#1-在孤寂中自救" class="headerlink" title="1. 在孤寂中自救"></a>1. 在孤寂中自救</h3><h4 id="发出声音的时候"><a href="#发出声音的时候" class="headerlink" title="发出声音的时候"></a>发出声音的时候</h4><p>请记住：</p>
+<ol>
+<li>只有在有可能为人听见的时候才喊（比如卡在老式电梯里）。因为喊叫会消耗体力，会使人发干、口渴。</li>
+<li>不时停下来听听有没有人应声。</li>
+<li>吹口哨的声音传得远一些。一动不能动或者等待救授的时候，可以练习一下牧人吹口哨（将两根手指放进嘴里，拇指和食指或者拇指和无名指都可以，抵住舌尖，并通过其间的空隙发声。不要将舌尖抵得太靠后了。练习一会儿，你说不定可以发出声来）。</li>
+<li>如果埋在建筑工地的碎石堆里，应该用最好的传声器械，比如（如果实在没有别的东西）用牙托敲打金属管子。你不必要非得懂摩尔斯码。只管使劲敲，使劲擦，不停地撞就行了。</li>
+<li>打碎玻璃可以引起人的注意。如果没有别的东西可以敲碎玻璃（连鞋子都没有了），可以按下述办法用拳头敲：<ol>
+<li>用东西将手腕包住；</li>
+<li>直接砸，但指关节要在最外面；</li>
+<li>砸过之后，指关节握住不要松；</li>
+<li>小心地将手拿开。</li>
+</ol>
+</li>
+</ol>
+<h4 id="被废墟埋住"><a href="#被废墟埋住" class="headerlink" title="被废墟埋住"></a>被废墟埋住</h4><ol>
+<li>脱掉衣服，这样，如果你被迫倒回去的话，衣服就不会堆积在一起卡住你。因为同样的原因，带大扣子的皮带也是危险的。</li>
+<li>最有可能成功爬出去的人先走，然后在可能的情况下爬向有风或者有光亮的地方。</li>
+<li>如果屋顶不稳定，先等着让他完全爬过去为止。然后再跟上，一切要非常小心，就好像会碰炸药一样。如果周围很坚实，则应该摸著前面人的脚跟前进。</li>
+<li>身体僵硬的人比身体放松的人更容易卡住。应该试试不同的体位。不要猛力强行適过。如果人放松，大个子的人也有可能令人吃惊地从极小的地方挤过去。</li>
+<li>对卡住的人应该与他不停地说话使其放松。如果身体够得者，而且卡住的人放松了，应该推或拉动。</li>
+<li>不要试着用绳子、皮带或者床单系在某人的腰上拉过洞口，那样有可能使他完全卡死。应该用手牵绳子拉。任何卡住的人都可以自己用手一把一把地往前挪。哪怕如此，这还是有可能造成肌肉损伤。因此，卡住的人还是必须停下来，放松以后再前进。</li>
+<li>不要将两手全伸出向下滑，到时两臂就收不回来了。应该一次伸出一只胳膊，或者两只手都抱在胸下侧。</li>
+<li>卡住的人最好的办法有可能是将绳子系在自己腰间，然后用膝盖和手交替爬动。</li>
+<li>顶层稍有抬升时，应该将双手放在膝上弯起身来。或者像鸭子一样靠后腿慢慢走。这可以使膝盖离开地面（膝盖骨疼痛可使人晕倒，因人的膝盖并非设计用于支撑身体重量的。体温也会从这里传到冰冷的地上，而且靠膝盖爬任何一段距离都不合算，没有效率）。</li>
+</ol>
+<h3 id="2-在拥挤中自救"><a href="#2-在拥挤中自救" class="headerlink" title="2. 在拥挤中自救"></a>2. 在拥挤中自救</h3><h4 id="踩在人堆里"><a href="#踩在人堆里" class="headerlink" title="踩在人堆里"></a>踩在人堆里</h4><ol>
+<li>深呼吸。</li>
+<li>用两只胳膊、肩膀和背部顶住压力。</li>
+<li>将胳膊放在胸前，有孩子也要这样保护。</li>
+<li>将两只脚一齐跳离地面，以免被踩住。</li>
+<li>不管朝哪个方向，要不停地移动。</li>
+</ol>
+<h4 id="刀子是怎么拿着的"><a href="#刀子是怎么拿着的" class="headerlink" title="刀子是怎么拿着的"></a>刀子是怎么拿着的</h4><ol>
+<li>如果刀子是准备朝你扔过去的样子，攻击者通常会变换一下抓握刀子的姿势，这就使你有了片刻的躲闪的时间。</li>
+<li>如果刀子拿在腋下，可以向上刺，而且很容易刺进肋骨。这意味着攻击者有一定的常识。</li>
+<li>从上向下朝你刺来的攻击者说明他不是专门的刀客（也不一定），刀子从上向下很难刺进肋骨。</li>
+</ol>
+<h4 id="当他们开始绑你的时候"><a href="#当他们开始绑你的时候" class="headerlink" title="当他们开始绑你的时候"></a>当他们开始绑你的时候</h4><p>你应该：</p>
+<ol>
+<li>胳膊及身体。深吸一口气。将肩膀向后收，绷紧胳膊，使其顶住绑绳。想办法通过装疼的样子将胳膊叠起来。这样会留下尽量多的空隙，可将胳膊向前收缩，使绳子松脱。呼出气，肩膀向前收，胳膊收进身体里侧，在你缩紧时，绳子应该很松了。</li>
+<li>手腕及手。交错移动手及手腕，慢慢地让绳子向下滑动，直到手可触及。如果位置合适，可用嘴叼开绳头。或者在某些松动处将绳结松开。</li>
+<li>腿与脚踝。大腿、膝盖与小腿可挣脱绳索。如果是绑在脚踝上，可用脚趾与膝盖一起移动，迫使两个脚踝彼此分开。</li>
+</ol>
+<h4 id="避开牛攻击的一些办法"><a href="#避开牛攻击的一些办法" class="headerlink" title="避开牛攻击的一些办法"></a>避开牛攻击的一些办法</h4><ol>
+<li>摇动脱下来的衣物（或者手上拿着任何东西挥动），然后扔在牛经过的路上。牛极有可能低下头去检查丢弃的东西，然后再开始追。这会给你时间再脱衣物哄它。要不停地脱。</li>
+<li>公牛倾向于寻找任何颜色鲜亮的东西，而不一定非得是红色。最好是将任何明亮的东西扔给它。</li>
+<li>公牛一般不下水。这是另一条脱身办法：河流、湖泊、水渠等。</li>
+<li>有家人在一起，如果不是你极不小心，这样的事情真是难以想像，要想办法将公牛引开，让妇女和小孩子朝不同的方向跑。哪怕在这样的时候，也很难说公牛会做什么，到底会去追谁。</li>
+<li>如果被公牛挑翻了，弄伤公牛的惟一办法就是抓住其鼻圈（如果有一个鼻圈的话），并用手一直抓住它。</li>
+<li>另一种曾经有效的办法：如果你已经被挑翻、放倒而又没有被弄死，可以假装死掉了。</li>
+</ol>
+<h4 id="对其他大型犬类，应该按下列顺序想办法吓退它们"><a href="#对其他大型犬类，应该按下列顺序想办法吓退它们" class="headerlink" title="对其他大型犬类，应该按下列顺序想办法吓退它们"></a>对其他大型犬类，应该按下列顺序想办法吓退它们</h4><ol>
+<li>使劲快速地朝其鼻子上打。</li>
+<li>将前臂挡在自己胸前，让狗去咬自己的前臂。咬住之后，一直将前臂塞进它的后颚，并立即用另外一只胳膊翻过来，这样，前臂有骨的那一面迫使狗的脖子向后倒，这时，你就可以抬起头来快速翻身，开始翻滚。</li>
+</ol>
+<h4 id="如果受到狼群攻击"><a href="#如果受到狼群攻击" class="headerlink" title="如果受到狼群攻击"></a>如果受到狼群攻击</h4><ol>
+<li>击打其鼻部。</li>
+<li>将臂部塞进它的后颚。</li>
+<li>和它一起躺下，用双腿将它的后背夹住。</li>
+<li>用腿使劲夹住后部，使其向后退缩，然后努力击打它的脖子。</li>
+</ol>
+<h4 id="如果有大群飞虫，应该不惜一切代价将自己捂得严严实实的"><a href="#如果有大群飞虫，应该不惜一切代价将自己捂得严严实实的" class="headerlink" title="如果有大群飞虫，应该不惜一切代价将自己捂得严严实实的"></a>如果有大群飞虫，应该不惜一切代价将自己捂得严严实实的</h4><ol>
+<li>用泥巴将面部、四肢及身体裸露部分糊住。</li>
+<li>临时做一顶阔边帽子。</li>
+<li>用衬衫、内衣、T恤衫做一个带网头罩（可将衬衣袖子套在头上，将衣袖上的扣子扣好）套在头上和脖子上，然后扎进上衣衣领里去。</li>
+<li>可能的情况下穿两层衣服。将裤子塞进袜子、长靴、绑腿里去。用带子、绳子或藤条将裤口扎好。将衣袖口扎进手套（比如临时用袜子做的）里面去。</li>
+<li>晚上也穿衣服。用任何布料做成临时蚊帐。</li>
+<li>可能的话，使用第一救助油膏、防叮剂、抗疟疾片。</li>
+</ol>
+<h4 id="扁虱、蚂蟥和跳蚤"><a href="#扁虱、蚂蟥和跳蚤" class="headerlink" title="扁虱、蚂蟥和跳蚤"></a>扁虱、蚂蟥和跳蚤</h4><ol>
+<li>扁虱可用刷、弹、拍打等办法抖掉。但是，如果它的头已经吸附在皮肉里面了，应该用碘、酒精将其松动，或者将点燃的烟头放在它附近的地方。不要硬拉，否则头有可能会断在里面造成溃烂。</li>
+<li>蚂蟥对弹击、盐、烟屁股敏感（它们可钻透任何种类的衣物）。如果已经吸附在皮肉上，也不要硬扯。</li>
+<li>在皮肤下挖洞并产卵的跳蚤一般可用刀子、针头、剔刀挑出来，之前应该用火把这些工具消毒。然后抹上碘酒。</li>
+</ol>
+<h4 id="如果被蜂攻击，可从最浓密的矮树丛里跑动，或者逃到水里"><a href="#如果被蜂攻击，可从最浓密的矮树丛里跑动，或者逃到水里" class="headerlink" title="如果被蜂攻击，可从最浓密的矮树丛里跑动，或者逃到水里"></a>如果被蜂攻击，可从最浓密的矮树丛里跑动，或者逃到水里</h4><ol>
+<li>穿上衣物作为障碍物（边角扎好）。</li>
+<li>尽量让衣服保持干燥、清洁和缝补好，特别是长短袜子，经常洗一洗。</li>
+<li>不要赤脚走路。</li>
+<li>如果落人热带水中，不管看上去多么新鲜的水体，都应该采取下列行动：<ol>
+<li>把鞋子里的水倒出来；</li>
+<li>把衣物拧于，将全身用毛巾擦干；</li>
+<li>如果有可能，换上干净衣服。</li>
+</ol>
+</li>
+<li>除非被迫涉水，否则尽量避开，因为极多的攻击者都栖息于水中，从可以钻进皮肤的虫子到黄貂鱼不等有水母，也有梭鱼，有水蛇，也有电鳗。从僧帽水母到珊瑚礁上的螫刺动物不等。</li>
+</ol>
+<h4 id="会游泳的人如果跟单独一条鲨鱼打斗"><a href="#会游泳的人如果跟单独一条鲨鱼打斗" class="headerlink" title="会游泳的人如果跟单独一条鲨鱼打斗"></a>会游泳的人如果跟单独一条鲨鱼打斗</h4><p>可用下列办法：</p>
+<ol>
+<li>不要转身逃跑，而应该正面相对，鲨鱼冲过来时闪到一边去。</li>
+<li>突然朝鲨鱼游去。</li>
+<li>如果在很近的地方，努力踢蹬、打击、甩开。</li>
+<li>在水下尖叫。</li>
+<li>用双手拍打水面。</li>
+<li>如果有武器，想办法刺其鳃部或者眼睛。</li>
+</ol>
+<h4 id="如果有人流血不止"><a href="#如果有人流血不止" class="headerlink" title="如果有人流血不止"></a>如果有人流血不止</h4><p>应该尽快想办法止血：</p>
+<ol>
+<li>用手指直接按住（除非有钢铁、石块、木头等嵌入里面<br>了）。</li>
+<li>压上布垫（手帕等）止血或使血慢慢渗。</li>
+<li>提升出血的身体部位。</li>
+<li>尽快找医生或去医院。</li>
+<li>不要洗正在流血的伤口。</li>
+<li>不要将凝结的血块揭开。</li>
+<li>止血带或绑带不要太紧。</li>
+<li>不要揭掉止血布，如果血渗出来了，可再绑一些上去。</li>
+</ol>
+<h4 id="失去意识后，如果看上去脊梁没有折断"><a href="#失去意识后，如果看上去脊梁没有折断" class="headerlink" title="失去意识后，如果看上去脊梁没有折断"></a>失去意识后，如果看上去脊梁没有折断</h4><p>可以：</p>
+<ol>
+<li>将头和身体翻转至一侧。</li>
+<li>将嘴里面的牙托、呕吐物、脏物等取出来，看看呼吸情况。</li>
+<li>看看有无出血点，如有要止住血。</li>
+<li>松开衣服，处理一下伤口。</li>
+<li>看看口袋里面有没有身份证明，也检查一下有无糖尿病史等。</li>
+<li>找担架、医疗救助或者救护车。</li>
+</ol>
+<h4 id="骨折发生后"><a href="#骨折发生后" class="headerlink" title="骨折发生后"></a>骨折发生后</h4><ol>
+<li>应该尽量保持原状，直到找到医生或者医院后再进行合适的处理。有时候，做得太多比什么也不做更有害。</li>
+<li>止痛：应该抬高肢体，因为骨折无一例外会引起内出血。</li>
+<li>用临时的绑带紧紧地系住。可用领带、皮带、布条等做绑带。应该意识到，身体是最好的夹板，胳膊可与身体绑在一起，腿和腿绑在一起，下颌和上颌绑在一起等等。</li>
+</ol>
+<h4 id="扭伤、掰伤的骨头会形成错位"><a href="#扭伤、掰伤的骨头会形成错位" class="headerlink" title="扭伤、掰伤的骨头会形成错位"></a>扭伤、掰伤的骨头会形成错位</h4><p>外表不正常可表明有错位情况存在。比如疼痛、无力、僵硬等，也可表明有错位：</p>
+<ol>
+<li>不要试图扳动复位。</li>
+<li>以最舒服的位置包扎好。</li>
+<li>不要用夹板。</li>
+</ol>
+<h4 id="手腕或者脚踝扭伤后"><a href="#手腕或者脚踝扭伤后" class="headerlink" title="手腕或者脚踝扭伤后"></a>手腕或者脚踝扭伤后</h4><p>会出现肿胀和青紫的现象：</p>
+<ol>
+<li>休息，使其不动，抬高。</li>
+<li>用一些湿布敷上。</li>
+<li>手腕：做一块简易夹板支撑住，使胳膊靠在躯干上。</li>
+<li>脚踝：使其与脚绑成“8”字形。如果肿胀继续，应该解开绑带，重新打湿，再<br>绑上。</li>
+</ol>
+<h4 id="被蛇咬到要打死那条蛇"><a href="#被蛇咬到要打死那条蛇" class="headerlink" title="被蛇咬到要打死那条蛇"></a>被蛇咬到要打死那条蛇</h4><p>不管谁打死都行：</p>
+<ol>
+<li>被蛇咬到之后，不要慌乱、紧张，不要四处跑动。</li>
+<li>让被咬者躺下来一动也不动。</li>
+<li>在伤口靠近心脏的一侧扎上绑带，每半小时松开一分钟。</li>
+<li>冲洗伤口表层，但不要擦拭。</li>
+<li>想办法处理休克，但不要喝东西。</li>
+<li>立即找医生、医院（如有可能，带上死蛇）。</li>
+</ol>
+<h4 id="被狗咬伤"><a href="#被狗咬伤" class="headerlink" title="被狗咬伤"></a>被狗咬伤</h4><ol>
+<li>将伤口处的唾液全部用肥皂水洗干净。</li>
+<li>用清洁干净的布包住。</li>
+<li>使被咬部分固定下来（用夹板）。</li>
+<li>将受害者送至医院。</li>
+</ol>
+<h4 id="心脏病发作"><a href="#心脏病发作" class="headerlink" title="心脏病发作"></a>心脏病发作</h4><p>症状：突然抓住横杠、书桌或捂住腹部。呼吸不畅，上腹或胸腔疼痛（沿胳膊向下有疼痛，或者向上往脖子和头部有疼痛感），快找医生。</p>
+<p>同时：</p>
+<ol>
+<li>让病者尽保持舒服的姿势（通常任其平躺着）。</li>
+<li>松开衣服。</li>
+<li>盖住病人（但不可太热）。</li>
+<li>不要搬动，也不要给病人喝东西。</li>
+<li>让病人深呼吸，慢慢地呼吸，通过嘴呼吸。</li>
+<li>如果呼吸停止，应进行人工呼吸。</li>
+</ol>
+<h4 id="发生严重的头部撞击后"><a href="#发生严重的头部撞击后" class="headerlink" title="发生严重的头部撞击后"></a>发生严重的头部撞击后</h4><p>可产生类似于晕车，昏迷，嘴部、耳部、鼻子出血的症状，还有头疼。瞳孔形状也很怪：</p>
+<ol>
+<li>让伤者平躺，盖起来，不要让他挣扎和乱动。如果脊柱没有断，脸也是红的，将上衣、夹克、毛衣折叠起来，使其头枕在上面。如果脸色发白，不要垫枕头。</li>
+<li>轻轻转动头、身体到一侧（如果不怀疑脊椎断裂），这样的话，血、粘液、呕吐物就可以流出来。如果头部流血，可在头部放上清洁干净的布（不要用力绑，以免使碎骨刺人大脑）。</li>
+<li>请记住：一动不动地躺好（哪怕有意识），目的是要等到医疗救助人员到达。</li>
+</ol>
+<h4 id="紧急生产"><a href="#紧急生产" class="headerlink" title="紧急生产"></a>紧急生产</h4><p>在任何时候都有可能发生。不要惊慌，并非什么大不了的事情。自然生产是常见易行的事情，首先：</p>
+<ol>
+<li>不要拉扯婴儿，也不要拉扯脐带或与脐带相连的另一端的胞衣。</li>
+<li>孩子一生出来，赶紧将脐带结扎住。</li>
+<li>实在没有别的人来帮忙就自己切断脐带。如果帮忙的人在到达的路上，可将脐带结扎好，但让另一头连着胞衣。</li>
+<li>让婴儿保持温暖，可放在母亲的双腿间。</li>
+</ol>
+<h3 id="3-在干渴中自救"><a href="#3-在干渴中自救" class="headerlink" title="3. 在干渴中自救"></a>3. 在干渴中自救</h3><h4 id="延缓干渴"><a href="#延缓干渴" class="headerlink" title="延缓干渴"></a>延缓干渴</h4><ol>
+<li>吮吸一点什么东西，选择某种光滑、不易吸收和较小的东西：螺丝帽、卵石、树叶、口香糖。梅干最佳，生洋葱也行。</li>
+<li>建议不要吮吸雪及冰（让人更渴、还会使胃部发冷）。</li>
+<li>炎热的天气需要有衣服挡住身体，以阻止身体汗液的挥发应该多穿衣服而不是脱衣物。将衣领、袖口都扣起来，将腿盖住。做些头罩。旋转着摔掉汗水，这样可以使汗液仍然保留在体表。在阳光强的地区穿白色的衣服，比如将白衬衣穿在上衣外面。这也许会不舒服，但却有助于挡住一些热量，从而减少出汗。极冷的天气有可能表明汗会冻住。松开太紧的衣服、脱掉几层衣服可以减少出汗，然后在你歇下来的时候将衣服全部还原。</li>
+<li>保持凉爽：在炎热的天气里，用浸过海水、尿液、酒精的湿布擦脸、手、脖子可降温。在筏子、救生艇和舢板上的时候，用海水浸透衣服可以降温，但太阳太大的时候不可频繁用此方法。</li>
+<li>找阴凉处：人在太阳底下比在阴影里需要两倍多的水。因此，只要找得到阴凉处就应该躲到底下去。车辆、树木、岩石和沙丘都行。阴影是保存汗水的关键，也是缓和干渴痛苦的一个办法，越是往后，干渴越是厉害。如果找不到避阴处，想办法用任何织物或者装置做一个，就是披屋和帐篷的原理。然后睡一下。</li>
+<li>如果每天只有半升的水，不要吃东西。</li>
+<li>不要吃蛋白、鸡蛋、牛奶、鱼和奶酪，除非一天有5升的水，因为这些东西都需要水才能够消化。可吃一些果类、甜品和饼干，植物也行。</li>
+</ol>
+<h4 id="饮用禁忌"><a href="#饮用禁忌" class="headerlink" title="饮用禁忌"></a>饮用禁忌</h4><ol>
+<li>永远不要喝海水。</li>
+<li>不要喝尿，因尿液里面的盐分太高，你会更渴。如果太热，可用尿液润湿布垫降温。或者在极冷的地方使冰冷的皮肤暖和一些。</li>
+<li>酒精：建议不要喝。在生存环境下会引起鲁莽的行为。</li>
+<li>蓄电池水：里面可能含有毒铅化物，禁喝。</li>
+<li>鱼汁：不要喝鱼汁，哪怕你有机会搞到鱼。很多鱼的鱼汁都有害，虽然少数鱼不是如此。</li>
+<li>不要喝任何牛奶状的、含盐的水，也不要喝肥皂水等。</li>
+</ol>
+<h4 id="处理饮水"><a href="#处理饮水" class="headerlink" title="处理饮水"></a>处理饮水</h4><ol>
+<li>现存的水。只要渴了就喝水。建议少喝，分多次喝。不要以为半升水分50次喝就能够活50天，这是个谬误。在摄氏27度的温度下，如果没有水，人最多只能够活10 天。如果有2. 2升水，你可以活11天，当然是在你不用力气的前提下。</li>
+<li>额外的供应。因为雨水、河流、绿洲而得到新水源时，应该多喝一些，超过自己的储存能力为好，然后再出发。让自己的身体灌满水，就好像自己是一个水库一样。这样，你身体里的水分就会保存尽量长的时间，免得人体水分需求出现赤字。如果在沙漠中旅行，人体能够携带多少水就带多少水，哪怕以牺牲别的装置为代价。水要装在有盖的容器里。</li>
+</ol>
+<h4 id="寻找水源"><a href="#寻找水源" class="headerlink" title="寻找水源"></a>寻找水源</h4><ol>
+<li>雨水。观天象。随时准备好迎接雨水。将已经脏了的容器清洗干净。大多数材料可以通过涂腊、奶酪等而成为防水器具。如果是在海上，可将船用覆盖物、油布、船帆放进海水中漂洗去盐壳。有些盐会使雨水变质，但是它不会对你形成伤害。</li>
+<li>露水。在沙漠和不毛之地，露水会大量落下来。做好一些接露水的东西，那就是一些光滑的表面，比如铺在地上的东西的反面，汽车车罩、飞机的引擎罩等，还有铝罐。可挖些露水坑，在底下铺上帆布、棉布或者塑料布，或者从沙子底下挖出石头来擦于净堆起来。露水会在这些东西上面积存下来，并滴到地上。将露水收存到容器里去。也可以把露水用布吸起来。请记住，露水也可能在附近的植物和石头上积存下来。早起四处看一看。</li>
+<li>雪。如果有海水喷到雪上面了，雪水不要喝。只有在下列条件下才能够喝：①找不到新鲜淡水②附近没有冰。将雪化成水太不经济，费燃料，也费时间，搞出来的水也只有一点点。而且，你一天需要2.2升的水（雪可以在手握雪球的情况下融化，但有冻伤危险）。</li>
+<li>冰。冰是最好的产水物。但是，如果找得到水，最好不要因此而浪费燃料。学会辨别老冰层和新冰层。应该只用老冰，因为里面所含的盐分少一些。可以舔一舔，看看里面是否含盐。新冰般是尖角形的，有刺，呈奶油色。冰山上的冰很好，但那是取冰的危险办法（冰山有可能会翻塌，哪怕是在新的冰层上重新冰冻住的，因为水下的冰比水上的冰融化更快些）。大浮冰上的水池一般没有问题，特别是在旧冰层上。但是，这些水有可能含有盐分。这可以用常识加以判断——尝一尝。</li>
+<li>泥水。将布料、手绢、海绵伸进泥水里面，然后挤干。</li>
+<li>植物。仙人掌类的植物值得一试，尽管看上去它们就像皮革一样。如果有刀子，可以打碎或者切掉它们的顶部，挤一挤看。也可以试着拿到石头上去敲击。你有可能得到一些含水的碎块，或者汁液（如果呈牛奶色就不要喝）。</li>
+<li>丛林中的植物有可能含有淡水。试一试，绿色的竹子有时候含有一些可解渴的汁液，如果裂开或者呈黄色，里面可能有雨水。如果里面发出咯咯声，可以砍掉上面的节。竹节还是极好的装水容器。</li>
+<li>藤最好。在极茂密的藤类尽量高的地方切开，再将底部砍断削尖末端。可以直接饮用，也可以倒进杯子（注意：嘴与藤类直接接触有可能会引起皮肤疼痛）。但是，如果渗出的是牛奶状汁液就不要喝。</li>
+<li>绿色的椰子有可能含有1升的水，是极好的汁液。找到绿果后，想办法找到顶上的两个眼，用任何尖的东西插进去。或者用尖锐的石块砸开。如果没有带刀子，可将一根尖木桩垂直插在地上，并用力将绿果扎在这根木桩，然后不停地拧动。可以爬上棕榈树找水。</li>
+<li>在天气极炎热的地区，除非确信地下有水，否则，万不可抱希望而费尽气力去地下找水。如果你是位风水先生，那当然没有事。如果不是，应该将汗水和气力省下来。万万不可盲目乱挖。</li>
+</ol>
+<h4 id="水的净化"><a href="#水的净化" class="headerlink" title="水的净化"></a>水的净化</h4><ol>
+<li>所有的水都应该先视为已经污染，澄清的水也有可能是污染水。自来水有污染。从高处山村流下来，或者流经一只死羊的山泉也有可能被污染。喝了这些被污染的水则有患霍乱、伤寒、痢疾、血吸虫病等危险。当然，也有一些人喝过极脏而又未经净化处理的水没有事。</li>
+<li>可以这样净化：将手指放进耳朵，抠一些耳屎出来，将手指伸进水里面，让耳屎化开表层铅的张力，然后就在这个已经化开张力的小部分水区饮水（就在你的手指伸进去的附近）。</li>
+<li>更广泛的净水方法有下面这些步骤：<ol>
+<li>用布或折叠起来的手绢隔开水，将颗粒、大石子沙、铁锈和<br>尘土滤出。</li>
+<li>煮开，至少一分钟（时间再长一些更好），然后，让一些沉淀物沉淀下来。可用来煮水的东西包括长竹管、纸巾盒、厚树皮等。</li>
+<li>1升水里面放上5滴碘（浑水里面放进5滴）。让其沉淀30分钟。用水滴将容器嘴部清洁一下，再等更长一段时间。</li>
+<li>加一点点盐会改善口感，或者将水从这个水罐倒人另外一些水罐。</li>
+<li>使用净水药丸，药瓶上面有使用说明。</li>
+</ol>
+</li>
+<li>求生蒸馏：如果沙漠上的迷路者有0.6平方米的塑料布，他就可以从地上“挤”出水来。这个办法并不是在哪里都可以使用的，但是，在许多地方，用这个方法一天可以挤出0.5升甚至更多的水。</li>
+<li>太阳蒸馏锅：在救生筏或者在海上漂流时，只要有太阳，一定要驾好这些可膨胀的球锅（可使盐水蒸发，产生淡水），这样就可以得到尽量多的饮水。</li>
+</ol>
+<h3 id="4-在水中自救"><a href="#4-在水中自救" class="headerlink" title="4. 在水中自救"></a>4. 在水中自救</h3><h4 id="沉下去之前"><a href="#沉下去之前" class="headerlink" title="沉下去之前"></a>沉下去之前</h4><p>如果你还有时间：</p>
+<ol>
+<li>把长靴、长皮鞋和任何鞋都踢掉。</li>
+<li>把太紧、太重的衣服和毛衣去掉。只保留衬衫、裤子、睡衣等。</li>
+<li>在衣服和口袋里塞满任何能够浮起来的东西。球体、海绵、塑料瓶、袋子、盒子等都有浮力。桶、箱子、皮鞋翻过来都是好浮子。</li>
+<li>抓住任何一种“筏子”：木板、汽车座垫、备用轮子及轮胎。</li>
+<li>不要错过任何近在手边的救生皮带或者救生衣。</li>
+<li>朝水上浮着的任何东西扑过去。</li>
+</ol>
+<h4 id="抽筋"><a href="#抽筋" class="headerlink" title="抽筋"></a>抽筋</h4><p>不要慌张，用最少的力气背过身来浮起。</p>
+<ol>
+<li>脚部抽筋：抓住脚趾用力朝胫骨方向扳动。</li>
+<li>小腿部抽筋：伸直腿，将脚趾往膝盖方向扳动，迫使足背向胫骨方向扳动，不停地按压脚后跟。</li>
+<li>大腿抽筋：弯曲膝盖，向前拉伸大腿。</li>
+<li>抽筋停下来以后，用手指揉动，直到僵硬消失为止。</li>
+<li>切记：拉伸可以解决抽筋问题。抽筋产生的剧痛是将要发作的警告。出现疼痛时，应赶紧拉伸肌肉。</li>
+</ol>
+<h4 id="冲浪"><a href="#冲浪" class="headerlink" title="冲浪"></a>冲浪</h4><p>太急的海浪千万不要去试，否则有可能被卷人急流中去。在大海浪中求生存需要特别的技术。</p>
+<p>一般而论，已经被冲入海浪中的人（或从防波堤和沙堤上冲下来的人）只在下述情形下才有机会存活：</p>
+<ol>
+<li>冲浪是在朝岸上方向冲来的海浪上进行的。</li>
+<li>用手抓住沙层，以避开反击。</li>
+<li>脱出海浪后，赶紧爬上高位水标之上。</li>
+</ol>
+<p>如果被急流（退回到大海的巨浪）卷走了：</p>
+<ol>
+<li>不要与海浪对游。</li>
+<li>斜着游出海浪。</li>
+<li>游过从几米到几百米不等的一段距离之后，游泳者会从急流中脱出身来，因此应该能够重新回到岸边（也许在下游数公里的某个地方）。</li>
+</ol>
+<p>如果附近没有人能够帮助，应该压下慌乱的心情。侧游或者蛙泳可以保存体力：</p>
+<ol>
+<li>与海岸平行游泳，直到你回到朝海岸冲去的大浪上。</li>
+<li>骑在小浪的后背上。就在小浪卷过并打下来之前潜入水中躲过它。</li>
+<li>在大海浪上的时候，可在朝海岸冲去的两个浪头之间游泳。大浪接近时，沉到底部去，用手掌抓住沙层，可避免被底层暗流冲翻。海浪过去以后，再从底部升上来游。</li>
+</ol>
+<h4 id="脱衣"><a href="#脱衣" class="headerlink" title="脱衣"></a>脱衣</h4><p>脱掉厚重、太紧和有网格的衣物。</p>
+<p>如果碰到某种可以做成浮子的东西（比如雨衣），不要马上丢弃，而应该让其浮在附近的地方，使其里层充满空气。</p>
+<p>踢掉鞋子，但要注意：皮靴倒过来用胳膊夹住可以用作浮子。帽子也可以做类似用途。</p>
+<p>将拉链、扣子和钩子等松开。脱衣物的时候，先将扣子等一切东西松开，深吸一口气，然后：</p>
+<ol>
+<li>像脱外衣一样脱掉解开了扣子的衬衫（不要从脸部脱，以免缠住脸部）。</li>
+<li>前面并不全有扣子的衬衣，应该将没有扣子的部分撕开。</li>
+<li>另一种脱法是从腰部褪下衬衣。</li>
+<li>前排衬衫扣子很滑，很难松开的时候，将这一部分撕开。</li>
+<li>将裤子松开拉链等以后退至膝盖部分及以下，再吸一口气，然后将头钻人水下完全脱掉，可用蝶泳方法将裤子完全脱掉。</li>
+</ol>
+<h4 id="汽车没入水中"><a href="#汽车没入水中" class="headerlink" title="汽车没入水中"></a>汽车没入水中</h4><p>一般的情况是，汽车是猛然间冲进水里的，而且很快便沉入水中，人来不及逃生。如果人是清醒的，可以按下列的步骤行动：</p>
+<ol>
+<li>摇起车窗。</li>
+<li>打开所有车灯，作为求救信号。</li>
+<li>不要试图去打开车窗。</li>
+<li>手抓住门把手。</li>
+<li>等到水漫齐下巴。</li>
+<li>然后打开车门，深吸一口气游到水面。</li>
+</ol>
+<p>一边等水往上漫（速度很快），一边考虑到底准备如何升到水面。如果门一开始打不开，要把孩子举到水面以上，这个时候人还是可以呼吸的。</p>
+<p>水漫到下巴的位置的时候，车外面的水向里面的压力会轻一些。如果车门打不开，赶快试试另外一边的门，或者摇下车窗，想办法挤出去，用脚狠命蹬。如果没有别的办法，蹬开或者砸开挡风玻璃或两侧玻璃朝外爬。</p>
+<h4 id="涉水过河"><a href="#涉水过河" class="headerlink" title="涉水过河"></a>涉水过河</h4><p>人们必须涉水过河时，全世界每年都有很多人淹死。每当你过河的时候要经常问一下自己：非得过河不可吗？难道就没有别的任何办法了？</p>
+<p>选择过河的地方一定要慎重，这是所有安全因素中最为重要的一个。寻找：</p>
+<ol>
+<li>清晰的河岸，如果你遇到麻烦，这会给你大量恢复的空间。</li>
+<li>坚实、平滑的河床，里面没有障碍物。</li>
+<li>没有随意乱漂的木头、漩涡、暗礁和其他危险物，特别是在将要涉水的下游处。</li>
+<li>尽量找水流不是很急的地方过，因此应该找河面比较宽的地方过，或者找河流分成几股支流的地方过。</li>
+<li>水深是很重要的。找水浅的地方过。但是，你还必须游过去。</li>
+</ol>
+<h4 id="如何涉水"><a href="#如何涉水" class="headerlink" title="如何涉水"></a>如何涉水</h4><ol>
+<li>要拖着脚，迈着短促的步伐直接涉水。移动时应该与河岸保持直角。面对着河面。挨着露出河面或者刚好在水面以下的大石头过河。如果水流太急，应该面朝下游，斜线横过，但应该有移动的空间。</li>
+<li>重复上面的动作，但用一根结实的棍子当作拐杖，将木棍轻轻伸向前方，并朝上游一点的地方点，然后踩着那个点过河，如此等等。水的流速会使木棍往下压。</li>
+<li>如果小组中有没有经验的人或者身体差的人，可将手臂挽起来。身体差的人夹在中间。</li>
+<li>最理想的办法是用一根长棍子当横杆，手臂互相挽着，身体差的人夹在中间。身体最好的人处在最外边。人水的时候应该顺水流呈直线，而不是横着。如果身体差的人摔倒，或者昏过去，其他的人就可以帮助他。</li>
+</ol>
+<h4 id="人工呼吸"><a href="#人工呼吸" class="headerlink" title="人工呼吸"></a>人工呼吸</h4><ol>
+<li>让受伤者仰躺着。</li>
+<li>分秒必争，不要耽误时间去擦嘴或者清理喉头，用手指一抹就可以解决（或用手绢包着）。</li>
+<li>将头斜过去，扳开下颌，好打开空气通道（跟“吞剑”情况一样）。</li>
+<li>用脸堵住鼻孔，或者用手指捏住鼻孔。</li>
+<li>深呼吸，张大嘴，与落水者嘴贴得极紧。</li>
+<li>吹气到肺部。看看胸部有无起伏，然后移开嘴。</li>
+<li>看到肺部落下去的时候，再深深吸一口气（听听肺部呼出气体的声音）。如果没有胸部起伏的情况出现，再向后多扳动落水者的头，然后试一次，看看能不能将所需要的空气吹进去。</li>
+<li>不断地重复。头6次人工呼吸要快一些。然后，成人一分钟做10次，儿每分钟20次，力度稍小一些。注意：头6次呼吸做完以后，经常有可能再去清理受害者的嘴，动作要快。然后再按所说的频率做。</li>
+<li>如果无法打开嘴，或无法利用受伤者的嘴，那就将嘴闭上从其鼻孔里吹气（方法同口对口呼吸是一样的）。</li>
+</ol>
+<h4 id="西尔维斯特法"><a href="#西尔维斯特法" class="headerlink" title="西尔维斯特法"></a>西尔维斯特法</h4><p>如果落水者面部有伤，用西尔维斯特方法（更正法），动作要快：</p>
+<ol>
+<li>让病人平躺着。</li>
+<li>在其肩下垫上衣物或救生衣。</li>
+<li>将嘴里的杂物快快清理出来。要确保头后仰，而且是向下倒过来的。</li>
+<li>双腿跨在伤者头部蹲下，抓住其双腕。</li>
+<li>在其胸部稍下一点的地方交叉起来。</li>
+<li>救护人员手臂伸直，握住病人双腕，在胸部以下往下压。</li>
+<li>完全打开其双臂（使其胸腔内的空气呼出，再使空气吸进去）。</li>
+<li>一分钟重复12次。</li>
+</ol>
+<h3 id="5-在黑暗中自救"><a href="#5-在黑暗中自救" class="headerlink" title="5. 在黑暗中自救"></a>5. 在黑暗中自救</h3>
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E4%B9%A6%E6%91%98/">书摘</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%94%9F%E5%AD%98%E6%8A%80%E5%B7%A7/">生存技巧</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本文作者：以成<br>本文链接：<a href=""><script>document.write(window.location.href.replace(window.location.hash, ``))</script></a><br>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noopener">CC BY-NC-SA 4.0 协议</a> 。转载请注明本文作者与链接！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/play_manjaro_xfce_20_0_in_virtualbox/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">在 VirtualBox 中玩 Manjaro Xfce 20.0</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/posts/poem_jig_laih/">
+                        <span class="hidden-mobile">疫癘</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "jfqqrz6l9VmBjlVdmCKusyUX-gzGzoHsz",
+          app_key: "KMLndPzsjoL98YgC9e85v4WK",
+          placeholder: "欢迎给我留言，谈谈你的想法哦。\n（支持Markdown语法）",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      ©2015-2020 Transion Creative Centre
+      <br>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "《自救书》书摘&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?deb343538ea97eeebc6eea038e232994";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

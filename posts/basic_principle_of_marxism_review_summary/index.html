@@ -1,0 +1,1027 @@
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sat Apr 04 2020');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="huangjunxin">
+  <meta name="keywords" content="">
+  <title>马原考试复习总结 - 我的记事本</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>我的记事本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/03/13/8KDuAe.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2020-01-08 00:09">
+      2020年1月8日 凌晨
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      6.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      66
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>大二上学期学习了课程“马克思主义基本原理”，本文是期末时对本课程的总结与归纳，同时便于以后复查。</p>
+<a id="more"></a>
+<h2 id="考试题型与分值"><a href="#考试题型与分值" class="headerlink" title="考试题型与分值"></a>考试题型与分值</h2><p>哲学（1-3章）：60分</p>
+<ul>
+<li>第一章</li>
+<li>第二章第1、2节</li>
+<li>第三章第1、3节</li>
+</ul>
+<p>经济学（4-5章）：30分</p>
+<ul>
+<li>第四章第1节</li>
+<li>第五章第2节</li>
+</ul>
+<h2 id="0-导论"><a href="#0-导论" class="headerlink" title="0. 导论"></a>0. 导论</h2><h3 id="0-1-马克思的两个伟大发现"><a href="#0-1-马克思的两个伟大发现" class="headerlink" title="0.1 马克思的两个伟大发现"></a>0.1 马克思的两个伟大发现</h3><ul>
+<li>==历史唯物主义（唯物史观）、剩余价值学说==</li>
+</ul>
+<h3 id="0-2-马克思主义的三大来源"><a href="#0-2-马克思主义的三大来源" class="headerlink" title="0.2 马克思主义的三大来源"></a>0.2 马克思主义的三大来源</h3><ul>
+<li>德国的古典哲学、英国的古典政治经济学、英法空想社会主义学说</li>
+</ul>
+<h3 id="0-3-马克思主义诞生的标志性事件是什么"><a href="#0-3-马克思主义诞生的标志性事件是什么" class="headerlink" title="0.3 马克思主义诞生的标志性事件是什么"></a>0.3 马克思主义诞生的标志性事件是什么</h3><ul>
+<li>1848年《共产党宣言》的发表</li>
+</ul>
+<h3 id="0-4-马克思主义的五个基本特征"><a href="#0-4-马克思主义的五个基本特征" class="headerlink" title="0.4 马克思主义的五个基本特征"></a>0.4 马克思主义的五个基本特征</h3><ul>
+<li>科学性</li>
+<li>革命性</li>
+<li>实践性</li>
+<li>人民性</li>
+<li>发展性</li>
+</ul>
+<h2 id="1-世界的物质性及发展规律（重点的重点）"><a href="#1-世界的物质性及发展规律（重点的重点）" class="headerlink" title="1. 世界的物质性及发展规律（重点的重点）"></a>1. 世界的物质性及发展规律（重点的重点）</h2><h3 id="1-1-哲学的含义"><a href="#1-1-哲学的含义" class="headerlink" title="1.1 哲学的含义"></a>1.1 哲学的含义</h3><ul>
+<li>哲学是系统化、理论化的世界观，是对自然知识、社会知识和思维知识的概括和总结，他提供了对于世界以及人与世界关系的全面而深刻的思考。</li>
+</ul>
+<h3 id="1-2-哲学的基本问题"><a href="#1-2-哲学的基本问题" class="headerlink" title="1.2 哲学的基本问题"></a>1.2 哲学的基本问题</h3><ul>
+<li>思维和存在的关系问题<ul>
+<li>物质和意识==何者为第一性==：唯物/唯心</li>
+<li>物质和意识==是否具有同一性==：可知论/不可知论<ul>
+<li>唯物、唯心都是可知论者</li>
+<li>二元论者（不彻底的唯心）才是不可知论</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-唯物主义与唯心主义"><a href="#1-3-唯物主义与唯心主义" class="headerlink" title="1.3 唯物主义与唯心主义"></a>1.3 唯物主义与唯心主义</h3><h4 id="1-3-1-唯物主义的三种形态"><a href="#1-3-1-唯物主义的三种形态" class="headerlink" title="1.3.1 唯物主义的三种形态"></a>1.3.1 唯物主义的三种形态</h4><ul>
+<li>古代的朴素唯物主义</li>
+<li>近代的形而上学（机械）唯物主义</li>
+<li>现代的辩证唯物主义</li>
+</ul>
+<h4 id="1-3-2-唯心主义的两种形态"><a href="#1-3-2-唯心主义的两种形态" class="headerlink" title="1.3.2 唯心主义的两种形态"></a>1.3.2 唯心主义的两种形态</h4><ul>
+<li>主观唯心主义</li>
+<li>客观唯心主义</li>
+</ul>
+<h4 id="1-3-3-主流哲学流派、观点及代表人物"><a href="#1-3-3-主流哲学流派、观点及代表人物" class="headerlink" title="1.3.3 主流哲学流派、观点及代表人物"></a>1.3.3 主流哲学流派、观点及代表人物</h4><p><img src="https://s2.ax1x.com/2020/01/06/lr06dP.png" srcset="/img/loading.gif" alt="lr06dP.png"></p>
+<h3 id="1-4-马克思主义的物质观、运动观"><a href="#1-4-马克思主义的物质观、运动观" class="headerlink" title="1.4 马克思主义的物质观、运动观"></a>1.4 马克思主义的物质观、运动观</h3><h4 id="1-4-1-马克思主义的物质观：客观实在性"><a href="#1-4-1-马克思主义的物质观：客观实在性" class="headerlink" title="1.4.1 马克思主义的物质观：客观实在性"></a>1.4.1 马克思主义的物质观：客观实在性</h4><ol>
+<li>是人可以通过感觉感知的</li>
+<li>==它不依赖于我们的感知而存在（不论你愿不愿意，它都在那里）==</li>
+<li>它为我们的感觉所复写、摄影、反映</li>
+</ol>
+<h4 id="1-4-2-马克思主义的运动观"><a href="#1-4-2-马克思主义的运动观" class="headerlink" title="1.4.2 马克思主义的运动观"></a>1.4.2 马克思主义的运动观</h4><ol>
+<li>物质的==根本属性==是运动</li>
+<li>物质离不开运动（相反是形而上学）；运动也离不开物质（相反是唯心主义）</li>
+<li>时间和空间是物质运动的存在形式。时间是指物质运动的持续性、顺序性，特点是一维性，空间是指物质的广延性、伸张性，特点是三维性</li>
+</ol>
+<h3 id="1-5-意识是什么"><a href="#1-5-意识是什么" class="headerlink" title="1.5 意识是什么"></a>1.5 意识是什么</h3><h4 id="1-5-1-意识是什么"><a href="#1-5-1-意识是什么" class="headerlink" title="1.5.1 意识是什么"></a>1.5.1 意识是什么</h4><ul>
+<li>是物质世界长期发展的产物</li>
+<li>是人脑机能和属性</li>
+<li>==是物质世界的主观映象==</li>
+</ul>
+<h4 id="1-5-2-意识的发展经历了三个阶段"><a href="#1-5-2-意识的发展经历了三个阶段" class="headerlink" title="1.5.2 意识的发展经历了三个阶段"></a>1.5.2 意识的发展经历了三个阶段</h4><ul>
+<li>一切物质具有的反应特性</li>
+<li>低等动物的刺激感应性</li>
+<li>高等动物的感觉和心理</li>
+</ul>
+<h4 id="1-5-3-意识的形成的因素"><a href="#1-5-3-意识的形成的因素" class="headerlink" title="1.5.3 意识的形成的因素"></a>1.5.3 意识的形成的因素</h4><ul>
+<li>==劳动起决定性作用==</li>
+<li>语言促进了意识的发展，是意识的物质外壳</li>
+</ul>
+<h3 id="☆政治上：-只要是个作用就是重要作用-，而真正重要的作用应该叫决定性作用"><a href="#☆政治上：-只要是个作用就是重要作用-，而真正重要的作用应该叫决定性作用" class="headerlink" title="☆政治上：==只要是个作用就是重要作用==，而真正重要的作用应该叫决定性作用"></a>☆政治上：==只要是个作用就是重要作用==，而真正重要的作用应该叫决定性作用</h3><h4 id="1-5-4-意识的能动性与客观规律"><a href="#1-5-4-意识的能动性与客观规律" class="headerlink" title="1.5.4 意识的能动性与客观规律"></a>1.5.4 意识的能动性与客观规律</h4><p>意识的作用：具有==能动作用==</p>
+<ul>
+<li>意识反映世界有自觉性、目的性、计划性</li>
+<li>意识不仅反映事物的现象，而且反映事物的本质和规律</li>
+<li>意识具有指导实践改造客观世界的作用</li>
+<li>意识还具有指导、控制人的行为和生理活动的作用</li>
+</ul>
+<h3 id="1-6-物质与意识的辩证统一"><a href="#1-6-物质与意识的辩证统一" class="headerlink" title="1.6 物质与意识的辩证统一"></a>1.6 物质与意识的辩证统一</h3><ul>
+<li>物质==决定==意识</li>
+<li>意识对物质具有==反作用==</li>
+<li>主观能动性与客观规律有==统一性==</li>
+</ul>
+<h3 id="1-7-意识与人工智能的关系"><a href="#1-7-意识与人工智能的关系" class="headerlink" title="1.7 意识与人工智能的关系"></a>1.7 意识与人工智能的关系</h3><p>谈谈在人工智能飞速发展的条件下，如何认识物质与意识的关系。</p>
+<ol>
+<li>物质决定意识，意识依赖于物质并反作用于物质。意识是特殊的物质，是人脑的机能和属性，是客观世界的主观映象。人工智能，它的“意识”就基于他所处的躯壳以及其中的代码，这决定了它的“意识”。</li>
+<li>意识对物质具有反作用。这种反作用是意识的能动作用。人工智能的“意识”发展到一定的程度便有可能突破人类的限制而产生积极认识世界和改造世界的能力和活动</li>
+<li>要想正确认识和把握物质的决定作用和意识的反作用，必须处理好主观能动性和客观规律性的关系</li>
+</ol>
+<h3 id="1-8-辩证法的三大基本规律"><a href="#1-8-辩证法的三大基本规律" class="headerlink" title="1.8 辩证法的三大基本规律"></a>1.8 辩证法的三大基本规律</h3><ol>
+<li>对立统一规律</li>
+<li>质量互变规律</li>
+<li>否定之否定规律</li>
+</ol>
+<h4 id="1-8-1-第一大基本规律：-对立统一规律（矛盾是什么）"><a href="#1-8-1-第一大基本规律：-对立统一规律（矛盾是什么）" class="headerlink" title="1.8.1 第一大基本规律：==对立统一规律（矛盾是什么）=="></a>1.8.1 第一大基本规律：==对立统一规律（矛盾是什么）==</h4><p>矛盾是反映事物内部和事物之间==对立统一==关系的哲学范畴</p>
+<p>矛盾的对立属性又称==斗争性==，矛盾的统一属性又称==同一性==</p>
+<ul>
+<li><strong>在考研政治上，斗争同一 = 对立统一</strong></li>
+</ul>
+<p>辩证统一、对立统一理论表</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>范畴</th>
+<th>理论1</th>
+<th>理论2</th>
+<th>统一关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>马克思主义运动观</td>
+<td>绝对运动</td>
+<td>相对静止</td>
+<td>辩证统一</td>
+</tr>
+<tr>
+<td>==对立统一规律(矛盾)==</td>
+<td>==普遍性==</td>
+<td>==特殊性==</td>
+<td>辩证统一：12相互联系相互区别一定条件下相互转化</td>
+</tr>
+<tr>
+<td>质量互变规律</td>
+<td>量变</td>
+<td>质变</td>
+<td>辩证统一</td>
+</tr>
+<tr>
+<td>否定之否定规律</td>
+<td>肯定</td>
+<td>否定</td>
+<td>辩证统一</td>
+</tr>
+<tr>
+<td>==物质和意识==</td>
+<td>==物质==</td>
+<td>==意识==</td>
+<td>辩证统一：1决定2,2对1有反作用</td>
+</tr>
+<tr>
+<td>意识的作用</td>
+<td>尊重客观规律</td>
+<td>发挥主观能动性</td>
+<td>辩证统一：1是前提,2是必须</td>
+</tr>
+<tr>
+<td>==认识论==(第一次飞跃)</td>
+<td>==感性认识==</td>
+<td>==理性认识==</td>
+<td>辩证统一：12相互区别相互联系相互渗透</td>
+</tr>
+<tr>
+<td>从实践到认识(第二次)</td>
+<td>实践</td>
+<td>认识</td>
+<td>辩证统一</td>
+</tr>
+<tr>
+<td>==马克思主义真理观==</td>
+<td>==绝对性==</td>
+<td>==相对性==</td>
+<td>辩证统一：12相互依存相互包含相互渗透</td>
+</tr>
+<tr>
+<td>==真理的价值==</td>
+<td>==真理==</td>
+<td>==价值==</td>
+<td>辩证统一</td>
+</tr>
+<tr>
+<td>==社会存在与社会意识==</td>
+<td>==社会存在==</td>
+<td>==社会意识==</td>
+<td>辩证统一：1决定2,2对1有反作用</td>
+</tr>
+<tr>
+<td>生产</td>
+<td>生产力</td>
+<td>生产关系</td>
+<td>辩证统一：1决定2,2对1具有反作用</td>
+</tr>
+<tr>
+<td>商品</td>
+<td>价值</td>
+<td>使用价值</td>
+<td>对立统一</td>
+</tr>
+<tr>
+<td>经济</td>
+<td>经济基础</td>
+<td>上层建筑</td>
+<td>辩证统一：2必须适合1发展要求的规律</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="1-8-2-什么是矛盾的同一性"><a href="#1-8-2-什么是矛盾的同一性" class="headerlink" title="1.8.2 什么是矛盾的同一性"></a>1.8.2 什么是<strong>矛盾的同一性</strong></h4><ul>
+<li>指矛盾双方==相互依存==、==相互贯通==的性质和趋势<ol>
+<li>相互依存：没有你就没有我</li>
+<li>相互贯通：男人可以变女人，女人可以变男人</li>
+</ol>
+</li>
+</ul>
+<h4 id="1-8-3-什么是矛盾的斗争性"><a href="#1-8-3-什么是矛盾的斗争性" class="headerlink" title="1.8.3 什么是矛盾的斗争性"></a>1.8.3 什么是<strong>矛盾的斗争性</strong></h4><ul>
+<li>矛盾者的对立面之间==相互排斥、相互分离==的性质和趋势</li>
+<li>可以区分为==对抗性==（激烈的矛盾）和==非对抗性==（缓和的矛盾）两种基本形式</li>
+</ul>
+<h4 id="1-8-4-矛盾的同一性和斗争性的关系"><a href="#1-8-4-矛盾的同一性和斗争性的关系" class="headerlink" title="1.8.4 矛盾的同一性和斗争性的关系"></a>1.8.4 矛盾的同一性和斗争性的关系</h4><ul>
+<li>矛盾是==既同一又斗争==的，而不是时而同一时而斗争的（是既爱又恨，不是时而爱时而恨，当你爱他就会和他吵架，不吵了也就不爱了）</li>
+</ul>
+<h4 id="1-8-5-同一性在事物发展中的作用"><a href="#1-8-5-同一性在事物发展中的作用" class="headerlink" title="1.8.5 同一性在事物发展中的作用"></a>1.8.5 同一性在事物发展中的作用</h4><ul>
+<li>由于相互依存，==一方的发展以另一方的发展为条件==（我之前听过总书记的课，因此我也能光彩）</li>
+<li>同一性使矛盾双方相互吸取有利于自己的因素，==在相互作用中各自得到发展==（经历过一段感情关系后学到了很多，使自己变得更好了）</li>
+<li>优于矛盾彼此相通，矛盾双方可以==向着彼此的对立面转化而得到发展==，并规定着事物的发展方向（原来是我强你弱的，后来是你强我弱，而且你比我原来强的时候更强了，造成了==发展==）</li>
+</ul>
+<h4 id="1-8-6-斗争性在事物发展中的作用"><a href="#1-8-6-斗争性在事物发展中的作用" class="headerlink" title="1.8.6 斗争性在事物发展中的作用"></a>1.8.6 斗争性在事物发展中的作用</h4><ul>
+<li>矛盾双方的斗争促进矛盾双方力量的变化，造成事物的==量变==</li>
+<li>矛盾双方的斗争促使双方的地位和性质发生变化，实现事物的==质变==</li>
+</ul>
+<h4 id="1-8-7-方法论意义"><a href="#1-8-7-方法论意义" class="headerlink" title="1.8.7 方法论意义"></a>1.8.7 方法论意义</h4><ol>
+<li>看问题一分为二</li>
+<li>求同存异，和谐相处</li>
+<li>事物的发展不仅表现为==相辅相成==（去讨好她、去示好，然后就好了），而且表现为==相反相成==（处处跟她作对，她还来跟你好）</li>
+</ol>
+<h3 id="1-8-8-否定之否定规律"><a href="#1-8-8-否定之否定规律" class="headerlink" title="1.8.8 否定之否定规律"></a>1.8.8 否定之否定规律</h3><ul>
+<li>它揭示了事物发展的前进性与曲折性的统一</li>
+<li>表明了事物的发展不是直线式前进而是螺旋式上升的</li>
+</ul>
+<h3 id="1-9-矛盾分析方法-，对看待问题有哪三个启示"><a href="#1-9-矛盾分析方法-，对看待问题有哪三个启示" class="headerlink" title="1.9 ==矛盾分析方法==，对看待问题有哪三个启示"></a>1.9 ==矛盾分析方法==，对看待问题有哪三个启示</h3><ul>
+<li>抓重点、抓主流</li>
+<li>具体问题具体分析（矛盾的普遍性和特殊性是辩证统一的）</li>
+<li>要一分为二看问题</li>
+</ul>
+<h3 id="1-10-量变的两种形式"><a href="#1-10-量变的两种形式" class="headerlink" title="1.10 量变的两种形式"></a>1.10 量变的两种形式</h3><ul>
+<li>质量的增加</li>
+<li>空间结构</li>
+</ul>
+<h3 id="1-11-辩证法的五个基本范畴"><a href="#1-11-辩证法的五个基本范畴" class="headerlink" title="1.11 辩证法的五个基本范畴"></a>1.11 辩证法的五个基本范畴</h3><p>牛逼也不香：nbybx</p>
+<ul>
+<li>内容与形式</li>
+<li>本质与现象</li>
+<li>原因与结果</li>
+<li>必然与偶然</li>
+<li>现实与可能</li>
+</ul>
+<h3 id="1-12-辩证法的四个现代科学方法"><a href="#1-12-辩证法的四个现代科学方法" class="headerlink" title="1.12 辩证法的四个现代科学方法"></a>1.12 辩证法的四个现代科学方法</h3><p>刚才疯了：gcfl</p>
+<ul>
+<li>归纳和演绎</li>
+<li>抽象和具体</li>
+<li>分析和综合</li>
+<li>逻辑和历史</li>
+</ul>
+<h3 id="1-13-辩证法的联系与发展"><a href="#1-13-辩证法的联系与发展" class="headerlink" title="1.13 辩证法的联系与发展"></a>1.13 辩证法的联系与发展</h3><p>联系与发展是唯物辩证法的主要特征（论述题？）</p>
+<ul>
+<li>联系是事物内部和事物之间相互影响、相互制约的关系。整个世界就是一个普遍联系的有机整体，一切事物都和周围其他事物有条件地联系着。</li>
+<li>正是由于事物的普遍联系，它们之间的相互作用、相互影响，才构成了事物的运动、变化、发展。发展就是新事物的产生、旧事物的灭亡，即新事物代替旧事物。没有联系，就没有世界，也就没有发展。</li>
+</ul>
+<h2 id="2-实践与认识及其发展规律"><a href="#2-实践与认识及其发展规律" class="headerlink" title="2. 实践与认识及其发展规律"></a>2. 实践与认识及其发展规律</h2><h3 id="2-1-实践"><a href="#2-1-实践" class="headerlink" title="2.1 实践"></a>2.1 实践</h3><h4 id="2-1-1-实践的概念"><a href="#2-1-1-实践的概念" class="headerlink" title="2.1.1 实践的概念"></a>2.1.1 实践的概念</h4><p>马克思主义对实践的定义：</p>
+<ul>
+<li>实践是==人类==能动地改造世界的==客观物质性==活动<ul>
+<li>实践的主体只能是人</li>
+<li>实践归根到底还是属于物质世界的</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-1-2-实践的特点"><a href="#2-1-2-实践的特点" class="headerlink" title="2.1.2 ==实践的特点=="></a>2.1.2 ==实践的特点==</h4><p>作作死：zzs</p>
+<ul>
+<li>直接现实性（可以把脑中的物变成现实的物）</li>
+<li>自觉能动性（实践要受意识的指导）</li>
+<li>社会历史性（历史上的不同时候实践的方法不同）</li>
+</ul>
+<h4 id="2-1-3-实践的基本形式"><a href="#2-1-3-实践的基本形式" class="headerlink" title="2.1.3 实践的基本形式"></a>2.1.3 实践的基本形式</h4><p>网速快：wsk</p>
+<ul>
+<li>物质生产实践（劳动）</li>
+<li>社会政治实践（搞关系）</li>
+<li>科学文化实践（对未知的探索）</li>
+</ul>
+<h4 id="2-1-4-实践在认识活动中的决定作用"><a href="#2-1-4-实践在认识活动中的决定作用" class="headerlink" title="2.1.4 实践在认识活动中的决定作用"></a>2.1.4 实践在认识活动中的决定作用</h4><ul>
+<li>实践是认识的来源</li>
+<li>实践是认识发展的动力</li>
+<li>实践是认识的目的</li>
+<li>实践是检验认识真理性的唯一标准</li>
+</ul>
+<h3 id="2-2-认识"><a href="#2-2-认识" class="headerlink" title="2.2 认识"></a>2.2 认识</h3><h4 id="2-2-1-认识的本质"><a href="#2-2-1-认识的本质" class="headerlink" title="2.2.1 认识的本质"></a>2.2.1 认识的本质</h4><h5 id="2-2-1-1-唯物主义反映论与唯心主义先验论的对立"><a href="#2-2-1-1-唯物主义反映论与唯心主义先验论的对立" class="headerlink" title="2.2.1.1 唯物主义反映论与唯心主义先验论的对立"></a>2.2.1.1 唯物主义反映论与唯心主义先验论的对立</h5><p>存在着两条根本对立的认识路线：</p>
+<ul>
+<li><strong>一是坚持从物到感觉和思想的唯物主义路线（先有眼前的物再有我思想中的物）（对）</strong></li>
+<li>另一条是坚持从思想和感觉到物的唯心主义路线（先有我思想的物再有眼前的物）（错）</li>
+</ul>
+<h5 id="2-2-1-2-辩证唯物主义能动反映论与旧唯物主义直观反映论的区别"><a href="#2-2-1-2-辩证唯物主义能动反映论与旧唯物主义直观反映论的区别" class="headerlink" title="2.2.1.2 辩证唯物主义能动反映论与旧唯物主义直观反映论的区别"></a>2.2.1.2 辩证唯物主义能动反映论与旧唯物主义直观反映论的区别</h5><p>辩证唯物主义==能动==反映论与旧唯物主义==直观==反映论的区别：</p>
+<ul>
+<li><strong>辩证唯物主义==能动==反映论（对）</strong></li>
+<li>旧唯物主义即形而上学唯物主义的认识论，是把人的认识看成是==消极地、被动地==反映外界对象（错）</li>
+</ul>
+<h5 id="2-2-1-3-认识是什么，认识的主要内容：认识是主体在-实践-基础上对客体的-能动-反映"><a href="#2-2-1-3-认识是什么，认识的主要内容：认识是主体在-实践-基础上对客体的-能动-反映" class="headerlink" title="2.2.1.3 认识是什么，认识的主要内容：认识是主体在==实践==基础上对客体的==能动==反映"></a>2.2.1.3 认识是什么，认识的主要内容：认识是主体在==实践==基础上对客体的==能动==反映</h5><p>详细表达是：</p>
+<ul>
+<li>认识是主体对客体的反映</li>
+<li>主体对客体的反映是一个==能动==的创造性的过程</li>
+<li>主体对客体的能动反映是以==实践==为中介而实现的</li>
+</ul>
+<h4 id="2-2-2-认识的过程"><a href="#2-2-2-认识的过程" class="headerlink" title="2.2.2 认识的过程"></a>2.2.2 认识的过程</h4><p>从实践到认识：感性认识到理性认识的飞跃（第一次飞跃）</p>
+<h4 id="2-2-3-感性认识"><a href="#2-2-3-感性认识" class="headerlink" title="2.2.3 感性认识"></a>2.2.3 感性认识</h4><ul>
+<li>是认识的低级阶段</li>
+<li>是人在实践中通过感官对事物外部形态的==直接的、具体的反映（感性认识的对象）==</li>
+<li>它==包括感觉、知觉、表象==三种形式</li>
+<li>它的==特点==是直接性和具体性</li>
+</ul>
+<h4 id="2-2-4-理性认识"><a href="#2-2-4-理性认识" class="headerlink" title="2.2.4 理性认识"></a>2.2.4 理性认识</h4><ul>
+<li>是认识的高级阶段</li>
+<li>是人通过思维对事物内部联系的==间接的、概括的反映（理性认识的对象）==</li>
+<li>它==包括概念、判断、推理、假说、理论==等形式</li>
+<li>它的==特点==是它的间接性和抽象性</li>
+</ul>
+<h4 id="2-2-5-感性认识和理性认识的-辩证统一"><a href="#2-2-5-感性认识和理性认识的-辩证统一" class="headerlink" title="2.2.5 感性认识和理性认识的==辩证统一=="></a>2.2.5 感性认识和理性认识的==辩证统一==</h4><p>（前面举出了许多区别，感性认识和理性认识既然是辩证统一的，那么他们的联系是什么呢？）</p>
+<p>感性认识和理性认识的密不可分的辩证联系</p>
+<ol>
+<li>首先，感性认识和理性认识相互依存</li>
+<li>其次，在认识过程中，感性认识和理性认识又是==互相交织、互相渗透==的</li>
+</ol>
+<p>如果==割裂==两者的辩证统一关系，就会走向唯理论和经验论</p>
+<ul>
+<li>经验主义：片面==夸大感性==认识而忽略理性认识（==读书无用论==）</li>
+<li>教条主义：片面==夸大理性==认识而忽略感性认识（==死读书==）</li>
+</ul>
+<h3 id="☆政治上：没有什么是不相关的、没有用的、可有可无的、忽略不计的"><a href="#☆政治上：没有什么是不相关的、没有用的、可有可无的、忽略不计的" class="headerlink" title="☆政治上：没有什么是不相关的、没有用的、可有可无的、忽略不计的"></a>☆政治上：没有什么是不相关的、没有用的、可有可无的、忽略不计的</h3><h3 id="2-3-马克思主义的真理观"><a href="#2-3-马克思主义的真理观" class="headerlink" title="2.3 马克思主义的真理观"></a>2.3 马克思主义的真理观</h3><h4 id="2-3-1-真理的客观性"><a href="#2-3-1-真理的客观性" class="headerlink" title="2.3.1 真理的客观性"></a>2.3.1 真理的客观性</h4><ol>
+<li>就是承认认识的内容来自客观实际又符合客观实际</li>
+<li>指检验真理的标准是客观的</li>
+</ol>
+<h4 id="2-3-2-真理的绝对性和相对性的辩证统一"><a href="#2-3-2-真理的绝对性和相对性的辩证统一" class="headerlink" title="2.3.2  真理的绝对性和相对性的辩证统一"></a>2.3.2  真理的绝对性和相对性的辩证统一</h4><ol>
+<li>真理的绝对性和相对性==相互依存==</li>
+<li>真理的绝对性和相对性==互相包含、互相渗透==</li>
+<li>相对真理向绝对真理的转化</li>
+</ol>
+<h3 id="2-4-哲学意义上的-价值-（真理的价值）"><a href="#2-4-哲学意义上的-价值-（真理的价值）" class="headerlink" title="2.4 哲学意义上的==价值==（真理的价值）"></a>2.4 哲学意义上的==价值==（真理的价值）</h3><h4 id="2-4-1-价值是什么"><a href="#2-4-1-价值是什么" class="headerlink" title="2.4.1 价值是什么"></a>2.4.1 价值是什么</h4><p>是指实践基础上形成的==主体和客体==之间的意义关系</p>
+<h4 id="2-4-2-价值的基本特性"><a href="#2-4-2-价值的基本特性" class="headerlink" title="2.4.2 价值的基本特性"></a>2.4.2 价值的基本特性</h4><ul>
+<li>主观性</li>
+<li>客观性</li>
+<li>多维性</li>
+<li>社会历史性</li>
+</ul>
+<h4 id="2-4-3-价值观的评价（社会主义核心价值观，不考）"><a href="#2-4-3-价值观的评价（社会主义核心价值观，不考）" class="headerlink" title="2.4.3 价值观的评价（社会主义核心价值观，不考）"></a>2.4.3 价值观的评价（社会主义核心价值观，不考）</h4><h4 id="2-4-4-真理和价值在实践中的辩证统一"><a href="#2-4-4-真理和价值在实践中的辩证统一" class="headerlink" title="2.4.4 真理和价值在实践中的辩证统一"></a>2.4.4 真理和价值在实践中的辩证统一</h4><ul>
+<li>一方面，价值尺度必须以真理为前提</li>
+<li>另一方面，人类自身需要的内在尺度，推动着人们不断发现新的真理</li>
+</ul>
+<p>真理尺度：指在实践中人们必须遵循正确反映客观事物本质和规律的真理</p>
+<p>价值尺度：指在实践中人们都是按照自己的尺度和需要去认识世界和改造世界</p>
+<h2 id="3-人类社会及其发展规律"><a href="#3-人类社会及其发展规律" class="headerlink" title="3. 人类社会及其发展规律"></a>3. 人类社会及其发展规律</h2><h3 id="3-1-唯物史观和唯心史观"><a href="#3-1-唯物史观和唯心史观" class="headerlink" title="3.1 唯物史观和唯心史观"></a>3.1 唯物史观和唯心史观</h3><h4 id="3-1-1-唯心史观有什么错误"><a href="#3-1-1-唯心史观有什么错误" class="headerlink" title="3.1.1 唯心史观有什么错误"></a>3.1.1 唯心史观有什么错误</h4><ul>
+<li>一是至多考察人们活动的==思想动机==，而没有进一步追究思想动机背后的==物质动因==（没有考虑到为什么封建主义会向资本主义转变，认为它只有人在推动，与物质世界的变化无关）（例子：女权的变更）</li>
+<li>二是只看到个人在历史上的作用，而忽视人民群众创造历史的决定作用（例子：看历史书时自己唯心地假设）</li>
+</ul>
+<h4 id="3-1-2-唯物史观的基本观点"><a href="#3-1-2-唯物史观的基本观点" class="headerlink" title="3.1.2 唯物史观的基本观点"></a>3.1.2 唯物史观的基本观点</h4><ol>
+<li>社会存在和社会意识的辩证统一</li>
+<li>人民群众是历史的创造者，阶级斗争是推动社会发展的直接动力</li>
+<li>生产力与生产关系，经济基础与社会上层建筑</li>
+</ol>
+<h3 id="3-2-社会存在和社会意识的构成"><a href="#3-2-社会存在和社会意识的构成" class="headerlink" title="3.2 社会存在和社会意识的构成"></a>3.2 社会存在和社会意识的构成</h3><h4 id="3-2-1-社会存在（其实就是物质）"><a href="#3-2-1-社会存在（其实就是物质）" class="headerlink" title="3.2.1 社会存在（其实就是物质）"></a>3.2.1 社会存在（其实就是物质）</h4><p>社会存在属于社会生活的==物质方面==，是社会实践和物质生活条件的总和，包括：</p>
+<ol>
+<li><strong>物质生活资料的生产以及==生产方式==（生产力 + 生产关系，==决定性因素==）</strong></li>
+<li>==地理环境==（在经常火山喷发和地震的地方不可能有繁华的人类社会，不是决定性作用）</li>
+<li>==人口因素==（男女、老少比例很关键）</li>
+</ol>
+<h4 id="3-2-2-社会意识（其实就是意识）"><a href="#3-2-2-社会意识（其实就是意识）" class="headerlink" title="3.2.2 社会意识（其实就是意识）"></a>3.2.2 社会意识（其实就是意识）</h4><p>社会意识是社会生活的==精神方面==，是社会存在的==反映==，包括：</p>
+<ol>
+<li>社会意识的各种==形式==<ul>
+<li>与阶级<strong>有关</strong>：==社会意识形态==（如法律、经济、道德（不同社会背景有不同的道德标准）、艺术（与美术作品区分））</li>
+<li>与阶级<strong>无关</strong>：==非社会意识形态==</li>
+</ul>
+</li>
+<li>社会心理与==自发形成的风俗、习惯==（大家都不想要车牌号中有4）</li>
+</ol>
+<h4 id="3-2-3-社会存在和社会意识的关系（就是物质和意识的关系）"><a href="#3-2-3-社会存在和社会意识的关系（就是物质和意识的关系）" class="headerlink" title="3.2.3 社会存在和社会意识的关系（就是物质和意识的关系）"></a>3.2.3 社会存在和社会意识的关系（就是物质和意识的关系）</h4><ol>
+<li>一个方面，社会存在决定社会意识，社会意识是==社会存在的反映==，并反作用于社会存在<ul>
+<li>首先，社会存在是社会意识内容的客观来源，社会意识是社会物质生活过程及其条件的主观反映</li>
+<li>其次，社会意识是人们进行社会物质交换的产物</li>
+<li><strong>最后（重点）</strong>，随着社会存在的发展，社会意识也相应地==或迟或早地发生变化和发展（注意，不是立刻！）==</li>
+</ul>
+</li>
+<li>另一个方面，社会意识具有==相对独立性==，它在反映社会存在的同时具有自己特有的发展形式和规律（虽然被社会存在限制着，但是还是有一点自我的）<ul>
+<li>实现，社会意识与社会存在发展的==不完全同步性==和==不平衡性==（平衡：社会存在越发达，意识也就越先进；然而有的国家社会存在很发达，但意识不够先进，如美国；有的国家社会存在不够发达，意识却很先进，如中国）</li>
+<li>其次，社会意识内部各种形式之间的==相互影响==及各自具有的==历史继承性==（今天的意识会受到昨天的影响，如中国，即使今天已进入社会主义社会，但还有许多人残留着封建迷信思想）</li>
+<li>最后，社会意识对社会存在的能动的反作用（如果社会意识先进，会促进发展，如果落后，会阻碍发展）</li>
+</ul>
+</li>
+</ol>
+<h3 id="☆政治上：绝对不比较什么因素比什么因素-更重要-，除非是故事中更侧重哪一方面"><a href="#☆政治上：绝对不比较什么因素比什么因素-更重要-，除非是故事中更侧重哪一方面" class="headerlink" title="☆政治上：绝对不比较什么因素比什么因素==更重要==，除非是故事中更侧重哪一方面"></a>☆政治上：绝对不比较什么因素比什么因素==更重要==，除非是故事中更侧重哪一方面</h3><h3 id="3-3-科学技术对社会的作用"><a href="#3-3-科学技术对社会的作用" class="headerlink" title="3.3 科学技术对社会的作用"></a>3.3 科学技术对社会的作用</h3><h3 id="3-4-生产力和生产关系的辩证统一（高中讲过，可不看）"><a href="#3-4-生产力和生产关系的辩证统一（高中讲过，可不看）" class="headerlink" title="3.4 生产力和生产关系的辩证统一（高中讲过，可不看）"></a>3.4 生产力和生产关系的辩证统一（高中讲过，可不看）</h3><ol>
+<li>生产力决定生产关系</li>
+<li>生产关系反作用于生产力</li>
+<li>生产力和生产关系之间的矛盾运动</li>
+</ol>
+<h3 id="3-5-经济基础和上层建筑的辩证统一（高中讲过，可不看）"><a href="#3-5-经济基础和上层建筑的辩证统一（高中讲过，可不看）" class="headerlink" title="3.5 经济基础和上层建筑的辩证统一（高中讲过，可不看）"></a>3.5 经济基础和上层建筑的辩证统一（高中讲过，可不看）</h3><ol>
+<li>经济基础决定上层建筑</li>
+<li>上层建筑对经济基础具有反作用</li>
+<li>经济基础与上层建筑的相互作用构成二者的矛盾运动</li>
+<li>经济基础和上层建筑之间的内在联系构成了上层建筑一定要适合经济基础状况的规律</li>
+</ol>
+<h2 id="4-资本主义的本质及规律（第一节、第二节）"><a href="#4-资本主义的本质及规律（第一节、第二节）" class="headerlink" title="4. 资本主义的本质及规律（第一节、第二节）"></a>4. 资本主义的本质及规律（第一节、第二节）</h2><p>政治经济学</p>
+<ul>
+<li>简单商品经济（资本主义之前）</li>
+<li>高度发达的商品经济（资本主义及以后）</li>
+</ul>
+<h3 id="4-1-商品经济是什么"><a href="#4-1-商品经济是什么" class="headerlink" title="4.1 商品经济是什么"></a>4.1 商品经济是什么</h3><p>商品经济是以==交换==为目的而进行生产的经济形式</p>
+<p>商品经济产生的==历史条件==有两个：</p>
+<ul>
+<li>社会==分工==的出现（我耕田，你织布）</li>
+<li>生产资料和劳动产品==属于不同的所有者==（不能在一家人里交换，要两家人之间交换才算）</li>
+</ul>
+<h3 id="4-2-商品是什么？商品的属性有哪两个"><a href="#4-2-商品是什么？商品的属性有哪两个" class="headerlink" title="4.2 商品是什么？商品的属性有哪两个"></a>4.2 商品是什么？商品的属性有哪两个</h3><p>商品是用来交换的、能满足人们某种需要的劳动产品，具有==使用价值==和==价值两个因素（属性）==，是使用价值和价值的==矛盾统一体==</p>
+<h3 id="4-3-经济学意义上的-价值-是什么"><a href="#4-3-经济学意义上的-价值-是什么" class="headerlink" title="4.3 经济学意义上的==价值==是什么"></a>4.3 经济学意义上的==价值==是什么</h3><ul>
+<li>==价值==是凝结在商品中的无差别的一般人类==劳动==（最简：价值是劳动）</li>
+<li>==价值==是商品特有的==社会属性==（在荒岛上只有自己一人，身边的东西都没有价值）</li>
+<li>==使用价值==是商品的==自然属性==</li>
+</ul>
+<h3 id="4-4-商品的价值和使用价值之间的关系是-对立统一-的"><a href="#4-4-商品的价值和使用价值之间的关系是-对立统一-的" class="headerlink" title="4.4 商品的价值和使用价值之间的关系是==对立统一==的"></a>4.4 商品的价值和使用价值之间的关系是==对立统一==的</h3><ul>
+<li>对立性表现在：商品的使用价值和价值是==相互排斥==的，二者不可兼得（买手机和卖手机的一个获得使用价值一个获得价值，不能两者都得到）</li>
+<li>统一性表现在：作为商品，使用价值和价值二者缺一不可</li>
+</ul>
+<h3 id="4-5-价格如何衡量：-社会必要劳动时间"><a href="#4-5-价格如何衡量：-社会必要劳动时间" class="headerlink" title="4.5 价格如何衡量：==社会必要劳动时间=="></a>4.5 价格如何衡量：==社会必要劳动时间==</h3><p>社会必要劳动时间是指：在现有的社会正常生产条件下，在社会平均的劳动熟练程度和劳动强度下制造某种使用价值所需要的劳动时间</p>
+<h3 id="4-6-价值如何表现：货币的发行与流通"><a href="#4-6-价值如何表现：货币的发行与流通" class="headerlink" title="4.6 价值如何表现：货币的发行与流通"></a>4.6 价值如何表现：货币的发行与流通</h3><p>商品的交换是以货币为媒介的，货币是在长期交换过程中形成的固定地充当一般等价物的商品。货币有五种基本职能，即==价值尺度、流通手段、贮藏手段、支付手段、世界货币==，其中价值尺度和流通手段是货币的两个最基本的职能</p>
+<h3 id="4-7-商品的价值规律的积极作用和消极作用（辨析题？）"><a href="#4-7-商品的价值规律的积极作用和消极作用（辨析题？）" class="headerlink" title="4.7 商品的价值规律的积极作用和消极作用（辨析题？）"></a>4.7 商品的价值规律的积极作用和消极作用（辨析题？）</h3><h4 id="4-7-1-价值规律"><a href="#4-7-1-价值规律" class="headerlink" title="4.7.1 价值规律"></a>4.7.1 价值规律</h4><p>价值规律是商品经济的基本经济规律，它的==基本内容==和客观要求是：</p>
+<ol>
+<li>商品的价值量由生产商品的==社会必要劳动时间==决定</li>
+<li>商品交换以==价值量==为基础，按照等价交换的原则进行</li>
+</ol>
+<p>价值规律的==表现形式==：是商品的==价格==围绕==价值==自发==波动==</p>
+<p>重要影响：供求、币值</p>
+<p>决定性影响：==价值==</p>
+<h4 id="4-7-2-价值规律的积极作用"><a href="#4-7-2-价值规律的积极作用" class="headerlink" title="4.7.2 价值规律的积极作用"></a>4.7.2 价值规律的积极作用</h4><ol>
+<li>自发地==调节==生产资料和劳动力在社会各生产部门之间的==分配比例==（哪里钱多去哪里）</li>
+<li>自发地刺激社会生产力的发展（技术越好，生产越快）</li>
+<li>自发地调节社会收入分配（做得好，赚钱，做不好，赔钱）</li>
+</ol>
+<h4 id="4-7-3-价值规律的消极作用"><a href="#4-7-3-价值规律的消极作用" class="headerlink" title="4.7.3 价值规律的消极作用"></a>4.7.3 价值规律的消极作用</h4><ol>
+<li>可能导致垄断的发生，阻碍技术的进步</li>
+<li>可能引起商品生产者的两极分化（好的越来越好，坏的越来越差）</li>
+<li>造成社会资源的浪费（太多的时候，人才过剩，不好找工作）</li>
+</ol>
+<h3 id="4-8-剩余价值：超额剩余价值、相对剩余价值、绝对剩余价值的区别（了解）"><a href="#4-8-剩余价值：超额剩余价值、相对剩余价值、绝对剩余价值的区别（了解）" class="headerlink" title="4.8 剩余价值：超额剩余价值、相对剩余价值、绝对剩余价值的区别（了解）"></a>4.8 剩余价值：超额剩余价值、相对剩余价值、绝对剩余价值的区别（了解）</h3><p>超额剩余价值：就是商品的个别价值低于社会价值之间的差额</p>
+<p>绝对剩余价值：指在必要劳动时间不变的条件下，由于延长工作日的长度和提高劳动强度而生产的剩余价值</p>
+<p>相对剩余价值：在工作日长度不变的条件下，通过缩短必要劳动时间而相对延长剩余劳动时间所生产的剩余价值</p>
+<h3 id="4-9-资本的积累、资本的有机构成（了解）"><a href="#4-9-资本的积累、资本的有机构成（了解）" class="headerlink" title="4.9 资本的积累、资本的有机构成（了解）"></a>4.9 资本的积累、资本的有机构成（了解）</h3><h2 id="5-资本主义的发展及其趋势（第一节、第二节）"><a href="#5-资本主义的发展及其趋势（第一节、第二节）" class="headerlink" title="5. 资本主义的发展及其趋势（第一节、第二节）"></a>5. 资本主义的发展及其趋势（第一节、第二节）</h2><h3 id="5-1-垄断：国家垄断和国际垄断"><a href="#5-1-垄断：国家垄断和国际垄断" class="headerlink" title="5.1 垄断：国家垄断和国际垄断"></a>5.1 垄断：国家垄断和国际垄断</h3><p>垄断资本主义发展二个阶段：私人垄断到国家垄断；时间上：以二战为界。</p>
+<p>国家垄断主义的产生根源：生产力的发展，私人垄断不能适应社会化生产程度的进一步发展。</p>
+<h3 id="5-2-经济全球化、逆经济全球化（中美贸易？）"><a href="#5-2-经济全球化、逆经济全球化（中美贸易？）" class="headerlink" title="5.2 经济全球化、逆经济全球化（中美贸易？）"></a>5.2 经济全球化、逆经济全球化（中美贸易？）</h3><h4 id="5-2-1-经济全球化"><a href="#5-2-1-经济全球化" class="headerlink" title="5.2.1 经济全球化"></a>5.2.1 经济全球化</h4><p>经济全球化是指生产不断发展、科技加速进步、社会分工和国际分工不断深化、生产的社会化和国际化程度不断提高的情况下，世界各国、各地区的经济活动越来越超出某一国家和地区是的范围而相互联系、相互依赖的过程</p>
+<h4 id="5-2-2-逆经济全球化"><a href="#5-2-2-逆经济全球化" class="headerlink" title="5.2.2 逆经济全球化"></a>5.2.2 逆经济全球化</h4><p>李克强指出：</p>
+<ul>
+<li>要“推进一带一路建设，与沿线国家加强战略对接、务实合作”。</li>
+<li>“==一带一路==”是中国对“==逆全球化==”倾向开出的一剂良方。</li>
+</ul>
+<h3 id="5-3-经济全球化的四个表现（多选）"><a href="#5-3-经济全球化的四个表现（多选）" class="headerlink" title="5.3 经济全球化的四个表现（多选）"></a>5.3 经济全球化的四个表现（多选）</h3><ul>
+<li>国际分工进一步深化</li>
+<li>贸易全球化</li>
+<li>金融全球化</li>
+<li>企业生产经营全球化</li>
+</ul>
+<h3 id="5-4-当代资本主义的新变化"><a href="#5-4-当代资本主义的新变化" class="headerlink" title="5.4 当代资本主义的新变化"></a>5.4 当代资本主义的新变化</h3><ul>
+<li>生产资料所有制的变化</li>
+<li>劳资关系和分配关系的变化</li>
+<li>社会阶层和社会结构的变化</li>
+<li>经济调节机制和经济危机形态的变化</li>
+<li>政治制度的变化</li>
+</ul>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%94%BF%E6%B2%BB/">政治</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">期末复习</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%A9%AC%E5%85%8B%E6%80%9D%E4%B8%BB%E4%B9%89/">马克思主义</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%93%B2%E5%AD%A6/">哲学</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/">经济学</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本文作者：以成<br>本文链接：<a href=""><script>document.write(window.location.href.replace(window.location.hash, ``))</script></a><br>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noopener">CC BY-NC-SA 4.0 协议</a> 。转载请注明本文作者与链接！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/poem_coengv_soeng_si/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">長相思</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/posts/computer_network_review_summary/">
+                        <span class="hidden-mobile">计算机网络考试复习总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "jfqqrz6l9VmBjlVdmCKusyUX-gzGzoHsz",
+          app_key: "KMLndPzsjoL98YgC9e85v4WK",
+          placeholder: "欢迎给我留言，谈谈你的想法哦。\n（支持Markdown语法）",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      ©2015-2020 Transion Creative Centre
+      <br>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "马原考试复习总结&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?deb343538ea97eeebc6eea038e232994";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,765 @@
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sat Apr 04 2020');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="huangjunxin">
+  <meta name="keywords" content="">
+  <title>C++类的成员函数与this指针 - 我的记事本</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>我的记事本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/03/13/8KDuAe.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2019-06-12 20:06">
+      2019年6月12日 晚上
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      28
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>C++ 和 C 的特点是拥有可灵活操作的指针，而 C++ 又拥有面向对象的特性。那么，有关在类成员函数中的 this 指针到底是怎样的指针呢？本文将来探讨这个问题。</p>
+<a id="more"></a>
+<h2 id="1-引入"><a href="#1-引入" class="headerlink" title="1. 引入"></a>1. 引入</h2><p>试阅读以下程序代码：</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Day</span> &#123;</span>
+    <span class="hljs-keyword">int</span> hours_;
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setAndShow1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setAndShow2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setAndShow3</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span></span>;
+&#125;;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Day::setAndShow1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span> </span>&#123;
+    hours_ = hours;
+    <span class="hljs-built_in">cout</span> &lt;&lt; hours_ &lt;&lt; <span class="hljs-built_in">endl</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Day::setAndShow2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span> </span>&#123;
+    <span class="hljs-keyword">this</span>-&gt;hours_ = hours;
+    <span class="hljs-built_in">cout</span> &lt;&lt; hours_ &lt;&lt; <span class="hljs-built_in">endl</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Day::setAndShow3</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span> </span>&#123;
+    (*<span class="hljs-keyword">this</span>).hours_ = hours;
+    <span class="hljs-built_in">cout</span> &lt;&lt; hours_ &lt;&lt; <span class="hljs-built_in">endl</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    Day aday;
+    aday.setAndShow1(<span class="hljs-number">5</span>);
+    aday.setAndShow2(<span class="hljs-number">6</span>);
+    aday.setAndShow3(<span class="hljs-number">7</span>);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>程序主要展示了一个 Day 类，以及它的<strong>三个成员函数</strong>（setAndShow1，setAndShow2，setAndShow3）。相信，你可以看明白函数 setAndShow1 是在将实参 hours 赋值给成员变量 hours_，并输出 hours_。可能你还不知道函数 setAndShow2 与 setAndShow3 的实现中的 <strong>this</strong> 是什么意思。不要急，我们接下来就会讲解。</p>
+<p>先看一看程序的运行结果：</p>
+<pre><code class="hljs md">运行结果：
+5
+6
+7</code></pre>
+<h2 id="2-浅谈"><a href="#2-浅谈" class="headerlink" title="2. 浅谈"></a>2. 浅谈</h2><p>事实上，上文提到的这三条语句是等效的：</p>
+<pre><code class="hljs C++">hours_ = hours; <span class="hljs-comment">//[1]</span>
+<span class="hljs-keyword">this</span>-&gt;hours_ = hours; <span class="hljs-comment">//[2]</span>
+(*<span class="hljs-keyword">this</span>).hours_ = hours; <span class="hljs-comment">//[3]</span></code></pre>
+<p>this 是一个<strong>指向对象本身的指针</strong>。事实上，在成员函数中<strong>直接调用</strong>成员变量（如[1]），在编译器内部也会被解析成 [2] 或 [3] 的形式。</p>
+<p>对于在类外调用该类的成员函数的情况，我们一般是这样写的：</p>
+<pre><code class="hljs C++">aday.setAndShow1(<span class="hljs-number">5</span>);
+aday.setAndShow2(<span class="hljs-number">6</span>);
+aday.setAndShow3(<span class="hljs-number">7</span>);</code></pre>
+<p>调用函数时，编译器会<strong>在函数内隐式地</strong>定义一个<strong>常量指针形参 this</strong>，并初始化为<strong>指向这个函数所在的对象</strong>。可以理解为编译器帮我们把上面的<strong>函数调用</strong>重写成了这种形式：</p>
+<pre><code class="hljs C++">Day::setAndShow1(&amp;aday, <span class="hljs-number">5</span>);
+Day::setAndShow2(&amp;aday, <span class="hljs-number">6</span>);
+Day::setAndShow3(&amp;aday, <span class="hljs-number">7</span>);</code></pre>
+<p>到这里，我们便初步理解了 <strong>this 指针</strong>的作用了。</p>
+<h2 id="3-深入"><a href="#3-深入" class="headerlink" title="3. 深入"></a>3. 深入</h2><p>需要注意的是，this 形参是编译器<strong>隐式定义</strong>的。我们<strong>不能</strong>尝试去<strong>显式地定义</strong>它。</p>
+<p>但这并不影响我们使用它，因为他会自动地被编译器处理。</p>
+<p>下面讲解 this 指针 的<strong>常用场景</strong>：</p>
+<p>(1) <strong>将成员函数的返回值设为 *this，用于层叠式调用函数</strong></p>
+<p>尝试阅读以下程序代码：</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Day</span> &#123;</span>
+    <span class="hljs-keyword">int</span> hours_;
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function">Day &amp;<span class="hljs-title">setHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span></span>;
+    <span class="hljs-function">Day &amp;<span class="hljs-title">addHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">showHours</span><span class="hljs-params">()</span></span>;
+&#125;;
+<span class="hljs-function">Day &amp;<span class="hljs-title">Day::setHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span> </span>&#123;
+    hours_ = hours;
+    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+&#125;
+<span class="hljs-function">Day &amp;<span class="hljs-title">Day::addHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span> </span>&#123;
+    hours_ += hours;
+    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Day::showHours</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; hours_ &lt;&lt; <span class="hljs-built_in">endl</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    Day aday;
+    aday.setHours(<span class="hljs-number">5</span>).setHours(<span class="hljs-number">6</span>).setHours(<span class="hljs-number">7</span>).showHours();
+    aday.addHours(<span class="hljs-number">1</span>).addHours(<span class="hljs-number">1</span>).showHours();
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<pre><code class="hljs md">运行结果：
+7
+9</code></pre>
+<p>由于函数返回值为<strong>类类型的引用</strong>，使用<strong>句点运算符</strong>调用一个成员函数后可以反复使用，随之在一次函数处理后再次调用一个函数。</p>
+<p>特别地，我们要对上文的 <strong>addHours 函数</strong>稍作说明：</p>
+<p>该函数的意图是在对象的原有的小时数 (hours_) 中加上几小时。该函数使用了 <strong>+=运算符</strong>，也就是说，该运算符也是把<strong>左侧的运算对象当作左值来返回</strong>，恰巧与我们设计的成员函数的<strong>用法相仿</strong>。而对我们——<strong>类设计者</strong>而言，我们理应让<strong>成员函数的用法</strong>与<strong>它的意图相吻合</strong>。如：</p>
+<pre><code class="hljs C++"><span class="hljs-comment">//对于 +=运算符</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-keyword">int</span> hours = <span class="hljs-number">3</span>;
+    (hours += <span class="hljs-number">1</span>) += <span class="hljs-number">2</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; hours;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<pre><code class="hljs md">运行结果：
+6</code></pre>
+<pre><code class="hljs C++"><span class="hljs-comment">//对于成员函数 addHours</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Day</span> &#123;</span>
+    <span class="hljs-keyword">int</span> hours_;
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function">Day &amp;<span class="hljs-title">setHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span></span>;
+    <span class="hljs-function">Day &amp;<span class="hljs-title">addHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">showHours</span><span class="hljs-params">()</span></span>;
+&#125;;
+<span class="hljs-function">Day &amp;<span class="hljs-title">Day::setHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span> </span>&#123;
+    hours_ = hours;
+    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+&#125;
+<span class="hljs-function">Day &amp;<span class="hljs-title">Day::addHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span> </span>&#123;
+    hours_ += hours;
+    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Day::showHours</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; hours_ &lt;&lt; <span class="hljs-built_in">endl</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    Day aday;
+    aday.setHours(<span class="hljs-number">3</span>).addHours(<span class="hljs-number">1</span>).addHours(<span class="hljs-number">2</span>).showHours();
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<pre><code class="hljs md">运行结果：
+6</code></pre>
+<p>当然，我们不可以对返回值不是<strong>类类型的引用</strong>的成员函数进行再调用，如：</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Day</span> &#123;</span>
+    <span class="hljs-keyword">int</span> hours_;
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function">Day &amp;<span class="hljs-title">setHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span></span>;
+    <span class="hljs-function">Day &amp;<span class="hljs-title">addHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">showHours</span><span class="hljs-params">()</span></span>;
+&#125;;
+<span class="hljs-function">Day &amp;<span class="hljs-title">Day::setHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span> </span>&#123;
+    hours_ = hours;
+    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+&#125;
+<span class="hljs-function">Day &amp;<span class="hljs-title">Day::addHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span> </span>&#123;
+    hours_ += hours;
+    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Day::showHours</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; hours_ &lt;&lt; <span class="hljs-built_in">endl</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    Day aday;
+    aday.setHours(<span class="hljs-number">5</span>).showHours().addHours(<span class="hljs-number">1</span>); <span class="hljs-comment">//错误！</span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>如上文，成员函数 showHours 的返回值为<strong>空值</strong>，故<strong>不可使用句点运算符</strong>在其基础上继续调用其他函数。</p>
+<p>(2) <strong>函数的形参名与成员变量名相同时，必须使用 this-&gt; 以区分二者</strong></p>
+<p>如：</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Day</span> &#123;</span>
+    <span class="hljs-keyword">int</span> hours;
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-function">Day &amp;<span class="hljs-title">setHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span></span>;
+    <span class="hljs-function">Day &amp;<span class="hljs-title">addHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">showHours</span><span class="hljs-params">()</span></span>;
+&#125;;
+<span class="hljs-function">Day &amp;<span class="hljs-title">Day::setHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span> </span>&#123; <span class="hljs-comment">//形参名与成员变量名相同。</span>
+    <span class="hljs-keyword">this</span>-&gt;hours = hours; <span class="hljs-comment">//必须使用 this-&gt; 以示区分</span>
+    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+&#125;
+<span class="hljs-function">Day &amp;<span class="hljs-title">Day::addHours</span><span class="hljs-params">(<span class="hljs-keyword">int</span> hours)</span> </span>&#123;
+    <span class="hljs-keyword">this</span>-&gt;hours += hours; <span class="hljs-comment">//必须使用 this-&gt; 以示区分</span>
+    <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Day::showHours</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; hours &lt;&lt; <span class="hljs-built_in">endl</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    Day aday;
+    aday.setHours(<span class="hljs-number">3</span>).addHours(<span class="hljs-number">1</span>).addHours(<span class="hljs-number">2</span>).showHours();
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<h2 id="4-总结"><a href="#4-总结" class="headerlink" title="4. 总结"></a>4. 总结</h2><p>本文介绍了类成员函数中 this 指针 的相关知识，回顾全文，我们：</p>
+<ul>
+<li>讲解了 this 指针 的<strong>定义——指向对象本身的常量指针</strong></li>
+<li>介绍了 this 指针 的<strong>常用情况</strong>（两种）</li>
+</ul>
+<p>对于 C++ 的普通应用，了解了上文提到的东西已经足够了。</p>
+<p>最后，为了满足少数人的好奇心，此处总结了前文未曾提及到的一些 Q&amp;A（引用自 CSDN <a href="https://blog.csdn.net/aaa_cainiao_66666/article/details/79748081" target="_blank" rel="noopener">不知道起啥昵称</a>）：</p>
+<blockquote>
+<p><strong>Q1. this 指针 是什么时候被创建的？</strong></p>
+<p><strong>A1. this 在成员函数的开始执行前构造，在成员的执行结束后清除。</strong></p>
+<p>但是如果 class 或者 struct 里面没有方法的话，它们是没有构造函数的，只能当做C的 struct 使用。采用 TYPE xx 的方式定义的话，在栈里分配内存，这时候，this 指针 的值就是这块内存的地址。采用 new 的方式创建对象的话，在堆里分配内存，new 操作符通过 eax 返回分配 的地址，然后设置给指针变量。之后去调用构造函数（如果有构造函数的话），这时将这个内存块的地址传给 ecx，在构造函数中再被编译器进一步处理。</p>
+<p><strong>Q2. this 指针 存放在何处？堆、栈、全局变量，还是其他地方？</strong></p>
+<p><strong>A2. this 指针 会因编译器不同而有不同的放置位置。</strong> 可能是栈，也可能是寄存器，甚至全局变量。在汇编级别里面，一个值只会以3种形式出现：立即数、寄存器值和内存变量值。不是存放在寄存器就是存放在内存中，它们并不是与高级语言的变量相对应的。</p>
+<p><strong>Q3. this 指针 是如何传递类中的函数的？绑定？还是在函数参数的首参数就是 this 指针？那么，this 指针 又是如何找到“类实例后函数的”？</strong></p>
+<p><strong>A3. 大多数编译器通过 ecx 寄存器传递 this 指针。</strong> 事实上，这也是一个潜规则。一般来说，不同编译器都会遵从一致的传参规则，否则不同编译器产生的 obj 就无法匹配了。</p>
+<p>在调用之前，编译器会把对应的对象地址放到 eax 中。this 是通过函数参数的首参来传递的。this 指针 在调用之前生成，至于“类实例后函数”，没有这个说法。类在实例化时，只分配类中的变量空间，并没有为函数分配空间。自从类的函数定义完成后，它就在那里，并不会自动消失。</p>
+<p><strong>Q4. 我们只有获得一个对象后，才能通过对象使用 this 指针。如果我们知道一个对象 this 指针 的位置，可以直接使用吗？</strong></p>
+<p><strong>A4. this 指针 只有在成员函数中才有定义。因此，你获得一个对象后，也不能通过对象使用 this 指针。</strong> 所以，我们无法知道一个对象的 this 指针 的位置（只有在成员函数里才有 this 指针 的位置）。当然，在成员函数里，你是可以知道 this 指针 的位置的（可以通过 &amp;this 获得），也可以直接使用它。</p>
+<p><strong>Q5. 每个类编译后，是否创建一个类中函数表保存函数指针，以便用来调用函数？</strong></p>
+<p><strong>A5. 普通的类函数（不论是成员函数，还是静态函数）都不会创建一个函数表来保存函数指针。只有虚函数才会被放到函数表中。</strong></p>
+<p>但是，即使是虚函数，如果编译器能明确知道调用的是哪个函数，编译器就不会通过函数表中的指针来间接调用，而是会直接调用该函数。</p>
+</blockquote>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C++</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本文作者：以成<br>本文链接：<a href=""><script>document.write(window.location.href.replace(window.location.hash, ``))</script></a><br>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noopener">CC BY-NC-SA 4.0 协议</a> 。转载请注明本文作者与链接！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/mysql_review_summary/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">MySQL考试复习总结</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/posts/deep_copy_&amp;_shallow_copy_of_cpp/">
+                        <span class="hidden-mobile">C++深复制与浅复制</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "jfqqrz6l9VmBjlVdmCKusyUX-gzGzoHsz",
+          app_key: "KMLndPzsjoL98YgC9e85v4WK",
+          placeholder: "欢迎给我留言，谈谈你的想法哦。\n（支持Markdown语法）",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      ©2015-2020 Transion Creative Centre
+      <br>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "C++类的成员函数与this指针&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?deb343538ea97eeebc6eea038e232994";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,732 @@
+
+  <script type="text/javascript">
+    (function () {
+      var day = new Date('Sat Apr 04 2020');
+      var now = new Date();
+      var isMemorialDay = now.getFullYear() === day.getFullYear() && now.getMonth() === day.getMonth() && now.getDate() === day.getDate();
+      if (isMemorialDay) {
+        if (document.all) {
+          window.style = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.createStyleSheet('javascript:style');
+        } else {
+          var style = document.createElement('style');
+          style.type = 'text/css';
+          style.innerHTML = 'html {     -webkit-filter: grayscale(100%); /* webkit */     -moz-filter: grayscale(100%); /* firefox */     -ms-filter: grayscale(100%); /* ie9 */     -o-filter: grayscale(100%); /* opera */     filter: grayscale(100%);     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1); filter:gray; /* ie9- */   }';
+          document.getElementsByTagName('HEAD').item(0).appendChild(style);
+        }
+      }
+    })();
+  </script>
+  <!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="huangjunxin">
+  <meta name="keywords" content="">
+  <title>C++深复制与浅复制 - 我的记事本</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_yg9cfy8wd6.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>我的记事本</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('https://s1.ax1x.com/2020/03/13/8KDuAe.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+  <div class="mt-3 post-meta">
+    <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+    <time datetime="2019-05-31 21:17">
+      2019年5月31日 晚上
+    </time>
+  </div>
+
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      24
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>在 C++ 中，由于存在指针与引用这类概念，便会产生这种类的实例之间复制时底层原理不同的问题。本文将通过编写一个 string 类来讲讲，到底什么是深复制、浅复制。</p>
+<a id="more"></a>
+<h2 id="1-引入"><a href="#1-引入" class="headerlink" title="1. 引入"></a>1. 引入</h2><p>尝试阅读下面一段代码：</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">String</span> &#123;</span> <span class="hljs-comment">//模仿C++的string类</span>
+    <span class="hljs-keyword">char</span> * str;
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-keyword">String</span>(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * s); <span class="hljs-comment">//构造函数1：通过字符串常量来初始化</span>
+    <span class="hljs-keyword">String</span>(); <span class="hljs-comment">//构造函数2：默认构造函数</span>
+    ~<span class="hljs-keyword">String</span>(); <span class="hljs-comment">//析构函数</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">OutPut</span><span class="hljs-params">()</span></span>;
+&#125;;
+<span class="hljs-keyword">String</span>::<span class="hljs-keyword">String</span>(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * s) &#123;
+    <span class="hljs-keyword">int</span> len = <span class="hljs-built_in">strlen</span>(s); <span class="hljs-comment">//检查字符串的长度</span>
+    str = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[len + <span class="hljs-number">1</span>]; <span class="hljs-comment">//给字符串分配存储空间，并用指针指向</span>
+    <span class="hljs-built_in">strcpy</span>(str, s); <span class="hljs-comment">//把字符串常量复制到存储空间中</span>
+&#125;
+<span class="hljs-keyword">String</span>::<span class="hljs-keyword">String</span>() &#123;
+    <span class="hljs-keyword">int</span> len = <span class="hljs-number">4</span>; <span class="hljs-comment">//默认字符串长度为4</span>
+    str = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-number">4</span>]; <span class="hljs-comment">//给字符串分配存储空间，并用指针指向</span>
+    <span class="hljs-built_in">strcpy</span>(str, <span class="hljs-string">""</span>); <span class="hljs-comment">//把字符串常量复制到存储空间中，默认为空</span>
+&#125;
+<span class="hljs-keyword">String</span>::~<span class="hljs-keyword">String</span>() &#123;
+    <span class="hljs-keyword">delete</span> [] str; <span class="hljs-comment">//删除曾给字符串分配的空间</span>
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">String::OutPut</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//输出字符串</span>
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">String</span> <span class="hljs-title">name</span><span class="hljs-params">(<span class="hljs-string">"Huizhou University"</span>)</span></span>;
+    name.OutPut();
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<pre><code class="hljs md">运行结果：
+Huizhou University
+
+--------------------------------
+Process exited after 0.6706 seconds with return value 0</code></pre>
+<p>这段代码演示了一个类似C++的string类的功能，当然，这只是一个简化版。接下来，我们通过这个程序来讲解今天的主题——<strong>深复制与浅复制</strong>。</p>
+<h2 id="2-发现问题"><a href="#2-发现问题" class="headerlink" title="2. 发现问题"></a>2. 发现问题</h2><p>相信，学习C语言已久的你受够了必须要使用库函数 cstring 的 strcpy() 来复制字符数组的事实。前文的程序既然作为一个<strong>类似string</strong>的类，我们要求他能做许多事情。就如<strong>便捷地将一个字符串赋值给另一个字符串</strong>。</p>
+<p>就前文这个程序而言，能否实现这点呢？</p>
+<p>我们来大胆地尝试一下，在 return 0; 之前添加了<strong>两行代码</strong>：</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">String</span> &#123;</span> <span class="hljs-comment">//模仿C++的string类</span>
+    <span class="hljs-keyword">char</span> * str;
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-keyword">String</span>(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * s); <span class="hljs-comment">//构造函数1：通过字符串常量来初始化</span>
+    <span class="hljs-keyword">String</span>(); <span class="hljs-comment">//构造函数2：默认构造函数</span>
+    ~<span class="hljs-keyword">String</span>(); <span class="hljs-comment">//析构函数</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">OutPut</span><span class="hljs-params">()</span></span>;
+&#125;;
+<span class="hljs-keyword">String</span>::<span class="hljs-keyword">String</span>(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * s) &#123;
+    <span class="hljs-keyword">int</span> len = <span class="hljs-built_in">strlen</span>(s); <span class="hljs-comment">//检查字符串的长度</span>
+    str = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[len + <span class="hljs-number">1</span>]; <span class="hljs-comment">//给字符串分配存储空间，并用指针指向</span>
+    <span class="hljs-built_in">strcpy</span>(str, s); <span class="hljs-comment">//把字符串常量复制到存储空间中</span>
+&#125;
+<span class="hljs-keyword">String</span>::<span class="hljs-keyword">String</span>() &#123;
+    <span class="hljs-keyword">int</span> len = <span class="hljs-number">4</span>; <span class="hljs-comment">//默认字符串长度为4</span>
+    str = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-number">4</span>]; <span class="hljs-comment">//给字符串分配存储空间，并用指针指向</span>
+    <span class="hljs-built_in">strcpy</span>(str, <span class="hljs-string">""</span>); <span class="hljs-comment">//把字符串常量复制到存储空间中，默认为空</span>
+&#125;
+<span class="hljs-keyword">String</span>::~<span class="hljs-keyword">String</span>() &#123;
+    <span class="hljs-keyword">delete</span> [] str; <span class="hljs-comment">//删除曾给字符串分配的空间</span>
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">String::OutPut</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//输出字符串</span>
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">String</span> <span class="hljs-title">name</span><span class="hljs-params">(<span class="hljs-string">"Huizhou University"</span>)</span></span>;
+    name.OutPut();
+    <span class="hljs-comment">//新添加的代码</span>
+    <span class="hljs-function"><span class="hljs-keyword">String</span> <span class="hljs-title">name2</span><span class="hljs-params">(name)</span></span>;
+    name2.OutPut();
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>若你执行编译，你可能会惊讶地发现它<strong>竟然能通过编译</strong>，但是问题却出现在了运行结束时：</p>
+<pre><code class="hljs md">运行结果：
+Huizhou University
+Huizhou University
+
+--------------------------------
+Process exited after 3.015 seconds with return value 3221226356</code></pre>
+<p>它<strong>的确能够输出两行相同的字符串</strong>，但返回值告诉我们，程序<strong>并未正常地结束</strong>（因为其返回值并不是 0）。</p>
+<p>为什么呢？</p>
+<h2 id="3-分析问题"><a href="#3-分析问题" class="headerlink" title="3. 分析问题"></a>3. 分析问题</h2><p>在解释为什么之前，我们先要了解一个概念：<strong>复制构造函数</strong>。</p>
+<p>既然名中有“构造函数”四字，说明它的确是一种<strong>构造函数</strong>，只不过它有点特殊而已。它的原型通常是：</p>
+<pre><code class="hljs C++">ClassName(<span class="hljs-keyword">const</span> ClassName &amp; AnotherClass)</code></pre>
+<p>它与普通的构造函数一样，在每一个类中，也有<strong>默认的</strong>复制构造函数（只要你还未显式地定义它）。</p>
+<p><strong>默认复制构造函数的默认实现</strong>是这样的：</p>
+<pre><code class="hljs C++">ClassName(<span class="hljs-keyword">const</span> ClassName &amp; AnotherClass) &#123;
+    member1 = AnotherClass.member1;
+    member2 = AnotherClass.member2;
+    member3 = AnotherClass.member3;
+    <span class="hljs-comment">//...</span>
+&#125;</code></pre>
+<p>没错，它会默认地把 AnotherClass 中的<strong>所有成员变量 赋值给</strong> ClassName 的所有成员变量。</p>
+<p>回到前文的程序中，我们<strong>也用到了</strong>系统自动给我们实现的默认复制构造函数。它应是这样的：</p>
+<pre><code class="hljs C++"><span class="hljs-keyword">String</span>::<span class="hljs-keyword">String</span> (<span class="hljs-keyword">const</span> <span class="hljs-keyword">String</span> &amp; s) &#123;
+    str = s.str;
+&#125;</code></pre>
+<p>没错，你<strong>只是把一个 str 指针（所指向的地址）</strong>赋值过去了（这也是本文的主角之一：<strong>浅复制</strong>）。name2 中的 str 与 name 中的 str 指针<strong>都是指向同一个动态存储空间</strong>。</p>
+<p>通过前文知道，str 是一个指向<strong>通过运算符 new 创建的动态空间</strong>的<strong>指针</strong>。在程序结束前，类会调用析构函数。而类析构函数中有<strong>运用运算符 delete 归还动态空间</strong>的行为。</p>
+<p>而在函数 main 中，我们声明了两个类：name, name2，在这两个类调用析构函数时，它尝试<strong>把同一个空间归还了两次</strong>！这样，程序在第二次归还空间时，发现找不到这个空间。因为前一个空间已经被归还，从而导致<strong>运行时错误</strong>。</p>
+<p>这就是问题的根源所在。</p>
+<h2 id="4-解决问题"><a href="#4-解决问题" class="headerlink" title="4. 解决问题"></a>4. 解决问题</h2><p>我们如何避免这个错误呢？</p>
+<p>很简单，只要在我们复制的时候，<strong>另外地创建一个新的空间</strong>来存储（这也是本文的另一个主角：<strong>深复制</strong>），那么当析构函数被调用时，程序便能<strong>分别将两个空间归还</strong>。如：</p>
+<pre><code class="hljs C++"><span class="hljs-keyword">String</span>(<span class="hljs-keyword">const</span> <span class="hljs-keyword">String</span> &amp; s); <span class="hljs-comment">//函数原型</span></code></pre>
+<pre><code class="hljs C++"><span class="hljs-keyword">String</span>::<span class="hljs-keyword">String</span>(<span class="hljs-keyword">const</span> <span class="hljs-keyword">String</span> &amp; s) &#123; <span class="hljs-comment">//函数实现</span>
+    <span class="hljs-keyword">int</span> len = <span class="hljs-built_in">strlen</span>(s.str); <span class="hljs-comment">//检查字符串的长度</span>
+    str = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[len + <span class="hljs-number">1</span>]; <span class="hljs-comment">//给字符串分配存储空间，并用指针指向</span>
+    <span class="hljs-built_in">strcpy</span>(str, s.str); <span class="hljs-comment">//把字符串常量复制到存储空间中</span>
+&#125;</code></pre>
+<p>完整程序便是：</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">String</span> &#123;</span> <span class="hljs-comment">//模仿C++的string类</span>
+    <span class="hljs-keyword">char</span> * str;
+<span class="hljs-keyword">public</span>:
+    <span class="hljs-keyword">String</span>(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * s); <span class="hljs-comment">//构造函数1：通过字符串常量来初始化</span>
+    <span class="hljs-keyword">String</span>(); <span class="hljs-comment">//构造函数2：默认构造函数</span>
+    ~<span class="hljs-keyword">String</span>(); <span class="hljs-comment">//析构函数</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">OutPut</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-keyword">String</span>(<span class="hljs-keyword">const</span> <span class="hljs-keyword">String</span> &amp; s);
+&#125;;
+<span class="hljs-keyword">String</span>::<span class="hljs-keyword">String</span>(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * s) &#123;
+    <span class="hljs-keyword">int</span> len = <span class="hljs-built_in">strlen</span>(s); <span class="hljs-comment">//检查字符串的长度</span>
+    str = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[len + <span class="hljs-number">1</span>]; <span class="hljs-comment">//给字符串分配存储空间，并用指针指向</span>
+    <span class="hljs-built_in">strcpy</span>(str, s); <span class="hljs-comment">//把字符串常量复制到存储空间中</span>
+&#125;
+<span class="hljs-keyword">String</span>::<span class="hljs-keyword">String</span>() &#123;
+    <span class="hljs-keyword">int</span> len = <span class="hljs-number">4</span>; <span class="hljs-comment">//默认字符串长度为4</span>
+    str = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-number">4</span>]; <span class="hljs-comment">//给字符串分配存储空间，并用指针指向</span>
+    <span class="hljs-built_in">strcpy</span>(str, <span class="hljs-string">""</span>); <span class="hljs-comment">//把字符串常量复制到存储空间中，默认为空</span>
+&#125;
+<span class="hljs-keyword">String</span>::~<span class="hljs-keyword">String</span>() &#123;
+    <span class="hljs-keyword">delete</span> [] str; <span class="hljs-comment">//删除曾给字符串分配的空间</span>
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">String::OutPut</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//输出字符串</span>
+&#125;
+<span class="hljs-keyword">String</span>::<span class="hljs-keyword">String</span>(<span class="hljs-keyword">const</span> <span class="hljs-keyword">String</span> &amp; s) &#123; <span class="hljs-comment">//函数实现</span>
+    <span class="hljs-keyword">int</span> len = <span class="hljs-built_in">strlen</span>(s.str); <span class="hljs-comment">//检查字符串的长度</span>
+    str = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[len + <span class="hljs-number">1</span>]; <span class="hljs-comment">//给字符串分配存储空间，并用指针指向</span>
+    <span class="hljs-built_in">strcpy</span>(str, s.str); <span class="hljs-comment">//把字符串常量复制到存储空间中</span>
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;
+    <span class="hljs-function"><span class="hljs-keyword">String</span> <span class="hljs-title">name</span><span class="hljs-params">(<span class="hljs-string">"Huizhou University"</span>)</span></span>;
+    name.OutPut();
+    <span class="hljs-function"><span class="hljs-keyword">String</span> <span class="hljs-title">name2</span><span class="hljs-params">(name)</span></span>;
+    name2.OutPut();
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<pre><code class="hljs md">运行结果：
+Huizhou University
+Huizhou University
+
+--------------------------------
+Process exited after 1.17 seconds with return value 0</code></pre>
+<p>至此，程序的确正常运行了。</p>
+<h2 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. 总结</h2><p>本文通过编写一个 string 类来讲解了<strong>深复制与浅复制</strong>。</p>
+<ul>
+<li><strong>浅复制</strong>：对<strong>类</strong>进行逐个成员的复制。若成员是一个值，则复制值。若成员是一个指针，则复制指针。</li>
+<li><strong>深复制</strong>：对<strong>类</strong>进行逐个成员的复制。若成员是一个值，则复制值。若成员是一个指针，则<strong>另外对该指针所指向的内容分配空间</strong>，并复制相应值。</li>
+<li><p>了解<strong>复制构造函数</strong>。</p>
+</li>
+<li><p>注意，当我们的类成员变量<strong>包含指针类型</strong>时，应利用运算符 new 及 delete 人工编写<strong>构造函数</strong>、<strong>析构函数</strong>以及<strong>复制构造函数</strong>（其实还应<strong>编写重载赋值运算符</strong>，但其不在本文讨论范围）以避免发生内存错误。</p>
+</li>
+</ul>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">计算机科学</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
+                    
+                      <a class="hover-with-bg" href="/tags/C/">C++</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本文作者：以成<br>本文链接：<a href=""><script>document.write(window.location.href.replace(window.location.hash, ``))</script></a><br>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="nofollow noopener">CC BY-NC-SA 4.0 协议</a> 。转载请注明本文作者与链接！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/member_function_&amp;_this_pointer_of_cpp_class/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">C++类的成员函数与this指针</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/posts/storage_duration_&amp;_scope_&amp;_linkage_in_cpp/">
+                        <span class="hidden-mobile">C++存储持续性、作用域与链接性</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <div class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "jfqqrz6l9VmBjlVdmCKusyUX-gzGzoHsz",
+          app_key: "KMLndPzsjoL98YgC9e85v4WK",
+          placeholder: "欢迎给我留言，谈谈你的想法哦。\n（支持Markdown语法）",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    }
+    createObserver(loadValine, 'vcomments');
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      ©2015-2020 Transion Creative Centre
+      <br>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: 'article.markdown-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "C++深复制与浅复制&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?deb343538ea97eeebc6eea038e232994";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>
