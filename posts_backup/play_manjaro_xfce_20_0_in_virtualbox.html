@@ -170,7 +170,7 @@
 </nav>
 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('http://img.trenton.top/i/2023/10/29/653d47d61b227.jpg') no-repeat center center;
+         style="background: url('https://img.trenton.top/i/2023/10/29/653d47d61b227.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -248,7 +248,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx</code></pre>
 <p>然后 log out 再 log in，在右下角就能看见输入法的图标了。</p>
 <p>接下来右击输入法图标来自己 configure 即可。</p>
-<p><img src="http://img.trenton.top/i/2023/10/29/653d60158d6f9.png" srcset="/img/loading.gif" alt="653d60158d6f9"></p>
+<p><img src="https://img.trenton.top/i/2023/10/29/653d60158d6f9.png" srcset="/img/loading.gif" alt="653d60158d6f9"></p>
 <h3 id="3-4-zsh-及-oh-my-zsh"><a href="#3-4-zsh-及-oh-my-zsh" class="headerlink" title="3.4 zsh 及 oh-my-zsh"></a>3.4 zsh 及 oh-my-zsh</h3><p>zsh 是一个很受欢迎的 Shell，而 Manjaro 也自带了 zsh，因此我们不用安装，只用切换过去即可：</p>
 <pre><code class="hljs shell">chsh -s /bin/zsh</code></pre>
 <p>然后，我们需要安装 oh-my-zsh，oh-my-zsh 是一个美化 zsh 的工具包，安装后就能拥有好看的 Shell 啦：</p>
@@ -263,7 +263,7 @@ export XMODIFIERS=@im=fcitx</code></pre>
 <p>然后将 ZSH_THEME 一栏换成 ys，保存，再运行：</p>
 <pre><code class="hljs shell">source ~/.zshrc</code></pre>
 <p>即可。如图是主题更改前后的对比：</p>
-<p><img src="http://img.trenton.top/i/2023/10/29/653d5e27c8a13.png" srcset="/img/loading.gif" alt="653d5e27c8a13"></p>
+<p><img src="https://img.trenton.top/i/2023/10/29/653d5e27c8a13.png" srcset="/img/loading.gif" alt="653d5e27c8a13"></p>
 <h3 id="3-5-科学上网"><a href="#3-5-科学上网" class="headerlink" title="3.5 科学上网"></a>3.5 科学上网</h3><p>说到科学上网，这里要讲的方法是通过 SSR 实现的，可惜，之前非常好用的 electron-ssr 已经停止维护了，且目前的确有些问题，无法稳定使用，只能另辟蹊径，用另一个工具了：<a href="https://github.com/xzymoe/gfwlist2privoxy" target="_blank" rel="noopener">gfwlist2privoxy</a>。</p>
 <h4 id="3-5-1-gfwlist2privoxy"><a href="#3-5-1-gfwlist2privoxy" class="headerlink" title="3.5.1 gfwlist2privoxy"></a>3.5.1 gfwlist2privoxy</h4><p>由于 Git、python 在 Manjaro 是自带的，因此不用再手动安装了，可以直接到一个空目录里，把工具的源码 clone 下来，然后一顿操作猛如虎：</p>
 <pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">Git <span class="hljs-built_in">clone</span> 到本地</span>
@@ -290,7 +290,7 @@ ssr uninstall</code></pre>
 <li>打开 Firefox 并自行到插件商店下载 SwitchyOmega</li>
 <li>安装完成后会自动弹出设置界面</li>
 <li><p>然后将 proxy 页面修改成这样：</p>
-<p> <img src="http://img.trenton.top/i/2023/10/29/653d60f2f07b2.png" srcset="/img/loading.gif" alt="653d60f2f07b2"></p>
+<p> <img src="https://img.trenton.top/i/2023/10/29/653d60f2f07b2.png" srcset="/img/loading.gif" alt="653d60f2f07b2"></p>
 </li>
 <li><p>设置完后点保存 (Apply changes)，来到 auto switch 页面</p>
 </li>
@@ -301,11 +301,11 @@ ssr uninstall</code></pre>
 <li>保存 (Apply changes)，然后点击 Download Profile Now</li>
 <li>修改上方 Rule list rules 的 Profile 为 proxy</li>
 <li><p>再保存 (Apply changes)，最后就是这样：</p>
-<p><img src="http://img.trenton.top/i/2023/10/29/653d61121ca74.png" srcset="/img/loading.gif" alt="653d61121ca74"></p>
+<p><img src="https://img.trenton.top/i/2023/10/29/653d61121ca74.png" srcset="/img/loading.gif" alt="653d61121ca74"></p>
 </li>
 </ol>
 <p>最后到另外一个任意的网站页面，换一下 Proxy 的模式为 auto switch，就一劳永逸了：</p>
-<p><img src="http://img.trenton.top/i/2023/10/29/653d61255163f.png" srcset="/img/loading.gif" alt="653d61255163f"></p>
+<p><img src="https://img.trenton.top/i/2023/10/29/653d61255163f.png" srcset="/img/loading.gif" alt="653d61255163f"></p>
 <p>解释一下，上面这些步骤都是为了实现一个事情：在规则表 (Rule List) 的帮助下，在平时可以正常访问的页面用平常的方式连接访问，在平时不能正常访问的页面自动调用 Proxy 来访问，这样一来，可以根据不同的情况自动切换，就不用整天浪费科学上网的流量了。</p>
 <h4 id="3-5-3-proxychains-ng"><a href="#3-5-3-proxychains-ng" class="headerlink" title="3.5.3 proxychains-ng"></a>3.5.3 proxychains-ng</h4><p>下面还有一个小拓展，如果想要在控制台通过命令的形式来对指定程序或命令来提供代理，可以用 <a href="https://github.com/rofl0r/proxychains-ng" target="_blank" rel="noopener">proxychains-ng</a>。</p>
 <p>同样是通过 Git 来 clone 并安装，make 也是系统自带的，所以不用自己装：</p>
@@ -326,7 +326,7 @@ socks5  127.0.0.1 1080</code></pre>
 <pre><code class="hljs shell">curl myip.ipip.net
 proxychains4 curl myip.ipip.net</code></pre>
 <p>如果像这样的两个位置不同，就说明成功了：</p>
-<p><img src="http://img.trenton.top/i/2023/10/29/653d6138c77b2.png" srcset="/img/loading.gif" alt="653d6138c77b2"></p>
+<p><img src="https://img.trenton.top/i/2023/10/29/653d6138c77b2.png" srcset="/img/loading.gif" alt="653d6138c77b2"></p>
 
 </div>
 
