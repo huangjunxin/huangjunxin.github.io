@@ -170,7 +170,7 @@
 </nav>
 
     <div class="view intro-2" id="background" parallax=true
-         style="background: url('http://47.236.10.130:40027/i/2023/10/29/653d47d61b227.jpg') no-repeat center center;
+         style="background: url('http://img.trenton.top//i/2023/10/29/653d47d61b227.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -239,7 +239,7 @@
 <a id="more"></a>
 <p>奈何当时还在外地公司实习，身边没有显示屏不方便折腾，写文章也便拖到了现在。</p>
 <p>用九层亚克力外壳装好后是这样的，直接上图了：</p>
-<p><img src="http://47.236.10.130:40027/i/2023/10/29/653d5d891bed2.jpg" srcset="/img/loading.gif" alt="653d5d891bed2"></p>
+<p><img src="http://img.trenton.top//i/2023/10/29/653d5d891bed2.jpg" srcset="/img/loading.gif" alt="653d5d891bed2"></p>
 <p>后来辞了实习之后就回家了，现在趁着有空，打算重新装一个 Manjaro Xfce 在树莓派上，毕竟我还算是 Manjaro 的忠实粉丝吧，哈哈（</p>
 <h2 id="1-预备与镜像写入"><a href="#1-预备与镜像写入" class="headerlink" title="1. 预备与镜像写入"></a>1. 预备与镜像写入</h2><p>显然，要先准备好一些安装的工具和镜像：</p>
 <ul>
@@ -249,24 +249,24 @@
 </li>
 </ul>
 <p>下载完以上两个之后，安装好 Raspberry Pi Imager，找一张8G以上的 Micro SD 卡，接上读卡器就可以进行镜像的写入，显然，写入的时候是要格式化的，所以需要确保卡里没有重要的东西。打开安装工具，选好 Operating System（也就是镜像，这里我们选择 Use custom）：</p>
-<p><img src="http://47.236.10.130:40027/i/2023/10/29/653d5da5797d6.png" srcset="/img/loading.gif" alt="653d5da5797d6"></p>
+<p><img src="http://img.trenton.top//i/2023/10/29/653d5da5797d6.png" srcset="/img/loading.gif" alt="653d5da5797d6"></p>
 <p>还有 SD Card 盘符后，点 Write 开始写入：</p>
-<p><img src="http://47.236.10.130:40027/i/2023/10/29/653d5db96fbe3.png" srcset="/img/loading.gif" alt="653d5db96fbe3"></p>
+<p><img src="http://img.trenton.top//i/2023/10/29/653d5db96fbe3.png" srcset="/img/loading.gif" alt="653d5db96fbe3"></p>
 <p>这里我用的是 32G 的朗科的京东联名款 Micro SD 卡，当时是 ¥22.9 买的，还附送读卡器，读写速度实测还是非常可以的。树莓派4B 也能兼容这张 Micro SD 卡，所以也就可以不用买比较贵的闪迪了。</p>
 <p>如下图所示，就完成写入了：</p>
-<p><img src="http://47.236.10.130:40027/i/2023/10/29/653d5dd15190a.png" srcset="/img/loading.gif" alt="653d5dd15190a"></p>
+<p><img src="http://img.trenton.top//i/2023/10/29/653d5dd15190a.png" srcset="/img/loading.gif" alt="653d5dd15190a"></p>
 <p>然后可以直接将 Micro SD 卡插入树莓派，直接启动。</p>
 <h2 id="2-安装及设置-Manjaro-ARM"><a href="#2-安装及设置-Manjaro-ARM" class="headerlink" title="2. 安装及设置 Manjaro ARM"></a>2. 安装及设置 Manjaro ARM</h2><p>开机启动后会自动进行安装，随后会显示安装设置的界面，如下图是设置键盘布局：</p>
-<p><img src="http://47.236.10.130:40027/i/2023/10/29/653d5de95b8f8.png" srcset="/img/loading.gif" alt="653d5de95b8f8"></p>
+<p><img src="http://img.trenton.top//i/2023/10/29/653d5de95b8f8.png" srcset="/img/loading.gif" alt="653d5de95b8f8"></p>
 <p>我们选择 us 即可。</p>
 <p>接下来就是输入自己的用户名 (Enter username)，注意用户名只能为小写字母。</p>
 <p>随后设置用户组 (Enter additional groups) ，这里留空即可。</p>
 <p>设置用户密码和 Root 密码，自己设置即可。</p>
 <p>设置时区 (timezone)，这里可以选择 Asia/Hong_Kong 或者 Asia/Shanghai。</p>
 <p>最后进行语言设置 (locale)，这里建议选择英文即可 en_US.UTF-8，如果选择中文的话开机后会因为字体缺失而都是乱码：</p>
-<p><img src="http://47.236.10.130:40027/i/2023/10/29/653d5dfed3ca5.png" srcset="/img/loading.gif" alt="653d5dfed3ca5"></p>
+<p><img src="http://img.trenton.top//i/2023/10/29/653d5dfed3ca5.png" srcset="/img/loading.gif" alt="653d5dfed3ca5"></p>
 <p>最后确认设置，等待一会就会自动重启，然后就可以成功启动了：</p>
-<p><img src="http://47.236.10.130:40027/i/2023/10/29/653d5e13ccc5e.png" srcset="/img/loading.gif" alt="653d5e13ccc5e"></p>
+<p><img src="http://img.trenton.top//i/2023/10/29/653d5e13ccc5e.png" srcset="/img/loading.gif" alt="653d5e13ccc5e"></p>
 <p>注意，这整个安装过程中有可能会卡住之类的，那么有可能是在镜像写入的时候有出错，如果卡住太久，可以尝试重新查看前文 <1. 预备与镜像写入> 并重新进行镜像写入。</p>
 <h2 id="3-环境配置"><a href="#3-环境配置" class="headerlink" title="3. 环境配置"></a>3. 环境配置</h2><p>其实到这里基本上和我之前写过的 Manjaro 教程类似了，不过还是有些需要额外设置的地方，一些相同的步骤也直接复制过来了：</p>
 <h3 id="3-1-换源"><a href="#3-1-换源" class="headerlink" title="3.1 换源"></a>3.1 换源</h3><p>装完肯定要换源，不然更新系统或程序的时候会很慢：</p>
@@ -308,7 +308,7 @@ chsh -s /bin/zsh</code></pre>
 <p>然后将 ZSH_THEME 一栏换成 ys，保存，再运行：</p>
 <pre><code class="hljs shell">source ~/.zshrc</code></pre>
 <p>即可。如图是主题更改前后的对比：</p>
-<p><img src="http://47.236.10.130:40027/i/2023/10/29/653d5e27c8a13.png" srcset="/img/loading.gif" alt="653d5e27c8a13"></p>
+<p><img src="http://img.trenton.top//i/2023/10/29/653d5e27c8a13.png" srcset="/img/loading.gif" alt="653d5e27c8a13"></p>
 <h2 id="4-后记"><a href="#4-后记" class="headerlink" title="4. 后记"></a>4. 后记</h2><p>购买树莓派的初衷也是自己想多接触嵌入式这方面的知识，后面希望自己有新的折腾，就另写文章啦，根据上面的安装步骤即可完成 Manjaro ARM Xfce 大致的配置，便就此搁笔了。</p>
 
             </article>
